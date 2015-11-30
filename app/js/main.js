@@ -17,7 +17,7 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
   .state('root', {
     abstract: true,
     templateUrl: 'templates/tpl-layout/layout.tpl.html'
-  }).state('root.landing', {
+  }).state('landing', {
     url: '/',
     // controller: '... as vm',
     templateUrl: 'templates/tpl-app/landing.tpl.html'
