@@ -5,7 +5,9 @@
 @include foundation-everything;
 @include orbit-slide;
 @include orbit-container;
-
+@include orbit-next;
+@include orbit-previous;
+@include orbit-bullets;
 $Blue: #252839;
 $Gray: #677077;
 $lightGray: #b5b5b7;
@@ -21,21 +23,25 @@ body {
   margin: 20px auto;
  
 }
+
 .orbit-container{
-  padding-bottom: 90%;
-}
-.orbit-slide{
-  padding-top: 30%;
+  padding-bottom: 80%;
 }
 
+.orbit-bullets{
+  padding-top: 0;
+}
 .login{
   width: 50%;
   margin: 20px auto;
   text-align: center;
+  border: 1px solid black;
 }
 .signUp{
   width: 50%;
   margin: 20px auto;
+  text-align: center;
+  border: 1px solid black;
 }
 
 
@@ -89,4 +95,7 @@ body {
 .dropdown{
   width: 100%;
 }
-
+.addUser{
+  width: 50%;
+  margin: 0 auto;
+}
