@@ -1,11 +1,14 @@
-// Put any @imports here
-// See Readme for a list of supported ones
-
 // Import Foundation and Motion-UI
 @import 'foundation';
 @import 'motion-ui';
 @include motion-ui-transitions;
 @include foundation-everything;
+
+
+$Blue-color: #252839;
+$Gray: #677077;
+$LightGray: #b5b5b7;
+$Yellow: #b5b5b7;
 
 
 body {
