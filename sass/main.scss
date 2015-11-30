@@ -3,7 +3,8 @@
 @import 'motion-ui';
 @include motion-ui-transitions;
 @include foundation-everything;
-
+@include orbit-slide;
+@include orbit-container;
 
 $Blue-color: #252839;
 $Gray: #677077;
@@ -13,6 +14,17 @@ $Yellow: #b5b5b7;
 
 body {
   background: #747D7D;
+}
+.slider{
+  width: 50%;
+  margin: 20px auto;
+ 
+}
+.orbit-container{
+  padding-bottom: 90%;
+}
+.orbit-slide{
+  padding-top: 30%;
 }
 
 // .container {
