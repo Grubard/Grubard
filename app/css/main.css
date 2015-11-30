@@ -3377,11 +3377,14 @@ table.hover tr:nth-of-type(even):hover {
     float: right; } }
 
 body {
-  background: #747D7D; }
+  background-color: #252839;
+  background-image: linear-gradient(#252839, #677077);
+  background: #252839;
+  background: linear-gradient(#252839, #677077); }
 
 .container {
-  width: 600px;
-  margin: 15px auto;
+  width: 80%;
+  margin: 2% auto;
   border: 1px solid white;
   text-align: center; }
 

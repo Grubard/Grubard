@@ -5,19 +5,25 @@
 @include foundation-everything;
 
 
-$Blue-color: #252839;
+$Blue: #252839;
 $Gray: #677077;
 $LightGray: #b5b5b7;
-$Yellow: #b5b5b7;
+$Yellow: #f2b632;
+$orbit-bullet-diameter: 12rem;
 
 
 body {
-  background: #747D7D;
+  background-color: $Blue;
+  background-image: linear-gradient($Blue, $Gray);
+  background: $Blue;
+  background: linear-gradient($Blue, $Gray);
 }
 
 .container {
-  width: 600px;
-  margin: 15px auto;
+  width: 80%;
+  margin: 2% auto;
   border: 1px solid white;
   text-align: center;
 }
+
+
