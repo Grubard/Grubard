@@ -7,23 +7,60 @@
 
 $Blue: #252839;
 $Gray: #677077;
-$LightGray: #b5b5b7;
+$lightGray: #b5b5b7;
 $Yellow: #f2b632;
-$orbit-bullet-diameter: 12rem;
+
 
 
 body {
-  background-color: $Blue;
-  background-image: linear-gradient($Blue, $Gray);
-  background: $Blue;
-  background: linear-gradient($Blue, $Gray);
+ background: $Gray;
 }
 
-.container {
-  width: 80%;
-  margin: 2% auto;
-  border: 1px solid white;
+
+
+.userHomePage{
   text-align: center;
+  a{
+    color: $Yellow;
+  }
+  div{
+    display: inline-block;
+    margin: 3%;
+    border-radius: 5px;
+    height: 30em;
+    width: 40%;
+    h3{
+      border-bottom: 1px solid $Blue;
+      width: 75%;
+      margin: 2% auto;
+    }
+    &:hover{
+      border: 2px solid $Blue;
+    }
+
+  }
+  .pantry{
+    border: 1px solid $Blue;
+  }
+  .groceryList{
+    border: 1px solid $Blue;
+
+  }
 }
 
+@media all and (max-width: 1000px) {
+  .userHomePage div{
+    width: 90%;
+  }
+}
+
+.mainPantry{
+  ul{
+    list-style: none;
+  }
+}
+
+.crossOut{
+  text-decoration: line-through;
+}
 
