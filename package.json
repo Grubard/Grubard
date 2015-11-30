@@ -47,6 +47,7 @@
     "moment": "^2.10.6",
     "motion-ui": "^1.1.1",
     "normalize.css": "^3.0.3",
+    "slick-carousel": "^1.5.9",
     "underscore": "^1.8.3"
   },
   "browser": {

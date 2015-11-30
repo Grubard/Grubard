@@ -5395,20 +5395,71 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
+width: 100%;
+max-height: 100%;
+position: relative;
+margin: 0;
+overflow: hidden;
+list-style: none;
+left: auto;
+right: 0;
+left: 0;
+[data-whatinput='mouse'] & {
+  outline: 0; }
+
+position: relative;
+margin-top: 0.8rem;
+margin-bottom: 0.8rem;
+text-align: center;
+button {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.1rem;
+  background-color: #cacaca;
+  border-radius: 50%; }
+  button:hover {
+    background-color: #8a8a8a; }
+  button.is-active {
+    background-color: #8a8a8a; }
+
 body {
   background: #677077; }
 
+<<<<<<< HEAD
+=======
+.slider {
+  width: 50%;
+  margin: 20px auto; }
+
+.orbit-container {
+  padding-bottom: 80%; }
+
+.orbit-bullets {
+  padding-top: 0; }
+
+>>>>>>> master
 .login {
   width: 50%;
   margin: 20px auto;
-  text-align: center; }
+  text-align: center;
+  border: 1px solid black; }
 
 .signUp {
   width: 50%;
+<<<<<<< HEAD
   margin: 20px auto; }
 
 .dropdown {
   width: 100%; }
+=======
+<<<<<<< HEAD
+  margin: 20px auto;
+  text-align: center;
+  border: 1px solid black; }
+=======
+  margin: 20px auto; }
+>>>>>>> af33a0445f16af982f33701bc9773f29718fd350
+>>>>>>> master
 
 .userHomePage {
   text-align: center; }
@@ -5464,4 +5515,14 @@ body {
 .notCrossedOut {
   text-decoration: none; }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+.addUser {
+  width: 50%;
+  margin: 0 auto; }
+
+=======
+>>>>>>> af33a0445f16af982f33701bc9773f29718fd350
+>>>>>>> master
 /*# sourceMappingURL=main.css.map */

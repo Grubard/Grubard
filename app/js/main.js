@@ -37,11 +37,15 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
     url: '/pantry',
     // controller: '... as vm',
     templateUrl: 'templates/tpl-app/pantry.tpl.html'
+  }).state('root.add', {
+    url: '/addUser',
+    controller: 'AddUserController as vm',
+    templateUrl: 'templates/tpl-app/addUser.tpl.html'
   });
   /////** Add new .states here **/////
 
   // Allows the use of HTML5 stuff (Will help remove hashtags from routes)
-  // $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
 };
 
 config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
@@ -72,7 +76,23 @@ _angular2['default'].module('app.core', ['ui.router'])
 // .constant('...', ...)
 .config(_config2['default']);
 
-},{"./config":1,"angular":14,"angular-ui-router":12}],3:[function(require,module,exports){
+},{"./config":1,"angular":15,"angular-ui-router":13}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var AddUserController = function AddUserController($state, $http, $cookies) {
+  var vm = this;
+  vm.addUser = function (user) {
+    console.log(user);
+  };
+};
+AddUserController.$inject = ['$state', '$http', '$cookies'];
+exports['default'] = AddUserController;
+module.exports = exports['default'];
+
+},{}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -115,7 +135,7 @@ ListController.$inject = [];
 exports["default"] = ListController;
 module.exports = exports["default"];
 
-},{"jQuery":16}],4:[function(require,module,exports){
+},{"jQuery":17}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -141,7 +161,7 @@ LoginController.$inject = ['$state', '$http', '$cookies'];
 exports['default'] = LoginController;
 module.exports = exports['default'];
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -154,7 +174,7 @@ UserHomeController.$inject = [];
 exports["default"] = UserHomeController;
 module.exports = exports["default"];
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -183,18 +203,22 @@ var _controllersListController = require('./controllers/listController');
 
 var _controllersListController2 = _interopRequireDefault(_controllersListController);
 
+var _controllersAddUserController = require('./controllers/add.user.controller');
+
+var _controllersAddUserController2 = _interopRequireDefault(_controllersAddUserController);
+
 // import ... from './services/...';
 // import ... from './directives/...';
 
 _angular2['default'].module('app.default', ['app.core', 'ngCookies'])
 
 /////** Load Controllers, Services, and Directives **/////
-.controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']);
+.controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']).controller('AddUserController', _controllersAddUserController2['default']);
 
 // .service('...', ...)
 // .directive('...', ...)
 
-},{"../app-core/index":2,"./controllers/listController":3,"./controllers/login.controller":4,"./controllers/userHomeController":5,"angular":14,"angular-cookies":11}],7:[function(require,module,exports){
+},{"../app-core/index":2,"./controllers/add.user.controller":3,"./controllers/listController":4,"./controllers/login.controller":5,"./controllers/userHomeController":6,"angular":15,"angular-cookies":12}],8:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -211,7 +235,7 @@ _angular2['default'].module('app.layout', []);
 /////** Load Controllers **/////
 // .controller('...', ...)
 
-},{"angular":14}],8:[function(require,module,exports){
+},{"angular":15}],9:[function(require,module,exports){
 // Import our core files
 'use strict';
 
@@ -250,7 +274,7 @@ require('./app-default/index');
 
 _angular2['default'].module('app', ['app.core', 'app.layout', 'app.default']).run(_run2['default']);
 
-},{"./app-core/index":2,"./app-default/index":6,"./app-layout/index":7,"./run":9,"angular":14,"foundation":15,"jquery":17,"motion-ui":18}],9:[function(require,module,exports){
+},{"./app-core/index":2,"./app-default/index":7,"./app-layout/index":8,"./run":10,"angular":15,"foundation":16,"jquery":18,"motion-ui":19}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -272,7 +296,7 @@ run.$inject = ['$rootScope'];
 exports['default'] = run;
 module.exports = exports['default'];
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -595,11 +619,11 @@ angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterPr
 
 })(window, window.angular);
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":10}],12:[function(require,module,exports){
+},{"./angular-cookies":11}],13:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -4970,7 +4994,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -33989,11 +34013,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":13}],15:[function(require,module,exports){
+},{"./angular":14}],16:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 !function($) {
@@ -41434,7 +41458,7 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -50646,7 +50670,7 @@ return jQuery;
 
 }));
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
@@ -59866,7 +59890,7 @@ return jQuery;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -59985,7 +60009,7 @@ var MotionUI = {
 return MotionUI;
 }));
 
-},{"jquery":17}]},{},[8])
+},{"jquery":18}]},{},[9])
 
 
 //# sourceMappingURL=main.js.map

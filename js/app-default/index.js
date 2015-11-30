@@ -9,7 +9,7 @@ import '../app-core/index';
 import LoginController from './controllers/login.controller';
 import UserHomeController from './controllers/userHomeController';
 import ListController from './controllers/listController';
-
+import AddUserController from './controllers/add.user.controller';
 // import ... from './services/...';
 // import ... from './directives/...';
 
@@ -20,6 +20,7 @@ angular
   .controller('LoginController', LoginController)
   .controller('UserHomeController', UserHomeController)
   .controller('ListController', ListController)
+  .controller('AddUserController', AddUserController)
   // .service('...', ...)
   // .directive('...', ...)
 ;
