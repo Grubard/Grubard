@@ -5429,6 +5429,13 @@ body {
   width: 50%;
   margin: 20px auto; }
 
+.orbit-slide {
+  height: 100%; }
+
+.slide0 {
+  height: 500px;
+  background-image: url("http://www.closet-solutions.com/pantry_organized.jpg"); }
+
 .orbit-container {
   padding-bottom: 80%; }
 
@@ -5446,6 +5453,8 @@ body {
   margin: 20px auto;
   text-align: center;
   border: 1px solid black; }
+<<<<<<< HEAD
+=======
 
 .dropdown {
   width: 100%; }
@@ -5453,6 +5462,7 @@ body {
 .addUser {
   width: 50%;
   margin: 0 auto; }
+>>>>>>> d7b33b24d4a480125df912be2dc299cb26b9d1a1
 
 .userHomePage {
   text-align: center; }
@@ -5505,7 +5515,13 @@ body {
   text-decoration: line-through;
   opacity: 0.3; }
 
+<<<<<<< HEAD
+.addUser {
+  width: 50%;
+  margin: 0 auto; }
+=======
 .notCrossedOut {
   text-decoration: none; }
+>>>>>>> d7b33b24d4a480125df912be2dc299cb26b9d1a1
 
 /*# sourceMappingURL=main.css.map */
