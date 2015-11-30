@@ -5425,8 +5425,6 @@ button {
 body {
   background: #677077; }
 
-<<<<<<< HEAD
-=======
 .slider {
   width: 50%;
   margin: 20px auto; }
@@ -5437,7 +5435,6 @@ body {
 .orbit-bullets {
   padding-top: 0; }
 
->>>>>>> master
 .login {
   width: 50%;
   margin: 20px auto;
@@ -5446,20 +5443,16 @@ body {
 
 .signUp {
   width: 50%;
-<<<<<<< HEAD
-  margin: 20px auto; }
-
-.dropdown {
-  width: 100%; }
-=======
-<<<<<<< HEAD
   margin: 20px auto;
   text-align: center;
   border: 1px solid black; }
-=======
-  margin: 20px auto; }
->>>>>>> af33a0445f16af982f33701bc9773f29718fd350
->>>>>>> master
+
+.dropdown {
+  width: 100%; }
+
+.addUser {
+  width: 50%;
+  margin: 0 auto; }
 
 .userHomePage {
   text-align: center; }
@@ -5515,14 +5508,4 @@ body {
 .notCrossedOut {
   text-decoration: none; }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-.addUser {
-  width: 50%;
-  margin: 0 auto; }
-
-=======
->>>>>>> af33a0445f16af982f33701bc9773f29718fd350
->>>>>>> master
 /*# sourceMappingURL=main.css.map */

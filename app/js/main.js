@@ -45,7 +45,6 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
   /////** Add new .states here **/////
 
   // Allows the use of HTML5 stuff (Will help remove hashtags from routes)
-  $locationProvider.html5Mode(true);
 };
 
 config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];

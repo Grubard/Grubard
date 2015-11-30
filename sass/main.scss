@@ -49,6 +49,11 @@ body {
   width: 100%;
 }
 
+.addUser{
+  width: 50%;
+  margin: 0 auto;
+}
+
 
 .userHomePage{
   text-align: center;
@@ -118,21 +123,8 @@ body {
 .crossOut {
   text-decoration: line-through;
   opacity: 0.3;
-  
 }
+
 .notCrossedOut {
   text-decoration: none;
 }
-
-
-<<<<<<< HEAD
-
-=======
-.dropdown{
-  width: 100%;
-}
-.addUser{
-  width: 50%;
-  margin: 0 auto;
-}
->>>>>>> master
