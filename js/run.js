@@ -4,6 +4,10 @@ let run = function($rootScope) {
     $(document).foundation();
   });
 
+  $rootScope.$on('$stateChangeStart', function (event, data) {
+    $(document).foundation();
+  });
+
 };
 
 run.$inject = ['$rootScope'];

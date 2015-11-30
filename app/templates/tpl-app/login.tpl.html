@@ -1,0 +1,24 @@
+<div class="login">
+  <form ng-submit="vm.login(user)">
+    <input type="text" ng-model="user.userName" placeholder="Username">
+    <input type="password" ng-model="user.password" placeholder="Password">
+    <button class="button">Log In</button>
+  </form>
+</div>
+<div class="signUp">
+  <ul class = "dropdown menu" data-dropdown-menu>
+    <li>
+      <a class="button">Sign Up</a>
+      <ul class="menu">
+        <li>
+          <form ng-submit="vm.signUp(newUser)">
+            <input type="text" ng-model="newUser.userName" placeholder="Username">
+            <input type="email" ng-model="newUser.email" placeholder="Email">
+            <input type="password" ng-model="newUser.password" placeholder="password">
+            <button>Sign Up</button>
+         </form>
+      </li>
+     </ul>   
+    </li>   
+  </ul> 
+</div>  

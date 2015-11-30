@@ -3379,7 +3379,19 @@ table.hover tr:nth-of-type(even):hover {
 body {
   background: #677077; }
 
+<<<<<<< HEAD
 .userHomePage {
+=======
+<<<<<<< HEAD
+.login {
+  width: 50%;
+  margin: 20px auto;
+  text-align: center; }
+
+.signUp {
+  width: 50%;
+  margin: 20px auto;
+>>>>>>> master
   text-align: center; }
   .userHomePage a {
     color: #f2b632; }
@@ -3410,4 +3422,9 @@ body {
 .crossOut {
   text-decoration: line-through; }
 
+.dropdown {
+  width: 100%; }
+
+=======
+>>>>>>> isaac
 /*# sourceMappingURL=main.css.map */
