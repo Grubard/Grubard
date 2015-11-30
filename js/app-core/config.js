@@ -19,7 +19,7 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('root.login',{
     url: '/login',
-    // controller: '... as vm',
+    controller: 'LoginController as vm',
     templateUrl: 'templates/tpl-app/login.tpl.html'
   })
   .state('root.home', {

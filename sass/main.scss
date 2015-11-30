@@ -15,9 +15,22 @@ body {
   background: #747D7D;
 }
 
-.container {
-  width: 600px;
-  margin: 15px auto;
-  border: 1px solid white;
+// .container {
+//   width: 600px;
+//   margin: 15px auto;
+//   border: 1px solid white;
+//   text-align: center;
+// }
+.login{
+  width: 50%;
+  margin: 20px auto;
   text-align: center;
+}
+.signUp{
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+}
+.dropdown{
+  width: 100%;
 }
