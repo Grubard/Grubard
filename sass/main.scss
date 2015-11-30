@@ -1,0 +1,20 @@
+// Put any @imports here
+// See Readme for a list of supported ones
+
+// Import Foundation and Motion-UI
+@import 'foundation';
+@import 'motion-ui';
+@include motion-ui-transitions;
+@include foundation-everything;
+
+
+body {
+  background: #747D7D;
+}
+
+.container {
+  width: 600px;
+  margin: 15px auto;
+  border: 1px solid white;
+  text-align: center;
+}
