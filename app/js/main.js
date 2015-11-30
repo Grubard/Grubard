@@ -17,7 +17,7 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
   .state('root', {
     abstract: true,
     templateUrl: 'templates/tpl-layout/layout.tpl.html'
-  }).state('root.landing', {
+  }).state('landing', {
     url: '/',
     // controller: '... as vm',
     templateUrl: 'templates/tpl-app/landing.tpl.html'
@@ -43,6 +43,11 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
     templateUrl: 'templates/tpl-app/addUser.tpl.html'
   });
   /////** Add new .states here **/////
+<<<<<<< HEAD
+=======
+
+  // Allows the use of HTML5 stuff (Will help remove hashtags from routes)
+>>>>>>> d7b33b24d4a480125df912be2dc299cb26b9d1a1
 };
 
 config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
@@ -90,13 +95,13 @@ exports['default'] = AddUserController;
 module.exports = exports['default'];
 
 },{}],4:[function(require,module,exports){
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _jQuery = require('jQuery');
 
@@ -105,22 +110,32 @@ var _jQuery2 = _interopRequireDefault(_jQuery);
 var ListController = function ListController() {
 
   var vm = this;
-  vm.haveItem = haveItem;
   vm.removeItem = removeItem;
+  vm.addItemsToPantry = addItemsToPantry;
+  vm.clearCompleted = clearCompleted;
 
-  function haveItem() {
-    (0, _jQuery2['default'])(this).parent('li').addClass('crossOut');
+  // Dummy data used here
+  vm.items = [{ item: "Bread" }, { item: "Pickles" }, { item: "Chicken" }];
+
+  function removeItem(items, object) {
+    console.log('bye');
+    // vm.items.delete();
   }
 
-  function removeItem() {
-    console.log('bye');
+  function addItemsToPantry() {
+    console.log('ok');
+    // vm.items.post()
+  }
+
+  function clearCompleted() {
+    console.log('asdf');
   }
 };
 
 ListController.$inject = [];
 
-exports['default'] = ListController;
-module.exports = exports['default'];
+exports["default"] = ListController;
+module.exports = exports["default"];
 
 },{"jQuery":17}],5:[function(require,module,exports){
 'use strict';

@@ -2,16 +2,32 @@ import $ from 'jQuery';
 
 let ListController = function() {
   
-  let vm = this;
-  vm.haveItem = haveItem;
-  vm.removeItem = removeItem;
 
-  function haveItem() {
-    $(this).parent('li').addClass('crossOut');
+  let vm = this;
+  vm.removeItem = removeItem;
+  vm.addItemsToPantry = addItemsToPantry;
+  vm.clearCompleted = clearCompleted;
+
+
+  // Dummy data used here
+  vm.items = [
+    {item: "Bread"},
+    {item: "Pickles"},
+    {item: "Chicken"}
+  ];
+
+  function removeItem(items, object) {
+    console.log('bye');
+    // vm.items.delete();
   }
 
-  function removeItem() {
-    console.log('bye');
+  function addItemsToPantry() {
+    console.log('ok');
+    // vm.items.post()
+  }
+
+  function clearCompleted() {
+    console.log('asdf');
   }
 
 };
