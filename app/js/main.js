@@ -162,6 +162,10 @@ var run = function run($rootScope) {
   $rootScope.$on('$viewContentLoaded', function (event, data) {
     $(document).foundation();
   });
+
+  $rootScope.$on('$stateChangeStart', function (event, data) {
+    $(document).foundation();
+  });
 };
 
 run.$inject = ['$rootScope'];
