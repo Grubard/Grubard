@@ -3385,7 +3385,6 @@ list-style: none;
 body {
   background: #677077; }
 
-<<<<<<< HEAD
 .slider {
   width: 50%;
   margin: 20px auto; }
@@ -3396,12 +3395,6 @@ body {
 .orbit-slide {
   padding-top: 30%; }
 
-=======
-<<<<<<< HEAD
-.userHomePage {
-=======
-<<<<<<< HEAD
->>>>>>> e11be6fda4168da40232d47540cf17b5afae25d5
 .login {
   width: 50%;
   margin: 20px auto;
@@ -3409,8 +3402,9 @@ body {
 
 .signUp {
   width: 50%;
-  margin: 20px auto;
->>>>>>> master
+  margin: 20px auto; }
+
+.userHomePage {
   text-align: center; }
   .userHomePage a {
     color: #f2b632; }
@@ -3444,6 +3438,4 @@ body {
 .dropdown {
   width: 100%; }
 
-=======
->>>>>>> isaac
 /*# sourceMappingURL=main.css.map */
