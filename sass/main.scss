@@ -1,6 +1,7 @@
 // Import Foundation and Motion-UI
 @import 'foundation';
 @import 'motion-ui';
+@import 'font-awesome';
 @include motion-ui-transitions;
 @include foundation-everything;
 
@@ -24,6 +25,10 @@ body {
 .signUp{
   width: 50%;
   margin: 20px auto;
+}
+
+.dropdown{
+  width: 100%;
 }
 
 
@@ -63,18 +68,43 @@ body {
   }
 }
 
-.mainPantry{
+.groceryList{
+  width: 50%;
+  border: 1px solid white;
+  margin: 2% auto;
+  i{
+    float: right;
+    margin-right: 5%;
+  }
+  .fa-check-circle-o{
+    color: #57B65C;
+  }
+  .fa-trash-o{
+    color: #BD312E;
+  }
+  h3{
+    text-align: center;
+  }
   ul{
     list-style: none;
+    font-size: 1.2em;
+  }
+  .button{
+    text-align: center;
+    display: block;
+    margin-left: 35%;
+    width: 15em;
   }
 }
 
-.crossOut{
+.crossOut {
   text-decoration: line-through;
+  opacity: 0.3;
+  
+}
+.notCrossedOut {
+  text-decoration: none;
 }
 
 
-.dropdown{
-  width: 100%;
-}
 

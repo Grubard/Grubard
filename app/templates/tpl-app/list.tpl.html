@@ -1,15 +1,17 @@
-<div class="mainPantry">
+<div class="groceryList">
   <h3>Current Grocery List</h3>
   <ul>
-    <li>Bread 
-      <button class="button" ng-click="vm.haveItem()">Have Item</button> <button class="button" ng-click="vm.removeItem()">Remove from list</button>
-    </li> 
-     
-    <li>Pickles 
-      <button class="button" ng-click="vm.haveItem()">Have Item</button>
-      <button class="button" ng-click="vm.removeItem()">Remove from list</button>
+    <li ng-repeat="object in vm.items" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
+      {{ object.item }} 
+      <i class="fa fa-trash-o fa-2x" ng-click="vm.removeItem(object)"></i>
+      <i class="fa fa-check-circle-o fa-2x" ng-click="hasFoodItem = !hasFoodItem"></i>
+      <hr>
     </li>
-      
   </ul>
+
+
+  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Items to Pantry</button>
+  <button class="button clearCompleted" ng-click="vm.clearCompleted()">Clear Completed Items</button>
 </div>
+
 
