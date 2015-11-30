@@ -38,6 +38,8 @@
     "watchify": "^3.4.0"
   },
   "dependencies": {
+    "angular-cookies": "^1.4.8",
+    "angular-foundation": "^0.8.0",
     "browserify-shim": "^3.8.11",
     "font-awesome": "^4.4.0",
     "foundation-sites": "^6.0.3",
@@ -48,9 +50,9 @@
     "underscore": "^1.8.3"
   },
   "browser": {
-   "jquery": "./node_modules/jquery/dist/jquery.js",
-   "foundation": "./node_modules/foundation-sites/dist/foundation.js"
-   },
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "foundation": "./node_modules/foundation-sites/dist/foundation.js"
+  },
   "browserify-shim": {
     "jquery": "$",
     "foundation": "foundation"
@@ -59,5 +61,5 @@
     "transform": [
       "browserify-shim"
     ]
-  } 
+  }
 }
