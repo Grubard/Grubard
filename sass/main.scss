@@ -6,14 +6,15 @@
 @include orbit-slide;
 @include orbit-container;
 
-$Blue-color: #252839;
+$Blue: #252839;
 $Gray: #677077;
-$LightGray: #b5b5b7;
-$Yellow: #b5b5b7;
+$lightGray: #b5b5b7;
+$Yellow: #f2b632;
+
 
 
 body {
-  background: #747D7D;
+ background: $Gray;
 }
 .slider{
   width: 50%;
@@ -27,12 +28,6 @@ body {
   padding-top: 30%;
 }
 
-// .container {
-//   width: 600px;
-//   margin: 15px auto;
-//   border: 1px solid white;
-//   text-align: center;
-// }
 .login{
   width: 50%;
   margin: 20px auto;
@@ -41,8 +36,57 @@ body {
 .signUp{
   width: 50%;
   margin: 20px auto;
-  text-align: center;
 }
+
+
+.userHomePage{
+  text-align: center;
+  a{
+    color: $Yellow;
+  }
+  div{
+    display: inline-block;
+    margin: 3%;
+    border-radius: 5px;
+    height: 30em;
+    width: 40%;
+    h3{
+      border-bottom: 1px solid $Blue;
+      width: 75%;
+      margin: 2% auto;
+    }
+    &:hover{
+      border: 2px solid $Blue;
+    }
+
+  }
+  .pantry{
+    border: 1px solid $Blue;
+  }
+  .groceryList{
+    border: 1px solid $Blue;
+
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .userHomePage div{
+    width: 90%;
+  }
+}
+
+.mainPantry{
+  ul{
+    list-style: none;
+  }
+}
+
+.crossOut{
+  text-decoration: line-through;
+}
+
+
 .dropdown{
   width: 100%;
 }
+

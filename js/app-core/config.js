@@ -24,12 +24,12 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('root.home', {
     url: '/home',
-    // controller: '... as vm',
+    controller: 'UserHomeController as vm',
     templateUrl: 'templates/tpl-app/home.tpl.html'
   })
   .state('root.list',{
     url: '/list',
-    // controller: '... as vm',
+    controller: 'ListController as vm',
     templateUrl: 'templates/tpl-app/list.tpl.html'
   })
   .state('root.pantry',{
@@ -40,7 +40,7 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   /////** Add new .states here **/////
 
   // Allows the use of HTML5 stuff (Will help remove hashtags from routes)
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 };
 
 config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];

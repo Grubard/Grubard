@@ -3383,8 +3383,9 @@ margin: 0;
 overflow: hidden;
 list-style: none;
 body {
-  background: #747D7D; }
+  background: #677077; }
 
+<<<<<<< HEAD
 .slider {
   width: 50%;
   margin: 20px auto; }
@@ -3395,6 +3396,12 @@ body {
 .orbit-slide {
   padding-top: 30%; }
 
+=======
+<<<<<<< HEAD
+.userHomePage {
+=======
+<<<<<<< HEAD
+>>>>>>> e11be6fda4168da40232d47540cf17b5afae25d5
 .login {
   width: 50%;
   margin: 20px auto;
@@ -3403,9 +3410,40 @@ body {
 .signUp {
   width: 50%;
   margin: 20px auto;
+>>>>>>> master
   text-align: center; }
+  .userHomePage a {
+    color: #f2b632; }
+  .userHomePage div {
+    display: inline-block;
+    margin: 3%;
+    border-radius: 5px;
+    height: 30em;
+    width: 40%; }
+    .userHomePage div h3 {
+      border-bottom: 1px solid #252839;
+      width: 75%;
+      margin: 2% auto; }
+    .userHomePage div:hover {
+      border: 2px solid #252839; }
+  .userHomePage .pantry {
+    border: 1px solid #252839; }
+  .userHomePage .groceryList {
+    border: 1px solid #252839; }
+
+@media all and (max-width: 1000px) {
+  .userHomePage div {
+    width: 90%; } }
+
+.mainPantry ul {
+  list-style: none; }
+
+.crossOut {
+  text-decoration: line-through; }
 
 .dropdown {
   width: 100%; }
 
+=======
+>>>>>>> isaac
 /*# sourceMappingURL=main.css.map */
