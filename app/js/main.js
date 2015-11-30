@@ -17,10 +17,26 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
   .state('root', {
     abstract: true,
     templateUrl: 'templates/tpl-layout/layout.tpl.html'
-  }).state('root.home', {
+  }).state('root.landing', {
     url: '/',
     // controller: '... as vm',
+    templateUrl: 'templates/tpl-app/landing.tpl.html'
+  }).state('root.login', {
+    url: '/login',
+    // controller: '... as vm',
+    templateUrl: 'templates/tpl-app/login.tpl.html'
+  }).state('root.home', {
+    url: '/home',
+    // controller: '... as vm',
     templateUrl: 'templates/tpl-app/home.tpl.html'
+  }).state('root.list', {
+    url: '/list',
+    // controller: '... as vm',
+    templateUrl: 'templates/tpl-app/list.tpl.html'
+  }).state('root.pantry', {
+    url: '/pantry',
+    // controller: '... as vm',
+    templateUrl: 'templates/tpl-app/pantry.tpl.html'
   });
   /////** Add new .states here **/////
 
