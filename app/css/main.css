@@ -3379,6 +3379,7 @@ table.hover tr:nth-of-type(even):hover {
 body {
   background: #747D7D; }
 
+<<<<<<< HEAD
 .login {
   width: 50%;
   margin: 20px auto;
@@ -3392,4 +3393,6 @@ body {
 .dropdown {
   width: 100%; }
 
+=======
+>>>>>>> isaac
 /*# sourceMappingURL=main.css.map */
