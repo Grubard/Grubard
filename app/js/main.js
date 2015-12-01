@@ -154,22 +154,25 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LoginController = function LoginController($state, $http, $cookies) {
   var vm = this;
-  var url = 'https://git.heroku.com/intense-refuge-9476.git';
+  var url = 'http://intense-refuge-9476.herokuapp.com';
   vm.login = function (user) {
     console.log(user);
 
-    $http.post(url, user).then(function (res) {
-      console.log(res);
+    $http.post(url + '/login', user).then(function (res) {
+      console.log(res.data.user.username);
+      $cookies.put('auth_token', res.data.user.access_token);
+      $cookies.put('username', res.data.user.username);
     });
-    //$cookies.set...
+
     $state.go('root.home');
   };
   vm.signUp = function (newUser) {
     console.log(newUser);
-    $http.post(url, newUser).then(function (res) {
+    $http.post(url + '/signup', newUser).then(function (res) {
       console.log(res);
+      $cookies.put('auth_token', res.data.user.access_token);
+      $cookies.put('username', res.data.user.username);
     });
-    //$cookies.set...
     $state.go('root.home');
   };
 };
@@ -179,17 +182,22 @@ exports['default'] = LoginController;
 module.exports = exports['default'];
 
 },{}],6:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var UserHomeController = function UserHomeController() {};
+var UserHomeController = function UserHomeController($cookies) {
+  var token = $cookies.get('auth_token');
+  var user = $cookies.get('username');
+  console.log(token);
+  console.log(user);
+};
 
-UserHomeController.$inject = [];
+UserHomeController.$inject = ['$cookies'];
 
-exports["default"] = UserHomeController;
-module.exports = exports["default"];
+exports['default'] = UserHomeController;
+module.exports = exports['default'];
 
 },{}],7:[function(require,module,exports){
 'use strict';
