@@ -18,67 +18,63 @@ $Yellow: #f2b632;
 
 
 body {
- background: $lightGray;
+ background: #2DDD72;
 }
 
 .landingPage{
   width: 100%;
   height: 85vh;
-  background-color: #2DDD72;
   font-size: 5em;
-  .insideComputer{
-    width: 48%;
-    padding: 5% 0 0 4%;
-  }
   .computerImage{
-    position: absolute;
-    padding-bottom: 2%;
-    width: 48%;
+    position: relative;
+    width: 100%;
+    background-image: url('../images/macbook.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 82%;
   }
 
   .orbit{
-    position: relative;
-    top: 2em;
-    left: 15%;
-    width: 80%;
-    font-size: 12px;
-    .orbit-bullets{
-      padding-top: 38%;
-    }
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    font-size: .2em;
   }
   .landingRight{
-    float: right;
     color: white;
     font-family: 'Raleway', sans-serif;
-    margin-right: 10%;
-    margin-top: -20%;
-    img{
-      width: 1.5em;
+    text-align: center;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    .cart-img {
+
+    }
+    p {
+      
     }
     h5{
       padding: 0;
-      margin-top: -10%;
-      margin-left: 30%;
       color: $Blue;
     }
-    button{
-      background: inherit;
-      border: 3px solid $Yellow;
-      border-radius: 5px;
-      font-size: 0.4em;
-      margin-top: 15%;
-      margin-left: 12%;
-      &:hover{
-        color: $Blue;
-        border: 3px solid $Blue;
-      }
+    
+  }
+  .create {
+    background: inherit;
+    border: 3px solid $Yellow;
+    border-radius: 5px;
+    font-size: 0.4em;
+    margin-top: 2em;
+    &:hover{
+      color: $Blue;
+      border: 3px solid $Blue;
     }
   }
   .bottom{
     font-size: 0.3em;
     color: white;
     text-align: center;
-    margin-top: 17%;
+    margin-top: 10%;
     ul{
       list-style: none;
     }
@@ -91,6 +87,13 @@ body {
       }
     }
   }
+  
+}
+.landing-footer {
+    background-color: lightgray;
+    height: 3em;
+    width: 100%;
+    display: block;
 }
 
   .orbit-container{
