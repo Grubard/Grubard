@@ -1,11 +1,20 @@
 <div class="groceryList">
   <h3>Current Grocery List</h3>
+    <form ng-submit="vm.addNewItem(text)">
+      <input class="addItem" ng-model="text" placeholder="Add Item to your List">
+    </form>
   <ul>
     <li ng-repeat="object in vm.items" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
+
+      <input class="checkIt" type="checkbox" id="check1">
+      <label for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
+      
       {{ object.item }} 
-      <i class="fa fa-trash-o fa-2x" ng-click="vm.removeItem(object)"></i>
-      <i class="fa fa-check-circle-o fa-2x" ng-click="hasFoodItem = !hasFoodItem"></i>
+
+      <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
+
       <hr>
+
     </li>
   </ul>
 
@@ -13,5 +22,7 @@
   <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Items to Pantry</button>
   <button class="button clearCompleted" ng-click="vm.clearCompleted()">Clear Completed Items</button>
 </div>
+
+
 
 

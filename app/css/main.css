@@ -5520,32 +5520,69 @@ body {
     width: 90%; } }
 
 .groceryList {
-  width: 50%;
+  width: 80%;
   border: 1px solid white;
   margin: 2% auto; }
   .groceryList i {
     float: right;
-    margin-right: 5%; }
-  .groceryList .fa-check-circle-o {
-    color: #57B65C; }
-  .groceryList .fa-trash-o {
-    color: #BD312E; }
+    margin-right: 5%;
+    line-height: 30px;
+    color: #D41617; }
   .groceryList h3 {
     text-align: center; }
   .groceryList ul {
+    padding-top: 5%;
     list-style: none;
     font-size: 1.2em; }
   .groceryList .button {
     text-align: center;
     display: block;
-    margin-left: 35%;
+    margin: 2% auto;
     width: 15em; }
+  .groceryList .addItem {
+    display: block;
+    height: 2em;
+    width: 70%;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+    margin: 2% auto;
+    padding-left: 2%; }
+  .groceryList .checkIt {
+    display: none; }
+  .groceryList label {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border: 1px solid #252839;
+    border-radius: 100px;
+    vertical-align: -25%; }
+  .groceryList label:hover:before {
+    position: absolute;
+    right: 3px;
+    top: -4px;
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    font-size: 1.4em;
+    font-weight: 100;
+    color: #57B65C; }
 
 .crossOut {
+  position: relative;
   text-decoration: line-through;
   opacity: 0.3; }
+  .crossOut:before {
+    position: absolute;
+    left: 12px;
+    top: -2px;
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    color: #57B65C; }
 
 .notCrossedOut {
   text-decoration: none; }
+
+.shown {
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */
