@@ -196,8 +196,6 @@ Object.defineProperty(exports, '__esModule', {
 var UserHomeController = function UserHomeController($cookies) {
   var token = $cookies.get('auth_token');
   var user = $cookies.get('username');
-  console.log(token);
-  console.log(user);
 };
 
 UserHomeController.$inject = ['$cookies'];
