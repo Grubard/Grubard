@@ -5484,9 +5484,8 @@ body {
 .orbit-container {
   padding-bottom: 10%; }
 
-.dropdown {
-  font-size: 2.5em;
-  text-align: center; }
+.login {
+  margin-top: 10px; }
 
 .addUser {
   width: 50%;

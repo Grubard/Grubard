@@ -21,6 +21,8 @@ let LoginController = function($state, $http, $cookies){
     });
     $state.go('root.home');
   };
+
+
 };
 
 LoginController.$inject = ['$state', '$http', '$cookies'];
