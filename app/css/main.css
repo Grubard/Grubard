@@ -5478,6 +5478,25 @@ body {
       color: white; }
       .landingPage .bottom li:hover {
         color: #3C3F95; }
+<<<<<<< HEAD
+=======
+
+.landing-footer {
+  background-color: lightgray;
+  height: 3em;
+  width: 100%;
+  display: block; }
+
+.orbit-container {
+  padding-bottom: 10%; }
+
+.login {
+  margin-top: 10px;
+  text-align: center; }
+  .login a {
+    font-size: 2.5em;
+    background-color: #EEEEEE; }
+>>>>>>> master
 
 .addUser {
   width: 50%;
@@ -5642,5 +5661,26 @@ body {
   -webkit-transform: translate3d(100px, 0, 0);
   -moz-transform: translate3d(100px, 0, 0);
   transform: translate3d(100px, 0, 0); }
+
+.top-bar {
+  background-color: #006400;
+  font-weight: bold; }
+  .top-bar a {
+    color: white;
+    border-radius: .2em; }
+    .top-bar a:hover {
+      background-color: white;
+      color: #006400; }
+  .top-bar ul {
+    background-color: #006400; }
+  .top-bar .submenu.first-sub {
+    background-color: #006400; }
+    .top-bar .submenu.first-sub .is-submenu-item:hover {
+      color: black; }
+
+.fa-plus-square-o {
+  font-size: 2.5em;
+  color: white;
+  margin-right: .2em; }
 
 /*# sourceMappingURL=main.css.map */
