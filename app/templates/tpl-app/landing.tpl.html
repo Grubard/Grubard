@@ -1,57 +1,64 @@
-<div class="landingPage">
-  <div class="insideComputer">
-
-    <img class="computerImage" ng-src="../images/macbook.png">
-
-    <div class="orbit" data-orbit data-options="autoPlay: false">
-      <ul class="orbit-container">       
-        <li class="is-active orbit-slide">
-          <div>
-            <h3 class="text-center">SmartCart Does Stuff</h3>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>           
-          </div>
-        </li>
-        <li class="orbit-slide">
-          <div>
-            <h3 class="text-center">SmartCart is Best Cart</h3>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>           
-          </div>
-        </li>
-        <li class="orbit-slide">
-          <div>
-            <h3 class="text-center">This App Rules</h3>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>            
-          </div>
-        </li>
-        <li class="orbit-slide">
-          <div>
-            <h3 class="text-center">Wat</h3>
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>            
-          </div>
-        </li>
-      </ul>
-
-      <nav class="orbit-bullets">
-        <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-        <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-        <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-        <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-      </nav>  
+<div class="landingPage row">
+  <div class="landingRight column small-8 small-centered">
+    <div class="row">
+      <img class="cart-img small-3 column" ng-src="../images/logo.png">
+      <div class="small-9 column">
+        <p>smartCart</p>
+        <h5>Integrate your Pantry & Grocery List</h5>
+      </div>
     </div>
   </div>
-  
 
-  <div class="landingRight">
-    <p><img ng-src="../images/logo.png">smartCart</p>
-    <h5>Integrate your Pantry & Grocery List</h5>
-    <button class="button">Create a new Account!</button ng-click="joinUs()">
+  <div class="insideComputer column small-10 small-centered">
+
+    <div class="computerImage row">
+      <div class="orbit small-12 column" data-orbit data-options="autoPlay: false">
+        <ul class="orbit-container">       
+          <li class="is-active orbit-slide">
+            <div>
+              <h3 class="text-center">SmartCart Does Stuff</h3>
+              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>           
+            </div>
+          </li>
+          <li class="orbit-slide">
+            <div>
+              <h3 class="text-center">SmartCart is Best Cart</h3>
+              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>           
+            </div>
+          </li>
+          <li class="orbit-slide">
+            <div>
+              <h3 class="text-center">This App Rules</h3>
+              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>            
+            </div>
+          </li>
+          <li class="orbit-slide">
+            <div>
+              <h3 class="text-center">Wat</h3>
+              <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p>            
+            </div>
+          </li>
+        </ul>
+
+        <nav class="orbit-bullets">
+          <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+          <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+          <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+          <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+        </nav>  
+      </div>
+    </div>
   </div>
+
+  <button class="button create float-center">Create a new Account!</button ng-click="joinUs()"> 
+
+
 
   <div class="bottom">
     <ul>
-      <a href="#"><li>Contact Us</li></a>
-      <a href="#"><li>About</li></a>
-      <a href="#"><li>LogIn</li></a>
+      <a href="#/contact"><li>Contact Us</li></a>
+      <a href="#/about"><li>About</li></a>
+      <a href="#/login"><li>LogIn</li></a>
     </ul>
   </div>
 
