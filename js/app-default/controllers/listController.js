@@ -7,6 +7,7 @@ let ListController = function() {
   vm.removeItem = removeItem;
   vm.addItemsToPantry = addItemsToPantry;
   vm.clearCompleted = clearCompleted;
+  vm.editItem = editItem;
 
 
   // Dummy data used here
@@ -15,6 +16,11 @@ let ListController = function() {
     {item: "Pickles"},
     {item: "Chicken"}
   ];
+
+  function editItem (object){
+    // Edit item on double click
+    console.log('hi');
+  }
 
   function removeItem(items, object) {
     console.log('bye');
