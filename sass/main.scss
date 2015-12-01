@@ -102,9 +102,6 @@ body {
 .dropdown{
   font-size: 2.5em;
   text-align: center;
-  .login{
-    text-align: center;
-  }
 }
 
 .addUser{
@@ -115,7 +112,7 @@ body {
 .userHomePage{
   text-align: center;
   a{
-    color: $Yellow;
+    color: #429DE5;
   }
   div{
     display: inline-block;

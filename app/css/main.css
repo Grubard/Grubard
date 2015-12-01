@@ -5489,8 +5489,6 @@ body {
 .dropdown {
   font-size: 2.5em;
   text-align: center; }
-  .dropdown .login {
-    text-align: center; }
 
 .addUser {
   width: 50%;
@@ -5499,7 +5497,7 @@ body {
 .userHomePage {
   text-align: center; }
   .userHomePage a {
-    color: #f2b632; }
+    color: #429DE5; }
   .userHomePage div {
     display: inline-block;
     margin: 3%;
