@@ -43,8 +43,11 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
     templateUrl: 'templates/tpl-app/addUser.tpl.html'
   });
   /////** Add new .states here **/////
+<<<<<<< HEAD
+=======
 
   // Allows the use of HTML5 stuff (Will help remove hashtags from routes)
+>>>>>>> d7b33b24d4a480125df912be2dc299cb26b9d1a1
 };
 
 config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
