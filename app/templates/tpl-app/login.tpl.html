@@ -1,33 +1,24 @@
-<div class="row">
-<div class="small-12 large-6 columns login">
-  <ul class= "dropdown menu" data-dropdown-menu>
-    <li class="row">
-    <a class="small-12 column">Log In</a>
-    <ul class="menu"><form ng-submit="vm.login(user)">
-      <input type="text" ng-model="user.username" placeholder="Username">
-      <input type="password" ng-model="user.password" placeholder="Password">
-      <button class="button">Log In</button>
-    </form>
-    </ul>
-    </li>
-  <ul>
-</div>
-<div class="small-12 large-6 columns login">
-  <ul class = "dropdown menu" data-dropdown-menu>
-    <li class="row">
-      <a class="small-12 column">Sign Up</a>
-      <ul class="menu">
-        <li>
-          <form ng-submit="vm.signUp(newUser)">
+<div class="row login">
+    <div class="small-12 large-6 columns login">
+      
+        
+        <h4>Log In</h4>
+        <form ng-submit="vm.login(user)">
+          <input type="text" ng-model="user.username" placeholder="Username">
+          <input type="password" ng-model="user.password" placeholder="Password">
+          <button class="button">Log In</button>
+        </form>
+     
+    </div>
+
+    <div class="small-12 large-6 columns login">
+      <h4>Sign Up</h4>
+        <form ng-submit="vm.signUp(newUser)">
             <input type="email" ng-model="newUser.email" placeholder="Email">
             <input type="text" ng-model="newUser.username" placeholder="Username">
             
-            <input type="password" ng-model="newUser.password" placeholder="password">
-            <button class="button success">Sign Up</button>
+            <input type="password" ng-model="newUser.password" placeholder="Password">
+            <button class="button">Sign Up</button>
          </form>
-      </li>
-     </ul>   
-    </li>   
-  </ul> 
-</div>  
+      </div>  
 </div>

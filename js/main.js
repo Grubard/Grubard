@@ -1,5 +1,6 @@
 // Import our core files
 import angular from 'angular';
+import 'angular-animate';
 
 // Import jQuery and Foundation and Motion-UI
 import $ from 'jquery';
@@ -18,6 +19,6 @@ import './app-default/index';
 $(document).foundation();
 
 angular
-  .module('app', ['app.core', 'app.layout', 'app.default'])
+  .module('app', ['app.core', 'app.layout', 'app.default', 'ngAnimate'])
   .run(run)
 ;
