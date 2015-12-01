@@ -5431,7 +5431,11 @@ body {
   height: 100vh; }
 
 .login {
-  margin-top: 10px; }
+  margin-top: 10px;
+  text-align: center; }
+  .login a {
+    font-size: 2.5em;
+    background-color: #EEEEEE; }
 
 .addUser {
   width: 50%;

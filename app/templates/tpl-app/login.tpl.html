@@ -1,24 +1,35 @@
-<div class="row login">
-    <div class="small-12 large-6 columns login">
-      
-        
-        <h4>Log In</h4>
-        <form ng-submit="vm.login(user)">
+
+
+<div class="login row">
+<ul class="vertical menu" data-accordion-menu>
+  <li class="small-12 large-6 columns">
+    <a href="#">Log In</a>
+    <ul class="menu vertical nested">
+      <li>
+          <form ng-submit="vm.login(user)">
           <input type="text" ng-model="user.username" placeholder="Username">
           <input type="password" ng-model="user.password" placeholder="Password">
-          <button class="button">Log In</button>
+          <button data-close aria-label="Close reveal" class="button">Log In</button>
         </form>
-     
-    </div>
-
-    <div class="small-12 large-6 columns login">
-      <h4>Sign Up</h4>
-        <form ng-submit="vm.signUp(newUser)">
+      </li>
+  </ul>
+</li>
+<li class="small-12 large-6 columns">
+  <a href="#">Sign Up</a>
+    <ul class="menu vertical nested">
+      <li>
+         <form ng-submit="vm.signUp(newUser)">
             <input type="email" ng-model="newUser.email" placeholder="Email">
             <input type="text" ng-model="newUser.username" placeholder="Username">
             
             <input type="password" ng-model="newUser.password" placeholder="Password">
             <button class="button">Sign Up</button>
          </form>
-      </div>  
-</div>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>      
+
+
+      
