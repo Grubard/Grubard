@@ -1,6 +1,6 @@
 import $ from 'jQuery';
 
-let ListController = function() {
+let ListController = function($scope) {
   
 
   let vm = this;
@@ -8,6 +8,7 @@ let ListController = function() {
   vm.addItemsToPantry = addItemsToPantry;
   vm.clearCompleted = clearCompleted;
   vm.editItem = editItem;
+  vm.addNewItem = addNewItem;
 
 
   // Dummy data used here
@@ -17,14 +18,19 @@ let ListController = function() {
     {item: "Chicken"}
   ];
 
+  function addNewItem (text) {
+    let newItem = {item: text};
+    vm.items.push(newItem);
+    $scope.text = '';
+  }
+
   function editItem (object){
     // Edit item on double click
     console.log('hi');
   }
 
-  function removeItem(items, object) {
-    console.log('bye');
-    // vm.items.delete();
+  function removeItem(items) {
+    console.log('delete me');
   }
 
   function addItemsToPantry() {
@@ -38,6 +44,6 @@ let ListController = function() {
 
 };
 
-ListController.$inject = [];
+ListController.$inject = ['$scope'];
 
 export default ListController;

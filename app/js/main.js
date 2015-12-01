@@ -102,25 +102,31 @@ var _jQuery = require('jQuery');
 
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
-var ListController = function ListController() {
+var ListController = function ListController($scope) {
 
   var vm = this;
   vm.removeItem = removeItem;
   vm.addItemsToPantry = addItemsToPantry;
   vm.clearCompleted = clearCompleted;
   vm.editItem = editItem;
+  vm.addNewItem = addNewItem;
 
   // Dummy data used here
   vm.items = [{ item: "Bread" }, { item: "Pickles" }, { item: "Chicken" }];
+
+  function addNewItem(text) {
+    var newItem = { item: text };
+    vm.items.push(newItem);
+    $scope.text = '';
+  }
 
   function editItem(object) {
     // Edit item on double click
     console.log('hi');
   }
 
-  function removeItem(items, object) {
-    console.log('bye');
-    // vm.items.delete();
+  function removeItem(items) {
+    console.log('delete me');
   }
 
   function addItemsToPantry() {
@@ -133,7 +139,7 @@ var ListController = function ListController() {
   }
 };
 
-ListController.$inject = [];
+ListController.$inject = ['$scope'];
 
 exports["default"] = ListController;
 module.exports = exports["default"];
