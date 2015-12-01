@@ -11,15 +11,21 @@
 @include orbit-previous;
 @include orbit-bullets;
 
-$Blue: #252839;
+$Blue: #3C3F95;
 $Gray: #677077;
 $lightGray: #b5b5b7;
 $Yellow: #f2b632;
+$Green: #2DDD72;
 
 
 body {
- background: #2DDD72;
+  background-color: $Green;
+  background-image: linear-gradient($Green, $lightGray);
+  background: $Green;
+  background: linear-gradient($Green, $lightGray);
+  height: 100vh;
 }
+
 
 .landingPage{
   width: 100%;
@@ -102,11 +108,13 @@ body {
 
 .login{
   margin-top: 10px;
+
   text-align: center;
   a{
     font-size: 2.5em;
     background-color: #EEEEEE;
   }
+
 }
 
 .addUser{
@@ -231,9 +239,70 @@ body {
   text-decoration: none;
 }
 
-.shown{
-  display: block;
+
+
+
+
+
+
+
+.logo{
+  img{
+    display: block;
+    margin: 5% auto;
+    width: 60%;
+  }
 }
+
+.slideArea{
+  display: block;
+  margin: 0 auto;
+  padding: 5%;
+  .orbit-slide{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .descriptorImages{
+    text-align: center;
+    img{
+      display: inline-block;
+    }
+    div{
+      display: inline-block;
+      padding-right: 1em;
+    }
+  }
+}
+
+.signUp{
+  margin-top: -1em;
+  button{
+    border-radius: 3px;
+    background: inherit;
+    border: 1px solid $Yellow;
+    font-size: 1em;
+  }
+}
+
+
+.bottom{
+  ul{
+    list-style: none;
+    text-align: center;
+  }
+  li{
+    padding-right: 3em;
+    display: inline-block;
+    font-size: 1em;
+    a{
+      color: $Blue;
+      &:hover{
+        color: white;
+      }
+    }
+  }
+}
+
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
@@ -270,6 +339,7 @@ body {
   -moz-transform:translate3d(100px, 0, 0);
   transform:translate3d(100px, 0, 0);
 }
+
 
 
 
