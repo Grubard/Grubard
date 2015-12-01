@@ -5589,8 +5589,8 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  -webkit-transition: all .75s ease-in-out;
-  transition: all .75s ease-in-out; }
+  -webkit-transition: all .25s linear;
+  transition: all .25s linear; }
 
 [ui-view].ng-enter {
   opacity: 0;
