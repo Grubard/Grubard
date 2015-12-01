@@ -1,7 +1,7 @@
 <div class="groceryList">
   <h3>Current Grocery List</h3>
   <ul>
-    <li ng-repeat="object in vm.items" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
+    <li ng-repeat="object in vm.items" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
       {{ object.item }} 
       <i class="fa fa-trash-o fa-2x" ng-click="vm.removeItem(object)"></i>
       <i class="fa fa-check-circle-o fa-2x" ng-click="hasFoodItem = !hasFoodItem"></i>

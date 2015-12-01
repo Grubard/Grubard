@@ -41,6 +41,16 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/addUser',
     controller: 'AddUserController as vm',
     templateUrl: 'templates/tpl-app/addUser.tpl.html'
+  })
+  .state('root.contact',{
+    url: '/contact',
+    //controller,
+    templateUrl: 'templates/tpl-app/contact.tpl.html'
+  })
+  .state('root.about',{
+    url: '/about',
+    //controller,
+    templateUrl: 'templates/tpl-app/about.tpl.html'
   });
   /////** Add new .states here **/////
 

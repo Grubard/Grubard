@@ -41,6 +41,14 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
     url: '/addUser',
     controller: 'AddUserController as vm',
     templateUrl: 'templates/tpl-app/addUser.tpl.html'
+  }).state('root.contact', {
+    url: '/contact',
+    //controller,
+    templateUrl: 'templates/tpl-app/contact.tpl.html'
+  }).state('root.about', {
+    url: '/about',
+    //controller,
+    templateUrl: 'templates/tpl-app/about.tpl.html'
   });
   /////** Add new .states here **/////
 };
@@ -108,9 +116,15 @@ var ListController = function ListController() {
   vm.removeItem = removeItem;
   vm.addItemsToPantry = addItemsToPantry;
   vm.clearCompleted = clearCompleted;
+  vm.editItem = editItem;
 
   // Dummy data used here
   vm.items = [{ item: "Bread" }, { item: "Pickles" }, { item: "Chicken" }];
+
+  function editItem(object) {
+    // Edit item on double click
+    console.log('hi');
+  }
 
   function removeItem(items, object) {
     console.log('bye');
@@ -140,15 +154,21 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LoginController = function LoginController($state, $http, $cookies) {
   var vm = this;
+  var url = 'https://git.heroku.com/intense-refuge-9476.git';
   vm.login = function (user) {
     console.log(user);
-    //$http.post...
+
+    $http.post(url, user).then(function (res) {
+      console.log(res);
+    });
     //$cookies.set...
     $state.go('root.home');
   };
   vm.signUp = function (newUser) {
     console.log(newUser);
-    //$http.post...
+    $http.post(url, newUser).then(function (res) {
+      console.log(res);
+    });
     //$cookies.set...
     $state.go('root.home');
   };
