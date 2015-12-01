@@ -5453,8 +5453,6 @@ body {
   margin: 20px auto;
   text-align: center;
   border: 1px solid black; }
-<<<<<<< HEAD
-=======
 
 .dropdown {
   width: 100%; }
@@ -5462,7 +5460,6 @@ body {
 .addUser {
   width: 50%;
   margin: 0 auto; }
->>>>>>> d7b33b24d4a480125df912be2dc299cb26b9d1a1
 
 .userHomePage {
   text-align: center; }
@@ -5515,13 +5512,7 @@ body {
   text-decoration: line-through;
   opacity: 0.3; }
 
-<<<<<<< HEAD
-.addUser {
-  width: 50%;
-  margin: 0 auto; }
-=======
 .notCrossedOut {
   text-decoration: none; }
->>>>>>> d7b33b24d4a480125df912be2dc299cb26b9d1a1
 
 /*# sourceMappingURL=main.css.map */
