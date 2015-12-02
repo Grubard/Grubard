@@ -1,4 +1,4 @@
-<div class="logo row">
+<!-- <div class="logo row">
   <img class="cart-img small" ng-src="../images/smartcartlogo.png">  
 </div>
 
@@ -9,36 +9,14 @@
       <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>  
 
       <li class="is-active orbit-slide">
-        <div>
-          <div class="descriptorImages">
-            <img ng-src="../images/threeCarts.png">
-            <div>
-              boringCart!
-            </div>
-            <div>
-              normalCart!
-            </div>
-            <div>
-              smartCart!
-            </div>
-          </div>          
-        </div>
+        <img ng-src="../images/step1.png">
+        <p>There is no limit on number of users per account. All users will have access to the household grocery list and pantry.</p>
       </li>
       <li class="orbit-slide">
-        <div>
-          <div class="descriptorImages">
-     
-          </div>          
-      
-        </div>
+        <img ng-src="../images/step2.png">
       </li>
       <li class="orbit-slide">
-        <div>
-          <div class="descriptorImages">
-
-          </div>          
-    
-        </div>
+        <img ng-src="../images/step3.png">
       </li>
     </ul>
 
@@ -64,6 +42,31 @@
     <li><a href="#/about">About</a></li>
     <li><a href="#/login">LogIn</a></li>
   </ul>
+</div> -->
+
+<div class="landingPage">
+  <div class="logo">
+    <img class="cart-img" ng-src="../images/smartcartlogo.png">  
+  </div>
+
+  <div class="productDescription">
+    <hr>
+    <img ng-src="../images/step1.png">
+    <img ng-src="../images/step2.png">
+    <img ng-src="../images/step3.png">
+    <hr>
+  </div>
+
+  <div class="signUp">
+    <button class="button">Create a new Account!</button ng-click="joinUs()"> 
+  </div>
+
+  <ul class="landingInfo">
+    <li><a href="#/contact">Contact Us</a></li>
+    <li><a href="#/about">About</a></li>
+    <li><a href="#/login">LogIn</a></li>
+  </ul>
+ 
 </div>
 
 
