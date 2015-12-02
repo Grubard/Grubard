@@ -5450,6 +5450,7 @@ body::after {
 .logo img {
   display: block;
   width: 100%;
+<<<<<<< HEAD
   margin: 0 auto;
   padding-top: 3%; }
 
@@ -5468,6 +5469,54 @@ body::after {
     display: block;
     width: 35%;
     margin: 0 auto; } }
+=======
+  height: 85vh;
+  font-size: 5em; }
+  .landingPage .computerImage {
+    position: relative;
+    width: 100%;
+    background-image: url("../images/macbook.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 82%; }
+  .landingPage .orbit {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    font-size: .2em; }
+  .landingPage .landingRight {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-bottom: .5em;
+    margin-top: 1em; }
+    .landingPage .landingRight h5 {
+      padding: 0;
+      color: #3C3F95; }
+  .landingPage .create {
+    background: inherit;
+    border: 3px solid #f2b632;
+    border-radius: 5px;
+    font-size: 0.4em;
+    margin-top: 2em; }
+    .landingPage .create:hover {
+      color: #3C3F95;
+      border: 3px solid #3C3F95; }
+  .landingPage .bottom {
+    font-size: 0.3em;
+    color: white;
+    text-align: center;
+    margin-top: 10%; }
+    .landingPage .bottom ul {
+      list-style: none; }
+    .landingPage .bottom li {
+      display: inline-block;
+      padding-right: 5%;
+      color: white; }
+      .landingPage .bottom li:hover {
+        color: #3C3F95; }
+>>>>>>> master
 
 .signUp button {
   display: block;
@@ -5594,42 +5643,32 @@ body::after {
   transition: all .25s linear; }
 
 [ui-view].ng-enter {
-  opacity: 0;
-  -webkit-transform: scale3d(0.5, 0.5, 0.5);
-  -moz-transform: scale3d(0.5, 0.5, 0.5);
-  transform: scale3d(0.5, 0.5, 0.5); }
+  opacity: 0; }
 
 [ui-view].ng-enter-active {
-  opacity: 1;
-  -webkit-transform: scale3d(1, 1, 1);
-  -moz-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1); }
+  opacity: 1; }
 
 [ui-view].ng-leave {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
+  opacity: 1; }
 
 [ui-view].ng-leave-active {
-  opacity: 0;
-  -webkit-transform: translate3d(100px, 0, 0);
-  -moz-transform: translate3d(100px, 0, 0);
-  transform: translate3d(100px, 0, 0); }
+  opacity: 0; }
 
 .top-bar {
-  background-color: #006400;
+  background-color: #1eb95b;
   font-weight: bold; }
+  .top-bar .top-bar-right .menu button:hover {
+    background-color: #1eb95b; }
   .top-bar a {
     color: white;
     border-radius: .2em; }
     .top-bar a:hover {
       background-color: white;
-      color: #006400; }
+      color: #1eb95b; }
   .top-bar ul {
-    background-color: #006400; }
+    background-color: #1eb95b; }
   .top-bar .submenu.first-sub {
-    background-color: #006400; }
+    background-color: #1eb95b; }
     .top-bar .submenu.first-sub .is-submenu-item:hover {
       color: black; }
 
@@ -5637,5 +5676,21 @@ body::after {
   font-size: 2.5em;
   color: white;
   margin-right: .2em; }
+  .fa-plus-square-o:hover {
+    background-color: #1eb95b;
+    color: #178d45; }
+
+.hide-pantry {
+  display: none; }
+
+#pantry-list {
+  float: left;
+  position: fixed;
+  width: 13em; }
+  #pantry-list p {
+    display: inline-block; }
+  #pantry-list i {
+    display: inline-block;
+    margin-left: 1.2em; }
 
 /*# sourceMappingURL=main.css.map */

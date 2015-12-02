@@ -81,7 +81,7 @@ _angular2['default'].module('app.core', ['ui.router'])
 // .constant('...', ...)
 .config(_config2['default']);
 
-},{"./config":1,"angular":17,"angular-ui-router":15}],3:[function(require,module,exports){
+},{"./config":1,"angular":18,"angular-ui-router":16}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -152,7 +152,7 @@ ListController.$inject = ['$scope'];
 exports["default"] = ListController;
 module.exports = exports["default"];
 
-},{"jQuery":19}],5:[function(require,module,exports){
+},{"jQuery":20}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -206,6 +206,34 @@ module.exports = exports['default'];
 },{}],7:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var pantry = function pantry() {
+
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function link(scope, element, attrs) {
+
+      function functionShow() {
+        $('#pantry-list').toggleClass('hide-pantry');
+        console.log('hi');
+      }
+
+      element.on('click', functionShow);
+    }
+  };
+};
+
+pantry.$inject = [];
+
+exports['default'] = pantry;
+module.exports = exports['default'];
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _angular = require('angular');
@@ -236,18 +264,20 @@ var _controllersAddUserController = require('./controllers/add.user.controller')
 
 var _controllersAddUserController2 = _interopRequireDefault(_controllersAddUserController);
 
-// import ... from './services/...';
+var _directivesPantryDir = require('./directives/pantry.dir');
+
+var _directivesPantryDir2 = _interopRequireDefault(_directivesPantryDir);
+
 // import ... from './directives/...';
 
 _angular2['default'].module('app.default', ['app.core', 'ngCookies'])
 
 /////** Load Controllers, Services, and Directives **/////
-.controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']).controller('AddUserController', _controllersAddUserController2['default']);
+.controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']).controller('AddUserController', _controllersAddUserController2['default']).directive('pantry', _directivesPantryDir2['default']);
 
-// .service('...', ...)
 // .directive('...', ...)
 
-},{"../app-core/index":2,"./controllers/add.user.controller":3,"./controllers/listController":4,"./controllers/login.controller":5,"./controllers/userHomeController":6,"angular":17,"angular-cookies":14}],8:[function(require,module,exports){
+},{"../app-core/index":2,"./controllers/add.user.controller":3,"./controllers/listController":4,"./controllers/login.controller":5,"./controllers/userHomeController":6,"./directives/pantry.dir":7,"angular":18,"angular-cookies":15}],9:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -264,7 +294,7 @@ _angular2['default'].module('app.layout', []);
 /////** Load Controllers **/////
 // .controller('...', ...)
 
-},{"angular":17}],9:[function(require,module,exports){
+},{"angular":18}],10:[function(require,module,exports){
 // Import our core files
 'use strict';
 
@@ -305,7 +335,7 @@ require('./app-default/index');
 
 _angular2['default'].module('app', ['app.core', 'app.layout', 'app.default', 'ngAnimate']).run(_run2['default']);
 
-},{"./app-core/index":2,"./app-default/index":7,"./app-layout/index":8,"./run":10,"angular":17,"angular-animate":12,"foundation":18,"jquery":20,"motion-ui":21}],10:[function(require,module,exports){
+},{"./app-core/index":2,"./app-default/index":8,"./app-layout/index":9,"./run":11,"angular":18,"angular-animate":13,"foundation":19,"jquery":21,"motion-ui":22}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -323,7 +353,7 @@ run.$inject = ['$rootScope'];
 exports['default'] = run;
 module.exports = exports['default'];
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -4255,11 +4285,11 @@ angular.module('ngAnimate', [])
 
 })(window, window.angular);
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 require('./angular-animate');
 module.exports = 'ngAnimate';
 
-},{"./angular-animate":11}],13:[function(require,module,exports){
+},{"./angular-animate":12}],14:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -4582,11 +4612,11 @@ angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterPr
 
 })(window, window.angular);
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":13}],15:[function(require,module,exports){
+},{"./angular-cookies":14}],16:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -8957,7 +8987,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -37976,11 +38006,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":16}],18:[function(require,module,exports){
+},{"./angular":17}],19:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 !function($) {
@@ -45421,7 +45451,7 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -54633,7 +54663,7 @@ return jQuery;
 
 }));
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
@@ -63853,7 +63883,7 @@ return jQuery;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -63972,7 +64002,7 @@ var MotionUI = {
 return MotionUI;
 }));
 
-},{"jquery":20}]},{},[9])
+},{"jquery":21}]},{},[10])
 
 
 //# sourceMappingURL=main.js.map

@@ -278,51 +278,59 @@ body::after {
 
 [ui-view].ng-enter {
   opacity: 0;
-  -webkit-transform:scale3d(0.5, 0.5, 0.5);
-  -moz-transform:scale3d(0.5, 0.5, 0.5);
-  transform:scale3d(0.5, 0.5, 0.5);
+  // -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  // -moz-transform:scale3d(0.5, 0.5, 0.5);
+  // transform:scale3d(0.5, 0.5, 0.5);
 }
 
 [ui-view].ng-enter-active {
   opacity: 1;
-  -webkit-transform:scale3d(1, 1, 1);
-  -moz-transform:scale3d(1, 1, 1);
-  transform:scale3d(1, 1, 1);
+  // -webkit-transform:scale3d(1, 1, 1);
+  // -moz-transform:scale3d(1, 1, 1);
+  // transform:scale3d(1, 1, 1);
 }
 
 [ui-view].ng-leave {
   opacity: 1;
-  -webkit-transform:translate3d(0, 0, 0);
-  -moz-transform:translate3d(0, 0, 0);
-  transform:translate3d(0, 0, 0);
+  // -webkit-transform:translate3d(0, 0, 0);
+  // -moz-transform:translate3d(0, 0, 0);
+  // transform:translate3d(0, 0, 0);
 }
 
 [ui-view].ng-leave-active {
   opacity: 0;
-  -webkit-transform:translate3d(100px, 0, 0);
-  -moz-transform:translate3d(100px, 0, 0);
-  transform:translate3d(100px, 0, 0);
+  // -webkit-transform:translate3d(100px, 0, 0);
+  // -moz-transform:translate3d(100px, 0, 0);
+  // transform:translate3d(100px, 0, 0);
 }
 
 // Top Bar //
 /////////////
 
 .top-bar {
-  background-color: #006400;
+  background-color: darken($Green, 10%);
   font-weight: bold;
+  .top-bar-right {
+    .menu button {
+      &:hover {
+        background-color: darken($Green, 10%);
+      }
+    }
+  }
+  
   a {
     color: white;
     border-radius: .2em;
     &:hover {
       background-color: white;
-      color: #006400;
+      color: darken($Green, 10%);
     }
   }
   ul {
-    background-color: #006400;
+    background-color: darken($Green, 10%);
   }
   .submenu.first-sub {
-    background-color: #006400;
+    background-color: darken($Green, 10%);
     .is-submenu-item:hover {
       color: black;
     }
@@ -332,8 +340,29 @@ body::after {
   font-size: 2.5em;
   color: white;
   margin-right: .2em;
+  &:hover {
+    background-color: darken($Green, 10%);
+    color: darken($Green, 20%);
+  }
 }
 
+.hide-pantry {
+  display: none;
+}
+
+#pantry-list {
+  float: left;
+  position: fixed;
+  width: 13em;
+  p {
+    display: inline-block;
+  }
+  i {
+    display: inline-block;
+    margin-left: 1.2em;
+  }
+
+}
 
 
 
