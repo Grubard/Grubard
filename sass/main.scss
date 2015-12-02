@@ -335,9 +335,7 @@ body::after {
 /////////////
 
 .top-bar {
-
   background-color: darken($Green, 10%);
-
   font-weight: bold;
   .top-bar-right {
     .menu button {
@@ -366,19 +364,34 @@ body::after {
 }
 
 #user {
-  width: 13em;
+  width: 15em;
   position: fixed;
   right: 0;
+  top: 55px;
   z-index: 999;
+  padding: 0.6em;
+  h5 {
+    text-align: center;
+  }
   p {
     display: inline-block;
   }
   li {
+    padding: .5em;
     &:hover {
       background-color: black;
       color: white;
     }
+    a {
+      width: 85%;
+      display: inline-block;
+    }
+    i {
+      display: inline-block;
+      margin-right: .5em;
+    }
   }
+  
 
 }
 
@@ -388,5 +401,44 @@ body::after {
   }
 }
 
+#alert {
+  width: 13em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  h5 {
+    text-align: center;
+  }
+  p {
+    display: inline-block;
+  }
+  li {
+    padding: .5em;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+  a {
+    padding: 0;
+  }
 
+}
 
+#alert-btn {
+  &:hover {
+    background-color: $Green;
+  }
+}
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em;
+  &:hover {
+    background-color: $Green;
+  }
+
+}

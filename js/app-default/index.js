@@ -13,6 +13,8 @@ import ListService from './services/listService';
 
 import user from './directives/user.dir';
 import alert from './directives/alert.dir';
+import addUser from './directives/adduser.dir';
+import userList from './directives/userlist.dir';
 
 angular
   .module('app.default', ['app.core', 'ngCookies'])
@@ -30,5 +32,7 @@ angular
   .service('ListService', ListService)
   .directive('user', user)
   .directive('alert', alert)
+  .directive('addUser', addUser)
+  .directive('userList', userList)
 ;
   
