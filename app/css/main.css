@@ -5425,7 +5425,10 @@ button {
   button.is-active {
     background-color: #8a8a8a; }
 
+<<<<<<< HEAD
+=======
 >>>>>>> isaac
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5635,6 +5638,13 @@ body::after {
       color: #1eb95b; }
   .top-bar ul {
     background-color: white; }
+<<<<<<< HEAD
+  .top-bar .submenu.first-sub {
+    background-color: #1eb95b; }
+    .top-bar .submenu.first-sub .is-submenu-item:hover {
+      color: black; }
+=======
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
 
 .hide-user {
   display: none; }

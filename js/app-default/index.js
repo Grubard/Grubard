@@ -2,7 +2,14 @@ import angular from 'angular';
 import 'angular-cookies';
 import '../app-core/index';
 
+<<<<<<< HEAD
+/////** Import Controllers, Services, and Directives **/////
+import AuthService from '../app-layout/services/authService';
 
+// import ... from './controllers/...';
+=======
+
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
 import LoginController from './controllers/login.controller';
 import UserHomeController from './controllers/userHomeController';
 import ListController from './controllers/listController';
@@ -18,6 +25,10 @@ import userList from './directives/userlist.dir';
 
 angular
   .module('app.default', ['app.core', 'ngCookies'])
+<<<<<<< HEAD
+  .service('AuthService', AuthService)
+  /////** Load Controllers, Services, and Directives **/////
+=======
   .constant('SERVER', {
     URL:'http://intense-refuge-9476.herokuapp.com',
     CONFIG: {
@@ -25,6 +36,7 @@ angular
     }
   })
 
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
   .controller('LoginController', LoginController)
   .controller('UserHomeController', UserHomeController)
   .controller('ListController', ListController)
