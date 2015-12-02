@@ -84,7 +84,7 @@ _angular2['default'].module('app.core', ['ui.router'])
 // .constant('...', ...)
 .config(_config2['default']);
 
-},{"./config":1,"angular":20,"angular-ui-router":18}],3:[function(require,module,exports){
+},{"./config":1,"angular":22,"angular-ui-router":20}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -154,7 +154,7 @@ ListController.$inject = ['$scope', '$http', 'ListService'];
 exports['default'] = ListController;
 module.exports = exports['default'];
 
-},{"jQuery":22}],5:[function(require,module,exports){
+},{"jQuery":24}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -211,6 +211,33 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+var addUser = function addUser() {
+
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function link(scope, element, attrs) {
+
+      function functionShow() {
+        $('#add-user').toggleClass('hide-user');
+      }
+
+      element.on('click', functionShow);
+    }
+  };
+};
+
+addUser.$inject = [];
+
+exports['default'] = addUser;
+module.exports = exports['default'];
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 var alert = function alert() {
 
   return {
@@ -244,7 +271,7 @@ alert.$inject = [];
 exports['default'] = alert;
 module.exports = exports['default'];
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -283,7 +310,34 @@ user.$inject = [];
 exports['default'] = user;
 module.exports = exports['default'];
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var userList = function userList() {
+
+  return {
+    restrict: 'A',
+    scope: true,
+    link: function link(scope, element, attrs) {
+
+      function functionShow() {
+        $('#user-list').toggleClass('hide-user');
+      }
+
+      element.on('click', functionShow);
+    }
+  };
+};
+
+userList.$inject = [];
+
+exports['default'] = userList;
+module.exports = exports['default'];
+
+},{}],11:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -324,14 +378,22 @@ var _directivesAlertDir = require('./directives/alert.dir');
 
 var _directivesAlertDir2 = _interopRequireDefault(_directivesAlertDir);
 
+var _directivesAdduserDir = require('./directives/adduser.dir');
+
+var _directivesAdduserDir2 = _interopRequireDefault(_directivesAdduserDir);
+
+var _directivesUserlistDir = require('./directives/userlist.dir');
+
+var _directivesUserlistDir2 = _interopRequireDefault(_directivesUserlistDir);
+
 _angular2['default'].module('app.default', ['app.core', 'ngCookies']).constant('SERVER', {
   URL: 'http://intense-refuge-9476.herokuapp.com',
   CONFIG: {
     headers: {}
   }
-}).controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']).controller('AddUserController', _controllersAddUserController2['default']).service('ListService', _servicesListService2['default']).directive('user', _directivesUserDir2['default']).directive('alert', _directivesAlertDir2['default']);
+}).controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']).controller('AddUserController', _controllersAddUserController2['default']).service('ListService', _servicesListService2['default']).directive('user', _directivesUserDir2['default']).directive('alert', _directivesAlertDir2['default']).directive('addUser', _directivesAdduserDir2['default']).directive('userList', _directivesUserlistDir2['default']);
 
-},{"../app-core/index":2,"./controllers/add.user.controller":3,"./controllers/listController":4,"./controllers/login.controller":5,"./controllers/userHomeController":6,"./directives/alert.dir":7,"./directives/user.dir":8,"./services/listService":10,"angular":20,"angular-cookies":17}],10:[function(require,module,exports){
+},{"../app-core/index":2,"./controllers/add.user.controller":3,"./controllers/listController":4,"./controllers/login.controller":5,"./controllers/userHomeController":6,"./directives/adduser.dir":7,"./directives/alert.dir":8,"./directives/user.dir":9,"./directives/userlist.dir":10,"./services/listService":12,"angular":22,"angular-cookies":19}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -368,7 +430,7 @@ ListService.$inject = ['$http', 'SERVER', '$cookies'];
 exports['default'] = ListService;
 module.exports = exports['default'];
 
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -385,7 +447,7 @@ _angular2['default'].module('app.layout', []);
 /////** Load Controllers **/////
 // .controller('...', ...)
 
-},{"angular":20}],12:[function(require,module,exports){
+},{"angular":22}],14:[function(require,module,exports){
 // Import our core files
 'use strict';
 
@@ -426,7 +488,7 @@ require('./app-default/index');
 
 _angular2['default'].module('app', ['app.core', 'app.layout', 'app.default', 'ngAnimate']).run(_run2['default']);
 
-},{"./app-core/index":2,"./app-default/index":9,"./app-layout/index":11,"./run":13,"angular":20,"angular-animate":15,"foundation":21,"jquery":23,"motion-ui":24}],13:[function(require,module,exports){
+},{"./app-core/index":2,"./app-default/index":11,"./app-layout/index":13,"./run":15,"angular":22,"angular-animate":17,"foundation":23,"jquery":25,"motion-ui":26}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -451,7 +513,7 @@ run.$inject = ['$rootScope', '$cookies', '$state'];
 exports['default'] = run;
 module.exports = exports['default'];
 
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -4383,11 +4445,11 @@ angular.module('ngAnimate', [])
 
 })(window, window.angular);
 
-},{}],15:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 require('./angular-animate');
 module.exports = 'ngAnimate';
 
-},{"./angular-animate":14}],16:[function(require,module,exports){
+},{"./angular-animate":16}],18:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -4710,11 +4772,11 @@ angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterPr
 
 })(window, window.angular);
 
-},{}],17:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":16}],18:[function(require,module,exports){
+},{"./angular-cookies":18}],20:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -9085,7 +9147,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],19:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -38104,11 +38166,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],20:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":19}],21:[function(require,module,exports){
+},{"./angular":21}],23:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 !function($) {
@@ -45549,7 +45611,7 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],22:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -54761,7 +54823,7 @@ return jQuery;
 
 }));
 
-},{}],23:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
@@ -63981,7 +64043,7 @@ return jQuery;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],24:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -64100,7 +64162,7 @@ var MotionUI = {
 return MotionUI;
 }));
 
-},{"jquery":23}]},{},[12])
+},{"jquery":25}]},{},[14])
 
 
 //# sourceMappingURL=main.js.map

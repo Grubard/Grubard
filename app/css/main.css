@@ -5396,6 +5396,36 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
+<<<<<<< HEAD
+=======
+width: 100%;
+max-height: 100%;
+position: relative;
+margin: 0;
+overflow: hidden;
+list-style: none;
+left: auto;
+right: 0;
+left: 0;
+[data-whatinput='mouse'] & {
+  outline: 0; }
+
+position: relative;
+margin-top: 0.8rem;
+margin-bottom: 0.8rem;
+text-align: center;
+button {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.1rem;
+  background-color: #cacaca;
+  border-radius: 50%; }
+  button:hover {
+    background-color: #8a8a8a; }
+  button.is-active {
+    background-color: #8a8a8a; }
+
+>>>>>>> isaac
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5608,17 +5638,58 @@ body::after {
   display: none; }
 
 #user {
-  width: 13em;
+  width: 15em;
   position: fixed;
   right: 0;
-  z-index: 999; }
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #user h5 {
+    text-align: center; }
   #user p {
     display: inline-block; }
-  #user li:hover {
-    background-color: black;
-    color: white; }
+  #user li {
+    padding: .5em; }
+    #user li:hover {
+      background-color: black;
+      color: white; }
+    #user li a {
+      width: 85%;
+      display: inline-block; }
+    #user li i {
+      display: inline-block;
+      margin-right: .5em; }
 
 #user-btn:hover {
   background-color: #2DDD72; }
+
+#alert {
+  width: 13em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #alert h5 {
+    text-align: center; }
+  #alert p {
+    display: inline-block; }
+  #alert li {
+    padding: .5em; }
+    #alert li:hover {
+      background-color: black;
+      color: white; }
+  #alert a {
+    padding: 0; }
+
+#alert-btn:hover {
+  background-color: #2DDD72; }
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em; }
+  .users-list:hover {
+    background-color: #2DDD72; }
 
 /*# sourceMappingURL=main.css.map */
