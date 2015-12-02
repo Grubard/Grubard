@@ -10,7 +10,8 @@ import LoginController from './controllers/login.controller';
 import UserHomeController from './controllers/userHomeController';
 import ListController from './controllers/listController';
 import AddUserController from './controllers/add.user.controller';
-import pantry from './directives/pantry.dir';
+import user from './directives/user.dir';
+import alert from './directives/alert.dir';
 // import ... from './directives/...';
 
 angular
@@ -21,7 +22,8 @@ angular
   .controller('UserHomeController', UserHomeController)
   .controller('ListController', ListController)
   .controller('AddUserController', AddUserController)
-  .directive('pantry', pantry)
+  .directive('user', user)
+  .directive('alert', alert)
   // .directive('...', ...)
 ;
   

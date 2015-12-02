@@ -5695,6 +5695,7 @@ body::after {
     background-color: white; }
 =======
     background-color: #1eb95b; }
+<<<<<<< HEAD
   .top-bar .submenu.first-sub {
     background-color: #1eb95b; }
 >>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
@@ -5710,16 +5711,24 @@ body::after {
     color: #178d45; }
 
 .hide-pantry {
+=======
+
+.hide-user {
+>>>>>>> isaac
   display: none; }
 
-#pantry-list {
-  float: left;
+#user {
+  width: 13em;
   position: fixed;
-  width: 13em; }
-  #pantry-list p {
+  right: 0;
+  z-index: 999; }
+  #user p {
     display: inline-block; }
-  #pantry-list i {
-    display: inline-block;
-    margin-left: 1.2em; }
+  #user li:hover {
+    background-color: black;
+    color: white; }
+
+#user-btn:hover {
+  background-color: #2DDD72; }
 
 /*# sourceMappingURL=main.css.map */

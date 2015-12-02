@@ -334,41 +334,33 @@ body::after {
 
     background-color: white;
   }
-
-  .submenu.first-sub {
-    background-color: darken($Green, 10%);
-
-    .is-submenu-item:hover {
-      color: black;
-    }
-  }
-}
-.fa-plus-square-o {
-  font-size: 2.5em;
-  color: white;
-  margin-right: .2em;
-  &:hover {
-    background-color: darken($Green, 10%);
-    color: darken($Green, 20%);
-  }
 }
 
-.hide-pantry {
+.hide-user {
   display: none;
 }
 
-#pantry-list {
-  float: left;
-  position: fixed;
+#user {
   width: 13em;
+  position: fixed;
+  right: 0;
+  z-index: 999;
   p {
     display: inline-block;
   }
-  i {
-    display: inline-block;
-    margin-left: 1.2em;
+  li {
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 
+}
+
+#user-btn {
+  &:hover {
+    background-color: $Green;
+  }
 }
 
 
