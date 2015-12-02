@@ -209,14 +209,28 @@ body::after {
     width: 15em;
   }
   .addItem{
-    display: block;
+    display: inline-block;
     height: 2em;
-    width: 70%;
     border: none;
     font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
     margin: 2% auto;
     padding-left: 2%;
+  }
+  .foodName{
+    width: 30%;
+  }
+  .foodQuantity{
+    width: 10%;
+    padding-left: 1%;
+  }
+  .foodPreferred{
+    width: 12%;
+    padding-left: 1%;
+  }
+  .foodCategory{
+    width: 10%;
+    padding-left: 1%;
   }
   .checkIt{
     display: none;

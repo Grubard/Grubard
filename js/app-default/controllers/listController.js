@@ -1,49 +1,44 @@
 import $ from 'jQuery';
 
-let ListController = function($scope) {
+let ListController = function($scope, $http, ListService) {
   
 
   let vm = this;
-  vm.removeItem = removeItem;
-  vm.addItemsToPantry = addItemsToPantry;
-  vm.clearCompleted = clearCompleted;
-  vm.editItem = editItem;
+  // vm.removeItem = removeItem;
+  // vm.addItemsToPantry = addItemsToPantry;
+  // vm.clearCompleted = clearCompleted;
+  // vm.editItem = editItem;
+
   vm.addNewItem = addNewItem;
+  vm.items = [];
 
-
-  // Dummy data used here
-  vm.items = [
-    {item: "Bread"},
-    {item: "Pickles"},
-    {item: "Chicken"}
-  ];
-
-  function addNewItem (text) {
-    let newItem = {item: text};
-    vm.items.push(newItem);
-    $scope.text = '';
+  function addNewItem (food) {
+    vm.items.push(food);
+    ListService.addItem(food).then((response) => {
+    });
+    $scope.food = {};
   }
 
-  function editItem (object){
-    // Edit item on double click
-    console.log('hi');
-  }
+  // function editItem (object){
+  //   // Edit item on double click
+  //   console.log('hi');
+  // }
 
-  function removeItem(items) {
-    console.log('delete me');
-  }
+  // function removeItem(items) {
+  //   console.log('delete me');
+  // }
 
-  function addItemsToPantry() {
-    console.log('ok');
-    // vm.items.post()
-  }
+  // function addItemsToPantry() {
+  //   console.log('ok');
+  //   // vm.items.post()
+  // }
 
-  function clearCompleted() {
-    console.log('asdf');
-  }
+  // function clearCompleted() {
+  //   console.log('asdf');
+  // }
 
 };
 
-ListController.$inject = ['$scope'];
+ListController.$inject = ['$scope', '$http', 'ListService'];
 
 export default ListController;

@@ -51,6 +51,10 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/about',
     //controller,
     templateUrl: 'templates/tpl-app/about.tpl.html'
+  })
+  .state('root.account', {
+    url: '/account',
+    templateUrl: 'templates/tpl-app/accountSettings.tpl.html'
   });
   /////** Add new .states here **/////
 

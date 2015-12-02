@@ -7,7 +7,11 @@
       <input class="checkIt" type="checkbox" id="check1">
       <label for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
       
-      {{ object.item }} 
+      Item Name: {{ object.title }} |
+      Quantity: {{ object.quantity }} |
+      Preferred Number: {{ object.preferred }} |
+      Item Category: {{ object.category }} 
+
 
       <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 
@@ -15,8 +19,52 @@
 
     </li>
   </ul>
-  <form ng-submit="vm.addNewItem(text)">
-    <input class="addItem" ng-model="text" placeholder="Add Item to your List">
+  <form ng-submit="vm.addNewItem(food)">
+    <input class="addItem foodName" ng-model="food.title" placeholder="Add Item to your List">
+    <select class="addItem foodQuantity" ng-model="food.quantity">
+      <option value="" disabled selected>Quantity</option>  
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+
+    </select>
+  
+    <select class="addItem foodPreferred" ng-model="food.preferred">
+      <option value="" disabled selected>Preffered Amt</option>  
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <select class="addItem foodCategory" ng-model="food.category">
+      <option value="" disabled selected>Category</option>  
+      <option value="Produce">Produce</option>
+      <option value="Dairy">Dairy</option>
+      <option value="Deli">Deli</option>
+      <option value="Meats">Meats</option>
+      <option value="Baking">Baking</option>
+      <option value="Household Items">Household Items</option>
+      <option value="Frozen Foods">Frozen Foods</option>
+      <option value="Hygeine">Hygeine</option>
+      <option value="Beer">Beer</option>
+      <option value="Spices">Spices</option>
+    </select>
+
+    <button>Submit new Item</button>
   </form>
 
 
