@@ -3,7 +3,7 @@ import 'angular-cookies';
 import '../app-core/index';
 
 /////** Import Controllers, Services, and Directives **/////
-
+import AuthService from '../app-layout/services/authService';
 
 // import ... from './controllers/...';
 import LoginController from './controllers/login.controller';
@@ -15,7 +15,7 @@ import pantry from './directives/pantry.dir';
 
 angular
   .module('app.default', ['app.core', 'ngCookies'])
-  
+  .service('AuthService', AuthService)
   /////** Load Controllers, Services, and Directives **/////
   .controller('LoginController', LoginController)
   .controller('UserHomeController', UserHomeController)

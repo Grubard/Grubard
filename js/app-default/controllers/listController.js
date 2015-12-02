@@ -11,12 +11,7 @@ let ListController = function($scope) {
   vm.addNewItem = addNewItem;
 
 
-  // Dummy data used here
-  vm.items = [
-    {item: "Bread"},
-    {item: "Pickles"},
-    {item: "Chicken"}
-  ];
+
 
   function addNewItem (text) {
     let newItem = {item: text};
