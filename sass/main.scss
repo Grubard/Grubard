@@ -5,17 +5,18 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @include motion-ui-transitions;
 @include foundation-everything;
-@include orbit-slide;
-@include orbit-container;
-@include orbit-next;
-@include orbit-previous;
-@include orbit-bullets;
 
 $Blue: #3C3F95;
 $Gray: #677077;
 $lightGray: #b5b5b7;
+
 $Yellow: #f2b632;
 $Green: #2DDD72;
+$Purple: #78427E;
+$Orange: #F97F1F;
+$Red: #D02527;
+$FruitGreen: #40704E;
+
 
 body{
 
@@ -171,20 +172,20 @@ body::after {
   }
 }
 
-
-
-
-
 @media all and (max-width: 1000px) {
   .userHomePage div{
     width: 90%;
   }
 }
 
-.groceryList{
-  width: 80%;
-  border: 1px solid white;
-  margin: 2% auto;
+
+/*****************************Grocery List Page*******************/
+
+.mainGroceryList{
+  background: #D2DFEA;
+  border-radius: 10px;
+  width: 99%;
+  margin: 1% auto;
   i{
     float: right;
     margin-right: 5%;

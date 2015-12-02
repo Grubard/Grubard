@@ -1,8 +1,6 @@
-<div class="groceryList">
+<div class="mainGroceryList">
   <h3>Current Grocery List</h3>
-    <form ng-submit="vm.addNewItem(text)">
-      <input class="addItem" ng-model="text" placeholder="Add Item to your List">
-    </form>
+    
   <ul>
     <li ng-repeat="object in vm.items" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
@@ -17,6 +15,9 @@
 
     </li>
   </ul>
+  <form ng-submit="vm.addNewItem(text)">
+    <input class="addItem" ng-model="text" placeholder="Add Item to your List">
+  </form>
 
 
   <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Items to Pantry</button>

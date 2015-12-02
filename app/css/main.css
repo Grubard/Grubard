@@ -5396,33 +5396,6 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
-width: 100%;
-max-height: 100%;
-position: relative;
-margin: 0;
-overflow: hidden;
-list-style: none;
-left: auto;
-right: 0;
-left: 0;
-[data-whatinput='mouse'] & {
-  outline: 0; }
-
-position: relative;
-margin-top: 0.8rem;
-margin-bottom: 0.8rem;
-text-align: center;
-button {
-  width: 1.2rem;
-  height: 1.2rem;
-  margin: 0.1rem;
-  background-color: #cacaca;
-  border-radius: 50%; }
-  button:hover {
-    background-color: #8a8a8a; }
-  button.is-active {
-    background-color: #8a8a8a; }
-
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5450,7 +5423,6 @@ body::after {
 .logo img {
   display: block;
   width: 100%;
-<<<<<<< HEAD
   margin: 0 auto;
   padding-top: 3%; }
 
@@ -5469,54 +5441,6 @@ body::after {
     display: block;
     width: 35%;
     margin: 0 auto; } }
-=======
-  height: 85vh;
-  font-size: 5em; }
-  .landingPage .computerImage {
-    position: relative;
-    width: 100%;
-    background-image: url("../images/macbook.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding-bottom: 82%; }
-  .landingPage .orbit {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    font-size: .2em; }
-  .landingPage .landingRight {
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    margin-bottom: .5em;
-    margin-top: 1em; }
-    .landingPage .landingRight h5 {
-      padding: 0;
-      color: #3C3F95; }
-  .landingPage .create {
-    background: inherit;
-    border: 3px solid #f2b632;
-    border-radius: 5px;
-    font-size: 0.4em;
-    margin-top: 2em; }
-    .landingPage .create:hover {
-      color: #3C3F95;
-      border: 3px solid #3C3F95; }
-  .landingPage .bottom {
-    font-size: 0.3em;
-    color: white;
-    text-align: center;
-    margin-top: 10%; }
-    .landingPage .bottom ul {
-      list-style: none; }
-    .landingPage .bottom li {
-      display: inline-block;
-      padding-right: 5%;
-      color: white; }
-      .landingPage .bottom li:hover {
-        color: #3C3F95; }
->>>>>>> master
 
 .signUp button {
   display: block;
@@ -5572,27 +5496,29 @@ body::after {
   .userHomePage div {
     width: 90%; } }
 
-.groceryList {
-  width: 80%;
-  border: 1px solid white;
-  margin: 2% auto; }
-  .groceryList i {
+/*****************************Grocery List Page*******************/
+.mainGroceryList {
+  background: #D2DFEA;
+  border-radius: 10px;
+  width: 99%;
+  margin: 1% auto; }
+  .mainGroceryList i {
     float: right;
     margin-right: 5%;
     line-height: 30px;
     color: #D41617; }
-  .groceryList h3 {
+  .mainGroceryList h3 {
     text-align: center; }
-  .groceryList ul {
+  .mainGroceryList ul {
     padding-top: 5%;
     list-style: none;
     font-size: 1.2em; }
-  .groceryList .button {
+  .mainGroceryList .button {
     text-align: center;
     display: block;
     margin: 2% auto;
     width: 15em; }
-  .groceryList .addItem {
+  .mainGroceryList .addItem {
     display: block;
     height: 2em;
     width: 70%;
@@ -5601,16 +5527,16 @@ body::after {
     font-size: 1.2em;
     margin: 2% auto;
     padding-left: 2%; }
-  .groceryList .checkIt {
+  .mainGroceryList .checkIt {
     display: none; }
-  .groceryList label {
+  .mainGroceryList label {
     position: relative;
     width: 2em;
     height: 2em;
     border: 1px solid #3C3F95;
     border-radius: 100px;
     vertical-align: -25%; }
-  .groceryList label:hover:before {
+  .mainGroceryList label:hover:before {
     position: absolute;
     right: 3px;
     top: -4px;
