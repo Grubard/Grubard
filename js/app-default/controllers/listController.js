@@ -20,8 +20,9 @@ let ListController = function($scope, $http, ListService, $state) {
 
   }
 
-  groceryList();
 
+
+  groceryList();
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
       console.log(response);
@@ -30,8 +31,9 @@ let ListController = function($scope, $http, ListService, $state) {
   }
 
   function removeItem (object) {
-    console.log(object);
-    ListService.removeFood();
+    console.log(object.id);
+    ListService.removeFood(object.id);
+    $state.reload();
   }
 
 

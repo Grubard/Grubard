@@ -55,7 +55,7 @@
           <option value="false">false</option>
         </select>
 
-        <button>Submit new Item</button>
+        <button class="button addItem">Submit</button>
       </form>
     </li>
 
@@ -63,6 +63,8 @@
 
       <input class="checkIt" type="checkbox" id="check1">
       <label for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
+      
+
       
       <strong>Item:</strong> {{ object.title }} ({{ object.quantity }})<br>
       <!-- {{ object.preferred }} -->

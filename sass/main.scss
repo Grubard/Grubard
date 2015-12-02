@@ -187,20 +187,19 @@ body::after {
   background: #D2DFEA;
   border-radius: 10px;
   width: 95%;
-  height: 38em;
   margin: 1% auto;
 
   i{
     float: right;
     margin-right: 5%;
-    line-height: 30px;
     color: #D41617;
+    margin-top: -1em;
   }
   h3{
     text-align: center;
   }
   ul{
-    padding-top: 5%;
+    padding-top: 2%;
     list-style: none;
     font-size: 1.2em;
   }
@@ -209,12 +208,12 @@ body::after {
   }
   .button{
     text-align: center;
-    display: block;
     margin: 2% auto;
     width: 15em;
   }
   .addItem{
     width: 10%;
+    display: inline-block
   }
   .checkIt{
     display: none;
@@ -222,7 +221,9 @@ body::after {
 
 
   form{
+    width: 80%;
     font-size: 1em;;
+    margin-top: 0;
     margin-left: 4%;
     input{
       background: lighten(#D2DFEA, 5%);

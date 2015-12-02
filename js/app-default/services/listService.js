@@ -9,7 +9,6 @@ let ListService = function($http, SERVER, $cookies) {
   this.addItem = addItem;
   this.getGroceryList = getGroceryList;
   this.removeFood = removeFood;
-  // this.removeItem = removeItem;
 
   function Item (foodItem) {
     this.title = foodItem.title;
@@ -21,20 +20,16 @@ let ListService = function($http, SERVER, $cookies) {
 
   function addItem (foodItem) {
     let i = new Item(foodItem);
-    return $http.post(url + '/grocery', i, token);
+    return $http.post(url + '/grocery', i, SERVER.CONFIG);
   }
 
   function getGroceryList () {
     return $http.get(url + '/grocery' , SERVER.CONFIG);
   }
 
-  function removeFood () {
-    return $http.delete(url + '/grocery', SERVER.CONFIG);
+  function removeFood (objId) {
+    return $http.delete(url + '/grocery/' + objId, SERVER.CONFIG);
   }
-
-  // function removeItem (foodItem) {
-  //   return $http.delete(url + '/grocery')
-  // }
 
 };
 

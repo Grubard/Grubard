@@ -131,7 +131,6 @@ var ListController = function ListController($scope, $http, ListService, $state)
   }
 
   groceryList();
-
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
       console.log(response);
@@ -140,8 +139,9 @@ var ListController = function ListController($scope, $http, ListService, $state)
   }
 
   function removeItem(object) {
-    console.log(object);
-    ListService.removeFood();
+    console.log(object.id);
+    ListService.removeFood(object.id);
+    $state.reload();
   }
 
   // function editItem (object){
@@ -422,7 +422,6 @@ var ListService = function ListService($http, SERVER, $cookies) {
   this.addItem = addItem;
   this.getGroceryList = getGroceryList;
   this.removeFood = removeFood;
-  // this.removeItem = removeItem;
 
   function Item(foodItem) {
     this.title = foodItem.title;
@@ -434,20 +433,16 @@ var ListService = function ListService($http, SERVER, $cookies) {
 
   function addItem(foodItem) {
     var i = new Item(foodItem);
-    return $http.post(url + '/grocery', i, token);
+    return $http.post(url + '/grocery', i, SERVER.CONFIG);
   }
 
   function getGroceryList() {
     return $http.get(url + '/grocery', SERVER.CONFIG);
   }
 
-  function removeFood() {
-    return $http['delete'](url + '/grocery', SERVER.CONFIG);
+  function removeFood(objId) {
+    return $http['delete'](url + '/grocery/' + objId, SERVER.CONFIG);
   }
-
-  // function removeItem (foodItem) {
-  //   return $http.delete(url + '/grocery')
-  // }
 };
 
 ListService.$inject = ['$http', 'SERVER', '$cookies'];

@@ -5396,36 +5396,6 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
-<<<<<<< HEAD
-=======
-width: 100%;
-max-height: 100%;
-position: relative;
-margin: 0;
-overflow: hidden;
-list-style: none;
-left: auto;
-right: 0;
-left: 0;
-[data-whatinput='mouse'] & {
-  outline: 0; }
-
-position: relative;
-margin-top: 0.8rem;
-margin-bottom: 0.8rem;
-text-align: center;
-button {
-  width: 1.2rem;
-  height: 1.2rem;
-  margin: 0.1rem;
-  background-color: #cacaca;
-  border-radius: 50%; }
-  button:hover {
-    background-color: #8a8a8a; }
-  button.is-active {
-    background-color: #8a8a8a; }
-
->>>>>>> isaac
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5531,32 +5501,33 @@ body::after {
   background: #D2DFEA;
   border-radius: 10px;
   width: 95%;
-  height: 38em;
   margin: 1% auto; }
   .mainGroceryList i {
     float: right;
     margin-right: 5%;
-    line-height: 30px;
-    color: #D41617; }
+    color: #D41617;
+    margin-top: -1em; }
   .mainGroceryList h3 {
     text-align: center; }
   .mainGroceryList ul {
-    padding-top: 5%;
+    padding-top: 2%;
     list-style: none;
     font-size: 1.2em; }
   .mainGroceryList span {
     margin-left: 10%; }
   .mainGroceryList .button {
     text-align: center;
-    display: block;
     margin: 2% auto;
     width: 15em; }
   .mainGroceryList .addItem {
-    width: 10%; }
+    width: 10%;
+    display: inline-block; }
   .mainGroceryList .checkIt {
     display: none; }
   .mainGroceryList form {
+    width: 80%;
     font-size: 1em;
+    margin-top: 0;
     margin-left: 4%; }
     .mainGroceryList form input {
       background: #e3ebf2;
