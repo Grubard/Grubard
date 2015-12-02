@@ -19,13 +19,24 @@ $Green: #2DDD72;
 
 
 body {
-  background-color: $Green;
-  background-image: linear-gradient($Green, $lightGray);
-  background: $Green;
-  background: linear-gradient($Green, $lightGray);
+  // background-color: $Green;
+  
+  // background: $Green;
+  // background: linear-gradient($Green, $lightGray);
   height: 100vh;
+  position: relative;
 }
-
+body::after{
+  background-image: url('https://growerssupply.files.wordpress.com/2014/05/ballard-market-potatoes-008.jpg');
+  background-size: 100%;
+  opacity: 50%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
 
 .landingPage{
   width: 100%;
@@ -339,10 +350,10 @@ body {
 /////////////
 
 .top-bar {
-  background-color: #006400;
+  background-color: white;
   font-weight: bold;
   a {
-    color: white;
+    color: black;
     border-radius: .2em;
     &:hover {
       background-color: white;
@@ -350,10 +361,10 @@ body {
     }
   }
   ul {
-    background-color: #006400;
+    background-color: white;
   }
   .submenu.first-sub {
-    background-color: #006400;
+    background-color: white;
     .is-submenu-item:hover {
       color: black;
     }

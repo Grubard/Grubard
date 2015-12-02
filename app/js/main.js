@@ -311,14 +311,21 @@ _angular2['default'].module('app', ['app.core', 'app.layout', 'app.default', 'ng
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var run = function run($rootScope) {
+var run = function run($rootScope, $cookies, $state) {
 
   $rootScope.$on('$viewContentLoaded', function (event, data) {
     $(document).foundation();
   });
+  $rootScope.$on('$stateChangeSuccess', function () {
+    var token = $cookies.get('auth_token');
+    if (!token) {
+      alert("Uh oh! Looks like you aren't logged in.");
+      $state.go('root.login');
+    };
+  });
 };
 
-run.$inject = ['$rootScope'];
+run.$inject = ['$rootScope', '$cookies', '$state'];
 
 exports['default'] = run;
 module.exports = exports['default'];
