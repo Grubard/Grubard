@@ -12,6 +12,8 @@ import ListController from './controllers/listController';
 import AddUserController from './controllers/add.user.controller';
 import user from './directives/user.dir';
 import alert from './directives/alert.dir';
+import addUser from './directives/adduser.dir';
+import userList from './directives/userlist.dir';
 // import ... from './directives/...';
 
 angular
@@ -24,6 +26,8 @@ angular
   .controller('AddUserController', AddUserController)
   .directive('user', user)
   .directive('alert', alert)
+  .directive('addUser', addUser)
+  .directive('userList', userList)
   // .directive('...', ...)
 ;
   

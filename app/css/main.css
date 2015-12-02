@@ -5423,17 +5423,6 @@ button {
   button.is-active {
     background-color: #8a8a8a; }
 
-<<<<<<< HEAD
-body {
-  height: 100vh;
-  position: relative; }
-
-body::after {
-  background-image: url("https://growerssupply.files.wordpress.com/2014/05/ballard-market-potatoes-008.jpg");
-  background-size: 100%;
-  opacity: 50%;
-  z-index: -1;
-=======
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5442,17 +5431,12 @@ body::after {
   -o-background-size: cover;
   background-size: cover;
   opacity: 0.4;
->>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-<<<<<<< HEAD
-  position: absolute; }
-=======
   position: absolute;
   z-index: -1; }
->>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
 
 /*********************Landing Page******************************/
 .landingPage {
@@ -5466,7 +5450,6 @@ body::after {
 .logo img {
   display: block;
   width: 100%;
-<<<<<<< HEAD
   margin: 0 auto;
   padding-top: 3%; }
 
@@ -5485,56 +5468,6 @@ body::after {
     display: block;
     width: 35%;
     margin: 0 auto; } }
-=======
-  height: 85vh;
-  font-size: 5em; }
-  .landingPage .computerImage {
-    position: relative;
-    width: 100%;
-    background-image: url("../images/macbook.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding-bottom: 82%; }
-  .landingPage .orbit {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    font-size: .2em; }
-  .landingPage .landingRight {
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    margin-bottom: .5em;
-    margin-top: 1em; }
-    .landingPage .landingRight h5 {
-      padding: 0;
-      color: #3C3F95; }
-  .landingPage .create {
-    background: inherit;
-    border: 3px solid #f2b632;
-    border-radius: 5px;
-    font-size: 0.4em;
-    margin-top: 2em; }
-    .landingPage .create:hover {
-      color: #3C3F95;
-      border: 3px solid #3C3F95; }
-  .landingPage .bottom {
-    font-size: 0.3em;
-    color: white;
-    text-align: center;
-    margin-top: 10%; }
-    .landingPage .bottom ul {
-      list-style: none; }
-    .landingPage .bottom li {
-      display: inline-block;
-      padding-right: 5%;
-      color: white; }
-      .landingPage .bottom li:hover {
-        color: #3C3F95; }
-<<<<<<< HEAD
-=======
->>>>>>> master
 
 .signUp button {
   display: block;
@@ -5552,7 +5485,6 @@ body::after {
     .landingInfo li a {
       text-decoration: none;
       color: black; }
->>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
 
 /*********************LogIn Page******************************/
 .login {
@@ -5674,11 +5606,7 @@ body::after {
   opacity: 0; }
 
 .top-bar {
-<<<<<<< HEAD
-  background-color: white;
-=======
   background-color: #1eb95b;
->>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
   font-weight: bold; }
   .top-bar .top-bar-right .menu button:hover {
     background-color: #1eb95b; }
@@ -5689,46 +5617,64 @@ body::after {
       background-color: white;
       color: #1eb95b; }
   .top-bar ul {
-<<<<<<< HEAD
     background-color: white; }
-  .top-bar .submenu.first-sub {
-    background-color: white; }
-=======
-    background-color: #1eb95b; }
-<<<<<<< HEAD
-  .top-bar .submenu.first-sub {
-    background-color: #1eb95b; }
->>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
-    .top-bar .submenu.first-sub .is-submenu-item:hover {
-      color: black; }
-
-.fa-plus-square-o {
-  font-size: 2.5em;
-  color: white;
-  margin-right: .2em; }
-  .fa-plus-square-o:hover {
-    background-color: #1eb95b;
-    color: #178d45; }
-
-.hide-pantry {
-=======
 
 .hide-user {
->>>>>>> isaac
   display: none; }
 
 #user {
-  width: 13em;
+  width: 15em;
   position: fixed;
   right: 0;
-  z-index: 999; }
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #user h5 {
+    text-align: center; }
   #user p {
     display: inline-block; }
-  #user li:hover {
-    background-color: black;
-    color: white; }
+  #user li {
+    padding: .5em; }
+    #user li:hover {
+      background-color: black;
+      color: white; }
+    #user li a {
+      width: 85%;
+      display: inline-block; }
+    #user li i {
+      display: inline-block;
+      margin-right: .5em; }
 
 #user-btn:hover {
   background-color: #2DDD72; }
+
+#alert {
+  width: 13em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #alert h5 {
+    text-align: center; }
+  #alert p {
+    display: inline-block; }
+  #alert li {
+    padding: .5em; }
+    #alert li:hover {
+      background-color: black;
+      color: white; }
+  #alert a {
+    padding: 0; }
+
+#alert-btn:hover {
+  background-color: #2DDD72; }
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em; }
+  .users-list:hover {
+    background-color: #2DDD72; }
 
 /*# sourceMappingURL=main.css.map */

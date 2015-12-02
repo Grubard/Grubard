@@ -7,8 +7,8 @@ let run = function($rootScope, $cookies, $state) {
     let token = $cookies.get('auth_token');
     if(!token){
       alert("Uh oh! Looks like you aren't logged in.");
-      $state.go('root.login')
-    };
+      $state.go('root.login');
+    }
    
   });
   
