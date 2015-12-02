@@ -186,8 +186,10 @@ body::after {
 .mainGroceryList{
   background: #D2DFEA;
   border-radius: 10px;
-  width: 99%;
+  width: 95%;
+  height: 38em;
   margin: 1% auto;
+
   i{
     float: right;
     margin-right: 5%;
@@ -202,6 +204,9 @@ body::after {
     list-style: none;
     font-size: 1.2em;
   }
+  span{
+    margin-left: 10%;
+  }
   .button{
     text-align: center;
     display: block;
@@ -209,32 +214,37 @@ body::after {
     width: 15em;
   }
   .addItem{
-    display: inline-block;
-    height: 2em;
-    border: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
-    margin: 2% auto;
-    padding-left: 2%;
-  }
-  .foodName{
-    width: 30%;
-  }
-  .foodQuantity{
     width: 10%;
-    padding-left: 1%;
-  }
-  .foodPreferred{
-    width: 12%;
-    padding-left: 1%;
-  }
-  .foodCategory{
-    width: 10%;
-    padding-left: 1%;
   }
   .checkIt{
     display: none;
   }
+
+
+  form{
+    font-size: 1em;;
+    margin-left: 4%;
+    input{
+      background: lighten(#D2DFEA, 5%);
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em;
+    }
+    select{
+      // background: lighten(#D2DFEA, 5%);
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em;
+    }
+    .foodName{
+      width: 20em;
+    }
+    .foodQuantity{
+      width: 4em;
+    }
+  }
+
+
   label{
     position: relative;
     width: 2em;

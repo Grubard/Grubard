@@ -113,21 +113,35 @@ var _jQuery = require('jQuery');
 
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
-var ListController = function ListController($scope, $http, ListService) {
+var ListController = function ListController($scope, $http, ListService, $state) {
 
   var vm = this;
-  // vm.removeItem = removeItem;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;
   // vm.editItem = editItem;
 
+  vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
-  vm.items = [];
+  vm.groceryList = groceryList;
 
   function addNewItem(food) {
-    vm.items.push(food);
     ListService.addItem(food).then(function (response) {});
     $scope.food = {};
+    $state.reload();
+  }
+
+  groceryList();
+
+  function groceryList() {
+    ListService.getGroceryList().then(function (response) {
+      console.log(response);
+      vm.groceryList = response.data;
+    });
+  }
+
+  function removeItem(object) {
+    console.log(object);
+    ListService.removeFood();
   }
 
   // function editItem (object){
@@ -149,7 +163,7 @@ var ListController = function ListController($scope, $http, ListService) {
   // }
 };
 
-ListController.$inject = ['$scope', '$http', 'ListService'];
+ListController.$inject = ['$scope', '$http', 'ListService', '$state'];
 
 exports['default'] = ListController;
 module.exports = exports['default'];
@@ -344,6 +358,8 @@ var ListService = function ListService($http, SERVER, $cookies) {
   SERVER.CONFIG.headers['Access-Token'] = token;
 
   this.addItem = addItem;
+  this.getGroceryList = getGroceryList;
+  this.removeFood = removeFood;
   // this.removeItem = removeItem;
 
   function Item(foodItem) {
@@ -351,11 +367,20 @@ var ListService = function ListService($http, SERVER, $cookies) {
     this.quantity = foodItem.quantity;
     this.category = foodItem.category;
     this.preferred = foodItem.preferred;
+    this.necessity = foodItem.necessity;
   }
 
   function addItem(foodItem) {
     var i = new Item(foodItem);
-    return $http.post(url + '/grocery', i, SERVER.CONFIG);
+    return $http.post(url + '/grocery', i, token);
+  }
+
+  function getGroceryList() {
+    return $http.get(url + '/grocery', SERVER.CONFIG);
+  }
+
+  function removeFood() {
+    return $http['delete'](url + '/grocery', SERVER.CONFIG);
   }
 
   // function removeItem (foodItem) {
