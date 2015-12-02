@@ -5651,30 +5651,22 @@ body {
       color: #1eb95b; }
   .top-bar ul {
     background-color: #1eb95b; }
-  .top-bar .submenu.first-sub {
-    background-color: #1eb95b; }
-    .top-bar .submenu.first-sub .is-submenu-item:hover {
-      color: black; }
 
-.fa-plus-square-o {
-  font-size: 2.5em;
-  color: white;
-  margin-right: .2em; }
-  .fa-plus-square-o:hover {
-    background-color: #1eb95b;
-    color: #178d45; }
-
-.hide-pantry {
+.hide-user {
   display: none; }
 
-#pantry-list {
-  float: left;
+#user {
+  width: 13em;
   position: fixed;
-  width: 13em; }
-  #pantry-list p {
+  right: 0;
+  z-index: 999; }
+  #user p {
     display: inline-block; }
-  #pantry-list i {
-    display: inline-block;
-    margin-left: 1.2em; }
+  #user li:hover {
+    background-color: black;
+    color: white; }
+
+#user-btn:hover {
+  background-color: #2DDD72; }
 
 /*# sourceMappingURL=main.css.map */
