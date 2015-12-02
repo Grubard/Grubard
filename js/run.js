@@ -3,6 +3,7 @@ let run = function($rootScope, $cookies, $state, AuthService, $stateParams) {
   $rootScope.$on('$viewContentLoaded', function (event, data) {
     $(document).foundation();
   });
+<<<<<<< HEAD
 
   $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams){
 
@@ -22,6 +23,14 @@ let run = function($rootScope, $cookies, $state, AuthService, $stateParams) {
       
     }
   
+=======
+  $rootScope.$on('$stateChangeSuccess', function(){
+    let token = $cookies.get('auth_token');
+    if(!token){
+      alert("Uh oh! Looks like you aren't logged in.");
+      $state.go('root.login');
+    }
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
    
   });
   

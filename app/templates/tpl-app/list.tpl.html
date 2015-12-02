@@ -1,15 +1,73 @@
-<div class="groceryList">
+<div class="mainGroceryList">
   <h3>Current Grocery List</h3>
-    <form ng-submit="vm.addNewItem(text)">
-      <input class="addItem" ng-model="text" placeholder="Add Item to your List">
-    </form>
+    
   <ul>
-    <li ng-repeat="object in vm.items" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
+    <li>
+      <form ng-submit="vm.addNewItem(food)">
+        <input class="addItem foodName" ng-model="food.title" placeholder="New Item">
+        <select class="addItem foodQuantity" ng-model="food.quantity">
+          <option value="" disabled selected>Qty</option>  
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <select class="addItem foodCategory" ng-model="food.category">
+          <option value="" disabled selected>Category</option>  
+          <option value="Produce">Produce</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Deli">Deli</option>
+          <option value="Meats">Meats</option>
+          <option value="Baking">Baking</option>
+          <option value="Household Items">Household Items</option>
+          <option value="Frozen Foods">Frozen Foods</option>
+          <option value="Hygeine">Hygeine</option>
+          <option value="Beer">Beer</option>
+          <option value="Spices">Spices</option>
+        </select>
+      
+        <select class="addItem foodPreferred" ng-model="food.preferred">
+          <option value="" disabled selected>Preffered Amt</option>  
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+
+
+        <select class="addItem foodNecessity" ng-model="food.necessity">
+          <option value="" disabled selected>False</option>
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
+
+        <button>Submit new Item</button>
+      </form>
+    </li>
+
+    <li ng-repeat="object in vm.groceryList" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
       <input class="checkIt" type="checkbox" id="check1">
       <label for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
       
-      {{ object.item }} 
+      <strong>Item:</strong> {{ object.title }} ({{ object.quantity }})<br>
+      <!-- {{ object.preferred }} -->
+      <!-- Item Category: {{ object.category }}  -->
+
 
       <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 
@@ -19,8 +77,9 @@
   </ul>
 
 
-  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Items to Pantry</button>
-  <button class="button clearCompleted" ng-click="vm.clearCompleted()">Clear Completed Items</button>
+
+ <!--  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Items to Pantry</button>
+  <button class="button clearCompleted" ng-click="vm.clearCompleted()">Clear Completed Items</button> -->
 </div>
 
 

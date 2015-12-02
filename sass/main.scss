@@ -5,17 +5,18 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @include motion-ui-transitions;
 @include foundation-everything;
-@include orbit-slide;
-@include orbit-container;
-@include orbit-next;
-@include orbit-previous;
-@include orbit-bullets;
 
 $Blue: #3C3F95;
 $Gray: #677077;
 $lightGray: #b5b5b7;
+
 $Yellow: #f2b632;
 $Green: #2DDD72;
+$Purple: #78427E;
+$Orange: #F97F1F;
+$Red: #D02527;
+$FruitGreen: #40704E;
+
 
 body{
 
@@ -173,20 +174,22 @@ body::after {
   }
 }
 
-
-
-
-
 @media all and (max-width: 1000px) {
   .userHomePage div{
     width: 90%;
   }
 }
 
-.groceryList{
-  width: 80%;
-  border: 1px solid white;
-  margin: 2% auto;
+
+/*****************************Grocery List Page*******************/
+
+.mainGroceryList{
+  background: #D2DFEA;
+  border-radius: 10px;
+  width: 95%;
+  height: 38em;
+  margin: 1% auto;
+
   i{
     float: right;
     margin-right: 5%;
@@ -201,6 +204,9 @@ body::after {
     list-style: none;
     font-size: 1.2em;
   }
+  span{
+    margin-left: 10%;
+  }
   .button{
     text-align: center;
     display: block;
@@ -208,18 +214,37 @@ body::after {
     width: 15em;
   }
   .addItem{
-    display: block;
-    height: 2em;
-    width: 70%;
-    border: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
-    margin: 2% auto;
-    padding-left: 2%;
+    width: 10%;
   }
   .checkIt{
     display: none;
   }
+
+
+  form{
+    font-size: 1em;;
+    margin-left: 4%;
+    input{
+      background: lighten(#D2DFEA, 5%);
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em;
+    }
+    select{
+      // background: lighten(#D2DFEA, 5%);
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em;
+    }
+    .foodName{
+      width: 20em;
+    }
+    .foodQuantity{
+      width: 4em;
+    }
+  }
+
+
   label{
     position: relative;
     width: 2em;
@@ -310,9 +335,7 @@ body::after {
 /////////////
 
 .top-bar {
-
   background-color: darken($Green, 10%);
-
   font-weight: bold;
   .top-bar-right {
     .menu button {
@@ -334,42 +357,88 @@ body::after {
 
     background-color: white;
   }
-
-  .submenu.first-sub {
-    background-color: darken($Green, 10%);
-
-    .is-submenu-item:hover {
-      color: black;
-    }
-  }
-}
-.fa-plus-square-o {
-  font-size: 2.5em;
-  color: white;
-  margin-right: .2em;
-  &:hover {
-    background-color: darken($Green, 10%);
-    color: darken($Green, 20%);
-  }
 }
 
-.hide-pantry {
+.hide-user {
   display: none;
 }
 
-#pantry-list {
-  float: left;
+#user {
+  width: 15em;
   position: fixed;
-  width: 13em;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  h5 {
+    text-align: center;
+  }
   p {
     display: inline-block;
   }
-  i {
+  li {
+    padding: .5em;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+    a {
+      width: 85%;
+      display: inline-block;
+    }
+    i {
+      display: inline-block;
+      margin-right: .5em;
+    }
+  }
+  
+
+}
+
+#user-btn {
+  &:hover {
+    background-color: $Green;
+  }
+}
+
+#alert {
+  width: 13em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  h5 {
+    text-align: center;
+  }
+  p {
     display: inline-block;
-    margin-left: 1.2em;
+  }
+  li {
+    padding: .5em;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+  a {
+    padding: 0;
   }
 
 }
 
+#alert-btn {
+  &:hover {
+    background-color: $Green;
+  }
+}
 
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em;
+  &:hover {
+    background-color: $Green;
+  }
 
+}

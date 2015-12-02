@@ -5396,6 +5396,8 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
+<<<<<<< HEAD
+=======
 width: 100%;
 max-height: 100%;
 position: relative;
@@ -5423,6 +5425,10 @@ button {
   button.is-active {
     background-color: #8a8a8a; }
 
+<<<<<<< HEAD
+=======
+>>>>>>> isaac
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5523,45 +5529,59 @@ body::after {
   .userHomePage div {
     width: 90%; } }
 
-.groceryList {
-  width: 80%;
-  border: 1px solid white;
-  margin: 2% auto; }
-  .groceryList i {
+/*****************************Grocery List Page*******************/
+.mainGroceryList {
+  background: #D2DFEA;
+  border-radius: 10px;
+  width: 95%;
+  height: 38em;
+  margin: 1% auto; }
+  .mainGroceryList i {
     float: right;
     margin-right: 5%;
     line-height: 30px;
     color: #D41617; }
-  .groceryList h3 {
+  .mainGroceryList h3 {
     text-align: center; }
-  .groceryList ul {
+  .mainGroceryList ul {
     padding-top: 5%;
     list-style: none;
     font-size: 1.2em; }
-  .groceryList .button {
+  .mainGroceryList span {
+    margin-left: 10%; }
+  .mainGroceryList .button {
     text-align: center;
     display: block;
     margin: 2% auto;
     width: 15em; }
-  .groceryList .addItem {
-    display: block;
-    height: 2em;
-    width: 70%;
-    border: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
-    margin: 2% auto;
-    padding-left: 2%; }
-  .groceryList .checkIt {
+  .mainGroceryList .addItem {
+    width: 10%; }
+  .mainGroceryList .checkIt {
     display: none; }
-  .groceryList label {
+  .mainGroceryList form {
+    font-size: 1em;
+    margin-left: 4%; }
+    .mainGroceryList form input {
+      background: #e3ebf2;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em; }
+    .mainGroceryList form select {
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em; }
+    .mainGroceryList form .foodName {
+      width: 20em; }
+    .mainGroceryList form .foodQuantity {
+      width: 4em; }
+  .mainGroceryList label {
     position: relative;
     width: 2em;
     height: 2em;
     border: 1px solid #3C3F95;
     border-radius: 100px;
     vertical-align: -25%; }
-  .groceryList label:hover:before {
+  .mainGroceryList label:hover:before {
     position: absolute;
     right: 3px;
     top: -4px;
@@ -5618,30 +5638,70 @@ body::after {
       color: #1eb95b; }
   .top-bar ul {
     background-color: white; }
+<<<<<<< HEAD
   .top-bar .submenu.first-sub {
     background-color: #1eb95b; }
     .top-bar .submenu.first-sub .is-submenu-item:hover {
       color: black; }
+=======
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
 
-.fa-plus-square-o {
-  font-size: 2.5em;
-  color: white;
-  margin-right: .2em; }
-  .fa-plus-square-o:hover {
-    background-color: #1eb95b;
-    color: #178d45; }
-
-.hide-pantry {
+.hide-user {
   display: none; }
 
-#pantry-list {
-  float: left;
+#user {
+  width: 15em;
   position: fixed;
-  width: 13em; }
-  #pantry-list p {
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #user h5 {
+    text-align: center; }
+  #user p {
     display: inline-block; }
-  #pantry-list i {
-    display: inline-block;
-    margin-left: 1.2em; }
+  #user li {
+    padding: .5em; }
+    #user li:hover {
+      background-color: black;
+      color: white; }
+    #user li a {
+      width: 85%;
+      display: inline-block; }
+    #user li i {
+      display: inline-block;
+      margin-right: .5em; }
+
+#user-btn:hover {
+  background-color: #2DDD72; }
+
+#alert {
+  width: 13em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #alert h5 {
+    text-align: center; }
+  #alert p {
+    display: inline-block; }
+  #alert li {
+    padding: .5em; }
+    #alert li:hover {
+      background-color: black;
+      color: white; }
+  #alert a {
+    padding: 0; }
+
+#alert-btn:hover {
+  background-color: #2DDD72; }
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em; }
+  .users-list:hover {
+    background-color: #2DDD72; }
 
 /*# sourceMappingURL=main.css.map */
