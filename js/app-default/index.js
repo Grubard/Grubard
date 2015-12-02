@@ -3,6 +3,7 @@ import 'angular-cookies';
 import '../app-core/index';
 
 
+
 import LoginController from './controllers/login.controller';
 import UserHomeController from './controllers/userHomeController';
 import ListController from './controllers/listController';
@@ -18,6 +19,9 @@ import userList from './directives/userlist.dir';
 
 angular
   .module('app.default', ['app.core', 'ngCookies'])
+
+  .service('AuthService', AuthService)
+
   .constant('SERVER', {
     URL:'http://intense-refuge-9476.herokuapp.com',
     CONFIG: {

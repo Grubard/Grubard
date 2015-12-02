@@ -5396,6 +5396,42 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+width: 100%;
+max-height: 100%;
+position: relative;
+margin: 0;
+overflow: hidden;
+list-style: none;
+left: auto;
+right: 0;
+left: 0;
+[data-whatinput='mouse'] & {
+  outline: 0; }
+
+position: relative;
+margin-top: 0.8rem;
+margin-bottom: 0.8rem;
+text-align: center;
+button {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.1rem;
+  background-color: #cacaca;
+  border-radius: 50%; }
+  button:hover {
+    background-color: #8a8a8a; }
+  button.is-active {
+    background-color: #8a8a8a; }
+
+<<<<<<< HEAD
+=======
+>>>>>>> isaac
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
+>>>>>>> master
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5606,6 +5642,13 @@ body::after {
       color: #1eb95b; }
   .top-bar ul {
     background-color: white; }
+<<<<<<< HEAD
+  .top-bar .submenu.first-sub {
+    background-color: #1eb95b; }
+    .top-bar .submenu.first-sub .is-submenu-item:hover {
+      color: black; }
+=======
+>>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
 
 .hide-user {
   display: none; }
