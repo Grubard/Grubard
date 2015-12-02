@@ -10,7 +10,7 @@ import LoginController from './controllers/login.controller';
 import UserHomeController from './controllers/userHomeController';
 import ListController from './controllers/listController';
 import AddUserController from './controllers/add.user.controller';
-// import ... from './services/...';
+import pantry from './directives/pantry.dir';
 // import ... from './directives/...';
 
 angular
@@ -21,7 +21,7 @@ angular
   .controller('UserHomeController', UserHomeController)
   .controller('ListController', ListController)
   .controller('AddUserController', AddUserController)
-  // .service('...', ...)
+  .directive('pantry', pantry)
   // .directive('...', ...)
 ;
   
