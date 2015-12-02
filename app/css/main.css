@@ -5423,80 +5423,76 @@ button {
   button.is-active {
     background-color: #8a8a8a; }
 
-body {
-  background-color: #2DDD72;
-  background-image: linear-gradient(#2DDD72, #b5b5b7);
-  background: #2DDD72;
-  background: linear-gradient(#2DDD72, #b5b5b7);
-  height: 100vh; }
+body::after {
+  content: "";
+  background: url("../images/background.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
 
+/*********************Landing Page******************************/
 .landingPage {
+  background: #D2DFEA;
+  border-radius: 10px;
+  width: 70%;
+  opacity: .9;
+  margin: 1% auto 0 auto;
+  vertical-align: middle; }
+
+.logo img {
+  display: block;
   width: 100%;
-  height: 85vh;
-  font-size: 5em; }
-  .landingPage .computerImage {
-    position: relative;
-    width: 100%;
-    background-image: url("../images/macbook.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding-bottom: 82%; }
-  .landingPage .orbit {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    font-size: .2em; }
-  .landingPage .landingRight {
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    margin-bottom: .5em;
-    margin-top: 1em; }
-    .landingPage .landingRight h5 {
-      padding: 0;
-      color: #3C3F95; }
-  .landingPage .create {
-    background: inherit;
-    border: 3px solid #f2b632;
-    border-radius: 5px;
-    font-size: 0.4em;
-    margin-top: 2em; }
-    .landingPage .create:hover {
-      color: #3C3F95;
-      border: 3px solid #3C3F95; }
-  .landingPage .bottom {
-    font-size: 0.3em;
-    color: white;
-    text-align: center;
-    margin-top: 10%; }
-    .landingPage .bottom ul {
-      list-style: none; }
-    .landingPage .bottom li {
-      display: inline-block;
-      padding-right: 5%;
-      color: white; }
-      .landingPage .bottom li:hover {
-        color: #3C3F95; }
-<<<<<<< HEAD
-=======
+  margin: 0 auto;
+  padding-top: 3%; }
 
-.landing-footer {
-  background-color: lightgray;
-  height: 3em;
-  width: 100%;
-  display: block; }
+.productDescription {
+  padding-top: 1%;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto; }
+  .productDescription img {
+    width: 15%;
+    display: inline-block;
+    margin-right: 5%; }
 
-.orbit-container {
-  padding-bottom: 10%; }
+@media all and (max-width: 1050px) and (min-width: 320px) {
+  .productDescription img {
+    display: block;
+    width: 35%;
+    margin: 0 auto; } }
 
+.signUp button {
+  display: block;
+  margin: 2% auto 3% auto; }
+
+.landingInfo {
+  text-align: center;
+  padding-bottom: 1em; }
+  .landingInfo ul {
+    list-style: none; }
+  .landingInfo li {
+    display: inline-block;
+    font-size: 1.2em;
+    margin-right: 1em; }
+    .landingInfo li a {
+      text-decoration: none;
+      color: black; }
+
+/*********************LogIn Page******************************/
 .login {
   margin-top: 10px;
   text-align: center; }
   .login a {
     font-size: 2.5em;
     background-color: #EEEEEE; }
->>>>>>> master
 
 .addUser {
   width: 50%;
@@ -5589,47 +5585,6 @@ body {
 
 .notCrossedOut {
   text-decoration: none; }
-
-.logo img {
-  display: block;
-  margin: 5% auto;
-  width: 60%; }
-
-.slideArea {
-  display: block;
-  margin: 0 auto;
-  padding: 5%; }
-  .slideArea .orbit-slide {
-    width: 70%;
-    margin: 0 auto; }
-  .slideArea .descriptorImages {
-    text-align: center; }
-    .slideArea .descriptorImages img {
-      display: inline-block; }
-    .slideArea .descriptorImages div {
-      display: inline-block;
-      padding-right: 1em; }
-
-.signUp {
-  margin-top: -1em; }
-  .signUp button {
-    border-radius: 3px;
-    background: inherit;
-    border: 1px solid #f2b632;
-    font-size: 1em; }
-
-.bottom ul {
-  list-style: none;
-  text-align: center; }
-
-.bottom li {
-  padding-right: 3em;
-  display: inline-block;
-  font-size: 1em; }
-  .bottom li a {
-    color: #3C3F95; }
-    .bottom li a:hover {
-      color: white; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
