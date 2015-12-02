@@ -18,15 +18,7 @@ let ListController = function($scope, $http, ListService, $state) {
     $scope.food = {};
     $state.reload();
 
-<<<<<<< HEAD
 
-
-  function addNewItem (text) {
-    let newItem = {item: text};
-    vm.items.push(newItem);
-    $scope.text = '';
-=======
->>>>>>> 5df73aeccd6454e84ae207296815f36a140a36c7
   }
 
 

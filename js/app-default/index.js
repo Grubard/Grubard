@@ -19,9 +19,6 @@ import userList from './directives/userlist.dir';
 
 angular
   .module('app.default', ['app.core', 'ngCookies'])
-
-  .service('AuthService', AuthService)
-
   .constant('SERVER', {
     URL:'http://intense-refuge-9476.herokuapp.com',
     CONFIG: {
