@@ -5396,6 +5396,47 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
+<<<<<<< HEAD
+=======
+width: 100%;
+max-height: 100%;
+position: relative;
+margin: 0;
+overflow: hidden;
+list-style: none;
+left: auto;
+right: 0;
+left: 0;
+[data-whatinput='mouse'] & {
+  outline: 0; }
+
+position: relative;
+margin-top: 0.8rem;
+margin-bottom: 0.8rem;
+text-align: center;
+button {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.1rem;
+  background-color: #cacaca;
+  border-radius: 50%; }
+  button:hover {
+    background-color: #8a8a8a; }
+  button.is-active {
+    background-color: #8a8a8a; }
+
+<<<<<<< HEAD
+body {
+  height: 100vh;
+  position: relative; }
+
+body::after {
+  background-image: url("https://growerssupply.files.wordpress.com/2014/05/ballard-market-potatoes-008.jpg");
+  background-size: 100%;
+  opacity: 50%;
+  z-index: -1;
+=======
+>>>>>>> master
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5404,12 +5445,17 @@ body::after {
   -o-background-size: cover;
   background-size: cover;
   opacity: 0.4;
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+<<<<<<< HEAD
+  position: absolute; }
+=======
   position: absolute;
   z-index: -1; }
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
 
 /*********************Landing Page******************************/
 .landingPage {
@@ -5441,6 +5487,59 @@ body::after {
     display: block;
     width: 35%;
     margin: 0 auto; } }
+<<<<<<< HEAD
+=======
+=======
+  height: 85vh;
+  font-size: 5em; }
+  .landingPage .computerImage {
+    position: relative;
+    width: 100%;
+    background-image: url("../images/macbook.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-bottom: 82%; }
+  .landingPage .orbit {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    font-size: .2em; }
+  .landingPage .landingRight {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-bottom: .5em;
+    margin-top: 1em; }
+    .landingPage .landingRight h5 {
+      padding: 0;
+      color: #3C3F95; }
+  .landingPage .create {
+    background: inherit;
+    border: 3px solid #f2b632;
+    border-radius: 5px;
+    font-size: 0.4em;
+    margin-top: 2em; }
+    .landingPage .create:hover {
+      color: #3C3F95;
+      border: 3px solid #3C3F95; }
+  .landingPage .bottom {
+    font-size: 0.3em;
+    color: white;
+    text-align: center;
+    margin-top: 10%; }
+    .landingPage .bottom ul {
+      list-style: none; }
+    .landingPage .bottom li {
+      display: inline-block;
+      padding-right: 5%;
+      color: white; }
+      .landingPage .bottom li:hover {
+        color: #3C3F95; }
+<<<<<<< HEAD
+=======
+>>>>>>> master
+>>>>>>> master
 
 .signUp button {
   display: block;
@@ -5458,6 +5557,7 @@ body::after {
     .landingInfo li a {
       text-decoration: none;
       color: black; }
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
 
 /*********************LogIn Page******************************/
 .login {
@@ -5581,20 +5681,31 @@ body::after {
   opacity: 0; }
 
 .top-bar {
+<<<<<<< HEAD
+  background-color: white;
+=======
   background-color: #1eb95b;
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
   font-weight: bold; }
   .top-bar .top-bar-right .menu button:hover {
     background-color: #1eb95b; }
   .top-bar a {
-    color: white;
+    color: black;
     border-radius: .2em; }
     .top-bar a:hover {
       background-color: white;
       color: #1eb95b; }
   .top-bar ul {
+<<<<<<< HEAD
+    background-color: white; }
+  .top-bar .submenu.first-sub {
+    background-color: white; }
+=======
     background-color: #1eb95b; }
+<<<<<<< HEAD
   .top-bar .submenu.first-sub {
     background-color: #1eb95b; }
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
     .top-bar .submenu.first-sub .is-submenu-item:hover {
       color: black; }
 
@@ -5607,16 +5718,24 @@ body::after {
     color: #178d45; }
 
 .hide-pantry {
+=======
+
+.hide-user {
+>>>>>>> isaac
   display: none; }
 
-#pantry-list {
-  float: left;
+#user {
+  width: 13em;
   position: fixed;
-  width: 13em; }
-  #pantry-list p {
+  right: 0;
+  z-index: 999; }
+  #user p {
     display: inline-block; }
-  #pantry-list i {
-    display: inline-block;
-    margin-left: 1.2em; }
+  #user li:hover {
+    background-color: black;
+    color: white; }
+
+#user-btn:hover {
+  background-color: #2DDD72; }
 
 /*# sourceMappingURL=main.css.map */
