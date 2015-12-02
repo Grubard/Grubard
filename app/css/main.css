@@ -5423,6 +5423,17 @@ button {
   button.is-active {
     background-color: #8a8a8a; }
 
+<<<<<<< HEAD
+body {
+  height: 100vh;
+  position: relative; }
+
+body::after {
+  background-image: url("https://growerssupply.files.wordpress.com/2014/05/ballard-market-potatoes-008.jpg");
+  background-size: 100%;
+  opacity: 50%;
+  z-index: -1;
+=======
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5431,12 +5442,17 @@ body::after {
   -o-background-size: cover;
   background-size: cover;
   opacity: 0.4;
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+<<<<<<< HEAD
+  position: absolute; }
+=======
   position: absolute;
   z-index: -1; }
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
 
 /*********************Landing Page******************************/
 .landingPage {
@@ -5516,6 +5532,8 @@ body::after {
       color: white; }
       .landingPage .bottom li:hover {
         color: #3C3F95; }
+<<<<<<< HEAD
+=======
 >>>>>>> master
 
 .signUp button {
@@ -5534,6 +5552,7 @@ body::after {
     .landingInfo li a {
       text-decoration: none;
       color: black; }
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
 
 /*********************LogIn Page******************************/
 .login {
@@ -5655,20 +5674,30 @@ body::after {
   opacity: 0; }
 
 .top-bar {
+<<<<<<< HEAD
+  background-color: white;
+=======
   background-color: #1eb95b;
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
   font-weight: bold; }
   .top-bar .top-bar-right .menu button:hover {
     background-color: #1eb95b; }
   .top-bar a {
-    color: white;
+    color: black;
     border-radius: .2em; }
     .top-bar a:hover {
       background-color: white;
       color: #1eb95b; }
   .top-bar ul {
+<<<<<<< HEAD
+    background-color: white; }
+  .top-bar .submenu.first-sub {
+    background-color: white; }
+=======
     background-color: #1eb95b; }
   .top-bar .submenu.first-sub {
     background-color: #1eb95b; }
+>>>>>>> e04bc59c558f241d182c7036de62f16d3843150c
     .top-bar .submenu.first-sub .is-submenu-item:hover {
       color: black; }
 

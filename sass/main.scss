@@ -19,6 +19,7 @@ $Green: #2DDD72;
 
 body{
 
+
 }
 
 body::after {
@@ -38,6 +39,7 @@ body::after {
 }
 
 /*********************Landing Page******************************/
+
 
 
 .landingPage{
@@ -308,7 +310,9 @@ body::after {
 /////////////
 
 .top-bar {
+
   background-color: darken($Green, 10%);
+
   font-weight: bold;
   .top-bar-right {
     .menu button {
@@ -319,7 +323,7 @@ body::after {
   }
   
   a {
-    color: white;
+    color: black;
     border-radius: .2em;
     &:hover {
       background-color: white;
@@ -327,10 +331,13 @@ body::after {
     }
   }
   ul {
-    background-color: darken($Green, 10%);
+
+    background-color: white;
   }
+
   .submenu.first-sub {
     background-color: darken($Green, 10%);
+
     .is-submenu-item:hover {
       color: black;
     }
