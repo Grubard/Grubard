@@ -13,7 +13,6 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   }) 
   .state('landing',{
     url: '/',
-    // controller: '... as vm',
     templateUrl: 'templates/tpl-app/landing.tpl.html',
     authenticate: false
   })
@@ -37,7 +36,7 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('root.pantry',{
     url: '/pantry',
-    // controller: '... as vm',
+    controller: 'PantryController as vm',
     templateUrl: 'templates/tpl-app/pantry.tpl.html',
     authenticate: true
   })
@@ -49,13 +48,11 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('root.contact',{
     url: '/contact',
-    //controller,
     templateUrl: 'templates/tpl-app/contact.tpl.html',
     authenticate: false
   })
   .state('root.about',{
     url: '/about',
-    //controller,
 
     templateUrl: 'templates/tpl-app/about.tpl.html',
     authenticate: false
@@ -65,7 +62,6 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'templates/tpl-app/accountSettings.tpl.html'
     
   });
-  /////** Add new .states here **/////
 
 
 };

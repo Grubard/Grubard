@@ -5474,19 +5474,35 @@ body::after {
     display: inline-block;
     width: 40%; }
   .loginPage .formStuff {
+    vertical-align: top;
+    margin-top: 5%;
     font-size: 1.5em;
-    padding-top: 5%;
     margin-left: 5%; }
     .loginPage .formStuff form {
       width: 80%; }
+    .loginPage .formStuff .logIn {
+      border-bottom: 1px solid #b5b5b7; }
   .loginPage .rightPanel {
     vertical-align: bottom;
     font-size: 1.3em;
     font-style: italic;
     text-align: center; }
     .loginPage .rightPanel img {
-      vertical-align: middle;
       width: 70%; }
+  .loginPage .newButton {
+    font-size: 0.8em;
+    margin-top: 3%;
+    margin-left: 21%; }
+  .loginPage .createAcct {
+    display: none; }
+  .loginPage .newSmartCart {
+    display: none; }
+  .loginPage .addOthers {
+    display: none; }
+  .loginPage .shown {
+    display: inline-block; }
+  .loginPage .hidden {
+    display: none; }
 
 /*********************User Page******************************/
 .userHomePage {
