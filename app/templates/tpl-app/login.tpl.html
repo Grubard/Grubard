@@ -1,34 +1,32 @@
+<div class="loginPage">
+
+  <div class="loginBlock formStuff">
+    <form ng-submit="vm.login(user)" class="logIn">
+      <p>Log In to Existing Account</p>
+      <input type="text" ng-model="user.username" placeholder="Username">
+      <input type="password" ng-model="user.password" placeholder="Password">
+      <button class="button">Log In</button>
+    </form>
 
 
-<div class="login row">
-<ul class="vertical menu" data-accordion-menu>
-  <li class="small-12 large-6 columns">
-    <a href="#">Log In</a>
-    <ul class="menu vertical nested">
-      <li>
-          <form ng-submit="vm.login(user)">
-          <input type="text" ng-model="user.username" placeholder="Username">
-          <input type="password" ng-model="user.password" placeholder="Password">
-          <button data-close aria-label="Close reveal" class="button">Log In</button>
-        </form>
-      </li>
-  </ul>
-</li>
-<li class="small-12 large-6 columns">
-  <a href="#">Sign Up</a>
-    <ul class="menu vertical nested">
-      <li>
-         <form ng-submit="vm.signUp(newUser)">
-            <input type="email" ng-model="newUser.email" placeholder="Email">
-            <input type="text" ng-model="newUser.username" placeholder="Username">
-            
-            <input type="password" ng-model="newUser.password" placeholder="Password">
-            <button class="button">Sign Up</button>
-         </form>
-      </li>
-    </ul>
-  </li>
-</ul>
+    <form ng-submit="vm.signUp(newUser)" class="createAcct">
+      <p>Create a new Account</p>
+      <input type="email" ng-model="newUser.email" placeholder="Email">
+      <input type="text" ng-model="newUser.username" placeholder="Username"> 
+      <input type="password" ng-model="newUser.password" placeholder="Password">
+      <button class="button">Sign Up</button>
+    </form>
+  </div>
+
+  <div class="loginBlock rightPanel">
+    <img ng-src="../images/logo.png">
+    <p>smartCart keeps track of what is hiding
+      in your pantry, warns users when items are
+      added to their grocery list that they already
+      have in stock, and updates your grocery
+      list when necessity items are running low.</p>
+  </div>
+
 </div>      
 
 

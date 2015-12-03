@@ -5396,14 +5396,11 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
-<<<<<<< HEAD
-=======
 body {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none; }
 
->>>>>>> isaac
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
@@ -5468,17 +5465,29 @@ body::after {
       color: black; }
 
 /*********************LogIn Page******************************/
-.login {
-  margin-top: 10px;
-  text-align: center; }
-  .login a {
-    font-size: 2.5em;
-    background-color: #EEEEEE; }
+.loginPage {
+  width: 100%;
+  height: 100vh;
+  background: #D2DFEA; }
+  .loginPage .loginBlock {
+    display: inline-block;
+    width: 40%; }
+  .loginPage .formStuff {
+    font-size: 1.5em;
+    padding-top: 5%;
+    margin-left: 5%; }
+    .loginPage .formStuff form {
+      width: 80%; }
+  .loginPage .rightPanel {
+    vertical-align: bottom;
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: center; }
+    .loginPage .rightPanel img {
+      vertical-align: middle;
+      width: 70%; }
 
-.addUser {
-  width: 50%;
-  margin: 0 auto; }
-
+/*********************User Page******************************/
 .userHomePage {
   text-align: center; }
   .userHomePage a {
