@@ -5447,9 +5447,10 @@ body::after {
     width: 35%;
     margin: 0 auto; } }
 
-.signUp button {
+.signUp a {
   display: block;
-  margin: 2% auto 3% auto; }
+  margin: 2% auto 3% auto;
+  width: 20%; }
 
 .landingInfo {
   text-align: center;
@@ -5465,41 +5466,70 @@ body::after {
       color: black; }
 
 /*********************LogIn Page******************************/
-.login {
-  margin-top: 10px;
-  text-align: center; }
-  .login a {
-    font-size: 2.5em;
-    background-color: #EEEEEE; }
-
-.addUser {
-  width: 50%;
-  margin: 0 auto; }
-
-.userHomePage {
-  text-align: center; }
-  .userHomePage a {
-    color: #429DE5; }
-  .userHomePage div {
+.loginPage {
+  width: 100%;
+  height: 100vh;
+  background: #D2DFEA; }
+  .loginPage .loginBlock {
     display: inline-block;
-    margin: 3%;
-    border-radius: 5px;
-    height: 30em;
     width: 40%; }
-    .userHomePage div h3 {
-      border-bottom: 1px solid #3C3F95;
-      width: 75%;
-      margin: 2% auto; }
-    .userHomePage div:hover {
-      border: 2px solid #3C3F95; }
-  .userHomePage .pantry {
-    border: 1px solid #3C3F95; }
-  .userHomePage .groceryList {
-    border: 1px solid #3C3F95; }
+  .loginPage .formStuff {
+    vertical-align: top;
+    margin-top: 5%;
+    font-size: 1.5em;
+    margin-left: 5%; }
+    .loginPage .formStuff form {
+      width: 80%; }
+    .loginPage .formStuff .logIn {
+      border-bottom: 1px solid #b5b5b7; }
+  .loginPage .rightPanel {
+    vertical-align: bottom;
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: center; }
+    .loginPage .rightPanel img {
+      width: 70%; }
+  .loginPage .newButton {
+    font-size: 0.8em;
+    margin-top: 3%;
+    margin-left: 21%; }
+  .loginPage .createAcct {
+    display: none; }
+  .loginPage .newSmartCart {
+    display: none; }
+  .loginPage .addOthers {
+    display: none; }
+  .loginPage .shown {
+    display: inline-block; }
+  .loginPage .hidden {
+    display: none; }
+
+/*********************User Page******************************/
+.userHomePage {
+  float: left; }
+
+.mainList {
+  float: left; }
 
 @media all and (max-width: 1000px) {
   .userHomePage div {
     width: 90%; } }
+
+.groceryList {
+  display: none; }
+
+.pantryList {
+  display: none; }
+
+.shown {
+  display: inline-block; }
+
+.title {
+  float: left;
+  margin: 5px; }
+
+.title:hover {
+  cursor: pointer; }
 
 /*****************************Grocery List Page*******************/
 .mainGroceryList {

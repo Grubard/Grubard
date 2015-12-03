@@ -1,6 +1,6 @@
 import $ from 'jQuery';
 
-let ListController = function($scope, $http, ListService, $state) {
+let PantryController = function($scope, $http, PantryService, $state) {
   
 
   let vm = this;
@@ -10,10 +10,10 @@ let ListController = function($scope, $http, ListService, $state) {
 
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
-  vm.groceryList = groceryList;
+  vm.pantryList = pantryList;
 
   function addNewItem (food) {
-    ListService.addItem(food).then((response) => {
+    PantryService.addItem(food).then((response) => {
     });
     $scope.food = {};
     $state.reload();
@@ -21,17 +21,17 @@ let ListController = function($scope, $http, ListService, $state) {
 
 
 
-  groceryList();
-  function groceryList() {
-    ListService.getGroceryList().then( (response) => {
+  pantryList();
+  function pantryList() {
+    PantryService.getPantryList().then( (response) => {
       console.log(response);
-      vm.groceryList = response.data;
+      vm.pantryList = response.data;
     });
   }
 
   function removeItem (object) {
     console.log(object.id);
-    ListService.removeFood(object.id);
+    PantryService.removeFood(object.id);
     setTimeout( function() {
       $state.reload();
     },100);
@@ -58,6 +58,6 @@ let ListController = function($scope, $http, ListService, $state) {
 
 };
 
-ListController.$inject = ['$scope', '$http', 'ListService', '$state'];
+PantryController.$inject = ['$scope', '$http', 'PantryService', '$state'];
 
-export default ListController;
+export default PantryController;

@@ -1,15 +1,37 @@
-<div class="userHomePage">
-  <a href="/#pantry"><div class="pantry">
-    <h3>Pantry Quick View</h3>
-    <h4>Click on the pantry to view details + edit</h4>
+<div class = "row">
+  <div class="userHomePage small-6">
+    <a href="/#pantry">
+      <div class="pantry">
+        <h3>Pantry Quick View</h3>
+        <h4>Click on the pantry to view details + edit</h4>
+      </div>
+    </a>
+    <a href="/#list">
+      <div>
+        <h3>Grocery List</h3>
+        <h4>Click on the grocery list to view details + edit</h4>
+      </div>
+    </a>
+  </div>
 
-  </div></a>
-
-  <a href="/#list"><div class="groceryList">
-    <h3>Grocery List</h3>
-    <h4>Click on the grocery list to view details + edit</h4>
-
-
-  </div></a>
+  <div class="userHomePage small-6">
+    <div class="mainList">
+      <h3 class="grocTitle title">Groceries</h3><h3 class="panTitle title">Pantry</h3>
+      <div class="groceryList shown">
+        <ul>
+          <li ng-repeat="i in vm.items">{{i.title}} {{i.quantity}}</li>
+        </ul>
+      </div>  
+    </div>
+    <div class="mainList">
+      
+      <div class="pantryList">
+        <ul>
+          <li ng-repeat="i in vm.pantryItems">{{i.title}} {{i.quantity}}</li>
+        </ul>
+      </div>
+        
+      
+    </div>
+  </div>
 </div>
-
