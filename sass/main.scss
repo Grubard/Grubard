@@ -158,31 +158,10 @@ body::after {
 
 
 .userHomePage{
-  text-align: center;
-  a{
-    color: #429DE5;
-  }
-  div{
-    display: inline-block;
-    margin: 3%;
-    border-radius: 5px;
-    height: 30em;
-    width: 40%;
-    h3{
-      border-bottom: 1px solid $Blue;
-      width: 75%;
-      margin: 2% auto;
-    }
-    &:hover{
-      border: 2px solid $Blue;
-    }
-  }
-  .pantry{
-    border: 1px solid $Blue;
-  }
-  .groceryList{
-    border: 1px solid $Blue;
-  }
+  float: left;
+}
+.mainList{
+  float: left;
 }
 
 @media all and (max-width: 1000px) {
@@ -190,7 +169,23 @@ body::after {
     width: 90%;
   }
 }
+.groceryList{
+  display: none;
+}
+.pantryList{
+  display: none;
+}
+.shown{
+  display: inline-block;
+}
+.title{
+  float: left;
+  margin: 5px;
 
+}
+  .title:hover{
+    cursor: pointer;
+  }
 
 /*****************************Grocery List Page*******************/
 
