@@ -210,9 +210,32 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _jQuery = require('jQuery');
+
+var _jQuery2 = _interopRequireDefault(_jQuery);
+
 var LoginController = function LoginController($state, $http, $cookies, AuthService) {
+
   var vm = this;
   var url = 'http://intense-refuge-9476.herokuapp.com';
+
+  vm.showCreateNew = showCreateNew;
+  vm.createSmartCart = createSmartCart;
+
+  function showCreateNew() {
+    (0, _jQuery2['default'])('.logIn').addClass('hidden');
+    (0, _jQuery2['default'])('.newSmartCart').addClass('shown');
+    (0, _jQuery2['default'])('.newButton').addClass('hidden');
+  }
+
+  function createSmartCart() {
+    (0, _jQuery2['default'])('.createAcct').addClass('shown');
+    (0, _jQuery2['default'])('.newSmartCart').addClass('hidden');
+  }
+
   vm.login = function (user) {
     console.log(user);
 
@@ -232,6 +255,8 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
       $cookies.put('username', res.data.user.username);
       $state.transitionTo('root.home');
     });
+    (0, _jQuery2['default'])('.createAcct').addClass('hidden');
+    (0, _jQuery2['default'])('.addOthers').addClass('shown');
   };
 };
 
@@ -239,7 +264,7 @@ LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService'];
 exports['default'] = LoginController;
 module.exports = exports['default'];
 
-},{}],7:[function(require,module,exports){
+},{"jQuery":28}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {

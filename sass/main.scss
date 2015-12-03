@@ -120,11 +120,15 @@ body::after {
     width: 40%;
   }
   .formStuff{
+    vertical-align: top;
+    margin-top: 5%;
     font-size: 1.5em;
-    padding-top: 5%;
     margin-left: 5%;
     form{
       width: 80%;
+    }
+    .logIn{
+      border-bottom: 1px solid $lightGray;
     }
   }
   .rightPanel{
@@ -133,10 +137,32 @@ body::after {
     font-style: italic;
     text-align: center;
     img{
-      vertical-align: middle;
       width: 70%;
     }
   }
+  
+  .newButton{
+    font-size: 0.8em;
+    margin-top: 3%;
+    margin-left: 21%;
+  }
+
+  .createAcct{
+    display: none;
+  }
+  .newSmartCart{
+    display: none;
+  }
+  .addOthers{
+    display: none;
+  }
+  .shown{
+    display: inline-block;
+  }
+  .hidden{
+    display: none;
+  }
+
 
 
 

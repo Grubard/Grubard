@@ -1,6 +1,27 @@
+import $ from 'jQuery';
+
 let LoginController = function($state, $http, $cookies, AuthService){
+  
+
+
   let vm = this;
   let url='http://intense-refuge-9476.herokuapp.com';
+
+  vm.showCreateNew = showCreateNew;
+  vm.createSmartCart = createSmartCart;
+
+  function showCreateNew () {
+    $('.logIn').addClass('hidden');
+    $('.newSmartCart').addClass('shown');
+    $('.newButton').addClass('hidden');
+  }
+
+  function createSmartCart () {
+    $('.createAcct').addClass('shown');
+    $('.newSmartCart').addClass('hidden');
+  }
+
+
   vm.login = function(user){
     console.log(user);
     
@@ -25,6 +46,8 @@ let LoginController = function($state, $http, $cookies, AuthService){
       $cookies.put('username', res.data.user.username);
       $state.transitionTo('root.home');
     });
+    $('.createAcct').addClass('hidden');
+    $('.addOthers').addClass('shown');
   };
 
 
