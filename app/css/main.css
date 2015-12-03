@@ -5504,6 +5504,19 @@ body::after {
   .loginPage .hidden {
     display: none; }
 
+.contact {
+  text-align: center;
+  margin: 20px auto; }
+  .contact a {
+    font-size: 1.2em;
+    font-style: italic;
+    color: black; }
+  .contact img {
+    width: 15%;
+    border-radius: 100%; }
+  .contact .contactUs {
+    float: left; }
+
 /*********************User Page******************************/
 .userHomePage {
   float: left; }
