@@ -5506,29 +5506,30 @@ body::after {
 
 /*********************User Page******************************/
 .userHomePage {
-  text-align: center; }
-  .userHomePage a {
-    color: #429DE5; }
-  .userHomePage div {
-    display: inline-block;
-    margin: 3%;
-    border-radius: 5px;
-    height: 30em;
-    width: 40%; }
-    .userHomePage div h3 {
-      border-bottom: 1px solid #3C3F95;
-      width: 75%;
-      margin: 2% auto; }
-    .userHomePage div:hover {
-      border: 2px solid #3C3F95; }
-  .userHomePage .pantry {
-    border: 1px solid #3C3F95; }
-  .userHomePage .groceryList {
-    border: 1px solid #3C3F95; }
+  float: left; }
+
+.mainList {
+  float: left; }
 
 @media all and (max-width: 1000px) {
   .userHomePage div {
     width: 90%; } }
+
+.groceryList {
+  display: none; }
+
+.pantryList {
+  display: none; }
+
+.shown {
+  display: inline-block; }
+
+.title {
+  float: left;
+  margin: 5px; }
+
+.title:hover {
+  cursor: pointer; }
 
 /*****************************Grocery List Page*******************/
 .mainGroceryList {

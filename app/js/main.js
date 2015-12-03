@@ -340,17 +340,41 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var UserHomeController = function UserHomeController($cookies, AuthService) {
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var UserHomeController = function UserHomeController($cookies, ListService) {
+  var vm = this;
   var token = $cookies.get('auth_token');
   var user = $cookies.get('username');
+  (0, _jquery2['default'])('.grocTitle').click(function () {
+    (0, _jquery2['default'])('.groceryList').addClass('shown');
+    (0, _jquery2['default'])('.pantryList').removeClass('shown');
+  });
+  (0, _jquery2['default'])('.panTitle').click(function () {
+    (0, _jquery2['default'])('.groceryList').removeClass('shown');
+    (0, _jquery2['default'])('.pantryList').addClass('shown');
+  });
+
+  groceryList();
+  function groceryList() {
+    ListService.getGroceryList().then(function (response) {
+      console.log(response);
+      vm.items = response.data;
+    });
+  }
 };
 
-UserHomeController.$inject = ['$cookies', 'AuthService'];
+UserHomeController.$inject = ['$cookies', 'ListService'];
 
 exports['default'] = UserHomeController;
 module.exports = exports['default'];
 
-},{}],9:[function(require,module,exports){
+},{"jquery":29}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
