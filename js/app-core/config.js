@@ -8,7 +8,8 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   .state('root', {
     abstract: true,
-    templateUrl: 'templates/tpl-layout/layout.tpl.html'
+    templateUrl: 'templates/tpl-layout/layout.tpl.html',
+    controller: 'LayoutController as vm'
   }) 
   .state('landing',{
     url: '/',

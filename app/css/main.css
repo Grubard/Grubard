@@ -5447,9 +5447,10 @@ body::after {
     width: 35%;
     margin: 0 auto; } }
 
-.signUp button {
+.signUp a {
   display: block;
-  margin: 2% auto 3% auto; }
+  margin: 2% auto 3% auto;
+  width: 20%; }
 
 .landingInfo {
   text-align: center;
