@@ -19,7 +19,9 @@ $FruitGreen: #40704E;
 
 
 body{
-
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 
 }
 
