@@ -347,7 +347,7 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var UserHomeController = function UserHomeController($cookies, ListService) {
+var UserHomeController = function UserHomeController($cookies, ListService, PantryService) {
   var vm = this;
   var token = $cookies.get('auth_token');
   var user = $cookies.get('username');
@@ -367,9 +367,16 @@ var UserHomeController = function UserHomeController($cookies, ListService) {
       vm.items = response.data;
     });
   }
+  pantryList();
+  function pantryList() {
+    PantryService.getPantryList().then(function (response) {
+      console.log(response);
+      vm.pantryItems = response.data;
+    });
+  }
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService'];
 
 exports['default'] = UserHomeController;
 module.exports = exports['default'];
