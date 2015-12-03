@@ -76,6 +76,7 @@ var LayoutController = function LayoutController($cookies, $state) {
   vm.logOut = function () {
     $cookies.remove('auth_token');
     $cookies.remove('username');
+    $cookies.remove('house_id');
     $state.go('landing');
   };
 };
@@ -230,10 +231,21 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
     (0, _jQuery2['default'])('.newSmartCart').addClass('shown');
     (0, _jQuery2['default'])('.newButton').addClass('hidden');
   }
-
-  function createSmartCart() {
+  var House = function House(obj) {
+    this.name = obj.name;
+    this.address = obj.address;
+  };
+  function createSmartCart(house) {
+    var x = new House(house);
     (0, _jQuery2['default'])('.createAcct').addClass('shown');
     (0, _jQuery2['default'])('.newSmartCart').addClass('hidden');
+    $http.post(url + '/house', x).then(function (res) {
+      console.log(res);
+      var expireDate = new Date();
+      expireDate.setDate(expireDate.getDate() + 7);
+      var id = res.data.house.id;
+      $cookies.put('house_id', id, { expires: expireDate });
+    });
   }
 
   vm.login = function (user) {
@@ -241,15 +253,18 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
 
     $http.post(url + '/login', user).then(function (res) {
 
-      $cookies.put('auth_token', res.data.user.access_token);
-      $cookies.put('username', res.data.user.username);
+      var expireDate = new Date();
+      expireDate.setDate(expireDate.getDate() + 7);
+      $cookies.put('auth_token', res.data.user.access_token, { expires: expireDate });
+      $cookies.put('username', res.data.user.username, { expires: expireDate });
 
       $state.transitionTo('root.home');
     });
   };
   vm.signUp = function (newUser) {
     console.log(newUser);
-    $http.post(url + '/signup', newUser).then(function (res) {
+    var id = $cookies.get('house_id');
+    $http.post(url + '/signup/' + id, newUser).then(function (res) {
       console.log(res);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);

@@ -168,7 +168,22 @@ body::after {
 
 }
 
-
+.contact{
+  text-align: center;
+  margin: 20px auto;
+  a{
+    font-size: 1.2em;
+    font-style: italic;
+    color: black;
+  }
+  img{
+    width: 15%;
+    border-radius: 100%;
+  }
+  .contactUs{
+    float: left;
+  }
+}
 
 
 
