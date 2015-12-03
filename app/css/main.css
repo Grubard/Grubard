@@ -5396,6 +5396,14 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar-right {
     float: right; } }
 
+<<<<<<< HEAD
+=======
+body {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
+
+>>>>>>> isaac
 body::after {
   content: "";
   background: url("../images/background.jpg") no-repeat center center;
