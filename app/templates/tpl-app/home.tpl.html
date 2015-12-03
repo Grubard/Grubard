@@ -17,18 +17,21 @@
   <div class="userHomePage small-6">
     <div class="mainList">
       <h3 class="grocTitle title">Groceries</h3><h3 class="panTitle title">Pantry</h3>
-      <p class="groceryList shown">groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries groceries </p>
-      <ul>
-        <li ng-repeat="i in vm.items">{{i.title}} {{i.quantity}}</li>
+      <div class="groceryList shown">
+        <ul>
+          <li ng-repeat="i in vm.items">{{i.title}} {{i.quantity}}</li>
+        </ul>
+      </div>  
     </div>
     <div class="mainList">
       
-      <p class="pantryList">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="pantryList">
+        <ul>
+          <li ng-repeat="i in vm.pantryItems">{{i.title}} {{i.quantity}}</li>
+        </ul>
+      </div>
+        
+      
     </div>
   </div>
 </div>
