@@ -5506,30 +5506,42 @@ body::after {
 
 /*********************User Page******************************/
 .userHomePage {
-  float: left; }
-
-.mainList {
-  float: left; }
-
-@media all and (max-width: 1000px) {
-  .userHomePage div {
-    width: 90%; } }
-
-.groceryList {
-  display: none; }
-
-.pantryList {
-  display: none; }
-
-.shown {
-  display: inline-block; }
-
-.title {
-  float: left;
-  margin: 5px; }
-
-.title:hover {
-  cursor: pointer; }
+  width: 100%;
+  height: 100vh;
+  background: #D2DFEA; }
+  .userHomePage .side {
+    display: inline-block; }
+  .userHomePage img {
+    width: 20%; }
+  .userHomePage .quickLinks {
+    border-right: 1px solid #b5b5b7;
+    height: 100%;
+    width: 15%; }
+    .userHomePage .quickLinks a {
+      color: #40704E; }
+  .userHomePage .quickNav {
+    margin-top: 15%;
+    text-align: center; }
+    .userHomePage .quickNav :hover {
+      color: white; }
+  .userHomePage .bothLists {
+    vertical-align: top;
+    width: 80%;
+    margin: 1% 2% 0 1%; }
+    .userHomePage .bothLists .title {
+      width: 49%;
+      display: inline-block;
+      font-size: 2em;
+      padding-left: 1em;
+      margin-bottom: 0; }
+    .userHomePage .bothLists .hidden {
+      display: none; }
+    .userHomePage .bothLists .dark {
+      background: #c1d3e2; }
+    .userHomePage .bothLists .lighten {
+      color: #b5b5b7; }
+    .userHomePage .bothLists .list {
+      width: 98.3%; }
 
 /*****************************Grocery List Page*******************/
 .mainGroceryList {

@@ -1,37 +1,41 @@
-<div class = "row">
-  <div class="userHomePage small-6">
-    <a href="/#pantry">
-      <div class="pantry">
-        <h3>Pantry Quick View</h3>
-        <h4>Click on the pantry to view details + edit</h4>
-      </div>
-    </a>
-    <a href="/#list">
-      <div>
-        <h3>Grocery List</h3>
-        <h4>Click on the grocery list to view details + edit</h4>
-      </div>
-    </a>
+<div class="userHomePage">
+
+  <div class="side quickLinks">
+      
+
+    <div class="quickNav">
+      <a href="/#pantry">
+        <img ng-src='../images/eggplant.png'>
+        <p>Edit Pantry</p>
+      </a>
+    </div>
+    
+    <div class="quickNav">
+      <a href="/#list">
+        <img ng-src='../images/apple.png'>
+        <p>Edit Grocery List</p>
+      </a>
+    </div>
+
   </div>
 
-  <div class="userHomePage small-6">
-    <div class="mainList">
-      <h3 class="grocTitle title">Groceries</h3><h3 class="panTitle title">Pantry</h3>
-      <div class="groceryList shown">
-        <ul>
-          <li ng-repeat="i in vm.items">{{i.title}} {{i.quantity}}</li>
-        </ul>
-      </div>  
+  
+  <div class="side bothLists">
+    <p class="pantryTitle title dark">Current Pantry</p>
+    <p class="grocTitle title lighten">Grocery List</p>
+
+    <div class="list pantryList dark">
+      <ul>
+        <li ng-repeat="i in vm.pantryItems">{{i.title}} {{i.quantity}}</li>
+      </ul>
     </div>
-    <div class="mainList">
-      
-      <div class="pantryList">
-        <ul>
-          <li ng-repeat="i in vm.pantryItems">{{i.title}} {{i.quantity}}</li>
-        </ul>
-      </div>
-        
-      
-    </div>
+
+    <div class="list groceryList dark hidden">
+      <ul>
+        <li ng-repeat="i in vm.items">{{i.title}} {{i.quantity}}</li>
+      </ul>
+    </div>  
+    
   </div>
+        
 </div>

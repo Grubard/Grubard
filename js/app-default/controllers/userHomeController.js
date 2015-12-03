@@ -3,13 +3,20 @@ let UserHomeController = function($cookies, ListService, PantryService) {
   let vm = this;
   let token=$cookies.get('auth_token');
   let user =$cookies.get('username');
+
   $('.grocTitle').click(function(){
-    $('.groceryList').addClass('shown');
-    $('.pantryList').removeClass('shown');
+    $('.grocTitle').addClass('dark').removeClass('lighten');
+    $('.groceryList').removeClass('hidden');
+    $('.pantryList').addClass('hidden');
+    $('.pantryTitle').removeClass('dark').addClass('lighten');
   });
-  $('.panTitle').click(function(){
-    $('.groceryList').removeClass('shown');
-    $('.pantryList').addClass('shown');
+
+  $('.pantryTitle').click(function(){
+    $('.pantryTitle').addClass('dark').removeClass('lighten');
+    $('.pantryList').removeClass('hidden');
+    $('.groceryList').addClass('hidden');
+    $('.grocTitle').removeClass('dark').addClass('lighten');
+
   });
 
   groceryList();
