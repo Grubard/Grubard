@@ -222,6 +222,10 @@ body::after {
       font-size: 2em;
       padding-left: 1em;
       margin-bottom: 0;
+      padding-bottom: 1em;
+      &:hover{
+        cursor: pointer;
+      }
     }
     .hidden{
       display: none;
@@ -234,6 +238,22 @@ body::after {
     }
     .list{
       width: 98.3%;
+      img{
+        width: 3%;
+        display: block;
+        margin: 0 auto;
+      }
+      table{
+        text-align: left;
+        tr{
+          border-bottom: 1px solid $lightGray;
+          background: darken(#D2DFEA, 5%);   
+        }     
+        tbody{
+          border: none;
+          width: 98.3%;
+        }
+      }
     }
   }
 }

@@ -25,17 +25,47 @@
     <p class="grocTitle title lighten">Grocery List</p>
 
     <div class="list pantryList dark">
-      <ul>
-        <li ng-repeat="i in vm.pantryItems">{{i.title}} {{i.quantity}}</li>
-      </ul>
+      <table style="width: 100%">
+        <tr>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Quantity in Pantry</th>
+          <th>Quantity Preferred</th>
+          <th>Necessity</th>
+        </tr>
+        <tr ng-repeat="i in vm.pantryItems">
+          <td>{{i.title}}</td>
+          <td>{{i.category}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.preferred}}</td>
+          <td>{{i.necessity}}</td>
+        </tr>
+      </table>
+      <img ng-src='../images/eggplant.png'>
+
     </div>
 
     <div class="list groceryList dark hidden">
-      <ul>
-        <li ng-repeat="i in vm.items">{{i.title}} {{i.quantity}}</li>
-      </ul>
+      <table style="width: 100%">
+        <tr>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Quantity in Pantry</th>
+          <th>Quantity Preferred</th>
+          <th>Necessity</th>
+        </tr>
+        <tr ng-repeat="i in vm.items">
+          <td>{{i.title}}</td>
+          <td>{{i.category}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.preferred}}</td>
+          <td>{{i.necessity}}</td>
+        </tr>
+      </table>
+      <img ng-src='../images/apple.png'>
+      
     </div>  
-    
+   
   </div>
         
 </div>

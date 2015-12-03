@@ -5546,7 +5546,10 @@ body::after {
       display: inline-block;
       font-size: 2em;
       padding-left: 1em;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding-bottom: 1em; }
+      .userHomePage .bothLists .title:hover {
+        cursor: pointer; }
     .userHomePage .bothLists .hidden {
       display: none; }
     .userHomePage .bothLists .dark {
@@ -5555,6 +5558,18 @@ body::after {
       color: #b5b5b7; }
     .userHomePage .bothLists .list {
       width: 98.3%; }
+      .userHomePage .bothLists .list img {
+        width: 3%;
+        display: block;
+        margin: 0 auto; }
+      .userHomePage .bothLists .list table {
+        text-align: left; }
+        .userHomePage .bothLists .list table tr {
+          border-bottom: 1px solid #b5b5b7;
+          background: #c1d3e2; }
+        .userHomePage .bothLists .list table tbody {
+          border: none;
+          width: 98.3%; }
 
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
