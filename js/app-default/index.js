@@ -7,9 +7,11 @@ import '../app-core/index';
 import LoginController from './controllers/login.controller';
 import UserHomeController from './controllers/userHomeController';
 import ListController from './controllers/listController';
+import PantryController from './controllers/pantryController';
 import AddUserController from './controllers/add.user.controller';
 
 import ListService from './services/listService';
+import PantryService from './services/pantryService';
 
 
 import user from './directives/user.dir';
@@ -29,8 +31,10 @@ angular
   .controller('LoginController', LoginController)
   .controller('UserHomeController', UserHomeController)
   .controller('ListController', ListController)
+  .controller('PantryController', PantryController)
   .controller('AddUserController', AddUserController)
   .service('ListService', ListService)
+  .service('PantryService', PantryService)
   .directive('user', user)
   .directive('alert', alert)
   .directive('addUser', addUser)
