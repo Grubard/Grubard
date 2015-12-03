@@ -379,7 +379,7 @@ body::after {
   }
   
   a {
-    color: black;
+    color: white;
     border-radius: .2em;
     &:hover {
       background-color: white;
@@ -387,9 +387,9 @@ body::after {
     }
   }
   ul {
-
-    background-color: white;
+    background-color: inherit;
   }
+
 }
 
 .hide-user {
@@ -435,17 +435,20 @@ body::after {
 }
 
 #alert {
-  width: 13em;
+  width: 16em;
   position: fixed;
   right: 0;
   top: 55px;
   z-index: 999;
   padding: 0.6em;
+  overflow: auto;
+  max-height: 100%;
   h5 {
     text-align: center;
   }
   p {
     display: inline-block;
+    margin-top: 1em;
   }
   li {
     padding: .5em;

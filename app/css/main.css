@@ -5634,13 +5634,13 @@ body::after {
   .top-bar .top-bar-right .menu button:hover {
     background-color: #1eb95b; }
   .top-bar a {
-    color: black;
+    color: white;
     border-radius: .2em; }
     .top-bar a:hover {
       background-color: white;
       color: #1eb95b; }
   .top-bar ul {
-    background-color: white; }
+    background-color: inherit; }
 
 .hide-user {
   display: none; }
@@ -5672,16 +5672,19 @@ body::after {
   background-color: #2DDD72; }
 
 #alert {
-  width: 13em;
+  width: 16em;
   position: fixed;
   right: 0;
   top: 55px;
   z-index: 999;
-  padding: 0.6em; }
+  padding: 0.6em;
+  overflow: auto;
+  max-height: 100%; }
   #alert h5 {
     text-align: center; }
   #alert p {
-    display: inline-block; }
+    display: inline-block;
+    margin-top: 1em; }
   #alert li {
     padding: .5em; }
     #alert li:hover {
