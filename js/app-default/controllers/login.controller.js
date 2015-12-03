@@ -23,8 +23,8 @@ let LoginController = function($state, $http, $cookies, AuthService){
       console.log(res);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);
+      $state.transitionTo('root.home');
     });
-    $state.transitionTo('root.home');
   };
 
 

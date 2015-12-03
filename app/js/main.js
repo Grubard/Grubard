@@ -12,7 +12,8 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
   // Set up some States
   $stateProvider.state('root', {
     abstract: true,
-    templateUrl: 'templates/tpl-layout/layout.tpl.html'
+    templateUrl: 'templates/tpl-layout/layout.tpl.html',
+    controller: 'LayoutController as vm'
   }).state('landing', {
     url: '/',
     // controller: '... as vm',
@@ -70,6 +71,27 @@ module.exports = exports['default'];
 },{}],2:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var LayoutController = function LayoutController($cookies, $state) {
+  var vm = this;
+
+  vm.logOut = function () {
+    $cookies.remove('auth_token');
+    $cookies.remove('username');
+    $state.go('landing');
+  };
+};
+
+LayoutController.$inject = ['$cookies', '$state'];
+
+exports['default'] = LayoutController;
+module.exports = exports['default'];
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _angular = require('angular');
@@ -77,6 +99,10 @@ var _angular = require('angular');
 var _angular2 = _interopRequireDefault(_angular);
 
 require('angular-ui-router');
+
+var _controllersLayoutController = require('./controllers/layout.controller');
+
+var _controllersLayoutController2 = _interopRequireDefault(_controllersLayoutController);
 
 /////** Import Constants and Config **/////
 // import ... from './constants/...';
@@ -94,9 +120,9 @@ var _appLayoutServicesAuthService2 = _interopRequireDefault(_appLayoutServicesAu
 _angular2['default'].module('app.core', ['ui.router'])
 /////** Load Constants and Config **/////
 // .constant('...', ...)
-.config(_config2['default']).service('AuthService', _appLayoutServicesAuthService2['default']);
+.controller('LayoutController', _controllersLayoutController2['default']).config(_config2['default']).service('AuthService', _appLayoutServicesAuthService2['default']);
 
-},{"../app-layout/services/authService":14,"./config":1,"angular":23,"angular-cookies":20,"angular-ui-router":21}],3:[function(require,module,exports){
+},{"../app-layout/services/authService":15,"./config":1,"./controllers/layout.controller":2,"angular":24,"angular-cookies":21,"angular-ui-router":22}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -112,7 +138,7 @@ AddUserController.$inject = ['$state', '$http', '$cookies'];
 exports['default'] = AddUserController;
 module.exports = exports['default'];
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -180,7 +206,7 @@ ListController.$inject = ['$scope', '$http', 'ListService', '$state'];
 exports['default'] = ListController;
 module.exports = exports['default'];
 
-},{"jQuery":25}],5:[function(require,module,exports){
+},{"jQuery":26}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -206,8 +232,8 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
       console.log(res);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);
+      $state.transitionTo('root.home');
     });
-    $state.transitionTo('root.home');
   };
 };
 
@@ -215,7 +241,7 @@ LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService'];
 exports['default'] = LoginController;
 module.exports = exports['default'];
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -231,7 +257,7 @@ UserHomeController.$inject = ['$cookies', 'AuthService'];
 exports['default'] = UserHomeController;
 module.exports = exports['default'];
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -258,7 +284,7 @@ addUser.$inject = [];
 exports['default'] = addUser;
 module.exports = exports['default'];
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -297,7 +323,7 @@ alert.$inject = [];
 exports['default'] = alert;
 module.exports = exports['default'];
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -336,7 +362,7 @@ user.$inject = [];
 exports['default'] = user;
 module.exports = exports['default'];
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -363,7 +389,7 @@ userList.$inject = [];
 exports['default'] = userList;
 module.exports = exports['default'];
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -419,7 +445,7 @@ _angular2['default'].module('app.default', ['app.core', 'ngCookies']).constant('
   }
 }).controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']).controller('AddUserController', _controllersAddUserController2['default']).service('ListService', _servicesListService2['default']).directive('user', _directivesUserDir2['default']).directive('alert', _directivesAlertDir2['default']).directive('addUser', _directivesAdduserDir2['default']).directive('userList', _directivesUserlistDir2['default']);
 
-},{"../app-core/index":2,"./controllers/add.user.controller":3,"./controllers/listController":4,"./controllers/login.controller":5,"./controllers/userHomeController":6,"./directives/adduser.dir":7,"./directives/alert.dir":8,"./directives/user.dir":9,"./directives/userlist.dir":10,"./services/listService":12,"angular":23,"angular-cookies":20}],12:[function(require,module,exports){
+},{"../app-core/index":3,"./controllers/add.user.controller":4,"./controllers/listController":5,"./controllers/login.controller":6,"./controllers/userHomeController":7,"./directives/adduser.dir":8,"./directives/alert.dir":9,"./directives/user.dir":10,"./directives/userlist.dir":11,"./services/listService":13,"angular":24,"angular-cookies":21}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -462,7 +488,7 @@ ListService.$inject = ['$http', 'SERVER', '$cookies'];
 exports['default'] = ListService;
 module.exports = exports['default'];
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -485,7 +511,7 @@ _angular2['default'].module('app.layout', ['ngCookies']).service('AuthService', 
 /////** Load Controllers **/////
 // .controller('...', ...)
 
-},{"./services/authService":14,"angular":23,"angular-cookies":20}],14:[function(require,module,exports){
+},{"./services/authService":15,"angular":24,"angular-cookies":21}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -507,7 +533,7 @@ AuthService.$inject = ['$cookies'];
 exports['default'] = AuthService;
 module.exports = exports['default'];
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 // Import our core files
 'use strict';
 
@@ -548,7 +574,7 @@ require('./app-default/index');
 
 _angular2['default'].module('app', ['app.core', 'app.layout', 'app.default', 'ngAnimate']).run(_run2['default']);
 
-},{"./app-core/index":2,"./app-default/index":11,"./app-layout/index":13,"./run":16,"angular":23,"angular-animate":18,"foundation":24,"jquery":26,"motion-ui":27}],16:[function(require,module,exports){
+},{"./app-core/index":3,"./app-default/index":12,"./app-layout/index":14,"./run":17,"angular":24,"angular-animate":19,"foundation":25,"jquery":27,"motion-ui":28}],17:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -584,7 +610,7 @@ run.$inject = ['$rootScope', '$cookies', '$state', 'AuthService', '$stateParams'
 exports["default"] = run;
 module.exports = exports["default"];
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -4516,11 +4542,11 @@ angular.module('ngAnimate', [])
 
 })(window, window.angular);
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 require('./angular-animate');
 module.exports = 'ngAnimate';
 
-},{"./angular-animate":17}],19:[function(require,module,exports){
+},{"./angular-animate":18}],20:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -4843,11 +4869,11 @@ angular.module('ngCookies').provider('$$cookieWriter', function $$CookieWriterPr
 
 })(window, window.angular);
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 require('./angular-cookies');
 module.exports = 'ngCookies';
 
-},{"./angular-cookies":19}],21:[function(require,module,exports){
+},{"./angular-cookies":20}],22:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -9218,7 +9244,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.8
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -38237,11 +38263,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":22}],24:[function(require,module,exports){
+},{"./angular":23}],25:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 !function($) {
@@ -45682,7 +45708,7 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -54894,7 +54920,7 @@ return jQuery;
 
 }));
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
@@ -64114,7 +64140,7 @@ return jQuery;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -64233,7 +64259,7 @@ var MotionUI = {
 return MotionUI;
 }));
 
-},{"jquery":26}]},{},[15])
+},{"jquery":27}]},{},[16])
 
 
 //# sourceMappingURL=main.js.map
