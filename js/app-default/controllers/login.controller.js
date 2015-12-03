@@ -15,10 +15,21 @@ let LoginController = function($state, $http, $cookies, AuthService){
     $('.newSmartCart').addClass('shown');
     $('.newButton').addClass('hidden');
   }
-
-  function createSmartCart () {
+  let House = function(obj){
+    this.name = obj.name;
+    this.address= obj.address;
+  };
+  function createSmartCart (house) {
+    let x = new House(house);
     $('.createAcct').addClass('shown');
     $('.newSmartCart').addClass('hidden');
+    $http.post(url+'/house', x).then((res)=>{
+      console.log(res);
+      var expireDate = new Date();
+      expireDate.setDate(expireDate.getDate() + 7);
+      let id = res.data.house.id;
+      $cookies.put('house_id', id, {expires: expireDate});
+    });
   }
 
 
@@ -27,10 +38,11 @@ let LoginController = function($state, $http, $cookies, AuthService){
     
     $http.post(url+'/login', user).then((res)=>{
       
-    
       
-      $cookies.put('auth_token', res.data.user.access_token);
-      $cookies.put('username', res.data.user.username);
+      var expireDate = new Date();
+      expireDate.setDate(expireDate.getDate() + 7);
+      $cookies.put('auth_token', res.data.user.access_token, {expires: expireDate});
+      $cookies.put('username', res.data.user.username, {expires: expireDate});
       
       $state.transitionTo('root.home');
 
@@ -40,7 +52,8 @@ let LoginController = function($state, $http, $cookies, AuthService){
   };
   vm.signUp = function(newUser){
     console.log(newUser);
-    $http.post(url+'/signup', newUser).then((res)=>{
+    let id = $cookies.get('house_id');
+    $http.post(url+'/signup/'+ id, newUser).then((res)=>{
       console.log(res);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);
