@@ -366,13 +366,19 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   var vm = this;
   var token = $cookies.get('auth_token');
   var user = $cookies.get('username');
+
   (0, _jquery2['default'])('.grocTitle').click(function () {
-    (0, _jquery2['default'])('.groceryList').addClass('shown');
-    (0, _jquery2['default'])('.pantryList').removeClass('shown');
+    (0, _jquery2['default'])('.grocTitle').addClass('dark').removeClass('lighten');
+    (0, _jquery2['default'])('.groceryList').removeClass('hidden');
+    (0, _jquery2['default'])('.pantryList').addClass('hidden');
+    (0, _jquery2['default'])('.pantryTitle').removeClass('dark').addClass('lighten');
   });
-  (0, _jquery2['default'])('.panTitle').click(function () {
-    (0, _jquery2['default'])('.groceryList').removeClass('shown');
-    (0, _jquery2['default'])('.pantryList').addClass('shown');
+
+  (0, _jquery2['default'])('.pantryTitle').click(function () {
+    (0, _jquery2['default'])('.pantryTitle').addClass('dark').removeClass('lighten');
+    (0, _jquery2['default'])('.pantryList').removeClass('hidden');
+    (0, _jquery2['default'])('.groceryList').addClass('hidden');
+    (0, _jquery2['default'])('.grocTitle').removeClass('dark').addClass('lighten');
   });
 
   groceryList();

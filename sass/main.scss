@@ -162,11 +162,8 @@ body::after {
   .hidden{
     display: none;
   }
-
-
-
-
 }
+
 
 .contact{
   text-align: center;
@@ -187,46 +184,64 @@ body::after {
 
 
 
-
-
-
-
-
-
-
-
 /*********************User Page******************************/
 
-
 .userHomePage{
-  float: left;
-}
-.mainList{
-  float: left;
-}
+  width: 100%;
+  height: 100vh;
+  background: #D2DFEA;
+  .side{
+    display: inline-block;
+  }
+  img{
+    width: 20%;
+  }
+  .quickLinks{
+    border-right: 1px solid $lightGray;
+    height: 100%;
+    width: 15%;
+    a{
+      color: $FruitGreen;
+    }
+  }
+  .quickNav{
+    margin-top: 15%;
+    text-align: center;
+    :hover{
+      color: white;
+    }
+  }
 
-@media all and (max-width: 1000px) {
-  .userHomePage div{
-    width: 90%;
+  .bothLists{
+    vertical-align: top;
+    width: 80%;
+    margin: 1% 2% 0 1%;
+    .title{
+      width: 49%;
+      display: inline-block;
+      font-size: 2em;
+      padding-left: 1em;
+      margin-bottom: 0;
+    }
+    .hidden{
+      display: none;
+    }
+    .dark{
+      background: darken(#D2DFEA, 5%);        
+    }
+    .lighten{
+      color: $lightGray;
+    }
+    .list{
+      width: 98.3%;
+    }
   }
 }
-.groceryList{
-  display: none;
-}
-.pantryList{
-  display: none;
-}
-.shown{
-  display: inline-block;
-}
-.title{
-  float: left;
-  margin: 5px;
 
-}
-  .title:hover{
-    cursor: pointer;
-  }
+
+
+
+
 
 /*****************************Grocery List Page*******************/
 
@@ -394,7 +409,7 @@ body::after {
   }
   
   a {
-    color: black;
+    color: white;
     border-radius: .2em;
     &:hover {
       background-color: white;
@@ -402,9 +417,9 @@ body::after {
     }
   }
   ul {
-
-    background-color: white;
+    background-color: inherit;
   }
+
 }
 
 .hide-user {
@@ -450,17 +465,20 @@ body::after {
 }
 
 #alert {
-  width: 13em;
+  width: 16em;
   position: fixed;
   right: 0;
   top: 55px;
   z-index: 999;
   padding: 0.6em;
+  overflow: auto;
+  max-height: 100%;
   h5 {
     text-align: center;
   }
   p {
     display: inline-block;
+    margin-top: 1em;
   }
   li {
     padding: .5em;
