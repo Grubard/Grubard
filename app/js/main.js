@@ -236,18 +236,10 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
   };
   function createSmartCart(house) {
     var x = new House(house);
-
     (0, _jQuery2['default'])('.createAcct').addClass('shown');
     (0, _jQuery2['default'])('.newSmartCart').addClass('hidden');
 
-    $http({
-      method: 'POST',
-      url: url + '/house',
-      headers: {
-        access_token: $cookies.get('auth_token')
-      },
-      data: x
-    }).then(function (res) {
+    $http.post(url + '/house', x).then(function (res) {
       console.log(res);
       var expireDate = new Date();
       expireDate.setDate(expireDate.getDate() + 7);
