@@ -33,10 +33,12 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
       vm.pantryItems = response.data;
     });
   }
+
   $scope.sort = {
     column: '',
     descending: false
-  };    
+  };  
+
 
   vm.sortBy = function(column) {
 

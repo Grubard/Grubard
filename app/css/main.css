@@ -5571,6 +5571,8 @@ body::after {
         .userHomePage .bothLists .list table tbody {
           border: none;
           width: 98.3%; }
+        .userHomePage .bothLists .list table th:hover {
+          cursor: pointer; }
 
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
