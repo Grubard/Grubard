@@ -27,13 +27,13 @@
     <div class="list pantryList dark">
       <table style="width: 100%">
         <tr>
-          <th>Item Name</th>
-          <th>Category</th>
-          <th>Quantity in Pantry</th>
-          <th>Quantity Preferred</th>
-          <th>Necessity</th>
+          <th ng-click="vm.sortPantry('title')">Item Name</th>
+          <th ng-click="vm.sortPantry('category')">Category</th>
+          <th ng-click="vm.sortPantry('quantity')">Quantity in Pantry</th>
+          <th ng-click="vm.sortPantry('preferred')">Quantity Preferred</th>
+          <th ng-click="vm.sortPantry('necessity')">Necessity</th>
         </tr>
-        <tr ng-repeat="i in vm.pantryItems">
+        <tr ng-repeat="i in vm.pantryItems|orderBy:sort.column:sort.descending">
           <td>{{i.title}}</td>
           <td>{{i.category}}</td>
           <td>{{i.quantity}}</td>
@@ -48,13 +48,13 @@
     <div class="list groceryList dark hidden">
       <table style="width: 100%">
         <tr>
-          <th>Item Name</th>
-          <th>Category</th>
-          <th>Quantity in Pantry</th>
-          <th>Quantity Preferred</th>
-          <th>Necessity</th>
+          <th ng-click="vm.sortBy('title')">Item Name</th>
+          <th ng-click="vm.sortBy('category')">Category</th>
+          <th ng-click="vm.sortBy('quantity')">Quantity in Pantry</th>
+          <th ng-click="vm.sortBy('preferred')">Quantity Preferred</th>
+          <th ng-click="vm.sortBy('necessity')">Necessity</th>
         </tr>
-        <tr ng-repeat="i in vm.items">
+        <tr ng-repeat="i in vm.items|orderBy:sort.column:sort.descending">
           <td>{{i.title}}</td>
           <td>{{i.category}}</td>
           <td>{{i.quantity}}</td>

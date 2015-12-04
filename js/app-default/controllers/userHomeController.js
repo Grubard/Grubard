@@ -1,5 +1,5 @@
 import $ from 'jquery';
-let UserHomeController = function($cookies, ListService, PantryService) {
+let UserHomeController = function($cookies, ListService, PantryService, $scope) {
   let vm = this;
   let token=$cookies.get('auth_token');
   let user =$cookies.get('username');
@@ -24,7 +24,9 @@ let UserHomeController = function($cookies, ListService, PantryService) {
     ListService.getGroceryList().then( (response) => {
       console.log(response);
       vm.items = response.data;
+      
     });
+
   }
   pantryList();
   function pantryList() {
@@ -33,9 +35,35 @@ let UserHomeController = function($cookies, ListService, PantryService) {
       vm.pantryItems = response.data;
     });
   }
+  $scope.sort = {
+            column: '',
+            descending: false
+        };    
+  vm.sortBy = function(column) {
 
+            var sort = $scope.sort;
+ 
+            if (sort.column == column) {
+                sort.descending = !sort.descending;
+            } else {
+                sort.column = column;
+                sort.descending = false;
+            }
+        };
+
+   vm.sortPantry = function(column) {
+
+            var sort = $scope.sort;
+ 
+            if (sort.column == column) {
+                sort.descending = !sort.descending;
+            } else {
+                sort.column = column;
+                sort.descending = false;
+            }
+        };     
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope'];
 
 export default UserHomeController;
