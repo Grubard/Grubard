@@ -34,32 +34,33 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
     });
   }
   $scope.sort = {
-            column: '',
-            descending: false
-        };    
+    column: '',
+    descending: false
+  };    
+
   vm.sortBy = function(column) {
 
-            var sort = $scope.sort;
- 
-            if (sort.column == column) {
-                sort.descending = !sort.descending;
-            } else {
-                sort.column = column;
-                sort.descending = false;
-            }
-        };
+    var sort = $scope.sort;
 
-   vm.sortPantry = function(column) {
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
 
-            var sort = $scope.sort;
- 
-            if (sort.column == column) {
-                sort.descending = !sort.descending;
-            } else {
-                sort.column = column;
-                sort.descending = false;
-            }
-        };     
+  vm.sortPantry = function(column) {
+
+    var sort = $scope.sort;
+
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };     
 };
 
 UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope'];
