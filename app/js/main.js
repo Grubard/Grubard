@@ -355,7 +355,7 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var UserHomeController = function UserHomeController($cookies, ListService, PantryService) {
+var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope) {
   var vm = this;
 
   (0, _jquery2['default'])('.grocTitle').click(function () {
@@ -386,9 +386,36 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       vm.pantryItems = response.data;
     });
   }
+  $scope.sort = {
+    column: '',
+    descending: false
+  };
+  vm.sortBy = function (column) {
+
+    var sort = $scope.sort;
+
+    if (sort.column == column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
+
+  vm.sortPantry = function (column) {
+
+    var sort = $scope.sort;
+
+    if (sort.column == column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope'];
 
 exports['default'] = UserHomeController;
 module.exports = exports['default'];
