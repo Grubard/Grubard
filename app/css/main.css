@@ -5399,11 +5399,12 @@ table.hover tr:nth-of-type(even):hover {
 body {
   -moz-user-select: none;
   -webkit-user-select: none;
-  user-select: none; }
+  user-select: none;
+  height: 100%; }
 
 body::after {
   content: "";
-  background: url("../images/background.jpg") no-repeat center center;
+  background: url("../images/background.jpg") center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -5417,6 +5418,9 @@ body::after {
   z-index: -1; }
 
 /*********************Landing Page******************************/
+.outside {
+  background-image: url("../images/background.jpg") no-repeat center center; }
+
 .landingPage {
   background: #D2DFEA;
   border-radius: 10px;
@@ -5441,12 +5445,6 @@ body::after {
     display: inline-block;
     margin-right: 5%; }
 
-@media all and (max-width: 1050px) and (min-width: 320px) {
-  .productDescription img {
-    display: block;
-    width: 35%;
-    margin: 0 auto; } }
-
 .signUp a {
   display: block;
   margin: 2% auto 3% auto;
@@ -5465,7 +5463,21 @@ body::after {
       text-decoration: none;
       color: black; }
 
+@media all and (max-width: 1050px) {
+  .productDescription img {
+    display: block;
+    width: 35%;
+    margin: 0 auto; }
+  .signUp a {
+    width: 50%;
+    font-size: 1em; } }
+
 /*********************LogIn Page******************************/
+@media all and (max-width: 1050px) {
+  .loginBlock {
+    display: block;
+    width: 100%; } }
+
 .loginPage {
   width: 100%;
   height: 100vh;
@@ -5483,7 +5495,7 @@ body::after {
     .loginPage .formStuff .logIn {
       border-bottom: 1px solid #b5b5b7; }
   .loginPage .rightPanel {
-    vertical-align: bottom;
+    margin-top: 5%;
     font-size: 1.3em;
     font-style: italic;
     text-align: center; }
@@ -5505,19 +5517,6 @@ body::after {
     display: inline-block; }
   .loginPage .hidden {
     display: none; }
-
-.contact {
-  text-align: center;
-  margin: 20px auto; }
-  .contact a {
-    font-size: 1.2em;
-    font-style: italic;
-    color: black; }
-  .contact img {
-    width: 15%;
-    border-radius: 100%; }
-  .contact .contactUs {
-    float: left; }
 
 /*********************User Page******************************/
 .userHomePage {
