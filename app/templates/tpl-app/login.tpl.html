@@ -11,14 +11,6 @@
 
     <button class="button newButton" ng-click="vm.showCreateNew()">New smartCart</button>
 
-    <form ng-submit="vm.createSmartCart(house)" class="newSmartCart">
-      <p>New smartCart!</p>
-      <input type="text" ng-model="house.name" placeholder="Name your smartCart">
-      <input type="text" ng-model="house.address" placeholder="smartCart Location"> 
-      <button class="button">Next Step</button>
-    </form>
-
-
     <form ng-submit="vm.signUp(newUser)" class="createAcct">
       <p>Create User Profile</p>
       <input type="email" ng-model="newUser.email" placeholder="Email">
@@ -27,13 +19,22 @@
       <button class="button">Sign Up</button>
     </form>
 
+    <form ng-submit="vm.createSmartCart(house)" class="newSmartCart">
+      <p>New smartCart!</p>
+      <input type="text" ng-model="house.name" placeholder="Name your smartCart">
+      <input type="text" ng-model="house.address" placeholder="smartCart Location"> 
+      <button class="button">Next Step</button>
+    </form>
+
+
+
     <form ng-submit="vm.addOtherUsers(friends)" class="addOthers">
       <p>Invite others to this smartCart!</p>
       <input type="text" ng-model="friends.name" placeholder="Name">
       <input type="email" ng-model="friends.email" placeholder="Input an email to invite a new person!">
       <button class="button">Add another friend</button>
-      <button class="button">Finish</button>
     </form>
+      <a href="#/home"><button class="button finishButton">Finish</button>
   </div>
 
   <div class="loginBlock rightPanel">

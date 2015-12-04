@@ -53,7 +53,6 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   })
   .state('root.about',{
     url: '/about',
-
     templateUrl: 'templates/tpl-app/about.tpl.html',
     authenticate: false
   })
