@@ -398,12 +398,11 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
     column: '',
     descending: false
   };
-
   vm.sortBy = function (column) {
 
     var sort = $scope.sort;
 
-    if (sort.column === column) {
+    if (sort.column == column) {
       sort.descending = !sort.descending;
     } else {
       sort.column = column;
@@ -415,7 +414,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
 
     var sort = $scope.sort;
 
-    if (sort.column === column) {
+    if (sort.column == column) {
       sort.descending = !sort.descending;
     } else {
       sort.column = column;

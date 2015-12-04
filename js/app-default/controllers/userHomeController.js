@@ -35,34 +35,40 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
   }
 
   $scope.sort = {
+<<<<<<< HEAD
     column: '',
     descending: false
   };  
 
 
+=======
+            column: '',
+            descending: false
+        };    
+>>>>>>> parent of 4f1aec5... fixed code-style errors
   vm.sortBy = function(column) {
 
-    var sort = $scope.sort;
+            var sort = $scope.sort;
+ 
+            if (sort.column == column) {
+                sort.descending = !sort.descending;
+            } else {
+                sort.column = column;
+                sort.descending = false;
+            }
+        };
 
-    if (sort.column === column) {
-      sort.descending = !sort.descending;
-    } else {
-      sort.column = column;
-      sort.descending = false;
-    }
-  };
+   vm.sortPantry = function(column) {
 
-  vm.sortPantry = function(column) {
-
-    var sort = $scope.sort;
-
-    if (sort.column === column) {
-      sort.descending = !sort.descending;
-    } else {
-      sort.column = column;
-      sort.descending = false;
-    }
-  };     
+            var sort = $scope.sort;
+ 
+            if (sort.column == column) {
+                sort.descending = !sort.descending;
+            } else {
+                sort.column = column;
+                sort.descending = false;
+            }
+        };     
 };
 
 UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope'];
