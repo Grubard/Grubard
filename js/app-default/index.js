@@ -10,6 +10,7 @@ import ListController from './controllers/listController';
 import PantryController from './controllers/pantryController';
 import AddUserController from './controllers/add.user.controller';
 
+import LoginService from './services/loginService';
 import ListService from './services/listService';
 import PantryService from './services/pantryService';
 
@@ -33,6 +34,7 @@ angular
   .controller('ListController', ListController)
   .controller('PantryController', PantryController)
   .controller('AddUserController', AddUserController)
+  .service('LoginService', LoginService)
   .service('ListService', ListService)
   .service('PantryService', PantryService)
   .directive('user', user)

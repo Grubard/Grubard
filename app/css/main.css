@@ -5493,6 +5493,8 @@ body::after {
     font-size: 0.8em;
     margin-top: 3%;
     margin-left: 21%; }
+  .loginPage .finishButton {
+    display: none; }
   .loginPage .createAcct {
     display: none; }
   .loginPage .newSmartCart {

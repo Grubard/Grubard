@@ -1,8 +1,6 @@
 import $ from 'jquery';
 let UserHomeController = function($cookies, ListService, PantryService, $scope) {
   let vm = this;
-  let token=$cookies.get('auth_token');
-  let user =$cookies.get('username');
 
   $('.grocTitle').click(function(){
     $('.grocTitle').addClass('dark').removeClass('lighten');
@@ -40,6 +38,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
     column: '',
     descending: false
   };  
+
 
   vm.sortBy = function(column) {
 
