@@ -253,6 +253,9 @@ body::after {
           border: none;
           width: 98.3%;
         }
+        th:hover{
+          cursor: pointer;
+        }
       }
     }
   }
