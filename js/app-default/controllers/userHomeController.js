@@ -2,6 +2,8 @@ import $ from 'jquery';
 let UserHomeController = function($cookies, ListService, PantryService, $scope) {
   let vm = this;
 
+  
+
   $('.grocTitle').click(function(){
     $('.grocTitle').addClass('dark').removeClass('lighten');
     $('.groceryList').removeClass('hidden');

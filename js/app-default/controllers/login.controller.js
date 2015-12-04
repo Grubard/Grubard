@@ -20,6 +20,7 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
 
   vm.signUp = function(newUser){
     $http.post(url+'/signup/', newUser).then((res)=>{
+      console.log(res.data);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);
     });

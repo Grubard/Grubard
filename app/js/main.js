@@ -234,6 +234,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
 
   vm.signUp = function (newUser) {
     $http.post(url + '/signup/', newUser).then(function (res) {
+      console.log(res.data);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);
     });
