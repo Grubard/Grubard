@@ -36,6 +36,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
 
   $scope.sort = {
 <<<<<<< HEAD
+<<<<<<< HEAD
     column: '',
     descending: false
   };  
@@ -48,6 +49,13 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
 >>>>>>> parent of 4f1aec5... fixed code-style errors
   vm.sortBy = function(column) {
 
+=======
+            column: '',
+            descending: false
+        };    
+  vm.sortBy = function(column) {
+
+>>>>>>> parent of 4f1aec5... fixed code-style errors
             var sort = $scope.sort;
  
             if (sort.column == column) {
