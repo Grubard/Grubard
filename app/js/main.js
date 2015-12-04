@@ -217,45 +217,39 @@ var _jQuery = require('jQuery');
 
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
-var LoginController = function LoginController($state, $http, $cookies, AuthService, SERVER, LoginService) {
-
-  var url = SERVER.URL;
+var LoginController = function LoginController($state, $http, $cookies, AuthService) {
 
   var vm = this;
+  var url = 'http://intense-refuge-9476.herokuapp.com';
 
   vm.showCreateNew = showCreateNew;
   vm.createSmartCart = createSmartCart;
 
   function showCreateNew() {
     (0, _jQuery2['default'])('.logIn').addClass('hidden');
-    (0, _jQuery2['default'])('.createAcct').addClass('shown');
+    (0, _jQuery2['default'])('.newSmartCart').addClass('shown');
     (0, _jQuery2['default'])('.newButton').addClass('hidden');
   }
-
-  vm.signUp = function (newUser) {
-    $http.post(url + '/signup/', newUser).then(function (res) {
-      $cookies.put('auth_token', res.data.user.access_token);
-      $cookies.put('username', res.data.user.username);
-    });
-    (0, _jQuery2['default'])('.createAcct').addClass('hidden');
-    (0, _jQuery2['default'])('.newSmartCart').addClass('shown');
+  var House = function House(obj) {
+    this.name = obj.name;
+    this.address = obj.address;
   };
-
   function createSmartCart(house) {
-    LoginService.createNewSmartCart(house).then(function (res) {
+    var x = new House(house);
+    (0, _jQuery2['default'])('.createAcct').addClass('shown');
+    (0, _jQuery2['default'])('.newSmartCart').addClass('hidden');
+
+    $http.post(url + '/house', x).then(function (res) {
       console.log(res);
       var expireDate = new Date();
       expireDate.setDate(expireDate.getDate() + 7);
       var id = res.data.house.id;
       $cookies.put('house_id', id, { expires: expireDate });
     });
-
-    (0, _jQuery2['default'])('.addOthers').addClass('shown');
-    (0, _jQuery2['default'])('.finishButton').addClass('shown');
-    (0, _jQuery2['default'])('.newSmartCart').addClass('hidden');
   }
 
   vm.login = function (user) {
+    console.log(user);
 
     $http.post(url + '/login', user).then(function (res) {
 
@@ -263,12 +257,25 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
       expireDate.setDate(expireDate.getDate() + 7);
       $cookies.put('auth_token', res.data.user.access_token, { expires: expireDate });
       $cookies.put('username', res.data.user.username, { expires: expireDate });
+
       $state.transitionTo('root.home');
     });
   };
+  vm.signUp = function (newUser) {
+    console.log(newUser);
+    var id = $cookies.get('house_id');
+    $http.post(url + '/signup/' + id, newUser).then(function (res) {
+      console.log(res);
+      $cookies.put('auth_token', res.data.user.access_token);
+      $cookies.put('username', res.data.user.username);
+      $state.transitionTo('root.home');
+    });
+    (0, _jQuery2['default'])('.createAcct').addClass('hidden');
+    (0, _jQuery2['default'])('.addOthers').addClass('shown');
+  };
 };
 
-LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService'];
+LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService'];
 exports['default'] = LoginController;
 module.exports = exports['default'];
 
@@ -386,10 +393,12 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       vm.pantryItems = response.data;
     });
   }
+
   $scope.sort = {
     column: '',
     descending: false
   };
+
   vm.sortBy = function (column) {
 
     var sort = $scope.sort;

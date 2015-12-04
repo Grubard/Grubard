@@ -22,12 +22,12 @@ body{
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-
+  height: 100%;
 }
 
 body::after {
   content: "";
-  background: url('../images/background.jpg') no-repeat center center;
+  background: url('../images/background.jpg')center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -42,6 +42,10 @@ body::after {
 }
 
 /*********************Landing Page******************************/
+
+.outside{
+  background-image: url('../images/background.jpg') no-repeat center center;
+}
 
 .landingPage{
   background: #D2DFEA;
@@ -74,14 +78,6 @@ body::after {
   }
 }
 
-@media all and (max-width: 1050px) and (min-width: 320px) {
-  .productDescription img{
-    display: block;
-    width: 35%;
-    margin: 0 auto;
-  }
-}
-
 .signUp {
   a{
     display: block;
@@ -108,8 +104,29 @@ body::after {
   }
 }
 
+@media all and (max-width: 1050px) {
+  .productDescription img{
+    display: block;
+    width: 35%;
+    margin: 0 auto;
+  }
+  .signUp{
+    a{
+      width: 50%;
+      font-size: 1em;
+    }
+  }
+}
+
 
 /*********************LogIn Page******************************/
+
+@media all and (max-width: 1050px) {
+  .loginBlock{
+    display: block;
+    width: 100%;
+  }
+}
 
 .loginPage{
   width: 100%;
@@ -132,7 +149,7 @@ body::after {
     }
   }
   .rightPanel{
-    vertical-align: bottom;
+    margin-top: 5%;
     font-size: 1.3em;
     font-style: italic;
     text-align: center;
@@ -167,22 +184,7 @@ body::after {
 }
 
 
-.contact{
-  text-align: center;
-  margin: 20px auto;
-  a{
-    font-size: 1.2em;
-    font-style: italic;
-    color: black;
-  }
-  img{
-    width: 15%;
-    border-radius: 100%;
-  }
-  .contactUs{
-    float: left;
-  }
-}
+
 
 
 
@@ -254,6 +256,9 @@ body::after {
         tbody{
           border: none;
           width: 98.3%;
+        }
+        th:hover{
+          cursor: pointer;
         }
       }
     }
