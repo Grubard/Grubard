@@ -15,6 +15,7 @@ let LoginService = function($http, SERVER, $cookies) {
   };
 
   function createNewSmartCart(house) {
+    console.log(house);
     let h = new House(house);
     return $http.post(url + '/house', h, SERVER.CONFIG);
   }
