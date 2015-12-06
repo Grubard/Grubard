@@ -228,7 +228,7 @@ body::after {
       font-size: 2em;
       padding-left: 1em;
       margin-bottom: 0;
-      padding-bottom: 1em;
+      padding-bottom: 0.25em;
       &:hover{
         cursor: pointer;
       }
@@ -243,7 +243,7 @@ body::after {
       color: $lightGray;
     }
     .list{
-      width: 98.3%;
+      width: 98.4%;
       img{
         width: 3%;
         display: block;
@@ -267,11 +267,63 @@ body::after {
   }
 }
 
+@media all and (max-width: 1050px) {
+  .bothLists{
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .bothLists{
+    .pantryTitle{
+      font-size: 10px;
+    }
+  }
+}
+
 .vertical{
-  border: 2px solid white;
-  text-decoration: none;
-  .title{
+  padding-top: 1em;
+  a.subTitle{
     font-size: 1.5em;
+    color: $FruitGreen;
+    border: 2px solid darken(#D2DFEA, 20%);
+    border-radius: 5px;
+    padding-top: 0.5%;
+    width: 80%;
+    margin: 0 auto;
+    span.quantity{
+      float: right;
+      margin-right: 6%;
+      margin-top: 3px;
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      border-radius: 30px; /* or 50% */
+      background-color: $Red;
+      color: white;
+      text-align: center;
+      font-size: 0.5em;
+    }
+  }
+  .pantryList{
+    width: 100%;
+  }
+  .nested li{
+    margin-left: 10%;
+    margin-bottom: 0.25em;
+    margin-top: -0.5em;
+  }
+  li.itemTitle{
+    color: $Purple;
+    font-weight: bold;
+    margin-bottom: 0.50em;
+  }
+  .itemQuantity{
+    margin-left: 25%;
+  }
+  .itemQuantityNumber{
+    margin-left: 28%;
   }
 }
 

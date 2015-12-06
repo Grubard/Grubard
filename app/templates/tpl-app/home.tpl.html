@@ -123,7 +123,6 @@
         <p>Edit Grocery List</p>
       </a>
     </div>
-
   </div>
 
   
@@ -133,32 +132,112 @@
 
     <div class="list pantryList dark">
       <ul class="vertical menu" data-accordion-menu>
+        
         <li>
-          <a class="title" href="#">Necessities</a>
-          <ul class="menu vertical nested is-active">
-            <li><a href="#">Milk</a></li>
-            <li><a href="#">Soap</a></li>
-          </ul>
-        </li>
-        <li>
-          <a class="title" href="#">Dairy</a>
+          <a class="subTitle">Necessities<span class="quantity">3</span></a>
           <ul class="menu vertical nested">
-            <li><a href="#">Milk</a></li>
-            <li><a href="#">Eggs</a></li>
-            <li><a href="#">Cheese</a></li>
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li>Milk<span class="itemQuantityNumber">7</span></li>
+            <li>Soap</li>
           </ul>
         </li>
+        
         <li>
-          <a class="title" href="#">Produce</a>
+          <a class="subTitle">Produce<span class="quantity">12</span></a>
           <ul class="menu vertical nested">
-            <li><a href="#">Carrots</a></li>
-            <li><a href="#">Celery</a></li>
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li>Carrots</li>
+            <li>Celery</li>
           </ul>
         </li>
-        <li><a class="title" href="#">Beer</a></li>
+        
+        <li>
+          <a class="subTitle">Dairy<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li>Milk</li>
+            <li>Eggs</li>
+            <li>Cheese</li>
+          </ul>
+        </li>
+        
+        <li>
+          <a class="subTitle">Deli<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>
+        
+        <li>
+          <a class="subTitle">Meats<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>
+
+        <li>
+          <a class="subTitle">Baking<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>        
+
+        <li>
+          <a class="subTitle">Spices<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>        
+
+        <li>
+          <a class="subTitle">Frozen Foods<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>        
+
+        <li>
+          <a class="subTitle">Beverages<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>        
+
+        <li>
+          <a class="subTitle">Hygiene<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>        
+
+        <li>
+          <a class="subTitle">Household Items<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>        
+
+        <li>
+          <a class="subTitle">Other<span class="quantity">0</span></a>
+          <ul class="menu vertical nested">
+            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
+            <li></li>
+          </ul>
+        </li>
       </ul>
       <a href="/#pantry"><img ng-src='../images/eggplant.png'></a>
     </div>
+
+
+
 
 
 
@@ -181,8 +260,7 @@
           <td>{{i.necessity}}</td>
         </tr>
       </table>
-      <a href="/#list"><img ng-src='../images/apple.png'></a>
-      
+      <a href="/#list"><img ng-src='../images/apple.png'></a>   
     </div>  
    
   </div>
