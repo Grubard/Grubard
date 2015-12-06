@@ -33,7 +33,7 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
   function createSmartCart (house) {
     console.log(house);
     LoginService.createNewSmartCart(house).then( (res)=> {
-      console.log(res.data);
+      console.log(res);
       var expireDate = new Date();
       expireDate.setDate(expireDate.getDate() + 7);
       let id = res.data.house.id;

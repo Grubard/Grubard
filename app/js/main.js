@@ -245,7 +245,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
   function createSmartCart(house) {
     console.log(house);
     LoginService.createNewSmartCart(house).then(function (res) {
-      console.log(res.data);
+      console.log(res);
       var expireDate = new Date();
       expireDate.setDate(expireDate.getDate() + 7);
       var id = res.data.house.id;
@@ -677,9 +677,9 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
   var url = SERVER.URL;
   var token = $cookies.get('auth_token');
   SERVER.CONFIG.headers['Access-Token'] = token;
+  console.log(SERVER.CONFIG);
 
   var vm = this;
-
   vm.createNewSmartCart = createNewSmartCart;
 
   var House = function House(house) {
@@ -688,8 +688,9 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
   };
 
   function createNewSmartCart(house) {
-    console.log(house);
     var h = new House(house);
+    console.log(SERVER.CONFIG);
+    console.log('h:', h);
     return $http.post(url + '/house', h, SERVER.CONFIG);
   }
 };
