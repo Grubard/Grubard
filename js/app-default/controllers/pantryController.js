@@ -2,7 +2,12 @@ import $ from 'jQuery';
 
 let PantryController = function($scope, $http, PantryService, $state) {
   
-
+  $('.addItem').click(function(){
+    $('.panAdd').addClass('displayPan');
+  });
+  $('.doneAdding').click(function(){
+    $('.panAdd').removeClass('displayPan');
+  });
   let vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;

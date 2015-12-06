@@ -287,7 +287,10 @@ body::after {
   border-radius: 10px;
   width: 95%;
   margin: 1% auto;
-
+  padding-bottom: 10px;
+  .addPanItem{
+    margin: 10px;
+  }
   i{
     float: right;
     margin-right: 5%;
@@ -310,25 +313,19 @@ body::after {
     margin: 2% auto;
     width: 15em;
   }
-  .addItem{
-    width: 10%;
-    display: inline-block
-  }
+ 
   .checkIt{
     display: none;
   }
 
 
-  form{
-    width: 80%;
-    font-size: 1em;;
-    margin-top: 0;
-    margin-left: 4%;
+  
     input{
       background: lighten(#D2DFEA, 5%);
       border: none;
       border-radius: 5px;
       padding: 0.5em;
+      margin: 8px 0px;
     }
     select{
       // background: lighten(#D2DFEA, 5%);
@@ -336,14 +333,7 @@ body::after {
       border-radius: 5px;
       padding: 0.5em;
     }
-    .foodName{
-      width: 20em;
-    }
-    .foodQuantity{
-      width: 4em;
-    }
-  }
-
+ 
 
   label{
     position: relative;
@@ -386,12 +376,25 @@ body::after {
 
 
 
+.panAdd{
+  display: none;
+  text-align: center;
+}
 
+.displayPan{
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
 
-
-
-
-
+.addPanItem{
+  display: block;
+  width: 100%;
+}
+.addBtns{
+  text-align: center;
+}
 
 
 

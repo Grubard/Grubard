@@ -5585,7 +5585,10 @@ body::after {
   background: #D2DFEA;
   border-radius: 10px;
   width: 95%;
-  margin: 1% auto; }
+  margin: 1% auto;
+  padding-bottom: 10px; }
+  .mainGroceryList .addPanItem {
+    margin: 10px; }
   .mainGroceryList i {
     float: right;
     margin-right: 5%;
@@ -5603,29 +5606,18 @@ body::after {
     text-align: center;
     margin: 2% auto;
     width: 15em; }
-  .mainGroceryList .addItem {
-    width: 10%;
-    display: inline-block; }
   .mainGroceryList .checkIt {
     display: none; }
-  .mainGroceryList form {
-    width: 80%;
-    font-size: 1em;
-    margin-top: 0;
-    margin-left: 4%; }
-    .mainGroceryList form input {
-      background: #e3ebf2;
-      border: none;
-      border-radius: 5px;
-      padding: 0.5em; }
-    .mainGroceryList form select {
-      border: none;
-      border-radius: 5px;
-      padding: 0.5em; }
-    .mainGroceryList form .foodName {
-      width: 20em; }
-    .mainGroceryList form .foodQuantity {
-      width: 4em; }
+  .mainGroceryList input {
+    background: #e3ebf2;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 8px 0px; }
+  .mainGroceryList select {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em; }
   .mainGroceryList label {
     position: relative;
     width: 2em;
@@ -5657,6 +5649,23 @@ body::after {
 
 .notCrossedOut {
   text-decoration: none; }
+
+.panAdd {
+  display: none;
+  text-align: center; }
+
+.displayPan {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center; }
+
+.addPanItem {
+  display: block;
+  width: 100%; }
+
+.addBtns {
+  text-align: center; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
