@@ -5574,6 +5574,12 @@ body::after {
         .userHomePage .bothLists .list table th:hover {
           cursor: pointer; }
 
+.vertical {
+  border: 2px solid white;
+  text-decoration: none; }
+  .vertical .title {
+    font-size: 1.5em; }
+
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
   background: #D2DFEA;

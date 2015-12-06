@@ -6,6 +6,8 @@
 @include motion-ui-transitions;
 @include foundation-everything;
 
+
+
 $Blue: #3C3F95;
 $Gray: #677077;
 $lightGray: #b5b5b7;
@@ -262,6 +264,14 @@ body::after {
         }
       }
     }
+  }
+}
+
+.vertical{
+  border: 2px solid white;
+  text-decoration: none;
+  .title{
+    font-size: 1.5em;
   }
 }
 

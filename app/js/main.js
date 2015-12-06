@@ -234,6 +234,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
 
   vm.signUp = function (newUser) {
     $http.post(url + '/signup/', newUser).then(function (res) {
+      console.log(res.data);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);
     });
@@ -242,6 +243,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
   };
 
   function createSmartCart(house) {
+    console.log(house);
     LoginService.createNewSmartCart(house).then(function (res) {
       console.log(res);
       var expireDate = new Date();
@@ -675,9 +677,9 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
   var url = SERVER.URL;
   var token = $cookies.get('auth_token');
   SERVER.CONFIG.headers['Access-Token'] = token;
+  console.log(SERVER.CONFIG);
 
   var vm = this;
-
   vm.createNewSmartCart = createNewSmartCart;
 
   var House = function House(house) {
@@ -687,6 +689,8 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
 
   function createNewSmartCart(house) {
     var h = new House(house);
+    console.log(SERVER.CONFIG);
+    console.log('h:', h);
     return $http.post(url + '/house', h, SERVER.CONFIG);
   }
 };
