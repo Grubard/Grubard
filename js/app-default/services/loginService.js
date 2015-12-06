@@ -1,9 +1,5 @@
 let LoginService = function($http, SERVER, $cookies) {
   
-  let url = SERVER.URL;
-  let token = $cookies.get('auth_token');
-  SERVER.CONFIG.headers['Access-Token'] = token;
-  console.log(SERVER.CONFIG);
 
 
   let vm = this;
@@ -16,6 +12,10 @@ let LoginService = function($http, SERVER, $cookies) {
   };
 
   function createNewSmartCart(house) {
+    let url = SERVER.URL;
+    let token = $cookies.get('auth_token');
+    SERVER.CONFIG.headers['Access-Token'] = token;
+    console.log(SERVER.CONFIG);
     let h = new House(house);
     console.log(SERVER.CONFIG);
     console.log('h:', h);
