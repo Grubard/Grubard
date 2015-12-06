@@ -674,11 +674,6 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LoginService = function LoginService($http, SERVER, $cookies) {
 
-  var url = SERVER.URL;
-  var token = $cookies.get('auth_token');
-  SERVER.CONFIG.headers['Access-Token'] = token;
-  console.log(SERVER.CONFIG);
-
   var vm = this;
   vm.createNewSmartCart = createNewSmartCart;
 
@@ -688,6 +683,10 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
   };
 
   function createNewSmartCart(house) {
+    var url = SERVER.URL;
+    var token = $cookies.get('auth_token');
+    SERVER.CONFIG.headers['Access-Token'] = token;
+    console.log(SERVER.CONFIG);
     var h = new House(house);
     console.log(SERVER.CONFIG);
     console.log('h:', h);
