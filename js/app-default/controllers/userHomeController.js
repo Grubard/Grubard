@@ -22,7 +22,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
-      console.log(response);
+      // console.log(response);
       vm.items = response.data;
       
     });
@@ -31,7 +31,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
   pantryList();
   function pantryList() {
     PantryService.getPantryList().then( (response) => {
-      console.log(response);
+      // console.log(response);
       vm.pantryItems = response.data;
     });
   }

@@ -10,7 +10,7 @@
   <ul>
     <li>
       <form ng-submit="vm.addNewItem(food)">
-        <input class="addPanItem" ng-model="food.title" placeholder="New Item">
+        <input class="addPanItem" ng-model="food.title" placeholder="New Item" required>
         <select class="addPanItem" ng-model="food.quantity">
           <option value="" disabled selected>Qty</option>  
           <option value="1">1</option>
@@ -56,9 +56,9 @@
 
 
         <select class="addPanItem" ng-model="food.necessity">
-          <option value="" disabled selected>False</option>
-          <option value="true">true</option>
-          <option value="false">false</option>
+          <option value="" disabled selected>Necessity?</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
         </select>
 
         <button class="button   addPanItem">Submit</button>
