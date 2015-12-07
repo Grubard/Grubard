@@ -148,6 +148,14 @@ var _jQuery = require('jQuery');
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
 var ListController = function ListController($scope, $http, ListService, $state) {
+  (0, _jQuery2['default'])('.addAGroc').click(function () {
+    console.log('wat');
+    (0, _jQuery2['default'])('.grocAddForm').addClass('showGrocForm');
+  });
+  (0, _jQuery2['default'])('.doneAddingGroc').click(function () {
+    (0, _jQuery2['default'])('.grocAddForm').removeClass('showGrocForm');
+    $state.reload();
+  });
 
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
@@ -161,7 +169,6 @@ var ListController = function ListController($scope, $http, ListService, $state)
   function addNewItem(food) {
     ListService.addItem(food).then(function (response) {});
     $scope.food = {};
-    $state.reload();
   }
 
   groceryList();
@@ -294,6 +301,7 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   });
   (0, _jQuery2['default'])('.doneAdding').click(function () {
     (0, _jQuery2['default'])('.panAdd').removeClass('displayPan');
+    $state.reload();
   });
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
@@ -307,13 +315,12 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   function addNewItem(food) {
     PantryService.addItem(food).then(function (response) {});
     $scope.food = {};
-    $state.reload();
   }
 
   pantryList();
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
-      console.log(response);
+      // console.log(response);
       vm.pantryList = response.data;
       // vm.pantryList = [{title: 'beef', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}, {title: 'chicken', category: 'meats', quantity: '100', preferred: '10', necessity: 'true'},{title: 'wats', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}]
 
@@ -792,19 +799,40 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var TransferService = function TransferService($http, SERVER, $cookies) {
   var url = SERVER.URL;
   var token = $cookies.get('auth_token');
   SERVER.CONFIG.headers['Access-Token'] = token;
   this.transferItems = transferItems;
 
-  function transferItems(x) {
-    console.log(x);
-    return function (x) {
-      if (x.quantity < x.preferred) {
-        $http.post(url + '/grocery', x, SERVER.CONFIG);
-      }
-    };
+  function transferItems(pantry) {
+    $http.get(url + '/grocery', SERVER.CONFIG).then(function (res) {
+
+      var groceries = res.data;
+      var grocNames = [];
+      groceries.map(function (name) {
+        grocNames.push(name.title);
+      });
+
+      pantry.map(function (panItem) {
+        if (panItem.quantity < panItem.preferred) {
+          var yay = _jquery2['default'].inArray(panItem.title, grocNames);
+          console.log(yay);
+          if (yay === -1) {
+            $http.post(url + '/grocery', panItem, SERVER.CONFIG).then(function (res) {
+              console.log(res);
+            });
+          }
+        }
+      });
+    });
   }
 };
 
@@ -813,7 +841,7 @@ TransferService.$inject = ['$http', 'SERVER', '$cookies'];
 exports['default'] = TransferService;
 module.exports = exports['default'];
 
-},{}],18:[function(require,module,exports){
+},{"jquery":31}],18:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }

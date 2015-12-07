@@ -1,10 +1,11 @@
 <div class="mainGroceryList">
   <h3>Current Grocery List</h3>
-    
+    <button class="button addAGroc">Add Grocery</button>
   <ul>
     <li>
+    <div class="grocAddForm">
       <form ng-submit="vm.addNewItem(food)">
-        <input class="addItem foodName" ng-model="food.title" placeholder="New Item">
+        <input class="newGroc foodName" ng-model="food.title" placeholder="New Item">
         <select class="addItem foodQuantity" ng-model="food.quantity">
           <option value="" disabled selected>Qty</option>  
           <option value="1">1</option>
@@ -19,7 +20,7 @@
           <option value="10">10</option>
         </select>
 
-        <select class="addItem foodCategory" ng-model="food.category">
+        <select class="newGroc foodCategory" ng-model="food.category">
           <option value="" disabled selected>Category</option>  
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
@@ -33,7 +34,7 @@
           <option value="Spices">Spices</option>
         </select>
       
-        <select class="addItem foodPreferred" ng-model="food.preferred">
+        <select class="newGroc foodPreferred" ng-model="food.preferred">
           <option value="" disabled selected>Preffered Amt</option>  
           <option value="1">1</option>
           <option value="2">2</option>
@@ -49,14 +50,16 @@
 
 
 
-        <select class="addItem foodNecessity" ng-model="food.necessity">
+        <select class="newGroc foodNecessity" ng-model="food.necessity">
           <option value="" disabled selected>False</option>
           <option value="true">true</option>
           <option value="false">false</option>
         </select>
 
-        <button class="button addItem">Submit</button>
+        <button class="button newGroc">Submit</button>
       </form>
+      <button class="button doneAddingGroc">Done Adding</button>
+      </div>
     </li>
 
     <li ng-repeat="object in vm.groceryList" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
