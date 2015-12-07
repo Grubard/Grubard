@@ -29,7 +29,7 @@ body{
 
 body { 
   background-image:url('../images/strawberryBG.jpg'); 
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: cover;
 
 }
@@ -514,8 +514,17 @@ body {
       font-weight: 500;
     }
   }
-
 }
+@media all and (max-width: 900px) {
+  .top-bar-left{
+    width: 13em;
+    padding-top: 10px;
+    .logoArea a img{
+      width: 2em;
+    }
+  }
+}
+
 
 .hide-user {
   display: none;
