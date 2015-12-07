@@ -1,7 +1,14 @@
 import $ from 'jQuery';
 
 let ListController = function($scope, $http, ListService, $state) {
-  
+  $('.addAGroc').click(function(){
+    console.log('wat');
+    $('.grocAddForm').addClass('showGrocForm');
+  });
+  $('.doneAddingGroc').click(function(){
+    $('.grocAddForm').removeClass('showGrocForm');
+    $state.reload();
+  });
 
   let vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
@@ -16,7 +23,6 @@ let ListController = function($scope, $http, ListService, $state) {
     ListService.addItem(food).then((response) => {
     });
     $scope.food = {};
-    $state.reload();
   }
 
 

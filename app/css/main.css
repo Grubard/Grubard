@@ -5614,57 +5614,19 @@ body {
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
   background: #D2DFEA;
-  border-radius: 10px;
-  width: 95%;
-  margin: 1% auto;
-  padding-bottom: 10px; }
-  .mainGroceryList .addPanItem {
-    margin: 10px; }
-  .mainGroceryList i {
-    float: right;
-    margin-right: 5%;
-    color: #D41617;
-    margin-top: -1em; }
-  .mainGroceryList h3 {
-    text-align: center; }
-  .mainGroceryList ul {
-    padding-top: 2%;
-    list-style: none;
-    font-size: 1.2em; }
-  .mainGroceryList span {
-    margin-left: 10%; }
-  .mainGroceryList .button {
-    text-align: center;
-    margin: 2% auto;
-    width: 15em; }
-  .mainGroceryList .checkIt {
-    display: none; }
-  .mainGroceryList input {
-    background: #e3ebf2;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5em;
-    margin: 8px 0px; }
-  .mainGroceryList select {
-    border: none;
-    border-radius: 5px;
-    padding: 0.5em; }
-  .mainGroceryList label {
-    position: relative;
-    width: 2em;
-    height: 2em;
-    border: 1px solid #3C3F95;
-    border-radius: 100px;
-    vertical-align: -25%; }
-  .mainGroceryList label:hover:before {
-    position: absolute;
-    right: 3px;
-    top: -4px;
-    font-family: 'FontAwesome';
-    content: '\f00c';
-    font-size: 1.4em;
-    font-weight: 100;
-    color: #57B65C; }
+  text-align: center; }
+
+.grocAddForm {
+  display: none;
+  margin: 20px auto;
+  width: 45%; }
+  .grocAddForm input {
+    width: 100%;
+    height: 2.5em;
+    margin: 10px 0px; }
+
+.showGrocForm {
+  display: block; }
 
 .crossOut {
   position: relative;
