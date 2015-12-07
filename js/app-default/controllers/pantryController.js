@@ -7,6 +7,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   });
   $('.doneAdding').click(function(){
     $('.panAdd').removeClass('displayPan');
+    $state.reload();
   });
   let vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
@@ -21,7 +22,6 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
     PantryService.addItem(food).then((response) => {
     });
     $scope.food = {};
-    $state.reload();
   }
 
 
@@ -29,7 +29,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   pantryList();
   function pantryList() {
     PantryService.getPantryList().then( (response) => {
-      console.log(response);
+      // console.log(response);
       vm.pantryList = response.data;
       // vm.pantryList = [{title: 'beef', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}, {title: 'chicken', category: 'meats', quantity: '100', preferred: '10', necessity: 'true'},{title: 'wats', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}]
 
