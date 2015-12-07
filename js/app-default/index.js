@@ -13,7 +13,7 @@ import AddUserController from './controllers/add.user.controller';
 import LoginService from './services/loginService';
 import ListService from './services/listService';
 import PantryService from './services/pantryService';
-
+import TransferService from './services/transferService';
 
 import user from './directives/user.dir';
 import alert from './directives/alert.dir';
@@ -37,6 +37,7 @@ angular
   .service('LoginService', LoginService)
   .service('ListService', ListService)
   .service('PantryService', PantryService)
+  .service('TransferService', TransferService)
   .directive('user', user)
   .directive('alert', alert)
   .directive('addUser', addUser)

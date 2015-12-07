@@ -1,6 +1,6 @@
 import $ from 'jQuery';
 
-let PantryController = function($scope, $http, PantryService, $state) {
+let PantryController = function($scope, $http, PantryService, $state, TransferService) {
   
   $('.addItem').click(function(){
     $('.panAdd').addClass('displayPan');
@@ -31,6 +31,10 @@ let PantryController = function($scope, $http, PantryService, $state) {
     PantryService.getPantryList().then( (response) => {
       console.log(response);
       vm.pantryList = response.data;
+      // vm.pantryList = [{title: 'beef', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}, {title: 'chicken', category: 'meats', quantity: '100', preferred: '10', necessity: 'true'},{title: 'wats', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}]
+
+      //TransferService does things
+      TransferService.transferItems(vm.pantryList);
     });
   }
 
@@ -63,6 +67,6 @@ let PantryController = function($scope, $http, PantryService, $state) {
 
 };
 
-PantryController.$inject = ['$scope', '$http', 'PantryService', '$state'];
+PantryController.$inject = ['$scope', '$http', 'PantryService', '$state', 'TransferService'];
 
 export default PantryController;
