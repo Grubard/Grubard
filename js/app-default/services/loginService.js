@@ -15,15 +15,11 @@ let LoginService = function($http, SERVER, $cookies) {
     let url = SERVER.URL;
     let token = $cookies.get('auth_token');
     SERVER.CONFIG.headers['Access-Token'] = token;
-    console.log(SERVER.CONFIG);
     let h = new House(house);
     console.log(SERVER.CONFIG);
     console.log('h:', h);
     return $http.post(url + '/house', h, SERVER.CONFIG);
   }
-
-
-
 };
 
 LoginService.$inject = ['$http', 'SERVER', '$cookies'];
