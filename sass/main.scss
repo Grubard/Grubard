@@ -27,36 +27,27 @@ body{
   height: 100%;
 }
 
-body::after {
-  content: "";
-  background: url('../images/background.jpg')center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
+body { 
+  background-image:url('../images/strawberryBG.jpg'); 
+  background-repeat: no-repeat;
+  background-position: cover;
+
 }
+
 
 /*********************Landing Page******************************/
 
-.outside{
-  background-image: url('../images/background.jpg') no-repeat center center;
-}
+
 
 .landingPage{
   background: #D2DFEA;
   border-radius: 10px;
   width: 70%;
-  opacity: .9;
+  opacity: .95;
   margin: 1% auto 0 auto;
   vertical-align: middle;
 }
+
 
 .logo{
   img{
@@ -123,48 +114,47 @@ body::after {
 
 /*********************LogIn Page******************************/
 
-@media all and (max-width: 1050px) {
-  .loginBlock{
-    display: block;
-    width: 100%;
-  }
-}
 
 .loginPage{
-  width: 100%;
-  height: 100vh;
-  background: #D2DFEA;
+  border-radius: 5px;
+  width: 50%;
+  color: white;
+  background: #303E4D;
+  opacity: 0.9;
+  margin-left: 3%;
+  margin-top: 1%;
+  padding: 1%;
   .loginBlock{
-    display: inline-block;
-    width: 40%;
+    width: 80%;
   }
   .formStuff{
-    vertical-align: top;
+    margin: 0 auto;
     margin-top: 5%;
     font-size: 1.5em;
-    margin-left: 5%;
     form{
       width: 80%;
     }
     .logIn{
-      border-bottom: 1px solid $lightGray;
+      border-bottom: 1px solid white;
     }
   }
   .rightPanel{
-    margin-top: 5%;
+    width: 70%;
+    margin: 0 auto;
     font-size: 1.3em;
+    font-weight: 600;
     font-style: italic;
-    text-align: center;
-    img{
-      width: 70%;
+    p{
+      margin-left: -15px;
     }
   }
-  
   .newButton{
     font-size: 0.8em;
     margin-top: 3%;
     margin-left: 21%;
   }
+  
+
   .finishButton{
     display: none;
   }
@@ -185,6 +175,11 @@ body::after {
   }
 }
 
+@media all and (max-width: 900px) {
+  .loginPage{
+    width: 90%;
+  }
+}
 
 
 
@@ -486,30 +481,38 @@ body::after {
   // transform:translate3d(100px, 0, 0);
 }
 
+
+
+
+
+
 // Top Bar //
 /////////////
 
 .top-bar {
-  background-color: darken($Green, 10%);
-  font-weight: bold;
-  .top-bar-right {
-    .menu button {
-      &:hover {
-        background-color: darken($Green, 10%);
-      }
-    }
-  }
-  
-  a {
-    color: white;
-    border-radius: .2em;
-    &:hover {
-      background-color: white;
-      color: darken($Green, 10%);
-    }
-  }
+  // height: 4em;
+  background-color: #303E4D;
   ul {
     background-color: inherit;
+  }
+  .top-bar-left {
+    margin-top: -2em;
+    a{
+      color: white;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: 500;
+    }
+    img{
+      width: 10%;
+    }
+  }
+  .top-bar-right {
+    .menu button {
+      vertical-align: middle;
+      font-size: 1em;
+      font-weight: 500;
+    }
   }
 
 }
