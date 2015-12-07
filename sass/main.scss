@@ -189,8 +189,6 @@ body {
 
 .userHomePage{
   width: 100%;
-  height: 100vh;
-  background: #D2DFEA;
   .side{
     display: inline-block;
   }
@@ -198,9 +196,10 @@ body {
     width: 20%;
   }
   .quickLinks{
-    border-right: 1px solid $lightGray;
-    height: 100%;
-    width: 15%;
+    width: 16%;
+    background: #303E4E;
+    opacity: .9;
+    height: 50em;
     a{
       color: $FruitGreen;
     }
@@ -288,17 +287,18 @@ body {
     margin: 0 auto;
     span.quantity{
       float: right;
-      margin-right: 6%;
+      margin-right: 4%;
       margin-top: 3px;
       display: inline-block;
       height: 20px;
       width: 20px;
       line-height: 20px;
-      border-radius: 30px; /* or 50% */
-      background-color: $Red;
-      color: white;
+      border-radius: 30px;
+      // background-color: $Red;
+      color: $Red;
       text-align: center;
-      font-size: 0.5em;
+      font-size: 0.6em;
+      font-weight: 500;
     }
   }
   .pantryList{
@@ -308,18 +308,11 @@ body {
     margin-left: 10%;
     margin-bottom: 0.25em;
     margin-top: -0.5em;
+    table td{
+      text-align: center;
+    }
   }
-  li.itemTitle{
-    color: $Purple;
-    font-weight: bold;
-    margin-bottom: 0.50em;
-  }
-  .itemQuantity{
-    margin-left: 25%;
-  }
-  .itemQuantityNumber{
-    margin-left: 28%;
-  }
+
 }
 
 
@@ -351,6 +344,11 @@ body {
     padding-top: 2%;
     list-style: none;
     font-size: 1.2em;
+  }
+  li{
+    margin-top: 1em;
+    list-style: none;
+    margin-left: 2em;
   }
   span{
     margin-left: 10%;

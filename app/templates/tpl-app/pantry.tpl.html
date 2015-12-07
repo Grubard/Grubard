@@ -1,7 +1,6 @@
 <div class="mainGroceryList">
   <h3>Current Pantry List</h3>
 
-  
     <button class="button addItem addPanItem">Add an Item</button>
     
 
@@ -68,6 +67,7 @@
     </li>
     <button class="button doneAdding">Done Adding</button>
     </div>
+    
 
     <li ng-repeat="object in vm.pantryList" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
