@@ -320,11 +320,10 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   pantryList();
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
-      // console.log(response);
+
       vm.pantryList = response.data;
       // vm.pantryList = [{title: 'beef', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}, {title: 'chicken', category: 'meats', quantity: '100', preferred: '10', necessity: 'true'},{title: 'wats', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}]
 
-      //TransferService does things
       TransferService.transferItems(vm.pantryList);
     });
   }
