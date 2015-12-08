@@ -12,7 +12,7 @@
     <div class="quickNav">
       <a href="/#list">
         <img ng-src='../images/apple.png'>
-        <p>Edit Grocery List</p>
+        <p>Go Shopping <br> or <br> Edit Grocery List</p>
       </a>
     </div>
 
@@ -38,13 +38,25 @@
         <li>
           <a class="subTitle">Necessities<span class="quantity necessityQuant">{{ vm.necessityAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.necessity">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }} </span></li>
+           
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.necessity">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
         </li>
         
         <li>
-          <a class="subTitle">Produce<span class="quantity produceQuant">{{ vm.produceAmt }}</span></a>
+          <a class="subTitle">Produce<span class="quantity">{{ vm.produceAmt }}</span></a>
           <ul class="menu vertical nested">
 
             <li>
@@ -64,85 +76,285 @@
         </li>
         
         <li>
-          <a class="subTitle">Dairy<span class="quantity dairyQuant">{{ vm.dairyAmt }}</span></a>
-          <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.dairy">{{ item.title }} <span class="itemQuantityNumber"> {{ item.quantity }}</span></li>
-          </ul>
-        </li>
-        
-        <li>
           <a class="subTitle">Deli<span class="quantity">{{ vm.deliAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.deli">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
-          </ul>
-        </li>
-        
-        <li>
-          <a class="subTitle">Meats<span class="quantity">{{ vm.meatsAmt }}</span></a>
-          <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.meats">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+         
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.deli">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
           </ul>
         </li>
 
         <li>
-          <a class="subTitle">Baking<span class="quantity">{{ vm.bakingAmt }}</span></a>
+          <a class="subTitle">Meats<span class="quantity">{{ vm.meatsAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.baking">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+           
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.meats">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
-        </li>        
+        </li>
 
         <li>
           <a class="subTitle">Spices<span class="quantity">{{ vm.spicesAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.spices">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+         
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.spices">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
           </ul>
         </li>        
+        
+        <li>
+          <a class="subTitle">Baking<span class="quantity">{{ vm.bakingAmt }}</span></a>
+          <ul class="menu vertical nested">
+       
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.baking">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+          </ul>
+        </li>    
+
+        <li>
+          <a class="subTitle">Breakfast Items<span class="quantity">{{ vm.breakfastAmt }}</span></a>
+          <ul class="menu vertical nested">
+            
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.breakfast">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a class="subTitle">Snacks<span class="quantity">{{ vm.snacksAmt }}</span></a>
+          <ul class="menu vertical nested">
+            
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.snacks">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a class="subTitle">Sweets<span class="quantity">{{ vm.sweetsAmt }}</span></a>
+          <ul class="menu vertical nested">
+            
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.sweets">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a class="subTitle">Grains & Pasta<span class="quantity">{{ vm.grainsAmt }}</span></a>
+          <ul class="menu vertical nested">
+            
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.grains">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
+          </ul>
+        </li>         
 
         <li>
           <a class="subTitle">Frozen Foods<span class="quantity">{{ vm.frozenAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.frozen">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+           
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.frozen">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
-        </li>        
+        </li>
 
         <li>
-          <a class="subTitle">Beverages<span class="quantity">{{ vm.bevAmt }}</span></a>
+          <a class="subTitle">Beverages<span class="quantity">{{ vm.bevsAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.bevs">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+       
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.bevs">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
-        </li>        
+        </li>
 
         <li>
           <a class="subTitle">Hygiene<span class="quantity">{{ vm.hygieneAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.hygiene">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+         
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.hygiene">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
-        </li>        
+        </li>
+
 
         <li>
           <a class="subTitle">Household Items<span class="quantity">{{ vm.householdAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.household">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+          
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.household">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
-        </li>        
+        </li>
+
+        <li>
+          <a class="subTitle">Dairy<span class="quantity">{{ vm.dairyAmt }}</span></a>
+          <ul class="menu vertical nested">
+        
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.dairy">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
+          </ul>
+        </li>
 
         <li>
           <a class="subTitle">Other<span class="quantity">{{ vm.otherAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.other">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+         
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.other">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
         </li>
+
       </ul>
+
       <a href="/#pantry"><img ng-src='../images/eggplant.png'></a>
     </div>
 
