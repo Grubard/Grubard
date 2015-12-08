@@ -158,9 +158,9 @@ var ListController = function ListController($scope, $http, ListService, $state)
   });
 
   var vm = this;
-  // vm.addItemsToPantry = addItemsToPantry;
-  // vm.clearCompleted = clearCompleted;
-  // vm.editItem = editItem;
+  vm.addItemsToPantry = addItemsToPantry;
+  vm.clearCompleted = clearCompleted;
+  vm.editItem = editItem;
 
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
@@ -187,23 +187,23 @@ var ListController = function ListController($scope, $http, ListService, $state)
     }, 100);
   }
 
-  // function editItem (object){
-  //   // Edit item on double click
-  //   console.log('hi');
-  // }
+  function editItem(object) {
+    // Edit item on double click
+    console.log('hi');
+  }
 
-  // function removeItem(items) {
-  //   console.log('delete me');
-  // }
+  function removeItem(items) {
+    console.log('delete me');
+  }
 
-  // function addItemsToPantry() {
-  //   console.log('ok');
-  //   // vm.items.post()
-  // }
+  function addItemsToPantry() {
+    console.log('ok');
+    // vm.items.post()
+  }
 
-  // function clearCompleted() {
-  //   console.log('asdf');
-  // }
+  function clearCompleted() {
+    console.log('asdf');
+  }
 };
 
 ListController.$inject = ['$scope', '$http', 'ListService', '$state'];
@@ -320,11 +320,10 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   pantryList();
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
-      // console.log(response);
+
       vm.pantryList = response.data;
       // vm.pantryList = [{title: 'beef', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}, {title: 'chicken', category: 'meats', quantity: '100', preferred: '10', necessity: 'true'},{title: 'wats', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}]
 
-      //TransferService does things
       TransferService.transferItems(vm.pantryList);
     });
   }
@@ -840,13 +839,11 @@ var TransferService = function TransferService($http, SERVER, $cookies) {
       });
 
       pantry.map(function (panItem) {
-        if (panItem.quantity < panItem.preferred) {
+        if (panItem.quantity < panItem.preferred && panItem.necessity === true) {
           var yay = _jquery2['default'].inArray(panItem.title, grocNames);
-          console.log(yay);
+
           if (yay === -1) {
-            $http.post(url + '/grocery', panItem, SERVER.CONFIG).then(function (res) {
-              console.log(res);
-            });
+            $http.post(url + '/grocery', panItem, SERVER.CONFIG).then(function (res) {});
           }
         }
       });
