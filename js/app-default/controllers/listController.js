@@ -11,9 +11,9 @@ let ListController = function($scope, $http, ListService, $state) {
   });
 
   let vm = this;
-  // vm.addItemsToPantry = addItemsToPantry;
-  // vm.clearCompleted = clearCompleted;
-  // vm.editItem = editItem;
+  vm.addItemsToPantry = addItemsToPantry;
+  vm.clearCompleted = clearCompleted;
+  vm.editItem = editItem;
 
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
@@ -44,23 +44,23 @@ let ListController = function($scope, $http, ListService, $state) {
   }
 
 
-  // function editItem (object){
-  //   // Edit item on double click
-  //   console.log('hi');
-  // }
+  function editItem (object){
+    // Edit item on double click
+    console.log('hi');
+  }
 
-  // function removeItem(items) {
-  //   console.log('delete me');
-  // }
+  function removeItem(items) {
+    console.log('delete me');
+  }
 
-  // function addItemsToPantry() {
-  //   console.log('ok');
-  //   // vm.items.post()
-  // }
+  function addItemsToPantry() {
+    console.log('ok');
+    // vm.items.post()
+  }
 
-  // function clearCompleted() {
-  //   console.log('asdf');
-  // }
+  function clearCompleted() {
+    console.log('asdf');
+  }
 
 };
 
