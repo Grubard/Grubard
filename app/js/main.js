@@ -354,8 +354,10 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   }
 
   function saveNewChanges(object) {
-    console.log(object);
-    PantryService.editFoodItem(object).then(function (response) {});
+
+    PantryService.editFoodItem(object).then(function (response) {
+      console.log('this is the response', response);
+    });
     setTimeout(function () {
       $state.reload();
     }, 100);
@@ -828,7 +830,9 @@ var PantryService = function PantryService($http, SERVER, $cookies) {
   }
 
   function editFoodItem(foodObj) {
-    return $http.post(url + '/edible/' + foodObj.id + '/edit', SERVER.CONFIG);
+    var x = foodObj.id;
+    console.log(foodObj);
+    return $http.put(url + '/edible/' + x + '/edit', foodObj, SERVER.CONFIG);
   }
 };
 

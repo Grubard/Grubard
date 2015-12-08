@@ -53,8 +53,9 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   }
 
   function saveNewChanges(object) {
-    console.log(object);
+    
     PantryService.editFoodItem(object).then((response) => {
+      console.log('this is the response', response);
     });
     setTimeout( function() {
       $state.reload();
