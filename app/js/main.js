@@ -821,13 +821,11 @@ var TransferService = function TransferService($http, SERVER, $cookies) {
       });
 
       pantry.map(function (panItem) {
-        if (panItem.quantity < panItem.preferred) {
+        if (panItem.quantity < panItem.preferred && panItem.necessity === true) {
           var yay = _jquery2['default'].inArray(panItem.title, grocNames);
-          console.log(yay);
+
           if (yay === -1) {
-            $http.post(url + '/grocery', panItem, SERVER.CONFIG).then(function (res) {
-              console.log(res);
-            });
+            $http.post(url + '/grocery', panItem, SERVER.CONFIG).then(function (res) {});
           }
         }
       });

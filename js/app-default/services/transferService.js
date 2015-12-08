@@ -15,12 +15,12 @@ let TransferService = function($http, SERVER, $cookies){
       });
 
       pantry.map(function(panItem){
-        if(panItem.quantity < panItem.preferred){
+        if(panItem.quantity < panItem.preferred && panItem.necessity === true){
           let yay = $.inArray(panItem.title, grocNames);
-          console.log(yay);
+          
           if(yay === -1){
             $http.post(url + '/grocery', panItem, SERVER.CONFIG).then((res)=>{
-              console.log(res);
+              
             });
           }
         }
