@@ -5626,9 +5626,15 @@ body {
 .mainGroceryList {
   background: #D2DFEA;
   border-radius: 10px;
-  width: 95%;
-  margin: 1% auto;
+  width: 75%;
+  margin: 3% auto;
   padding-bottom: 10px; }
+  .mainGroceryList .buttonAdd {
+    text-align: center; }
+    .mainGroceryList .buttonAdd button {
+      font-size: 1.5em;
+      height: 65px;
+      border-radius: 10px; }
   .mainGroceryList .addPanItem {
     margin: 10px; }
   .mainGroceryList i {
@@ -5711,6 +5717,24 @@ body {
 .addBtns {
   text-align: center; }
 
+<<<<<<< HEAD
+.editItem {
+  display: none; }
+
+.showEditForm {
+  display: inline-block; }
+
+.grocAddForm {
+  display: none; }
+
+.showGrocForm {
+  display: block;
+  width: 45%;
+  margin: 0 auto;
+  text-align: center; }
+
+=======
+>>>>>>> 5be2be6c146eda7de004d3bb60639e0969665f1d
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;

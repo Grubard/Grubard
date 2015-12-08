@@ -1,6 +1,8 @@
 <div class="mainGroceryList">
   <h3>Current Grocery List</h3>
-    <button class="button addAGroc">Add Grocery</button>
+    <div class="buttonAdd">
+      <button class="button addAGroc">Add Grocery</button>
+    </div>
   <ul>
     <li>
     <div class="grocAddForm">
@@ -56,14 +58,17 @@
 
 
         <select class="newGroc foodNecessity" ng-model="food.necessity">
-          <option value="" disabled selected>False</option>
-          <option value="true">true</option>
-          <option value="false">false</option>
+          <option value="" disabled selected>Necessity?</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
         </select>
-
-        <button class="button newGroc">Submit</button>
+        
+          <button class="button newGroc">Submit</button>
+        
       </form>
-      <button class="button doneAddingGroc">Done Adding</button>
+      
+        <button class="button doneAddingGroc">Done Adding</button>
+      
       </div>
     </li>
 
@@ -74,7 +79,7 @@
       
 
       
-      <strong>Item:</strong> {{ object.title }} {{ object.quantity }}<br>
+      <strong>Item:</strong> {{ object.title }} {{ object.quantity }}
 
       <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 
@@ -84,10 +89,10 @@
   </ul>
 
 
-
-  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Checked Items to Pantry</button>
+  <div class="buttonAdd">
+  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Purchased Checked Items!</button>
   <button class="button clearCompleted" ng-click="vm.clearThese()">Delete Checked Items</button>
-  
+  </div>
 </div>
 
 

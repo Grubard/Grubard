@@ -393,7 +393,7 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope) {
+var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope, TransferService) {
   var vm = this;
 
   (0, _jquery2['default'])('.grocTitle').click(function () {
@@ -439,6 +439,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
       vm.pantryItems = response.data;
+      TransferService.transferItems(vm.pantryItems);
       var items = response.data;
       items.forEach(function (item) {
         console.log('nec', item);
@@ -503,7 +504,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   };
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService'];
 
 exports['default'] = UserHomeController;
 module.exports = exports['default'];
