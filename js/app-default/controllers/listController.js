@@ -1,6 +1,6 @@
 import $ from 'jQuery';
 
-let ListController = function($scope, $http, ListService, $state) {
+let ListController = function($scope, $http, ListService, $state, SERVER, $cookies) {
   $('.addAGroc').click(function(){
     console.log('wat');
     $('.grocAddForm').addClass('showGrocForm');
@@ -9,16 +9,20 @@ let ListController = function($scope, $http, ListService, $state) {
     $('.grocAddForm').removeClass('showGrocForm');
     $state.reload();
   });
+  let items= [];
 
   let vm = this;
+  let url = SERVER.URL;
+  let token = $cookies.get('auth_token');
+  SERVER.CONFIG.headers['Access-Token'] = token;
   vm.addItemsToPantry = addItemsToPantry;
-  vm.clearCompleted = clearCompleted;
+  vm.clearThese = clearThese;
   vm.editItem = editItem;
 
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
-
+  vm.purchased = [];
   function addNewItem (food) {
     ListService.addItem(food).then((response) => {
     });
@@ -31,7 +35,7 @@ let ListController = function($scope, $http, ListService, $state) {
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
       console.log(response);
-      vm.groceryList = response.data;
+      vm.groceryListYay = response.data;
     });
   }
 
@@ -42,28 +46,44 @@ let ListController = function($scope, $http, ListService, $state) {
       $state.reload();
     },100);
   }
-
-
+  
+  
   function editItem (object){
     // Edit item on double click
-    console.log('hi');
   }
 
   function removeItem(items) {
     console.log('delete me');
   }
+  
+
+ 
+
 
   function addItemsToPantry() {
-    console.log('ok');
-    // vm.items.post()
+    vm.purchased.map(function(x){
+   $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
+    console.log(res);
+      ListService.removeFood(x.id);
+      setTimeout( function() {
+        $state.reload();
+      },100);
+    });
+   });
+    
   }
-
-  function clearCompleted() {
-    console.log('asdf');
+  
+  function clearThese() {
+    vm.purchased.map(function(x){
+      ListService.removeFood(x.id);
+      setTimeout( function() {
+        $state.reload();
+      },100);
+    })
   }
 
 };
 
-ListController.$inject = ['$scope', '$http', 'ListService', '$state'];
+ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies'];
 
 export default ListController;
