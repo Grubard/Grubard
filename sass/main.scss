@@ -351,9 +351,17 @@ body {
 .mainGroceryList{
   background: #D2DFEA;
   border-radius: 10px;
-  width: 95%;
-  margin: 1% auto;
+  width: 75%;
+  margin: 3% auto;
   padding-bottom: 10px;
+  .buttonAdd{
+    text-align: center;
+    button{
+      font-size: 1.5em;
+      height: 65px;
+      border-radius: 10px;
+    }
+  }
   .addPanItem{
     margin: 10px;
   }
@@ -473,11 +481,18 @@ body {
 //   display: inline-block;
 // }
 
+//*************************Add Groceries Form***********************//
 
+.grocAddForm{
+  display: none;
+}
 
-
-
-
+.showGrocForm{
+  display: block;
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+}
 
 
 [ui-view].ng-enter, [ui-view].ng-leave {

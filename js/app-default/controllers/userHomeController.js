@@ -1,5 +1,5 @@
 import $ from 'jquery';
-let UserHomeController = function($cookies, ListService, PantryService, $scope) {
+let UserHomeController = function($cookies, ListService, PantryService, $scope, TransferService) {
   let vm = this;
 
   
@@ -49,6 +49,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
   function pantryList() {
     PantryService.getPantryList().then( (response) => {
       vm.pantryItems = response.data;
+      TransferService.transferItems(vm.pantryItems);
       let items = response.data;
       items.forEach(function(item) {
         console.log('nec', item);
@@ -123,6 +124,6 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
      
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService'];
 
 export default UserHomeController;
