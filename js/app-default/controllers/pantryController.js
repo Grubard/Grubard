@@ -62,6 +62,13 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
     },100);
   }
 
+  vm.logOut = function(){
+    $cookies.remove('auth_token');
+    $cookies.remove('username');
+    $cookies.remove('house_id');
+    $state.go('landing');
+  };
+
   // function removeItem(items) {
   //   console.log('delete me');
   // }

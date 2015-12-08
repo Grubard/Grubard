@@ -1,4 +1,30 @@
-<div class="mainGroceryList">
+<div class="side quickLinks2">
+
+  <div class="quickNav2">
+    <a href="/#home">
+      <img ng-src='../images/home.png'>
+      <p>Return Home</p>
+    </a>
+  </div>
+  
+  <div class="quickNav2">
+    <a href="/#list">
+      <img ng-src='../images/apple.png'>
+      <p>Go Shopping <br> or <br> Edit Grocery List</p>
+    </a>
+  </div>
+
+  <div class="quickNav2">
+    <a href="/#list" ng-click="vm.logOut()">
+      <img ng-src='../images/carrot.png'>
+      <p>Log Out</p>
+    </a>
+  </div>
+</div>
+
+<div class="side mainGroceryList">
+
+
   <h3>Current Pantry List</h3>
 
     <button class="button addItem addPanItem">Add an Item</button>

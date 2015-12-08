@@ -214,6 +214,13 @@ var ListController = function ListController($scope, $http, ListService, $state,
       }, 100);
     });
   }
+
+  vm.logOut = function () {
+    $cookies.remove('auth_token');
+    $cookies.remove('username');
+    $cookies.remove('house_id');
+    $state.go('landing');
+  };
 };
 
 ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies'];
@@ -362,6 +369,13 @@ var PantryController = function PantryController($scope, $http, PantryService, $
       $state.reload();
     }, 100);
   }
+
+  vm.logOut = function () {
+    $cookies.remove('auth_token');
+    $cookies.remove('username');
+    $cookies.remove('house_id');
+    $state.go('landing');
+  };
 
   // function removeItem(items) {
   //   console.log('delete me');
@@ -833,7 +847,7 @@ var PantryService = function PantryService($http, SERVER, $cookies) {
   function editFoodItem(foodObj) {
     var x = foodObj.id;
     console.log(foodObj);
-    return $http.put(url + '/edible/' + x + '/edit', foodObj, SERVER.CONFIG);
+    return $http.put(url + '/edible/' + x, foodObj, SERVER.CONFIG);
   }
 };
 

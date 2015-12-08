@@ -74,6 +74,13 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
     });
   }
 
+  vm.logOut = function(){
+    $cookies.remove('auth_token');
+    $cookies.remove('username');
+    $cookies.remove('house_id');
+    $state.go('landing');
+  };
+
 };
 
 ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies'];

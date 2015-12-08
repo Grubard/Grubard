@@ -5622,13 +5622,34 @@ body {
     .vertical .necTable td {
       width: 12em; }
 
+.quickLinks2 {
+  width: 16%;
+  background: #303E4E;
+  opacity: .9;
+  height: 66em;
+  padding-top: 1em; }
+  .quickLinks2 a {
+    color: #40704E; }
+
+.quickNav2 {
+  margin-top: 15%;
+  text-align: center; }
+  .quickNav2 img {
+    width: 20%; }
+  .quickNav2 :hover {
+    color: white; }
+
+.side {
+  display: inline-block;
+  vertical-align: top; }
+
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
   background: #D2DFEA;
-  border-radius: 10px;
   width: 75%;
-  margin: 3% auto;
-  padding-bottom: 10px; }
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-left: -4px; }
   .mainGroceryList .buttonAdd {
     text-align: center; }
     .mainGroceryList .buttonAdd button {
@@ -5717,13 +5738,7 @@ body {
 .addBtns {
   text-align: center; }
 
-<<<<<<< HEAD
-.editItem {
-  display: none; }
-
-.showEditForm {
-  display: inline-block; }
-
+/*************************Add Groceries Form***********************/
 .grocAddForm {
   display: none; }
 
@@ -5733,8 +5748,6 @@ body {
   margin: 0 auto;
   text-align: center; }
 
-=======
->>>>>>> 5be2be6c146eda7de004d3bb60639e0969665f1d
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;

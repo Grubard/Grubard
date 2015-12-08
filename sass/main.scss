@@ -231,7 +231,7 @@ body {
       display: none;
     }
     .dark{
-      background: darken(#D2DFEA, 5%);        
+      background: darken(#D2DFEA, 5%);   
     }
     .lighten{
       color: $lightGray;
@@ -340,6 +340,32 @@ body {
   }
 }
 
+.quickLinks2{
+  width: 16%;
+  background: #303E4E;
+  opacity: .9;
+  height: 66em;
+  padding-top: 1em;
+  a{
+    color: $FruitGreen;
+  }
+}
+.quickNav2{
+  margin-top: 15%;
+  text-align: center;
+  img{
+    width: 20%;
+  }
+  :hover{
+    color: white;
+  }
+}
+
+.side{
+  display: inline-block;
+  vertical-align: top;
+}
+
 
 
 
@@ -350,10 +376,10 @@ body {
 
 .mainGroceryList{
   background: #D2DFEA;
-  border-radius: 10px;
   width: 75%;
-  margin: 3% auto;
+  margin: 0 auto;
   padding-bottom: 10px;
+  margin-left: -4px;
   .buttonAdd{
     text-align: center;
     button{
@@ -474,14 +500,9 @@ body {
 }
 
 
-// .editItem{
-//   display: none;
-// }
-// .showEditForm{
-//   display: inline-block;
-// }
 
-//*************************Add Groceries Form***********************//
+
+/*************************Add Groceries Form***********************/
 
 .grocAddForm{
   display: none;
