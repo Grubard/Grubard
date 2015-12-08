@@ -52,11 +52,6 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
     // Edit item on double click
   }
 
-<<<<<<< HEAD
- 
-
-=======
->>>>>>> 65e58330393c41fc2797605b02f98b7e336022b2
 
   function addItemsToPantry() {
     vm.purchased.map(function(x){
