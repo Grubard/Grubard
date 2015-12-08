@@ -25,6 +25,7 @@
 
 
 
+
   </div>
 
   
@@ -40,14 +41,20 @@
           <ul class="menu vertical nested">
            
             <li>
-              <table>
-                <tr>
+              <table class="necTable">
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td>In Stock <span>/</span>Preferred</td>
+                  <td>|</td>
+                  <td>Category</td>
                 </tr>
                 <tr ng-repeat="item in vm.necessity">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td></td>
+                  <td>{{item.category}}</td>
                 </tr>
               </table>
             </li>
@@ -61,13 +68,15 @@
 
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td>In Stock <span>/</span> Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.produce">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -81,13 +90,15 @@
          
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.deli">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -100,13 +111,15 @@
            
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.meats">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -120,13 +133,15 @@
          
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.spices">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -139,13 +154,15 @@
        
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.baking">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -158,13 +175,15 @@
             
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.breakfast">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -178,13 +197,15 @@
             
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span> Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.snacks">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -198,13 +219,15 @@
             
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span> Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.sweets">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -218,13 +241,15 @@
             
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span> Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.grains">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -238,13 +263,15 @@
            
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span> Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.frozen">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -258,13 +285,15 @@
        
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.bevs">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -278,13 +307,15 @@
          
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.hygiene">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -299,13 +330,15 @@
           
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.household">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -319,13 +352,15 @@
         
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.dairy">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>
@@ -339,13 +374,15 @@
          
             <li>
               <table>
-                <tr>
+                <tr class="head">
                   <td>Item</td>
-                  <td>Quantity</td>
+                  <td>|</td>
+                  <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
                 <tr ng-repeat="item in vm.other">
                   <td>{{item.title}}</td>
-                  <td>{{item.quantity}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} / {{item.preferred}}</td>
                 </tr>
               </table>
             </li>

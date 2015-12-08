@@ -199,7 +199,7 @@ body {
     width: 16%;
     background: #303E4E;
     opacity: .9;
-    height: 50em;
+    height: 66em;
     a{
       color: $FruitGreen;
     }
@@ -275,6 +275,11 @@ body {
   }
 }
 
+.userHomePage .bothLists .list table tr {
+  border-bottom: none;
+  background: #c1d3e2;
+}
+
 .vertical{
   padding-top: 1em;
   a.subTitle{
@@ -312,8 +317,29 @@ body {
       text-align: center;
     }
   }
-
+  table{
+    width: 70%;
+    margin: 0 5%;
+  }
+  table td{
+    margin: 0 auto;
+    width: 13em;
+  }
+  table tr.head{
+    color: $Purple;
+    font-weight: bold;
+    span{
+      color: black;
+    }
+  }
+  .necTable{
+    margin: 0 5%;
+    td{
+      width: 12em;
+    }
+  }
 }
+
 
 
 
@@ -333,9 +359,9 @@ body {
   }
   i{
     float: right;
-    margin-right: 5%;
+    margin-right: 7%;
     color: #D41617;
-    margin-top: -1em;
+    margin-top: 0.7em;
   }
   h3{
     text-align: center;
@@ -350,9 +376,7 @@ body {
     list-style: none;
     margin-left: 2em;
   }
-  span{
-    margin-left: 10%;
-  }
+
   .button{
     text-align: center;
     margin: 2% auto;
@@ -407,8 +431,8 @@ body {
   opacity: 0.3;
   &:before{
     position: absolute;
-    left: 12px;
-    top: -2px;
+    left: 14px;
+    top: 3px;
     font-family: 'FontAwesome';
     content: '\f00c';
     color: #57B65C;
@@ -440,6 +464,19 @@ body {
 .addBtns{
   text-align: center;
 }
+
+
+.editItem{
+  display: none;
+}
+.showEditForm{
+  display: inline-block;
+}
+
+
+
+
+
 
 
 

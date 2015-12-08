@@ -12,8 +12,10 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   let vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;
-  // vm.editItem = editItem;
 
+  vm.cancelChange = cancelChange;
+  vm.editItem = editItem;
+  vm.saveNewChanges = saveNewChanges;
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.pantryList = pantryList;
@@ -29,11 +31,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   pantryList();
   function pantryList() {
     PantryService.getPantryList().then( (response) => {
-      
       vm.pantryList = response.data;
-      // vm.pantryList = [{title: 'beef', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}, {title: 'chicken', category: 'meats', quantity: '100', preferred: '10', necessity: 'true'},{title: 'wats', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}]
-
-      
       TransferService.transferItems(vm.pantryList);
     });
   }
@@ -46,11 +44,21 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
     },100);
   }
 
+  function cancelChange () {
+    $state.reload();
+  }
 
-  // function editItem (object){
-  //   // Edit item on double click
-  //   console.log('hi');
-  // }
+
+  function editItem (object){
+    let objId = object.id;
+    console.log(objId);
+    $('.editItem').addClass('showEditForm');
+    $('.pantryListItem').addClass('editItem');
+  }
+
+  function saveNewChanges() {
+    console.log('good job');
+  }
 
   // function removeItem(items) {
   //   console.log('delete me');
