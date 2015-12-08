@@ -67,10 +67,10 @@
       </div>
     </li>
 
-    <li ng-repeat="object in vm.groceryList" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
+    <li ng-repeat="object in vm.groceryListYay" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
-      <input class="checkIt" type="checkbox" id="check1">
-      <label for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
+      <input class="checkIt" type="checkbox" id="check{{ object.id }}"  checklist-model="vm.purchased" checklist-value="object">
+      <label for="check{{object.id}}" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
       
 
       
@@ -85,8 +85,9 @@
 
 
 
-  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Items to Pantry</button>
-  <button class="button clearCompleted" ng-click="vm.clearCompleted()">Clear Completed Items</button>
+  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Checked Items to Pantry</button>
+  <button class="button clearCompleted" ng-click="vm.clearThese()">Delete Checked Items</button>
+  
 </div>
 
 

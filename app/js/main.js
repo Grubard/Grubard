@@ -147,7 +147,7 @@ var _jQuery = require('jQuery');
 
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
-var ListController = function ListController($scope, $http, ListService, $state) {
+var ListController = function ListController($scope, $http, ListService, $state, SERVER, $cookies) {
   (0, _jQuery2['default'])('.addAGroc').click(function () {
     console.log('wat');
     (0, _jQuery2['default'])('.grocAddForm').addClass('showGrocForm');
@@ -156,16 +156,20 @@ var ListController = function ListController($scope, $http, ListService, $state)
     (0, _jQuery2['default'])('.grocAddForm').removeClass('showGrocForm');
     $state.reload();
   });
+  var items = [];
 
   var vm = this;
+  var url = SERVER.URL;
+  var token = $cookies.get('auth_token');
+  SERVER.CONFIG.headers['Access-Token'] = token;
   vm.addItemsToPantry = addItemsToPantry;
-  vm.clearCompleted = clearCompleted;
+  vm.clearThese = clearThese;
   vm.editItem = editItem;
 
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
-
+  vm.purchased = [];
   function addNewItem(food) {
     ListService.addItem(food).then(function (response) {});
     $scope.food = {};
@@ -175,7 +179,7 @@ var ListController = function ListController($scope, $http, ListService, $state)
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
       console.log(response);
-      vm.groceryList = response.data;
+      vm.groceryListYay = response.data;
     });
   }
 
@@ -189,25 +193,36 @@ var ListController = function ListController($scope, $http, ListService, $state)
 
   function editItem(object) {
     // Edit item on double click
-    console.log('hi');
   }
 
   function addItemsToPantry() {
-    console.log('ok');
-    // vm.items.post()
+    vm.purchased.map(function (x) {
+      $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
+        console.log(res);
+        ListService.removeFood(x.id);
+        setTimeout(function () {
+          $state.reload();
+        }, 100);
+      });
+    });
   }
 
-  function clearCompleted() {
-    console.log('asdf');
+  function clearThese() {
+    vm.purchased.map(function (x) {
+      ListService.removeFood(x.id);
+      setTimeout(function () {
+        $state.reload();
+      }, 100);
+    });
   }
 };
 
-ListController.$inject = ['$scope', '$http', 'ListService', '$state'];
+ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies'];
 
 exports['default'] = ListController;
 module.exports = exports['default'];
 
-},{"jQuery":30}],6:[function(require,module,exports){
+},{"jQuery":31}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -277,7 +292,7 @@ LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER
 exports['default'] = LoginController;
 module.exports = exports['default'];
 
-},{"jQuery":30}],7:[function(require,module,exports){
+},{"jQuery":31}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -365,7 +380,7 @@ PantryController.$inject = ['$scope', '$http', 'PantryService', '$state', 'Trans
 exports['default'] = PantryController;
 module.exports = exports['default'];
 
-},{"jQuery":30}],8:[function(require,module,exports){
+},{"jQuery":31}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -493,7 +508,7 @@ UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scop
 exports['default'] = UserHomeController;
 module.exports = exports['default'];
 
-},{"jquery":31}],9:[function(require,module,exports){
+},{"jquery":32}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -638,6 +653,8 @@ require('angular-cookies');
 
 require('../app-core/index');
 
+require('checklist-model');
+
 var _controllersLoginController = require('./controllers/login.controller');
 
 var _controllersLoginController2 = _interopRequireDefault(_controllersLoginController);
@@ -690,14 +707,14 @@ var _directivesUserlistDir = require('./directives/userlist.dir');
 
 var _directivesUserlistDir2 = _interopRequireDefault(_directivesUserlistDir);
 
-_angular2['default'].module('app.default', ['app.core', 'ngCookies']).constant('SERVER', {
+_angular2['default'].module('app.default', ['app.core', 'ngCookies', 'checklist-model']).constant('SERVER', {
   URL: 'http://intense-refuge-9476.herokuapp.com',
   CONFIG: {
     headers: {}
   }
 }).controller('LoginController', _controllersLoginController2['default']).controller('UserHomeController', _controllersUserHomeController2['default']).controller('ListController', _controllersListController2['default']).controller('PantryController', _controllersPantryController2['default']).controller('AddUserController', _controllersAddUserController2['default']).service('LoginService', _servicesLoginService2['default']).service('ListService', _servicesListService2['default']).service('PantryService', _servicesPantryService2['default']).service('TransferService', _servicesTransferService2['default']).directive('user', _directivesUserDir2['default']).directive('alert', _directivesAlertDir2['default']).directive('addUser', _directivesAdduserDir2['default']).directive('userList', _directivesUserlistDir2['default']);
 
-},{"../app-core/index":3,"./controllers/add.user.controller":4,"./controllers/listController":5,"./controllers/login.controller":6,"./controllers/pantryController":7,"./controllers/userHomeController":8,"./directives/adduser.dir":9,"./directives/alert.dir":10,"./directives/user.dir":11,"./directives/userlist.dir":12,"./services/listService":14,"./services/loginService":15,"./services/pantryService":16,"./services/transferService":17,"angular":28,"angular-cookies":25}],14:[function(require,module,exports){
+},{"../app-core/index":3,"./controllers/add.user.controller":4,"./controllers/listController":5,"./controllers/login.controller":6,"./controllers/pantryController":7,"./controllers/userHomeController":8,"./directives/adduser.dir":9,"./directives/alert.dir":10,"./directives/user.dir":11,"./directives/userlist.dir":12,"./services/listService":14,"./services/loginService":15,"./services/pantryService":16,"./services/transferService":17,"angular":28,"angular-cookies":25,"checklist-model":29}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -861,7 +878,7 @@ TransferService.$inject = ['$http', 'SERVER', '$cookies'];
 exports['default'] = TransferService;
 module.exports = exports['default'];
 
-},{"jquery":31}],18:[function(require,module,exports){
+},{"jquery":32}],18:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -947,7 +964,7 @@ require('./app-default/index');
 
 _angular2['default'].module('app', ['app.core', 'app.layout', 'app.default', 'ngAnimate']).run(_run2['default']);
 
-},{"./app-core/index":3,"./app-default/index":13,"./app-layout/index":18,"./run":21,"angular":28,"angular-animate":23,"foundation":29,"jquery":31,"motion-ui":32}],21:[function(require,module,exports){
+},{"./app-core/index":3,"./app-default/index":13,"./app-layout/index":18,"./run":21,"angular":28,"angular-animate":23,"foundation":30,"jquery":32,"motion-ui":33}],21:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38641,6 +38658,156 @@ require('./angular');
 module.exports = angular;
 
 },{"./angular":27}],29:[function(require,module,exports){
+/**
+ * Checklist-model
+ * AngularJS directive for list of checkboxes
+ * https://github.com/vitalets/checklist-model
+ * License: MIT http://opensource.org/licenses/MIT
+ */
+
+angular.module('checklist-model', [])
+.directive('checklistModel', ['$parse', '$compile', function($parse, $compile) {
+  // contains
+  function contains(arr, item, comparator) {
+    if (angular.isArray(arr)) {
+      for (var i = arr.length; i--;) {
+        if (comparator(arr[i], item)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  // add
+  function add(arr, item, comparator) {
+    arr = angular.isArray(arr) ? arr : [];
+      if(!contains(arr, item, comparator)) {
+          arr.push(item);
+      }
+    return arr;
+  }  
+
+  // remove
+  function remove(arr, item, comparator) {
+    if (angular.isArray(arr)) {
+      for (var i = arr.length; i--;) {
+        if (comparator(arr[i], item)) {
+          arr.splice(i, 1);
+          break;
+        }
+      }
+    }
+    return arr;
+  }
+
+  // http://stackoverflow.com/a/19228302/1458162
+  function postLinkFn(scope, elem, attrs) {
+     // exclude recursion, but still keep the model
+    var checklistModel = attrs.checklistModel;
+    attrs.$set("checklistModel", null);
+    // compile with `ng-model` pointing to `checked`
+    $compile(elem)(scope);
+    attrs.$set("checklistModel", checklistModel);
+
+    // getter / setter for original model
+    var getter = $parse(checklistModel);
+    var setter = getter.assign;
+    var checklistChange = $parse(attrs.checklistChange);
+    var checklistBeforeChange = $parse(attrs.checklistBeforeChange);
+
+    // value added to list
+    var value = attrs.checklistValue ? $parse(attrs.checklistValue)(scope.$parent) : attrs.value;
+
+
+    var comparator = angular.equals;
+
+    if (attrs.hasOwnProperty('checklistComparator')){
+      if (attrs.checklistComparator[0] == '.') {
+        var comparatorExpression = attrs.checklistComparator.substring(1);
+        comparator = function (a, b) {
+          return a[comparatorExpression] === b[comparatorExpression];
+        };
+        
+      } else {
+        comparator = $parse(attrs.checklistComparator)(scope.$parent);
+      }
+    }
+
+    // watch UI checked change
+    scope.$watch(attrs.ngModel, function(newValue, oldValue) {
+      if (newValue === oldValue) { 
+        return;
+      } 
+
+      if (checklistBeforeChange && (checklistBeforeChange(scope) === false)) {
+        scope[attrs.ngModel] = contains(getter(scope.$parent), value, comparator);
+        return;
+      }
+
+      setValueInChecklistModel(value, newValue);
+
+      if (checklistChange) {
+        checklistChange(scope);
+      }
+    });
+
+    function setValueInChecklistModel(value, checked) {
+      var current = getter(scope.$parent);
+      if (angular.isFunction(setter)) {
+        if (checked === true) {
+          setter(scope.$parent, add(current, value, comparator));
+        } else {
+          setter(scope.$parent, remove(current, value, comparator));
+        }
+      }
+      
+    }
+
+    // declare one function to be used for both $watch functions
+    function setChecked(newArr, oldArr) {
+      if (checklistBeforeChange && (checklistBeforeChange(scope) === false)) {
+        setValueInChecklistModel(value, scope[attrs.ngModel]);
+        return;
+      }
+      scope[attrs.ngModel] = contains(newArr, value, comparator);
+    }
+
+    // watch original model change
+    // use the faster $watchCollection method if it's available
+    if (angular.isFunction(scope.$parent.$watchCollection)) {
+        scope.$parent.$watchCollection(checklistModel, setChecked);
+    } else {
+        scope.$parent.$watch(checklistModel, setChecked, true);
+    }
+  }
+
+  return {
+    restrict: 'A',
+    priority: 1000,
+    terminal: true,
+    scope: true,
+    compile: function(tElement, tAttrs) {
+      if ((tElement[0].tagName !== 'INPUT' || tAttrs.type !== 'checkbox') && (tElement[0].tagName !== 'MD-CHECKBOX') && (!tAttrs.btnCheckbox)) {
+        throw 'checklist-model should be applied to `input[type="checkbox"]` or `md-checkbox`.';
+      }
+
+      if (!tAttrs.checklistValue && !tAttrs.value) {
+        throw 'You should provide `value` or `checklist-value`.';
+      }
+
+      // by default ngModel is 'checked', so we set it if not specified
+      if (!tAttrs.ngModel) {
+        // local scope var storing individual checkbox model
+        tAttrs.$set("ngModel", "checked");
+      }
+
+      return postLinkFn;
+    }
+  };
+}]);
+
+},{}],30:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 !function($) {
@@ -46081,7 +46248,7 @@ Foundation.plugin(ResponsiveToggle, 'ResponsiveToggle');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
  * http://jquery.com/
@@ -55293,7 +55460,7 @@ return jQuery;
 
 }));
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
@@ -64513,7 +64680,7 @@ return jQuery;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], factory);
@@ -64632,7 +64799,7 @@ var MotionUI = {
 return MotionUI;
 }));
 
-},{"jquery":31}]},{},[20])
+},{"jquery":32}]},{},[20])
 
 
 //# sourceMappingURL=main.js.map
