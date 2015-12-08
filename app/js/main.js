@@ -198,7 +198,6 @@ var ListController = function ListController($scope, $http, ListService, $state,
   function addItemsToPantry() {
     vm.purchased.map(function (x) {
       $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
-        console.log(res);
         ListService.removeFood(x.id);
         setTimeout(function () {
           $state.reload();
@@ -351,14 +350,15 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   }
 
   function editItem(object) {
-    var objId = object.id;
-    console.log(objId);
-    (0, _jQuery2['default'])('.editItem').addClass('showEditForm');
-    (0, _jQuery2['default'])('.pantryListItem').addClass('editItem');
+    object.showEdit = true;
   }
 
-  function saveNewChanges() {
-    console.log('good job');
+  function saveNewChanges(object) {
+    console.log(object);
+    PantryService.editFoodItem(object).then(function (response) {});
+    setTimeout(function () {
+      $state.reload();
+    }, 100);
   }
 
   // function removeItem(items) {
@@ -805,6 +805,7 @@ var PantryService = function PantryService($http, SERVER, $cookies) {
   this.addItem = addItem;
   this.getPantryList = getPantryList;
   this.removeFood = removeFood;
+  this.editFoodItem = editFoodItem;
 
   function Item(foodItem) {
     this.title = foodItem.title;
@@ -825,6 +826,10 @@ var PantryService = function PantryService($http, SERVER, $cookies) {
 
   function removeFood(objId) {
     return $http['delete'](url + '/edible/' + objId, SERVER.CONFIG);
+  }
+
+  function editFoodItem(foodObj) {
+    return $http.post(url + '/edible/' + foodObj.id + '/edit', SERVER.CONFIG);
   }
 };
 

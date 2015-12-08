@@ -48,16 +48,17 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
     $state.reload();
   }
 
-
   function editItem (object){
-    let objId = object.id;
-    console.log(objId);
-    $('.editItem').addClass('showEditForm');
-    $('.pantryListItem').addClass('editItem');
+    object.showEdit = true;
   }
 
-  function saveNewChanges() {
-    console.log('good job');
+  function saveNewChanges(object) {
+    console.log(object);
+    PantryService.editFoodItem(object).then((response) => {
+    });
+    setTimeout( function() {
+      $state.reload();
+    },100);
   }
 
   // function removeItem(items) {

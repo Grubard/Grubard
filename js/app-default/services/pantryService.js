@@ -9,6 +9,7 @@ let PantryService = function($http, SERVER, $cookies) {
   this.addItem = addItem;
   this.getPantryList = getPantryList;
   this.removeFood = removeFood;
+  this.editFoodItem = editFoodItem;
 
   function Item (foodItem) {
     this.title = foodItem.title;
@@ -29,6 +30,10 @@ let PantryService = function($http, SERVER, $cookies) {
 
   function removeFood (objId) {
     return $http.delete(url + '/edible/' + objId, SERVER.CONFIG);
+  }
+
+  function editFoodItem (foodObj) {
+    return $http.post(url + '/edible/' + foodObj.id + '/edit', SERVER.CONFIG);
   }
 
 };

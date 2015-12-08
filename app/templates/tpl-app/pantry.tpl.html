@@ -65,7 +65,7 @@
           <option value="false">No</option>
         </select>
 
-        <button class="button   addPanItem">Submit</button>
+        <button class="button addPanItem">Submit</button>
       </form>
       
 
@@ -80,13 +80,13 @@
       <label for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
       
 
-      <span class="pantryListItem" ng-dblClick="vm.editItem(object)">
+      <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">
         <strong>Item:</strong> {{ object.title }} {{ object.quantity }}
       </span>
 
-      <form class="editItem" ng-submit="vm.saveNewChanges()">
-        Item:<input class="objectTitle" value="{{object.title}}">
-        Quantity:<input class="objectAmt" value="{{object.quantity}}">
+      <form ng-show="object.showEdit" class="editItem" ng-submit="vm.saveNewChanges(object)">
+        Item:<input class="objectTitle" ng-model="object.title" value="{{object.title}}">
+        Quantity:<input class="objectAmt" ng-model="object.quantity" value="{{object.quantity}}">
         <button class="button" type="submit">Submit Changes</button>
         <button class="button" ng-click="vm.cancelChange()">Cancel</button>
       </form>

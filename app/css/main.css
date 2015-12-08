@@ -5717,6 +5717,7 @@ body {
 .addBtns {
   text-align: center; }
 
+<<<<<<< HEAD
 .editItem {
   display: none; }
 
@@ -5732,6 +5733,8 @@ body {
   margin: 0 auto;
   text-align: center; }
 
+=======
+>>>>>>> 5be2be6c146eda7de004d3bb60639e0969665f1d
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;
