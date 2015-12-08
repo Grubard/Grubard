@@ -52,24 +52,19 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
     // Edit item on double click
   }
 
-  function removeItem(items) {
-    console.log('delete me');
-  }
-  
-
  
 
 
   function addItemsToPantry() {
     vm.purchased.map(function(x){
-   $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
-    console.log(res);
-      ListService.removeFood(x.id);
-      setTimeout( function() {
+      $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
+        console.log(res);
+        ListService.removeFood(x.id);
+        setTimeout( function() {
         $state.reload();
       },100);
+      });
     });
-   });
     
   }
   
@@ -79,7 +74,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
       setTimeout( function() {
         $state.reload();
       },100);
-    })
+    });
   }
 
 };

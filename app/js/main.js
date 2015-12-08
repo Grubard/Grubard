@@ -195,10 +195,6 @@ var ListController = function ListController($scope, $http, ListService, $state,
     // Edit item on double click
   }
 
-  function removeItem(items) {
-    console.log('delete me');
-  }
-
   function addItemsToPantry() {
     vm.purchased.map(function (x) {
       $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
