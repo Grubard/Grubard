@@ -33,7 +33,9 @@ let PantryService = function($http, SERVER, $cookies) {
   }
 
   function editFoodItem (foodObj) {
-    return $http.post(url + '/edible/' + foodObj.id + '/edit', SERVER.CONFIG);
+    let x = foodObj.id;
+    console.log(foodObj);
+    return $http.put(url + '/edible/' + x + '/edit', foodObj, SERVER.CONFIG);
   }
 
 };
