@@ -49,10 +49,6 @@ let ListController = function($scope, $http, ListService, $state) {
     console.log('hi');
   }
 
-  function removeItem(items) {
-    console.log('delete me');
-  }
-
   function addItemsToPantry() {
     console.log('ok');
     // vm.items.post()

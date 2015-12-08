@@ -52,7 +52,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope) 
       let items = response.data;
       items.forEach(function(item) {
         console.log('nec', item);
-        if (item.neccessity === true) {
+        if (item.necessity === true) {
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
         } else if (item.category === "Produce") {

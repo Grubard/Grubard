@@ -192,10 +192,6 @@ var ListController = function ListController($scope, $http, ListService, $state)
     console.log('hi');
   }
 
-  function removeItem(items) {
-    console.log('delete me');
-  }
-
   function addItemsToPantry() {
     console.log('ok');
     // vm.items.post()
@@ -306,8 +302,10 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;
-  // vm.editItem = editItem;
 
+  vm.cancelChange = cancelChange;
+  vm.editItem = editItem;
+  vm.saveNewChanges = saveNewChanges;
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.pantryList = pantryList;
@@ -320,10 +318,7 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   pantryList();
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
-
       vm.pantryList = response.data;
-      // vm.pantryList = [{title: 'beef', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}, {title: 'chicken', category: 'meats', quantity: '100', preferred: '10', necessity: 'true'},{title: 'wats', category: 'meats', quantity: '100', preferred: '900', necessity: 'true'}]
-
       TransferService.transferItems(vm.pantryList);
     });
   }
@@ -336,10 +331,20 @@ var PantryController = function PantryController($scope, $http, PantryService, $
     }, 100);
   }
 
-  // function editItem (object){
-  //   // Edit item on double click
-  //   console.log('hi');
-  // }
+  function cancelChange() {
+    $state.reload();
+  }
+
+  function editItem(object) {
+    var objId = object.id;
+    console.log(objId);
+    (0, _jQuery2['default'])('.editItem').addClass('showEditForm');
+    (0, _jQuery2['default'])('.pantryListItem').addClass('editItem');
+  }
+
+  function saveNewChanges() {
+    console.log('good job');
+  }
 
   // function removeItem(items) {
   //   console.log('delete me');
@@ -422,7 +427,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       var items = response.data;
       items.forEach(function (item) {
         console.log('nec', item);
-        if (item.neccessity === true) {
+        if (item.necessity === true) {
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
         } else if (item.category === "Produce") {

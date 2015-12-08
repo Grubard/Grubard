@@ -5519,7 +5519,7 @@ body {
     width: 16%;
     background: #303E4E;
     opacity: .9;
-    height: 50em; }
+    height: 66em; }
     .userHomePage .quickLinks a {
       color: #40704E; }
   .userHomePage .quickNav {
@@ -5571,6 +5571,10 @@ body {
   .bothLists .pantryTitle {
     font-size: 10px; } }
 
+.userHomePage .bothLists .list table tr {
+  border-bottom: none;
+  background: #c1d3e2; }
+
 .vertical {
   padding-top: 1em; }
   .vertical a.subTitle {
@@ -5602,6 +5606,21 @@ body {
     margin-top: -0.5em; }
     .vertical .nested li table td {
       text-align: center; }
+  .vertical table {
+    width: 70%;
+    margin: 0 5%; }
+  .vertical table td {
+    margin: 0 auto;
+    width: 13em; }
+  .vertical table tr.head {
+    color: #78427E;
+    font-weight: bold; }
+    .vertical table tr.head span {
+      color: black; }
+  .vertical .necTable {
+    margin: 0 5%; }
+    .vertical .necTable td {
+      width: 12em; }
 
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
@@ -5614,9 +5633,9 @@ body {
     margin: 10px; }
   .mainGroceryList i {
     float: right;
-    margin-right: 5%;
+    margin-right: 7%;
     color: #D41617;
-    margin-top: -1em; }
+    margin-top: 0.7em; }
   .mainGroceryList h3 {
     text-align: center; }
   .mainGroceryList ul {
@@ -5627,8 +5646,6 @@ body {
     margin-top: 1em;
     list-style: none;
     margin-left: 2em; }
-  .mainGroceryList span {
-    margin-left: 10%; }
   .mainGroceryList .button {
     text-align: center;
     margin: 2% auto;
@@ -5668,8 +5685,8 @@ body {
   opacity: 0.3; }
   .crossOut:before {
     position: absolute;
-    left: 12px;
-    top: -2px;
+    left: 14px;
+    top: 3px;
     font-family: 'FontAwesome';
     content: '\f00c';
     color: #57B65C; }
@@ -5693,6 +5710,12 @@ body {
 
 .addBtns {
   text-align: center; }
+
+.editItem {
+  display: none; }
+
+.showEditForm {
+  display: inline-block; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
