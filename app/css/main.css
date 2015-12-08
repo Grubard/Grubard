@@ -5509,52 +5509,59 @@ body {
     width: 90%; } }
 
 /*********************User Page******************************/
-.userHomePage .side {
-  display: inline-block; }
-
-.userHomePage img {
-  width: 20%; }
-
-.userHomePage .quickLinks {
-  padding-top: 3%;
-  height: 50em;
-  width: 15%;
-  background: #303E4E;
-  opacity: .9; }
-  .userHomePage .quickLinks a {
-    color: white; }
-
-.userHomePage .quickNav {
-  margin-top: 20%;
-  text-align: center; }
-  .userHomePage .quickNav :hover {
-    color: white; }
-
-.userHomePage .bothLists {
-  vertical-align: top;
-  width: 80%;
-  margin: 1% 2% 0 1%; }
-  .userHomePage .bothLists .title {
-    width: 49%;
-    display: inline-block;
-    font-size: 2em;
-    padding-left: 1em;
-    margin-bottom: 0;
-    padding-bottom: 0.25em; }
-    .userHomePage .bothLists .title:hover {
-      cursor: pointer; }
-  .userHomePage .bothLists .hidden {
-    display: none; }
-  .userHomePage .bothLists .dark {
-    background: #c1d3e2; }
-  .userHomePage .bothLists .lighten {
-    color: #b5b5b7; }
-  .userHomePage .bothLists .list {
-    width: 98.4%; }
-    .userHomePage .bothLists .list img {
-      width: 3%;
-      display: block;
-      margin: 0 auto; }
+.userHomePage {
+  width: 100%; }
+  .userHomePage .side {
+    display: inline-block; }
+  .userHomePage img {
+    width: 20%; }
+  .userHomePage .quickLinks {
+    width: 16%;
+    background: #303E4E;
+    opacity: .9;
+    height: 50em; }
+    .userHomePage .quickLinks a {
+      color: #40704E; }
+  .userHomePage .quickNav {
+    margin-top: 15%;
+    text-align: center; }
+    .userHomePage .quickNav :hover {
+      color: white; }
+  .userHomePage .bothLists {
+    vertical-align: top;
+    width: 80%;
+    margin: 1% 2% 0 1%; }
+    .userHomePage .bothLists .title {
+      width: 49%;
+      display: inline-block;
+      font-size: 2em;
+      padding-left: 1em;
+      margin-bottom: 0;
+      padding-bottom: 0.25em; }
+      .userHomePage .bothLists .title:hover {
+        cursor: pointer; }
+    .userHomePage .bothLists .hidden {
+      display: none; }
+    .userHomePage .bothLists .dark {
+      background: #c1d3e2; }
+    .userHomePage .bothLists .lighten {
+      color: #b5b5b7; }
+    .userHomePage .bothLists .list {
+      width: 98.4%; }
+      .userHomePage .bothLists .list img {
+        width: 3%;
+        display: block;
+        margin: 0 auto; }
+      .userHomePage .bothLists .list table {
+        text-align: left; }
+        .userHomePage .bothLists .list table tr {
+          border-bottom: 1px solid #b5b5b7;
+          background: #c1d3e2; }
+        .userHomePage .bothLists .list table tbody {
+          border: none;
+          width: 98.3%; }
+        .userHomePage .bothLists .list table th:hover {
+          cursor: pointer; }
 
 @media all and (max-width: 1050px) {
   .bothLists {
@@ -5563,9 +5570,6 @@ body {
 @media all and (max-width: 500px) {
   .bothLists .pantryTitle {
     font-size: 10px; } }
-
-.hidden {
-  display: none; }
 
 .vertical {
   padding-top: 1em; }
@@ -5578,49 +5582,85 @@ body {
     width: 80%;
     margin: 0 auto; }
     .vertical a.subTitle span.quantity {
-      display: inline-block;
       float: right;
-      margin-right: 6%;
+      margin-right: 4%;
       margin-top: 3px;
+      display: inline-block;
       height: 20px;
       width: 20px;
       line-height: 20px;
       border-radius: 30px;
-      background-color: #D02527;
-      color: white;
+      color: #D02527;
       text-align: center;
-      font-size: 0.5em; }
+      font-size: 0.6em;
+      font-weight: 500; }
   .vertical .pantryList {
     width: 100%; }
   .vertical .nested li {
     margin-left: 10%;
     margin-bottom: 0.25em;
     margin-top: -0.5em; }
-  .vertical li.itemTitle {
-    color: #78427E;
-    font-weight: bold;
-    margin-bottom: 0.50em; }
-  .vertical .itemQuantity {
-    margin-left: 25%; }
-  .vertical .itemQuantityNumber {
-    margin-left: 28%; }
+    .vertical .nested li table td {
+      text-align: center; }
 
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
   background: #D2DFEA;
-  text-align: center; }
-
-.grocAddForm {
-  display: none;
-  margin: 20px auto;
-  width: 45%; }
-  .grocAddForm input {
-    width: 100%;
-    height: 2.5em;
-    margin: 10px 0px; }
-
-.showGrocForm {
-  display: block; }
+  border-radius: 10px;
+  width: 95%;
+  margin: 1% auto;
+  padding-bottom: 10px; }
+  .mainGroceryList .addPanItem {
+    margin: 10px; }
+  .mainGroceryList i {
+    float: right;
+    margin-right: 5%;
+    color: #D41617;
+    margin-top: -1em; }
+  .mainGroceryList h3 {
+    text-align: center; }
+  .mainGroceryList ul {
+    padding-top: 2%;
+    list-style: none;
+    font-size: 1.2em; }
+  .mainGroceryList li {
+    margin-top: 1em;
+    list-style: none;
+    margin-left: 2em; }
+  .mainGroceryList span {
+    margin-left: 10%; }
+  .mainGroceryList .button {
+    text-align: center;
+    margin: 2% auto;
+    width: 15em; }
+  .mainGroceryList .checkIt {
+    display: none; }
+  .mainGroceryList input {
+    background: #e3ebf2;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 8px 0px; }
+  .mainGroceryList select {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em; }
+  .mainGroceryList label {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border: 1px solid #3C3F95;
+    border-radius: 100px;
+    vertical-align: -25%; }
+  .mainGroceryList label:hover:before {
+    position: absolute;
+    right: 3px;
+    top: -4px;
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    font-size: 1.4em;
+    font-weight: 100;
+    color: #57B65C; }
 
 .crossOut {
   position: relative;

@@ -46,8 +46,20 @@
         <li>
           <a class="subTitle">Produce<span class="quantity produceQuant">{{ vm.produceAmt }}</span></a>
           <ul class="menu vertical nested">
-            <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.produce">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+
+            <li>
+              <table>
+                <tr>
+                  <td>Item</td>
+                  <td>Quantity</td>
+                </tr>
+                <tr ng-repeat="item in vm.produce">
+                  <td>{{item.title}}</td>
+                  <td>{{item.quantity}}</td>
+                </tr>
+              </table>
+            </li>
+
           </ul>
         </li>
         
@@ -55,7 +67,7 @@
           <a class="subTitle">Dairy<span class="quantity dairyQuant">{{ vm.dairyAmt }}</span></a>
           <ul class="menu vertical nested">
             <li class="itemTitle">Item<span class="itemQuantity">Quantity</span></li>
-            <li ng-repeat="item in vm.dairy">{{ item.title }} <span class="itemQuantity"> {{ item.quantity }}</span></li>
+            <li ng-repeat="item in vm.dairy">{{ item.title }} <span class="itemQuantityNumber"> {{ item.quantity }}</span></li>
           </ul>
         </li>
         

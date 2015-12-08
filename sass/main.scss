@@ -187,10 +187,8 @@ body {
 
 /*********************User Page******************************/
 
-
-
 .userHomePage{
-
+  width: 100%;
   .side{
     display: inline-block;
   }
@@ -198,17 +196,16 @@ body {
     width: 20%;
   }
   .quickLinks{
-    padding-top: 3%;
-    height: 50em;
-    width: 15%;
+    width: 16%;
     background: #303E4E;
     opacity: .9;
+    height: 50em;
     a{
-      color: white;
+      color: $FruitGreen;
     }
   }
   .quickNav{
-    margin-top: 20%;
+    margin-top: 15%;
     text-align: center;
     :hover{
       color: white;
@@ -246,6 +243,20 @@ body {
         display: block;
         margin: 0 auto;
       }
+      table{
+        text-align: left;
+        tr{
+          border-bottom: 1px solid $lightGray;
+          background: darken(#D2DFEA, 5%);   
+        }     
+        tbody{
+          border: none;
+          width: 98.3%;
+        }
+        th:hover{
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -264,10 +275,6 @@ body {
   }
 }
 
-.hidden{
-  display: none;
-}
-
 .vertical{
   padding-top: 1em;
   a.subTitle{
@@ -279,18 +286,19 @@ body {
     width: 80%;
     margin: 0 auto;
     span.quantity{
-      display: inline-block;
       float: right;
-      margin-right: 6%;
+      margin-right: 4%;
       margin-top: 3px;
+      display: inline-block;
       height: 20px;
       width: 20px;
       line-height: 20px;
       border-radius: 30px;
-      background-color: $Red;
-      color: white;
+      // background-color: $Red;
+      color: $Red;
       text-align: center;
-      font-size: 0.5em;
+      font-size: 0.6em;
+      font-weight: 500;
     }
   }
   .pantryList{
@@ -300,18 +308,11 @@ body {
     margin-left: 10%;
     margin-bottom: 0.25em;
     margin-top: -0.5em;
+    table td{
+      text-align: center;
+    }
   }
-  li.itemTitle{
-    color: $Purple;
-    font-weight: bold;
-    margin-bottom: 0.50em;
-  }
-  .itemQuantity{
-    margin-left: 25%;
-  }
-  .itemQuantityNumber{
-    margin-left: 28%;
-  }
+
 }
 
 
@@ -323,22 +324,83 @@ body {
 
 .mainGroceryList{
   background: #D2DFEA;
-  text-align: center;
-}
-  .grocAddForm{
-    display: none;
-    margin: 20px auto;
-    width: 45%;
-    input{
-      width: 100%;
-      height: 2.5em;
-      margin: 10px 0px;
-    }
+  border-radius: 10px;
+  width: 95%;
+  margin: 1% auto;
+  padding-bottom: 10px;
+  .addPanItem{
+    margin: 10px;
   }
+  i{
+    float: right;
+    margin-right: 5%;
+    color: #D41617;
+    margin-top: -1em;
+  }
+  h3{
+    text-align: center;
+  }
+  ul{
+    padding-top: 2%;
+    list-style: none;
+    font-size: 1.2em;
+  }
+  li{
+    margin-top: 1em;
+    list-style: none;
+    margin-left: 2em;
+  }
+  span{
+    margin-left: 10%;
+  }
+  .button{
+    text-align: center;
+    margin: 2% auto;
+    width: 15em;
+  }
+ 
+  .checkIt{
+    display: none;
+  }
+
+
   
-.showGrocForm{
-  display: block;
+    input{
+      background: lighten(#D2DFEA, 5%);
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em;
+      margin: 8px 0px;
+    }
+    select{
+      // background: lighten(#D2DFEA, 5%);
+      border: none;
+      border-radius: 5px;
+      padding: 0.5em;
+    }
+ 
+
+  label{
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border: 1px solid $Blue;
+    border-radius: 100px;
+    vertical-align: -25%;
+  }
+  label:hover:before{
+    position: absolute;
+    right: 3px;
+    top: -4px;
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    font-size: 1.4em;
+    font-weight: 100;
+    color: #57B65C;
+  }
+
 }
+
 .crossOut {
   position: relative;
   text-decoration: line-through;
