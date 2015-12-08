@@ -158,9 +158,9 @@ var ListController = function ListController($scope, $http, ListService, $state)
   });
 
   var vm = this;
-  // vm.addItemsToPantry = addItemsToPantry;
-  // vm.clearCompleted = clearCompleted;
-  // vm.editItem = editItem;
+  vm.addItemsToPantry = addItemsToPantry;
+  vm.clearCompleted = clearCompleted;
+  vm.editItem = editItem;
 
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
@@ -187,23 +187,23 @@ var ListController = function ListController($scope, $http, ListService, $state)
     }, 100);
   }
 
-  // function editItem (object){
-  //   // Edit item on double click
-  //   console.log('hi');
-  // }
+  function editItem(object) {
+    // Edit item on double click
+    console.log('hi');
+  }
 
-  // function removeItem(items) {
-  //   console.log('delete me');
-  // }
+  function removeItem(items) {
+    console.log('delete me');
+  }
 
-  // function addItemsToPantry() {
-  //   console.log('ok');
-  //   // vm.items.post()
-  // }
+  function addItemsToPantry() {
+    console.log('ok');
+    // vm.items.post()
+  }
 
-  // function clearCompleted() {
-  //   console.log('asdf');
-  // }
+  function clearCompleted() {
+    console.log('asdf');
+  }
 };
 
 ListController.$inject = ['$scope', '$http', 'ListService', '$state'];
