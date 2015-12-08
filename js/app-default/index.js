@@ -1,7 +1,7 @@
 import angular from 'angular';
 import 'angular-cookies';
 import '../app-core/index';
-
+import 'checklist-model';
 
 
 import LoginController from './controllers/login.controller';
@@ -21,7 +21,7 @@ import addUser from './directives/adduser.dir';
 import userList from './directives/userlist.dir';
 
 angular
-  .module('app.default', ['app.core', 'ngCookies'])
+  .module('app.default', ['app.core', 'ngCookies', 'checklist-model'])
   .constant('SERVER', {
     URL:'http://intense-refuge-9476.herokuapp.com',
     CONFIG: {
