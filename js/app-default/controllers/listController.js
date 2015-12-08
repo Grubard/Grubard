@@ -55,15 +55,13 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
 
   function addItemsToPantry() {
     vm.purchased.map(function(x){
-   $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
-    console.log(res);
-      ListService.removeFood(x.id);
-      setTimeout( function() {
-        $state.reload();
-      },100);
-    });
-   });
-    
+      $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
+        ListService.removeFood(x.id);
+        setTimeout( function() {
+          $state.reload();
+        },100);
+      });
+    });  
   }
   
   function clearThese() {
@@ -72,7 +70,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
       setTimeout( function() {
         $state.reload();
       },100);
-    })
+    });
   }
 
 };

@@ -5390,11 +5390,11 @@ table.hover tr:nth-of-type(even):hover {
     width: 200px;
     margin-right: 1rem; }
 
-@media screen and (min-width: 40em) {
-  .top-bar-left {
-    float: left; }
-  .top-bar-right {
-    float: right; } }
+.top-bar-left {
+  float: left; }
+
+.top-bar-right {
+  float: right; }
 
 body {
   -moz-user-select: none;
@@ -5710,12 +5710,6 @@ body {
 
 .addBtns {
   text-align: center; }
-
-.editItem {
-  display: none; }
-
-.showEditForm {
-  display: inline-block; }
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
