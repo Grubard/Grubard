@@ -1,8 +1,8 @@
 import $ from 'jquery';
 let UserHomeController = function($cookies, ListService, PantryService, $scope, TransferService) {
+  
   let vm = this;
 
-  
 
   $('.grocTitle').click(function(){
     $('.grocTitle').addClass('dark').removeClass('lighten');

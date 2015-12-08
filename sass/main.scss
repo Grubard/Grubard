@@ -408,7 +408,6 @@ body {
   li{
     margin-top: 1em;
     list-style: none;
-    margin-left: 2em;
   }
 
   .button{
@@ -498,7 +497,12 @@ body {
 .addBtns{
   text-align: center;
 }
-
+.btnAdd{
+  button{
+    border-radius: 10px;
+  }
+  text-align: center;
+}
 
 
 

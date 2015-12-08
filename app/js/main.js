@@ -14,6 +14,7 @@ var config = function config($stateProvider, $urlRouterProvider, $locationProvid
     abstract: true,
     templateUrl: 'templates/tpl-layout/layout.tpl.html',
     controller: 'LayoutController as vm'
+
   }).state('landing', {
     url: '/',
     templateUrl: 'templates/tpl-app/landing.tpl.html',
@@ -71,6 +72,10 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LayoutController = function LayoutController($cookies, $state) {
   var vm = this;
+
+  var name = $cookies.get('username');
+
+  vm.name = name;
 
   vm.logOut = function () {
     $cookies.remove('auth_token');
@@ -289,6 +294,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
       expireDate.setDate(expireDate.getDate() + 7);
       $cookies.put('auth_token', res.data.user.access_token, { expires: expireDate });
       $cookies.put('username', res.data.user.username, { expires: expireDate });
+
       $state.transitionTo('root.home');
     });
   };
@@ -410,6 +416,7 @@ var _jquery = require('jquery');
 var _jquery2 = _interopRequireDefault(_jquery);
 
 var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope, TransferService) {
+
   var vm = this;
 
   (0, _jquery2['default'])('.grocTitle').click(function () {

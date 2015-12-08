@@ -54,7 +54,12 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
       expireDate.setDate(expireDate.getDate() + 7);
       $cookies.put('auth_token', res.data.user.access_token, {expires: expireDate});
       $cookies.put('username', res.data.user.username, {expires: expireDate});
+      
       $state.transitionTo('root.home');
+      
+
+
+
 
     });
     

@@ -5671,8 +5671,7 @@ body {
     font-size: 1.2em; }
   .mainGroceryList li {
     margin-top: 1em;
-    list-style: none;
-    margin-left: 2em; }
+    list-style: none; }
   .mainGroceryList .button {
     text-align: center;
     margin: 2% auto;
@@ -5738,7 +5737,15 @@ body {
 .addBtns {
   text-align: center; }
 
+<<<<<<< HEAD
 /*************************Add Groceries Form***********************/
+=======
+.btnAdd {
+  text-align: center; }
+  .btnAdd button {
+    border-radius: 10px; }
+
+>>>>>>> master
 .grocAddForm {
   display: none; }
 

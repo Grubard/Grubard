@@ -10,6 +10,7 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
     abstract: true,
     templateUrl: 'templates/tpl-layout/layout.tpl.html',
     controller: 'LayoutController as vm'
+   
   }) 
   .state('landing',{
     url: '/',
