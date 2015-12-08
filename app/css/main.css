@@ -5650,8 +5650,7 @@ body {
     font-size: 1.2em; }
   .mainGroceryList li {
     margin-top: 1em;
-    list-style: none;
-    margin-left: 2em; }
+    list-style: none; }
   .mainGroceryList .button {
     text-align: center;
     margin: 2% auto;
@@ -5717,12 +5716,10 @@ body {
 .addBtns {
   text-align: center; }
 
-<<<<<<< HEAD
-.editItem {
-  display: none; }
-
-.showEditForm {
-  display: inline-block; }
+.btnAdd {
+  text-align: center; }
+  .btnAdd button {
+    border-radius: 10px; }
 
 .grocAddForm {
   display: none; }
@@ -5733,8 +5730,6 @@ body {
   margin: 0 auto;
   text-align: center; }
 
-=======
->>>>>>> 5be2be6c146eda7de004d3bb60639e0969665f1d
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;

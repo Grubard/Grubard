@@ -10,7 +10,7 @@
 
     <section class="top-bar-right">
       <ul class="dropdown menu" data-dropdown-menu>       
-        <li><button id="user-btn" user type="button" class="button">Pantry Name</button></li>
+        <li><button id="user-btn" user type="button" class="button">{{vm.name}}</button></li>
         <li><button id="alert-btn" alert type="button" class="button"><i class="fa fa-bell-o"></i></button></li>
       </ul>  
     </section>
@@ -19,7 +19,7 @@
 
 <div id="user" class="callout hide-user">
   <div class="row">
-    <h5 class="small-12 float-center">PantryName + Menu</h5>  
+    <h5 class="small-12 float-center">{{vm.name}}  Menu</h5>  
     <hr>
     <ul class="small-12 vertical menu">
       <li class="users-list" add-user>Add User To House</li>

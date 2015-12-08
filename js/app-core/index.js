@@ -6,6 +6,7 @@ import LayoutController from './controllers/layout.controller';
 import config from './config';
 import 'angular-cookies';
 import AuthService from '../app-layout/services/authService';
+
 angular
   .module('app.core', ['ui.router'])  
   /////** Load Constants and Config **/////
