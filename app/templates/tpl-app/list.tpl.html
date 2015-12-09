@@ -32,19 +32,8 @@
     <div class="grocAddForm">
       <form ng-submit="vm.addNewItem(food)">
         <input class="newGroc foodName" ng-model="food.title" placeholder="New Item">
-        <select class="addItem foodQuantity" ng-model="food.quantity">
-          <option value="" disabled selected>Qty</option>  
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
+        <input type="text" class="addItem foodQuantity" ng-model="food.quantity" placeholder="Quantity">
+          
 
         <select class="newGroc foodCategory" ng-model="food.category">
           <option value="" disabled selected>Category</option>  
@@ -65,27 +54,8 @@
           <option value="Other">Other</option>
         </select>
       
-<!--         <select class="newGroc foodPreferred" ng-model="food.preferred">
-          <option value="" disabled selected>Preffered Amt</option>  
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select> -->
 
 
-
-<!--         <select class="newGroc foodNecessity" ng-model="food.necessity">
-          <option value="" disabled selected>Necessity?</option>
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select> -->
         
           <button class="button newGroc">Submit</button>
         

@@ -148,6 +148,11 @@ body{
 
 }
 
+
+.contactUs{
+  background-color: #FFF;
+}
+
 #alert-btn {
   &:hover {
     background-color: $Green;
@@ -163,6 +168,7 @@ body{
   }
 
 }
+
 
 
 /*********************Landing Page******************************/
@@ -710,4 +716,140 @@ body{
 
 
 
+
+
+// Top Bar //
+/////////////
+
+.top-bar {
+  // height: 4em;
+  background-color: #303E4D;
+  ul {
+    background-color: inherit;
+  }
+  .top-bar-left {
+    margin-top: -2em;
+    a{
+      color: white;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: 500;
+    }
+    img{
+      width: 10%;
+    }
+  }
+  .top-bar-right {
+    .menu button {
+      margin-top: 12px;
+      font-size: 1em;
+      font-weight: 500;
+      border-radius: 8px;
+    }
+  }
+}
+.logoArea{
+  height: 70px;
+}
+.logoArea a {
+  margin-top: 11px;
+}
+@media all and (max-width: 900px) {
+  .top-bar-left{
+    width: 13em;
+    padding-top: 10px;
+    .logoArea a img{
+
+      width: 2em;
+    }
+  }
+}
+
+
+.hide-user {
+  display: none;
+}
+
+#user {
+  width: 15em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  h5 {
+    text-align: center;
+  }
+  p {
+    display: inline-block;
+  }
+  li {
+    padding: .5em;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+    a {
+      width: 85%;
+      display: inline-block;
+    }
+    i {
+      display: inline-block;
+      margin-right: .5em;
+    }
+  }
+  
+
+}
+
+#user-btn {
+  &:hover {
+    background-color: $Green;
+  }
+}
+
+#alert {
+  width: 16em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  overflow: auto;
+  max-height: 100%;
+  h5 {
+    text-align: center;
+  }
+  p {
+    display: inline-block;
+    margin-top: 1em;
+  }
+  li {
+    padding: .5em;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+  a {
+    padding: 0;
+  }
+
+}
+
+#alert-btn {
+  &:hover {
+    background-color: $Green;
+  }
+}
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em;
+  &:hover {
+    background-color: $Green;
+  }
+
+}
 

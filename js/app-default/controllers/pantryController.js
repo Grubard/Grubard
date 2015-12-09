@@ -21,7 +21,10 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   vm.pantryList = pantryList;
 
   function addNewItem (food) {
+    console.log('what were sending: ', food);
     PantryService.addItem(food).then((response) => {
+      console.log('the response: ', response);
+
     });
     $scope.food = {};
   }
@@ -37,7 +40,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   }
 
   function removeItem (object) {
-    console.log(object.id);
+    
     PantryService.removeFood(object.id);
     setTimeout( function() {
       $state.reload();
@@ -55,7 +58,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   function saveNewChanges(object) {
     
     PantryService.editFoodItem(object).then((response) => {
-      console.log('this is the response', response);
+      
     });
     setTimeout( function() {
       $state.reload();

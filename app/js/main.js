@@ -70,11 +70,9 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LayoutController = function LayoutController($cookies, $state) {
+var LayoutController = function LayoutController($rootScope, $cookies, $state) {
   var vm = this;
-
   var name = $cookies.get('username');
-
   vm.name = name;
 
   vm.logOut = function () {
@@ -85,7 +83,7 @@ var LayoutController = function LayoutController($cookies, $state) {
   };
 };
 
-LayoutController.$inject = ['$cookies', '$state'];
+LayoutController.$inject = ['$rootScope', '$cookies', '$state'];
 
 exports['default'] = LayoutController;
 module.exports = exports['default'];
@@ -338,7 +336,10 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   vm.pantryList = pantryList;
 
   function addNewItem(food) {
-    PantryService.addItem(food).then(function (response) {});
+    console.log('what were sending: ', food);
+    PantryService.addItem(food).then(function (response) {
+      console.log('the response: ', response);
+    });
     $scope.food = {};
   }
 
@@ -351,7 +352,7 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   }
 
   function removeItem(object) {
-    console.log(object.id);
+
     PantryService.removeFood(object.id);
     setTimeout(function () {
       $state.reload();
@@ -368,9 +369,7 @@ var PantryController = function PantryController($scope, $http, PantryService, $
 
   function saveNewChanges(object) {
 
-    PantryService.editFoodItem(object).then(function (response) {
-      console.log('this is the response', response);
-    });
+    PantryService.editFoodItem(object).then(function (response) {});
     setTimeout(function () {
       $state.reload();
     }, 100);
@@ -463,6 +462,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
 
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
+      console.log('pantry: ', response);
       vm.pantryItems = response.data;
       TransferService.transferItems(vm.pantryItems);
       var items = response.data;

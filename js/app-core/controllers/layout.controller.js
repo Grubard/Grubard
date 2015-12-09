@@ -1,9 +1,11 @@
-let LayoutController = function($cookies, $state){
+let LayoutController = function($rootScope, $cookies, $state){
   let vm = this;
-  
   let name = $cookies.get('username');
-  
   vm.name = name;
+  
+  
+  
+  
 
   
 
@@ -16,6 +18,6 @@ let LayoutController = function($cookies, $state){
 
 };
 
-LayoutController.$inject = ['$cookies', '$state'];
+LayoutController.$inject = ['$rootScope', '$cookies', '$state'];
 
 export default LayoutController;
