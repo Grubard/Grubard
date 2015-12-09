@@ -21,9 +21,9 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   vm.pantryList = pantryList;
 
   function addNewItem (food) {
-    console.log('what were sending: ', food);
+    
     PantryService.addItem(food).then((response) => {
-      console.log('the response: ', response);
+      
 
     });
     $scope.food = {};
