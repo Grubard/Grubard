@@ -56,6 +56,7 @@ body{
       text-decoration: none;
       font-size: 1.3em;
       font-weight: 500;
+      margin-top: 8px;
     }
     img{
       width: 10%;
@@ -119,54 +120,8 @@ body{
   }
 }
 
-#alert {
-  width: 16em;
-  position: fixed;
-  right: 0;
-  top: 55px;
-  z-index: 999;
-  padding: 0.6em;
-  overflow: auto;
-  max-height: 100%;
-  h5 {
-    text-align: center;
-  }
-  p {
-    display: inline-block;
-    margin-top: 1em;
-  }
-  li {
-    padding: .5em;
-    &:hover {
-      background-color: black;
-      color: white;
-    }
-  }
-  a {
-    padding: 0;
-  }
-
-}
-
-
 .contactUs{
   background-color: #FFF;
-}
-
-#alert-btn {
-  &:hover {
-    background-color: $Green;
-  }
-}
-
-.users-list {
-  border: 1px solid black;
-  text-align: center;
-  margin-bottom: .4em;
-  &:hover {
-    background-color: $Green;
-  }
-
 }
 
 
@@ -349,12 +304,12 @@ body{
     margin-top: 15%;
     text-align: center;
     :hover{
-      color: white;
+      color: $Blue;
     }
   }
   .bothLists{
-    width: 79%;
-    margin: 1% 1% 0 2%;
+    width: 80%;
+    margin: 1% -15% 0 2%;
     overflow-y: scroll;
     height: 85vh;
     .title{
@@ -373,18 +328,23 @@ body{
     }
     .dark{
       background: darken(white, 10%);   
-      opacity: .9;
     }
     .lighten{
-      color: $lightGray;
+      background: white;
+      color: gray;
     }
     .list{
       width: 98.4%;
       img{
         width: 3%;
         display: block;
-        margin: 0 auto;
+        margin-left: 47.5%;
+        margin-top: 2%;
       }
+      span.imgWord{
+        margin-left: 45.5%;
+      }
+
       table{
         text-align: left;
         tr{
@@ -407,6 +367,10 @@ body{
 .userHomePage .bothLists .list table tr {
   border-bottom: none;
   background: inherit;
+}
+.userHomePage .bothLists .list table {
+    text-align: left;
+    margin-left: 0;
 }
 
 .vertical{
@@ -432,15 +396,12 @@ body{
     width: 20px;
     line-height: 20px;
     border-radius: 30px;
-    // background-color: $Red;
     color: $Red;
     text-align: center;
     font-size: 0.6em;
     font-weight: 500;
   }
   .nested li{
-    margin-left: 10%;
-    margin-bottom: 0.25em;
     margin-top: -0.5em;
     table td{
       text-align: center;
@@ -449,6 +410,10 @@ body{
   table{
     width: 70%;
     margin: 0 5%;
+    tbody{
+      background: inherit;
+      margin-left: -2%;
+    }
   }
   table td{
     margin: 0 auto;
@@ -461,10 +426,12 @@ body{
       color: black;
     }
   }
-  .necTable{
-    margin: 0 5%;
-    td{
-      width: 12em;
+  .groceryList{
+    .grocNec{
+      margin-left: 50px;
+    }
+    table.grocReg{
+      margin-left: 0;
     }
   }
 }
@@ -477,7 +444,7 @@ body{
 
 .quickLinks2{
   width: 16%;
-  background: #303E4E;
+  background: white;
   opacity: .9;
   height: 66em;
   padding-top: 1em;
@@ -492,7 +459,7 @@ body{
     width: 20%;
   }
   :hover{
-    color: white;
+    color: $Blue;
   }
 }
 
@@ -711,145 +678,3 @@ body{
   // -moz-transform:translate3d(100px, 0, 0);
   // transform:translate3d(100px, 0, 0);
 }
-
-
-
-
-
-
-
-// Top Bar //
-/////////////
-
-.top-bar {
-  // height: 4em;
-  background-color: #303E4D;
-  ul {
-    background-color: inherit;
-  }
-  .top-bar-left {
-    margin-top: -2em;
-    a{
-      color: white;
-      text-decoration: none;
-      font-size: 1.3em;
-      font-weight: 500;
-    }
-    img{
-      width: 10%;
-    }
-  }
-  .top-bar-right {
-    .menu button {
-      margin-top: 12px;
-      font-size: 1em;
-      font-weight: 500;
-      border-radius: 8px;
-    }
-  }
-}
-.logoArea{
-  height: 70px;
-}
-.logoArea a {
-  margin-top: 11px;
-}
-@media all and (max-width: 900px) {
-  .top-bar-left{
-    width: 13em;
-    padding-top: 10px;
-    .logoArea a img{
-
-      width: 2em;
-    }
-  }
-}
-
-
-.hide-user {
-  display: none;
-}
-
-#user {
-  width: 15em;
-  position: fixed;
-  right: 0;
-  top: 55px;
-  z-index: 999;
-  padding: 0.6em;
-  h5 {
-    text-align: center;
-  }
-  p {
-    display: inline-block;
-  }
-  li {
-    padding: .5em;
-    &:hover {
-      background-color: black;
-      color: white;
-    }
-    a {
-      width: 85%;
-      display: inline-block;
-    }
-    i {
-      display: inline-block;
-      margin-right: .5em;
-    }
-  }
-  
-
-}
-
-#user-btn {
-  &:hover {
-    background-color: $Green;
-  }
-}
-
-#alert {
-  width: 16em;
-  position: fixed;
-  right: 0;
-  top: 55px;
-  z-index: 999;
-  padding: 0.6em;
-  overflow: auto;
-  max-height: 100%;
-  h5 {
-    text-align: center;
-  }
-  p {
-    display: inline-block;
-    margin-top: 1em;
-  }
-  li {
-    padding: .5em;
-    &:hover {
-      background-color: black;
-      color: white;
-    }
-  }
-  a {
-    padding: 0;
-  }
-
-}
-
-#alert-btn {
-  &:hover {
-    background-color: $Green;
-  }
-}
-
-.users-list {
-  border: 1px solid black;
-  text-align: center;
-  margin-bottom: .4em;
-  &:hover {
-    background-color: $Green;
-  }
-
-}
-

@@ -5426,7 +5426,8 @@ body {
       color: white;
       text-decoration: none;
       font-size: 1.3em;
-      font-weight: 500; }
+      font-weight: 500;
+      margin-top: 8px; }
     .top-bar .top-bar-left img {
       width: 10%; }
   .top-bar .top-bar-right .menu button {
@@ -5470,42 +5471,10 @@ body {
 #user-btn:hover {
   background-color: #2DDD72; }
 
-#alert {
-  width: 16em;
-  position: fixed;
-  right: 0;
-  top: 55px;
-  z-index: 999;
-  padding: 0.6em;
-  overflow: auto;
-  max-height: 100%; }
-  #alert h5 {
-    text-align: center; }
-  #alert p {
-    display: inline-block;
-    margin-top: 1em; }
-  #alert li {
-    padding: .5em; }
-    #alert li:hover {
-      background-color: black;
-      color: white; }
-  #alert a {
-    padding: 0; }
-
-#alert-btn:hover {
-  background-color: #2DDD72; }
-
-.users-list {
-  border: 1px solid black;
-  text-align: center;
-  margin-bottom: .4em; }
-  .users-list:hover {
-    background-color: #2DDD72; }
-
-/*********************Landing Page******************************/
 .contactUs {
   background-color: #FFF; }
 
+/*********************Landing Page******************************/
 .landingPage {
   background: #D2DFEA;
   border-radius: 10px;
@@ -5633,10 +5602,10 @@ body {
     margin-top: 15%;
     text-align: center; }
     .userHomePage .quickNav :hover {
-      color: white; }
+      color: #3C3F95; }
   .userHomePage .bothLists {
-    width: 79%;
-    margin: 1% 1% 0 2%;
+    width: 80%;
+    margin: 1% -15% 0 2%;
     overflow-y: scroll;
     height: 85vh; }
     .userHomePage .bothLists .title {
@@ -5651,16 +5620,19 @@ body {
     .userHomePage .bothLists .hidden {
       display: none; }
     .userHomePage .bothLists .dark {
-      background: #e6e6e6;
-      opacity: .9; }
+      background: #e6e6e6; }
     .userHomePage .bothLists .lighten {
-      color: #b5b5b7; }
+      background: white;
+      color: gray; }
     .userHomePage .bothLists .list {
       width: 98.4%; }
       .userHomePage .bothLists .list img {
         width: 3%;
         display: block;
-        margin: 0 auto; }
+        margin-left: 47.5%;
+        margin-top: 2%; }
+      .userHomePage .bothLists .list span.imgWord {
+        margin-left: 45.5%; }
       .userHomePage .bothLists .list table {
         text-align: left; }
         .userHomePage .bothLists .list table tr {
@@ -5675,6 +5647,10 @@ body {
 .userHomePage .bothLists .list table tr {
   border-bottom: none;
   background: inherit; }
+
+.userHomePage .bothLists .list table {
+  text-align: left;
+  margin-left: 0; }
 
 .vertical {
   padding-top: 1em;
@@ -5703,14 +5679,15 @@ body {
     font-size: 0.6em;
     font-weight: 500; }
   .vertical .nested li {
-    margin-left: 10%;
-    margin-bottom: 0.25em;
     margin-top: -0.5em; }
     .vertical .nested li table td {
       text-align: center; }
   .vertical table {
     width: 70%;
     margin: 0 5%; }
+    .vertical table tbody {
+      background: inherit;
+      margin-left: -2%; }
   .vertical table td {
     margin: 0 auto;
     width: 13em; }
@@ -5719,15 +5696,15 @@ body {
     font-weight: bold; }
     .vertical table tr.head span {
       color: black; }
-  .vertical .necTable {
-    margin: 0 5%; }
-    .vertical .necTable td {
-      width: 12em; }
+  .vertical .groceryList .grocNec {
+    margin-left: 50px; }
+  .vertical .groceryList table.grocReg {
+    margin-left: 0; }
 
 /*****************************Grocery List Page*******************/
 .quickLinks2 {
   width: 16%;
-  background: #303E4E;
+  background: white;
   opacity: .9;
   height: 66em;
   padding-top: 1em; }
@@ -5740,7 +5717,7 @@ body {
   .quickNav2 img {
     width: 20%; }
   .quickNav2 :hover {
-    color: white; }
+    color: #3C3F95; }
 
 .mainGroceryList {
   background: #D2DFEA;
@@ -5896,100 +5873,4 @@ body {
 [ui-view].ng-leave-active {
   opacity: 0; }
 
-<<<<<<< HEAD
-.top-bar {
-  background-color: #303E4D; }
-  .top-bar ul {
-    background-color: inherit; }
-  .top-bar .top-bar-left {
-    margin-top: -2em; }
-    .top-bar .top-bar-left a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.3em;
-      font-weight: 500; }
-    .top-bar .top-bar-left img {
-      width: 10%; }
-  .top-bar .top-bar-right .menu button {
-    margin-top: 12px;
-    font-size: 1em;
-    font-weight: 500;
-    border-radius: 8px; }
-
-.logoArea {
-  height: 70px; }
-
-.logoArea a {
-  margin-top: 11px; }
-
-@media all and (max-width: 900px) {
-  .top-bar-left {
-    width: 13em;
-    padding-top: 10px; }
-    .top-bar-left .logoArea a img {
-      width: 2em; } }
-
-.hide-user {
-  display: none; }
-
-#user {
-  width: 15em;
-  position: fixed;
-  right: 0;
-  top: 55px;
-  z-index: 999;
-  padding: 0.6em; }
-  #user h5 {
-    text-align: center; }
-  #user p {
-    display: inline-block; }
-  #user li {
-    padding: .5em; }
-    #user li:hover {
-      background-color: black;
-      color: white; }
-    #user li a {
-      width: 85%;
-      display: inline-block; }
-    #user li i {
-      display: inline-block;
-      margin-right: .5em; }
-
-#user-btn:hover {
-  background-color: #2DDD72; }
-
-#alert {
-  width: 16em;
-  position: fixed;
-  right: 0;
-  top: 55px;
-  z-index: 999;
-  padding: 0.6em;
-  overflow: auto;
-  max-height: 100%; }
-  #alert h5 {
-    text-align: center; }
-  #alert p {
-    display: inline-block;
-    margin-top: 1em; }
-  #alert li {
-    padding: .5em; }
-    #alert li:hover {
-      background-color: black;
-      color: white; }
-  #alert a {
-    padding: 0; }
-
-#alert-btn:hover {
-  background-color: #2DDD72; }
-
-.users-list {
-  border: 1px solid black;
-  text-align: center;
-  margin-bottom: .4em; }
-  .users-list:hover {
-    background-color: #2DDD72; }
-
-=======
->>>>>>> 678e4c2e0ec3f5fd36468c8cba790e99bc22fda0
 /*# sourceMappingURL=main.css.map */
