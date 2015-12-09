@@ -8,7 +8,7 @@
   </div>
   
   <div class="quickNav2">
-    <a href="/#list">
+    <a href="/#pantry">
       <img ng-src='../images/eggplant.png'>
       <p>Edit Pantry</p>
     </a>
@@ -54,10 +54,8 @@
           <option value="Other">Other</option>
         </select>
       
-        
-          
 
-       
+
         
           <button class="button newGroc">Submit</button>
         
@@ -75,7 +73,7 @@
       
 
       
-      <strong>Item:</strong> {{ object.title }} | {{ object.preferred - object.quantity }} needed
+      <strong>Item:</strong> {{ object.title }} | {{object.quantity }} needed
 
       <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 

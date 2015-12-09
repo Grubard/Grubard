@@ -5396,16 +5396,111 @@ table.hover tr:nth-of-type(even):hover {
 .top-bar-right {
   float: right; }
 
+/**********************************All Things **************************************/
 body {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  height: 100%; }
-
-body {
+  overflow-x: hidden;
   background-image: url("../images/strawberryBG.jpg");
-  background-repeat: repeat;
   background-position: cover; }
+
+.wrapper {
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  backface-visibility: hidden;
+  will-change: overflow; }
+
+/**********************************Top-Bar**************************************/
+.top-bar {
+  display: block;
+  height: 4em;
+  width: 100%;
+  background-color: #303E4D; }
+  .top-bar ul {
+    background-color: inherit; }
+  .top-bar .top-bar-left {
+    margin-top: -2em; }
+    .top-bar .top-bar-left a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: 500; }
+    .top-bar .top-bar-left img {
+      width: 10%; }
+  .top-bar .top-bar-right .menu button {
+    vertical-align: middle;
+    font-size: 1em;
+    font-weight: 500; }
+
+@media all and (max-width: 900px) {
+  .top-bar-left {
+    width: 13em;
+    padding-top: 10px; }
+    .top-bar-left .logoArea a img {
+      width: 2em; } }
+
+.hide-user {
+  display: none; }
+
+#user {
+  width: 15em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #user h5 {
+    text-align: center; }
+  #user p {
+    display: inline-block; }
+  #user li {
+    padding: .5em; }
+    #user li:hover {
+      background-color: black;
+      color: white; }
+    #user li a {
+      width: 85%;
+      display: inline-block; }
+    #user li i {
+      display: inline-block;
+      margin-right: .5em; }
+
+#user-btn:hover {
+  background-color: #2DDD72; }
+
+#alert {
+  width: 16em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  overflow: auto;
+  max-height: 100%; }
+  #alert h5 {
+    text-align: center; }
+  #alert p {
+    display: inline-block;
+    margin-top: 1em; }
+  #alert li {
+    padding: .5em; }
+    #alert li:hover {
+      background-color: black;
+      color: white; }
+  #alert a {
+    padding: 0; }
+
+#alert-btn:hover {
+  background-color: #2DDD72; }
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em; }
+  .users-list:hover {
+    background-color: #2DDD72; }
 
 /*********************Landing Page******************************/
 .contactUs {
@@ -5416,8 +5511,9 @@ body {
   border-radius: 10px;
   width: 70%;
   opacity: .95;
-  margin: 1% auto 0 auto;
-  vertical-align: middle; }
+  margin: 2% auto;
+  vertical-align: middle;
+  overflow: scroll; }
 
 .logo img {
   display: block;
@@ -5464,36 +5560,33 @@ body {
 
 /*********************LogIn Page******************************/
 .loginPage {
-  border-radius: 5px;
   width: 50%;
+  border-radius: 5px;
   color: white;
   background: #303E4D;
   opacity: 0.9;
-  margin-left: 3%;
-  margin-top: 1%;
-  padding: 1%; }
-  .loginPage .loginBlock {
-    width: 80%; }
+  margin-left: 2%;
+  padding-left: 4%;
+  text-overflow: scroll; }
   .loginPage .formStuff {
-    margin: 0 auto;
+    padding-top: 1%;
     margin-top: 5%;
     font-size: 1.5em; }
     .loginPage .formStuff form {
-      width: 80%; }
+      width: 90%; }
     .loginPage .formStuff .logIn {
       border-bottom: 1px solid white; }
   .loginPage .rightPanel {
-    width: 70%;
-    margin: 0 auto;
-    font-size: 1.3em;
-    font-weight: 600;
+    margin-left: 13%;
+    padding-bottom: 2%;
+    width: 60%;
+    font-size: 1.2em;
+    font-weight: 400;
     font-style: italic; }
-    .loginPage .rightPanel p {
-      margin-left: -15px; }
   .loginPage .newButton {
     font-size: 0.8em;
     margin-top: 3%;
-    margin-left: 21%; }
+    margin-left: 30%; }
   .loginPage .finishButton {
     display: none; }
   .loginPage .createAcct {
@@ -5511,18 +5604,29 @@ body {
   .loginPage {
     width: 90%; } }
 
-/*********************User Page******************************/
+/*********************User Home Page******************************/
+@media all and (max-width: 1050px) {
+  .bothLists {
+    font-size: 12px; } }
+
+@media all and (max-width: 500px) {
+  .bothLists .pantryTitle {
+    font-size: 10px; } }
+
+.side {
+  display: inline-block;
+  vertical-align: top; }
+
 .userHomePage {
   width: 100%; }
-  .userHomePage .side {
-    display: inline-block; }
   .userHomePage img {
     width: 20%; }
+  .userHomePage .side {
+    display: inline-block; }
   .userHomePage .quickLinks {
-    width: 16%;
-    background: #303E4E;
-    opacity: .9;
-    height: 66em; }
+    width: 17%;
+    height: 100vh;
+    background: white; }
     .userHomePage .quickLinks a {
       color: #40704E; }
   .userHomePage .quickNav {
@@ -5531,13 +5635,14 @@ body {
     .userHomePage .quickNav :hover {
       color: white; }
   .userHomePage .bothLists {
-    vertical-align: top;
-    width: 80%;
-    margin: 1% 2% 0 1%; }
+    width: 79%;
+    margin: 1% 1% 0 2%;
+    overflow-y: scroll;
+    height: 85vh; }
     .userHomePage .bothLists .title {
       width: 49%;
       display: inline-block;
-      font-size: 2em;
+      font-size: 1.7em;
       padding-left: 1em;
       margin-bottom: 0;
       padding-bottom: 0.25em; }
@@ -5546,7 +5651,8 @@ body {
     .userHomePage .bothLists .hidden {
       display: none; }
     .userHomePage .bothLists .dark {
-      background: #c1d3e2; }
+      background: #e6e6e6;
+      opacity: .9; }
     .userHomePage .bothLists .lighten {
       color: #b5b5b7; }
     .userHomePage .bothLists .list {
@@ -5559,50 +5665,43 @@ body {
         text-align: left; }
         .userHomePage .bothLists .list table tr {
           border-bottom: 1px solid #b5b5b7;
-          background: #c1d3e2; }
+          background: #677077; }
         .userHomePage .bothLists .list table tbody {
           border: none;
           width: 98.3%; }
         .userHomePage .bothLists .list table th:hover {
           cursor: pointer; }
 
-@media all and (max-width: 1050px) {
-  .bothLists {
-    font-size: 12px; } }
-
-@media all and (max-width: 500px) {
-  .bothLists .pantryTitle {
-    font-size: 10px; } }
-
 .userHomePage .bothLists .list table tr {
   border-bottom: none;
-  background: #c1d3e2; }
+  background: inherit; }
 
 .vertical {
-  padding-top: 1em; }
+  padding-top: 1em;
+  padding-left: 6%;
+  display: inline-block;
+  width: 32em;
+  vertical-align: top; }
   .vertical a.subTitle {
     font-size: 1.5em;
     color: #40704E;
     border: 2px solid #8caeca;
     border-radius: 5px;
     padding-top: 0.5%;
-    width: 80%;
     margin: 0 auto; }
-    .vertical a.subTitle span.quantity {
-      float: right;
-      margin-right: 4%;
-      margin-top: 3px;
-      display: inline-block;
-      height: 20px;
-      width: 20px;
-      line-height: 20px;
-      border-radius: 30px;
-      color: #D02527;
-      text-align: center;
-      font-size: 0.6em;
-      font-weight: 500; }
-  .vertical .pantryList {
-    width: 100%; }
+  .vertical span.quantity {
+    float: right;
+    margin-right: 4%;
+    margin-top: 3px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border-radius: 30px;
+    color: #D02527;
+    text-align: center;
+    font-size: 0.6em;
+    font-weight: 500; }
   .vertical .nested li {
     margin-left: 10%;
     margin-bottom: 0.25em;
@@ -5625,6 +5724,7 @@ body {
     .vertical .necTable td {
       width: 12em; }
 
+/*****************************Grocery List Page*******************/
 .quickLinks2 {
   width: 16%;
   background: #303E4E;
@@ -5642,11 +5742,6 @@ body {
   .quickNav2 :hover {
     color: white; }
 
-.side {
-  display: inline-block;
-  vertical-align: top; }
-
-/*****************************Grocery List Page*******************/
 .mainGroceryList {
   background: #D2DFEA;
   width: 75%;
@@ -5761,6 +5856,17 @@ body {
   padding-top: 0;
   font-size: 0.5em; }
 
+.groceryList table {
+  display: inline-block;
+  vertical-align: top; }
+  .groceryList table caption {
+    margin: 0 auto; }
+  .groceryList table th {
+    width: 30%;
+    text-align: center; }
+  .groceryList table td {
+    text-align: center; }
+
 /*************************Add Groceries Form***********************/
 .grocAddForm {
   display: none; }
@@ -5790,6 +5896,7 @@ body {
 [ui-view].ng-leave-active {
   opacity: 0; }
 
+<<<<<<< HEAD
 .top-bar {
   background-color: #303E4D; }
   .top-bar ul {
@@ -5883,4 +5990,6 @@ body {
   .users-list:hover {
     background-color: #2DDD72; }
 
+=======
+>>>>>>> 678e4c2e0ec3f5fd36468c8cba790e99bc22fda0
 /*# sourceMappingURL=main.css.map */

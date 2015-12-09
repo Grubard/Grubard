@@ -11,7 +11,6 @@
 $Blue: #3C3F95;
 $Gray: #677077;
 $lightGray: #b5b5b7;
-
 $Yellow: #f2b632;
 $Green: #2DDD72;
 $Purple: #78427E;
@@ -20,34 +19,168 @@ $Red: #D02527;
 $FruitGreen: #40704E;
 
 
+/**********************************All Things **************************************/
+
 body{
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  height: 100%;
-}
-
-body { 
+  overflow-x: hidden;
   background-image:url('../images/strawberryBG.jpg'); 
-  background-repeat: repeat;
   background-position: cover;
+}
 
+.wrapper{
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  backface-visibility: hidden;
+  will-change: overflow;
 }
 
 
-/*********************Landing Page******************************/
+/**********************************Top-Bar**************************************/
+
+.top-bar {
+  display: block;
+  height: 4em;
+  width: 100%;
+  background-color: #303E4D;
+  ul {
+    background-color: inherit;
+  }
+  .top-bar-left {
+    margin-top: -2em;
+    a{
+      color: white;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: 500;
+    }
+    img{
+      width: 10%;
+    }
+  }
+  .top-bar-right {
+    .menu button {
+      vertical-align: middle;
+      font-size: 1em;
+      font-weight: 500;
+    }
+  }
+}
+@media all and (max-width: 900px) {
+  .top-bar-left{
+    width: 13em;
+    padding-top: 10px;
+    .logoArea a img{
+      width: 2em;
+    }
+  }
+}
+
+.hide-user {
+  display: none;
+}
+
+#user {
+  width: 15em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  h5 {
+    text-align: center;
+  }
+  p {
+    display: inline-block;
+  }
+  li {
+    padding: .5em;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+    a {
+      width: 85%;
+      display: inline-block;
+    }
+    i {
+      display: inline-block;
+      margin-right: .5em;
+    }
+  }
+}
+
+#user-btn {
+  &:hover {
+    background-color: $Green;
+  }
+}
+
+#alert {
+  width: 16em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  overflow: auto;
+  max-height: 100%;
+  h5 {
+    text-align: center;
+  }
+  p {
+    display: inline-block;
+    margin-top: 1em;
+  }
+  li {
+    padding: .5em;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+  a {
+    padding: 0;
+  }
+
+}
+
 
 .contactUs{
   background-color: #FFF;
 }
+
+#alert-btn {
+  &:hover {
+    background-color: $Green;
+  }
+}
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em;
+  &:hover {
+    background-color: $Green;
+  }
+
+}
+
+
+
+/*********************Landing Page******************************/
 
 .landingPage{
   background: #D2DFEA;
   border-radius: 10px;
   width: 70%;
   opacity: .95;
-  margin: 1% auto 0 auto;
+  margin: 2% auto;
   vertical-align: middle;
+  overflow: scroll;
 }
 
 
@@ -59,7 +192,6 @@ body {
     padding-top: 3%;
   }
 }
-
 
 .productDescription{
   padding-top: 1%;
@@ -113,50 +245,41 @@ body {
   }
 }
 
-
 /*********************LogIn Page******************************/
 
-
 .loginPage{
-  border-radius: 5px;
   width: 50%;
+  border-radius: 5px;
   color: white;
   background: #303E4D;
   opacity: 0.9;
-  margin-left: 3%;
-  margin-top: 1%;
-  padding: 1%;
-  .loginBlock{
-    width: 80%;
-  }
+  margin-left: 2%;
+  padding-left: 4%;
+  text-overflow: scroll;
   .formStuff{
-    margin: 0 auto;
+    padding-top: 1%;
     margin-top: 5%;
     font-size: 1.5em;
     form{
-      width: 80%;
+      width: 90%;
     }
     .logIn{
       border-bottom: 1px solid white;
     }
   }
   .rightPanel{
-    width: 70%;
-    margin: 0 auto;
-    font-size: 1.3em;
-    font-weight: 600;
+    margin-left: 13%;
+    padding-bottom: 2%;
+    width: 60%;
+    font-size: 1.2em;
+    font-weight: 400;
     font-style: italic;
-    p{
-      margin-left: -15px;
-    }
   }
   .newButton{
     font-size: 0.8em;
     margin-top: 3%;
-    margin-left: 21%;
+    margin-left: 30%;
   }
-  
-
   .finishButton{
     display: none;
   }
@@ -185,83 +308,7 @@ body {
 
 
 
-
-
-/*********************User Page******************************/
-
-.userHomePage{
-  width: 100%;
-  .side{
-    display: inline-block;
-  }
-  img{
-    width: 20%;
-  }
-  .quickLinks{
-    width: 16%;
-    background: #303E4E;
-    opacity: .9;
-    height: 66em;
-    a{
-      color: $FruitGreen;
-    }
-  }
-  .quickNav{
-    margin-top: 15%;
-    text-align: center;
-    :hover{
-      color: white;
-    }
-  }
-
-  .bothLists{
-    vertical-align: top;
-    width: 80%;
-    margin: 1% 2% 0 1%;
-    .title{
-      width: 49%;
-      display: inline-block;
-      font-size: 2em;
-      padding-left: 1em;
-      margin-bottom: 0;
-      padding-bottom: 0.25em;
-      &:hover{
-        cursor: pointer;
-      }
-    }
-    .hidden{
-      display: none;
-    }
-    .dark{
-      background: darken(#D2DFEA, 5%);   
-    }
-    .lighten{
-      color: $lightGray;
-    }
-    .list{
-      width: 98.4%;
-      img{
-        width: 3%;
-        display: block;
-        margin: 0 auto;
-      }
-      table{
-        text-align: left;
-        tr{
-          border-bottom: 1px solid $lightGray;
-          background: darken(#D2DFEA, 5%);   
-        }     
-        tbody{
-          border: none;
-          width: 98.3%;
-        }
-        th:hover{
-          cursor: pointer;
-        }
-      }
-    }
-  }
-}
+/*********************User Home Page******************************/
 
 @media all and (max-width: 1050px) {
   .bothLists{
@@ -277,39 +324,119 @@ body {
   }
 }
 
+.side{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.userHomePage{
+  width: 100%;
+  img{
+    width: 20%;
+  }
+  .side{
+    display: inline-block;
+  }
+  .quickLinks{
+    width: 17%;
+    height: 100vh;
+    background: white;
+    a{
+      color: $FruitGreen;
+    }
+  }
+  .quickNav{
+    margin-top: 15%;
+    text-align: center;
+    :hover{
+      color: white;
+    }
+  }
+  .bothLists{
+    width: 79%;
+    margin: 1% 1% 0 2%;
+    overflow-y: scroll;
+    height: 85vh;
+    .title{
+      width: 49%;
+      display: inline-block;
+      font-size: 1.7em;
+      padding-left: 1em;
+      margin-bottom: 0;
+      padding-bottom: 0.25em;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .hidden{
+      display: none;
+    }
+    .dark{
+      background: darken(white, 10%);   
+      opacity: .9;
+    }
+    .lighten{
+      color: $lightGray;
+    }
+    .list{
+      width: 98.4%;
+      img{
+        width: 3%;
+        display: block;
+        margin: 0 auto;
+      }
+      table{
+        text-align: left;
+        tr{
+          border-bottom: 1px solid $lightGray;
+          background: $Gray;   
+        }     
+        tbody{
+          border: none;
+          width: 98.3%;
+        }
+        th:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
 .userHomePage .bothLists .list table tr {
   border-bottom: none;
-  background: #c1d3e2;
+  background: inherit;
 }
 
 .vertical{
   padding-top: 1em;
+  padding-left: 6%;
+  display: inline-block;
+  width: 32em;
+  vertical-align: top;
   a.subTitle{
     font-size: 1.5em;
     color: $FruitGreen;
     border: 2px solid darken(#D2DFEA, 20%);
     border-radius: 5px;
     padding-top: 0.5%;
-    width: 80%;
     margin: 0 auto;
-    span.quantity{
-      float: right;
-      margin-right: 4%;
-      margin-top: 3px;
-      display: inline-block;
-      height: 20px;
-      width: 20px;
-      line-height: 20px;
-      border-radius: 30px;
-      // background-color: $Red;
-      color: $Red;
-      text-align: center;
-      font-size: 0.6em;
-      font-weight: 500;
-    }
   }
-  .pantryList{
-    width: 100%;
+  span.quantity{
+    float: right;
+    margin-right: 4%;
+    margin-top: 3px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    border-radius: 30px;
+    // background-color: $Red;
+    color: $Red;
+    text-align: center;
+    font-size: 0.6em;
+    font-weight: 500;
   }
   .nested li{
     margin-left: 10%;
@@ -342,6 +469,12 @@ body {
   }
 }
 
+
+
+
+
+/*****************************Grocery List Page*******************/
+
 .quickLinks2{
   width: 16%;
   background: #303E4E;
@@ -363,18 +496,6 @@ body {
   }
 }
 
-.side{
-  display: inline-block;
-  vertical-align: top;
-}
-
-
-
-
-
-
-
-/*****************************Grocery List Page*******************/
 
 .mainGroceryList{
   background: #D2DFEA;
@@ -523,6 +644,22 @@ body {
   font-size: 0.5em;
 }
 
+.groceryList table{
+  display: inline-block;
+  vertical-align: top;
+  caption{
+    margin: 0 auto;
+  }
+  th{
+    width: 30%;
+    text-align: center;
+  }
+  td{
+    text-align: center;
+  }
+}
+
+
 
 
 /*************************Add Groceries Form***********************/
@@ -574,6 +711,7 @@ body {
   // -moz-transform:translate3d(100px, 0, 0);
   // transform:translate3d(100px, 0, 0);
 }
+
 
 
 
@@ -714,3 +852,4 @@ body {
   }
 
 }
+
