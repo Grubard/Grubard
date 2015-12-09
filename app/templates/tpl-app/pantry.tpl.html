@@ -1,4 +1,28 @@
-<div class="mainGroceryList">
+<div class="side quickLinks2">
+
+  <div class="quickNav2">
+    <a href="/#home">
+      <img ng-src='../images/home.png'>
+      <p>Return Home</p>
+    </a>
+  </div>
+  
+  <div class="quickNav2">
+    <a href="/#list">
+      <img ng-src='../images/apple.png'>
+      <p>Go Shopping <br> or <br> Edit Grocery List</p>
+    </a>
+  </div>
+
+  <div class="quickNav2">
+    <a href="/#list" ng-click="vm.logOut()">
+      <img ng-src='../images/carrot.png'>
+      <p>Log Out</p>
+    </a>
+  </div>
+</div>
+
+<div class="side mainGroceryList">
   <h3>Current Pantry List</h3>
 
     <button class="button addItem addPanItem">Add an Item</button>
@@ -10,19 +34,8 @@
     <li>
       <form ng-submit="vm.addNewItem(food)">
         <input class="addPanItem" ng-model="food.title" placeholder="New Item" required>
-        <select class="addPanItem" ng-model="food.quantity">
-          <option value="" disabled selected>Qty</option>  
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
+        <input type="text" class="addPanItem" ng-model="food.quantity" placeholder="Quantity">
+          
 
         <select class="addPanItem" ng-model="food.category" required>
           <option value="" disabled selected>Category</option>  
@@ -43,19 +56,9 @@
           <option value="Other">Other</option>
         </select>
       
-        <select class="addPanItem" ng-model="food.preferred">
-          <option value="" disabled selected>Preffered Amt</option>  
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
+        <input type="text" class="addPanItem" ng-model="food.preferred" placeholder="Preferred Amount">
+            
+          
 
 
 
@@ -81,7 +84,7 @@
     <li ng-repeat="object in vm.pantryList"  ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
       <input class="checkIt" type="checkbox" id="check1">
-      <label for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
+      <label ng-hide="object.showEdit" for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
       
 
       <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">
@@ -89,13 +92,13 @@
       </span>
 
       <form ng-show="object.showEdit" class="editItem" ng-submit="vm.saveNewChanges(object)">
-        Item:<input class="objectTitle" ng-model="object.title" value="{{object.title}}">
-        Quantity:<input class="objectAmt" ng-model="object.quantity" value="{{object.quantity}}">
+        <span>Item:</span><input class="objectTitle" ng-model="object.title" value="{{object.title}}">
+        <span>Quantity:</span><input class="objectAmt" ng-model="object.quantity" value="{{object.quantity}}">
         <button class="button" type="submit">Submit Changes</button>
         <button class="button" ng-click="vm.cancelChange()">Cancel</button>
       </form>
 
-      <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
+      <i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
       <hr>
     </li>
   </ul>

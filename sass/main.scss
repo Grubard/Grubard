@@ -37,7 +37,9 @@ body {
 
 /*********************Landing Page******************************/
 
-
+.contactUs{
+  background-color: #FFF;
+}
 
 .landingPage{
   background: #D2DFEA;
@@ -231,7 +233,7 @@ body {
       display: none;
     }
     .dark{
-      background: darken(#D2DFEA, 5%);        
+      background: darken(#D2DFEA, 5%);   
     }
     .lighten{
       color: $lightGray;
@@ -340,6 +342,32 @@ body {
   }
 }
 
+.quickLinks2{
+  width: 16%;
+  background: #303E4E;
+  opacity: .9;
+  height: 66em;
+  padding-top: 1em;
+  a{
+    color: $FruitGreen;
+  }
+}
+.quickNav2{
+  margin-top: 15%;
+  text-align: center;
+  img{
+    width: 20%;
+  }
+  :hover{
+    color: white;
+  }
+}
+
+.side{
+  display: inline-block;
+  vertical-align: top;
+}
+
 
 
 
@@ -350,13 +378,14 @@ body {
 
 .mainGroceryList{
   background: #D2DFEA;
-  border-radius: 10px;
   width: 75%;
-  margin: 3% auto;
+  margin: 0 auto;
   padding-bottom: 10px;
+  margin-left: -4px;
   .buttonAdd{
     text-align: center;
     button{
+      line-height: 0.75em;
       font-size: 1.5em;
       height: 65px;
       border-radius: 10px;
@@ -392,23 +421,20 @@ body {
  
   .checkIt{
     display: none;
+  }  
+  input{
+    background: lighten(#D2DFEA, 5%);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 8px 0px;
   }
-
-
-  
-    input{
-      background: lighten(#D2DFEA, 5%);
-      border: none;
-      border-radius: 5px;
-      padding: 0.5em;
-      margin: 8px 0px;
-    }
-    select{
-      // background: lighten(#D2DFEA, 5%);
-      border: none;
-      border-radius: 5px;
-      padding: 0.5em;
-    }
+  select{
+    // background: lighten(#D2DFEA, 5%);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+  }
  
 
   label{
@@ -429,7 +455,21 @@ body {
     font-weight: 100;
     color: #57B65C;
   }
+}
 
+.editItem{
+  margin-left: 3.5em;
+  span{
+    font-weight: bold;
+  }
+  input{
+    width: 4em;
+    margin-right: 2.5em;
+  }
+  .button{
+    width: 10em;
+    border-radius: 5px;
+  }
 }
 
 .crossOut {
@@ -472,20 +512,20 @@ body {
   text-align: center;
 }
 .btnAdd{
+  text-align: center;
   button{
     border-radius: 10px;
   }
-  text-align: center;
 }
 
-// .editItem{
-//   display: none;
-// }
-// .showEditForm{
-//   display: inline-block;
-// }
+.addToPantry span{
+  padding-top: 0;
+  font-size: 0.5em;
+}
 
-//*************************Add Groceries Form***********************//
+
+
+/*************************Add Groceries Form***********************/
 
 .grocAddForm{
   display: none;
@@ -563,17 +603,25 @@ body {
   }
   .top-bar-right {
     .menu button {
-      vertical-align: middle;
+      margin-top: 12px;
       font-size: 1em;
       font-weight: 500;
+      border-radius: 8px;
     }
   }
+}
+.logoArea{
+  height: 70px;
+}
+.logoArea a {
+  margin-top: 11px;
 }
 @media all and (max-width: 900px) {
   .top-bar-left{
     width: 13em;
     padding-top: 10px;
     .logoArea a img{
+
       width: 2em;
     }
   }

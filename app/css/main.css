@@ -5408,6 +5408,9 @@ body {
   background-position: cover; }
 
 /*********************Landing Page******************************/
+.contactUs {
+  background-color: #FFF; }
+
 .landingPage {
   background: #D2DFEA;
   border-radius: 10px;
@@ -5622,16 +5625,38 @@ body {
     .vertical .necTable td {
       width: 12em; }
 
+.quickLinks2 {
+  width: 16%;
+  background: #303E4E;
+  opacity: .9;
+  height: 66em;
+  padding-top: 1em; }
+  .quickLinks2 a {
+    color: #40704E; }
+
+.quickNav2 {
+  margin-top: 15%;
+  text-align: center; }
+  .quickNav2 img {
+    width: 20%; }
+  .quickNav2 :hover {
+    color: white; }
+
+.side {
+  display: inline-block;
+  vertical-align: top; }
+
 /*****************************Grocery List Page*******************/
 .mainGroceryList {
   background: #D2DFEA;
-  border-radius: 10px;
   width: 75%;
-  margin: 3% auto;
-  padding-bottom: 10px; }
+  margin: 0 auto;
+  padding-bottom: 10px;
+  margin-left: -4px; }
   .mainGroceryList .buttonAdd {
     text-align: center; }
     .mainGroceryList .buttonAdd button {
+      line-height: 0.75em;
       font-size: 1.5em;
       height: 65px;
       border-radius: 10px; }
@@ -5684,6 +5709,17 @@ body {
     font-weight: 100;
     color: #57B65C; }
 
+.editItem {
+  margin-left: 3.5em; }
+  .editItem span {
+    font-weight: bold; }
+  .editItem input {
+    width: 4em;
+    margin-right: 2.5em; }
+  .editItem .button {
+    width: 10em;
+    border-radius: 5px; }
+
 .crossOut {
   position: relative;
   text-decoration: line-through;
@@ -5721,6 +5757,11 @@ body {
   .btnAdd button {
     border-radius: 10px; }
 
+.addToPantry span {
+  padding-top: 0;
+  font-size: 0.5em; }
+
+/*************************Add Groceries Form***********************/
 .grocAddForm {
   display: none; }
 
@@ -5763,9 +5804,16 @@ body {
     .top-bar .top-bar-left img {
       width: 10%; }
   .top-bar .top-bar-right .menu button {
-    vertical-align: middle;
+    margin-top: 12px;
     font-size: 1em;
-    font-weight: 500; }
+    font-weight: 500;
+    border-radius: 8px; }
+
+.logoArea {
+  height: 70px; }
+
+.logoArea a {
+  margin-top: 11px; }
 
 @media all and (max-width: 900px) {
   .top-bar-left {

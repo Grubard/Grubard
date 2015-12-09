@@ -70,11 +70,9 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LayoutController = function LayoutController($cookies, $state) {
+var LayoutController = function LayoutController($rootScope, $cookies, $state) {
   var vm = this;
-
   var name = $cookies.get('username');
-
   vm.name = name;
 
   vm.logOut = function () {
@@ -85,7 +83,7 @@ var LayoutController = function LayoutController($cookies, $state) {
   };
 };
 
-LayoutController.$inject = ['$cookies', '$state'];
+LayoutController.$inject = ['$rootScope', '$cookies', '$state'];
 
 exports['default'] = LayoutController;
 module.exports = exports['default'];
@@ -219,6 +217,13 @@ var ListController = function ListController($scope, $http, ListService, $state,
       }, 100);
     });
   }
+
+  vm.logOut = function () {
+    $cookies.remove('auth_token');
+    $cookies.remove('username');
+    $cookies.remove('house_id');
+    $state.go('landing');
+  };
 };
 
 ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies'];
@@ -331,7 +336,10 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   vm.pantryList = pantryList;
 
   function addNewItem(food) {
-    PantryService.addItem(food).then(function (response) {});
+    console.log('what were sending: ', food);
+    PantryService.addItem(food).then(function (response) {
+      console.log('the response: ', response);
+    });
     $scope.food = {};
   }
 
@@ -344,7 +352,7 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   }
 
   function removeItem(object) {
-    console.log(object.id);
+
     PantryService.removeFood(object.id);
     setTimeout(function () {
       $state.reload();
@@ -361,13 +369,18 @@ var PantryController = function PantryController($scope, $http, PantryService, $
 
   function saveNewChanges(object) {
 
-    PantryService.editFoodItem(object).then(function (response) {
-      console.log('this is the response', response);
-    });
+    PantryService.editFoodItem(object).then(function (response) {});
     setTimeout(function () {
       $state.reload();
     }, 100);
   }
+
+  vm.logOut = function () {
+    $cookies.remove('auth_token');
+    $cookies.remove('username');
+    $cookies.remove('house_id');
+    $state.go('landing');
+  };
 
   // function removeItem(items) {
   //   console.log('delete me');
@@ -447,12 +460,13 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
 
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
+      console.log('pantry: ', response);
       vm.pantryItems = response.data;
       TransferService.transferItems(vm.pantryItems);
       var items = response.data;
       items.forEach(function (item) {
-        console.log('nec', item);
         if (item.necessity === true) {
+          console.log(item);
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
         } else if (item.category === "Produce") {
@@ -839,8 +853,7 @@ var PantryService = function PantryService($http, SERVER, $cookies) {
 
   function editFoodItem(foodObj) {
     var x = foodObj.id;
-    console.log(foodObj);
-    return $http.put(url + '/edible/' + x + '/edit', foodObj, SERVER.CONFIG);
+    return $http.put(url + '/edible/' + x, foodObj, SERVER.CONFIG);
   }
 };
 
