@@ -31,7 +31,6 @@
 
     <div class="list pantryList dark">
       <ul class="vertical menu" data-accordion-menu>
-        
         <li>
           <a class="subTitle">Necessities<span class="quantity necessityQuant">{{ vm.necessityAmt }}</span></a>
           <ul class="menu vertical nested">
@@ -208,7 +207,9 @@
 
           </ul>
         </li>
+      </ul>
 
+      <ul class="vertical menu" data-accordion-menu>
         <li>
           <a class="subTitle">Sweets<span class="quantity">{{ vm.sweetsAmt }}</span></a>
           <ul class="menu vertical nested">
@@ -388,7 +389,7 @@
 
       </ul>
 
-      <a href="/#pantry"><img ng-src='../images/eggplant.png'></a>
+      <a href="/#pantry"><img ng-src='../images/eggplant.png'>Edit Pantry</a>
     </div>
 
 
@@ -399,7 +400,35 @@
 
 
     <div class="list groceryList dark hidden">
-      <table style="width: 100%">
+      <table class="grocNec" style="width: 49%">
+        <caption>Necessities</caption>
+        <tr>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Amount Needed</th>
+        </tr>
+        <tr ng-repeat="i in vm.necessity">
+          <td>{{i.title}}</td>
+          <td>{{i.category}}</td>
+          <td>{{i.preferred - i.quantity}}</td>
+        </tr>
+      </table>
+
+      <table class="grocReg " style="width: 49%">
+        <caption>Self-Added Items</caption>
+        <tr>
+          <th>Item Name</th>
+          <th>Category</th>
+          <th>Amount Needed</th>
+        </tr>
+        <tr ng-repeat="i in vm.items">
+          <td>{{i.title}}</td>
+          <td>{{i.category}}</td>
+          <td>{{i.quantity}}</td>
+        </tr>
+      </table>
+
+<!--       <table style="width: 100%">
         <tr>
           <th ng-click="vm.sortBy('title')">Item Name</th>
           <th ng-click="vm.sortBy('category')">Category</th>
@@ -414,8 +443,8 @@
           <td>{{i.preferred}}</td>
           <td>{{i.necessity}}</td>
         </tr>
-      </table>
-      <a href="/#list"><img ng-src='../images/apple.png'></a>   
+      </table> -->
+      <a href="/#list"><img ng-src='../images/apple.png'>Edit Grocery List</a>   
     </div>  
    
   </div>
