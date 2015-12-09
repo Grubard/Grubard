@@ -23,6 +23,7 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
       console.log(res.data);
       $cookies.put('auth_token', res.data.user.access_token);
       $cookies.put('username', res.data.user.username);
+      $rootScope.$broadcast('LoggedIn');
     });
     $('.createAcct').addClass('hidden');
     $('.newSmartCart').addClass('shown');
