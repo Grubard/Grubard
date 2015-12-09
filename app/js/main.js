@@ -465,8 +465,8 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       TransferService.transferItems(vm.pantryItems);
       var items = response.data;
       items.forEach(function (item) {
-        console.log('nec', item);
         if (item.necessity === true) {
+          console.log(item);
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
         } else if (item.category === "Produce") {
@@ -853,7 +853,6 @@ var PantryService = function PantryService($http, SERVER, $cookies) {
 
   function editFoodItem(foodObj) {
     var x = foodObj.id;
-    console.log(foodObj);
     return $http.put(url + '/edible/' + x, foodObj, SERVER.CONFIG);
   }
 };

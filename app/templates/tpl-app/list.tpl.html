@@ -103,7 +103,7 @@
       
 
       
-      <strong>Item:</strong> {{ object.title }} {{ object.quantity }}
+      <strong>Item:</strong> {{ object.title }} | {{ object.preferred - object.quantity }} needed
 
       <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 
@@ -114,7 +114,7 @@
 
 
   <div class="buttonAdd">
-  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Purchased Checked Items!</button>
+  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Purchase Checked Items!<br><span>(Add to Pantry)</span></button>
   <button class="button clearCompleted" ng-click="vm.clearThese()">Delete Checked Items</button>
   </div>
 </div>

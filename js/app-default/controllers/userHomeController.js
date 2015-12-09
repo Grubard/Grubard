@@ -52,10 +52,11 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
       TransferService.transferItems(vm.pantryItems);
       let items = response.data;
       items.forEach(function(item) {
-        console.log('nec', item);
         if (item.necessity === true) {
+          console.log(item);
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
+          
         } else if (item.category === "Produce") {
           vm.produce.push(item);
           vm.produceAmt = vm.produce.length;

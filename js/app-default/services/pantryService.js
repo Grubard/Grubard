@@ -34,7 +34,6 @@ let PantryService = function($http, SERVER, $cookies) {
 
   function editFoodItem (foodObj) {
     let x = foodObj.id;
-    console.log(foodObj);
     return $http.put(url + '/edible/' + x, foodObj, SERVER.CONFIG);
   }
 
