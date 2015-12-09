@@ -1,9 +1,10 @@
-let AuthService = function($cookies){
+let AuthService = function($cookies, $rootScope){
   this.authenticate = authenticate;
   function authenticate (){
 
     let token = $cookies.get('auth_token');
     if(token){
+      $rootScope.$broadcast('LoggedIn');
       return true;
     } else{
       return false;
@@ -11,5 +12,5 @@ let AuthService = function($cookies){
   }
 
 };
-AuthService.$inject= ['$cookies'];
+AuthService.$inject= ['$cookies', '$rootScope'];
 export default AuthService;

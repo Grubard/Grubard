@@ -340,10 +340,8 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   vm.pantryList = pantryList;
 
   function addNewItem(food) {
-    console.log('what were sending: ', food);
-    PantryService.addItem(food).then(function (response) {
-      console.log('the response: ', response);
-    });
+
+    PantryService.addItem(food).then(function (response) {});
     $scope.food = {};
   }
 
@@ -958,19 +956,20 @@ _angular2['default'].module('app.layout', ['ngCookies']).service('AuthService', 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var AuthService = function AuthService($cookies) {
+var AuthService = function AuthService($cookies, $rootScope) {
   this.authenticate = authenticate;
   function authenticate() {
 
     var token = $cookies.get('auth_token');
     if (token) {
+      $rootScope.$broadcast('LoggedIn');
       return true;
     } else {
       return false;
     }
   }
 };
-AuthService.$inject = ['$cookies'];
+AuthService.$inject = ['$cookies', '$rootScope'];
 exports['default'] = AuthService;
 module.exports = exports['default'];
 
@@ -1027,12 +1026,13 @@ var run = function run($rootScope, $cookies, $state, AuthService, $stateParams) 
     $(document).foundation();
   });
 
-  $rootScope.$on("$stateChangeSuccess", function (event, toState, toParams, fromState, fromParams) {
+  $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
 
     var x = AuthService.authenticate();
     console.log("w:", x);
 
     if (toState.authenticate && x === true) {
+      $rootScope.$broadcast('LoggedIn');
       return;
     }
     if (toState.authenticate && x === false) {
