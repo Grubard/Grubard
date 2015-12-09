@@ -5492,6 +5492,9 @@ body {
   #alert a {
     padding: 0; }
 
+.contactUs {
+  background-color: #FFF; }
+
 #alert-btn:hover {
   background-color: #2DDD72; }
 
@@ -5503,9 +5506,6 @@ body {
     background-color: #2DDD72; }
 
 /*********************Landing Page******************************/
-.contactUs {
-  background-color: #FFF; }
-
 .landingPage {
   background: #D2DFEA;
   border-radius: 10px;
@@ -5896,7 +5896,6 @@ body {
 [ui-view].ng-leave-active {
   opacity: 0; }
 
-<<<<<<< HEAD
 .top-bar {
   background-color: #303E4D; }
   .top-bar ul {
@@ -5990,6 +5989,4 @@ body {
   .users-list:hover {
     background-color: #2DDD72; }
 
-=======
->>>>>>> 678e4c2e0ec3f5fd36468c8cba790e99bc22fda0
 /*# sourceMappingURL=main.css.map */
