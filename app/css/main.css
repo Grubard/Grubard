@@ -5406,11 +5406,8 @@ body {
   background-position: cover; }
 
 .wrapper {
-  overflow: hidden;
   height: 100vh;
-  width: 100%;
-  backface-visibility: hidden;
-  will-change: overflow; }
+  width: 100%; }
 
 /**********************************Top-Bar**************************************/
 .top-bar {
@@ -5580,7 +5577,7 @@ body {
 
 @media all and (max-width: 500px) {
   .bothLists .pantryTitle {
-    font-size: 10px; } }
+    margin-left: -50%; } }
 
 .side {
   display: inline-block;
@@ -5605,7 +5602,7 @@ body {
       color: #3C3F95; }
   .userHomePage .bothLists {
     width: 80%;
-    margin: 1% -15% 0 2%;
+    margin: 5% -15% 0 2%;
     overflow-y: scroll;
     height: 85vh; }
     .userHomePage .bothLists .title {
@@ -5633,6 +5630,8 @@ body {
         margin-top: 2%; }
       .userHomePage .bothLists .list span.imgWord {
         margin-left: 45.5%; }
+      .userHomePage .bothLists .list span.imgWord2 {
+        margin-left: 44%; }
       .userHomePage .bothLists .list table {
         text-align: left; }
         .userHomePage .bothLists .list table tr {
@@ -5646,11 +5645,7 @@ body {
 
 .userHomePage .bothLists .list table tr {
   border-bottom: none;
-  background: inherit; }
-
-.userHomePage .bothLists .list table {
-  text-align: left;
-  margin-left: 0; }
+  background: #E6E6E6; }
 
 .vertical {
   padding-top: 1em;
@@ -5696,10 +5691,6 @@ body {
     font-weight: bold; }
     .vertical table tr.head span {
       color: black; }
-  .vertical .groceryList .grocNec {
-    margin-left: 50px; }
-  .vertical .groceryList table.grocReg {
-    margin-left: 0; }
 
 /*****************************Grocery List Page*******************/
 .quickLinks2 {
