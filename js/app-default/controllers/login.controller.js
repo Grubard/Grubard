@@ -1,6 +1,6 @@
 import $ from 'jQuery';
 
-let LoginController = function($state, $http, $cookies, AuthService, SERVER, LoginService){
+let LoginController = function($state, $http, $cookies, AuthService, SERVER, LoginService, $rootScope){
 
   let url = SERVER.URL;
 
@@ -54,14 +54,16 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
       expireDate.setDate(expireDate.getDate() + 7);
       $cookies.put('auth_token', res.data.user.access_token, {expires: expireDate});
       $cookies.put('username', res.data.user.username, {expires: expireDate});
-      
+      $rootScope.$broadcast('LoggedIn');
       $state.transitionTo('root.home');
+    });
+
+    
       
 
 
 
 
-    });
     
     
   };
@@ -69,5 +71,5 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
 
 };
 
-LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService'];
+LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService', '$rootScope'];
 export default LoginController;

@@ -70,10 +70,13 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LayoutController = function LayoutController($rootScope, $cookies, $state) {
+var LayoutController = function LayoutController($cookies, $state, $rootScope) {
   var vm = this;
-  var name = $cookies.get('username');
-  vm.name = name;
+  $rootScope.$on('LoggedIn', function () {
+
+    var name = $cookies.get('username');
+    vm.name = name;
+  });
 
   vm.logOut = function () {
     $cookies.remove('auth_token');
@@ -83,7 +86,7 @@ var LayoutController = function LayoutController($rootScope, $cookies, $state) {
   };
 };
 
-LayoutController.$inject = ['$rootScope', '$cookies', '$state'];
+LayoutController.$inject = ['$cookies', '$state', '$rootScope'];
 
 exports['default'] = LayoutController;
 module.exports = exports['default'];
@@ -244,7 +247,7 @@ var _jQuery = require('jQuery');
 
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
-var LoginController = function LoginController($state, $http, $cookies, AuthService, SERVER, LoginService) {
+var LoginController = function LoginController($state, $http, $cookies, AuthService, SERVER, LoginService, $rootScope) {
 
   var url = SERVER.URL;
 
@@ -292,13 +295,13 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
       expireDate.setDate(expireDate.getDate() + 7);
       $cookies.put('auth_token', res.data.user.access_token, { expires: expireDate });
       $cookies.put('username', res.data.user.username, { expires: expireDate });
-
+      $rootScope.$broadcast('LoggedIn');
       $state.transitionTo('root.home');
     });
   };
 };
 
-LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService'];
+LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService', '$rootScope'];
 exports['default'] = LoginController;
 module.exports = exports['default'];
 

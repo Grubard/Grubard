@@ -5471,9 +5471,47 @@ body {
 #user-btn:hover {
   background-color: #2DDD72; }
 
+<<<<<<< HEAD
 .contactUs {
   background-color: #FFF; }
 
+=======
+#alert {
+  width: 16em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  overflow: auto;
+  max-height: 100%; }
+  #alert h5 {
+    text-align: center; }
+  #alert p {
+    display: inline-block;
+    margin-top: 1em; }
+  #alert li {
+    padding: .5em; }
+    #alert li:hover {
+      background-color: black;
+      color: white; }
+  #alert a {
+    padding: 0; }
+
+.contactUs {
+  background-color: #FFF; }
+
+#alert-btn:hover {
+  background-color: #2DDD72; }
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em; }
+  .users-list:hover {
+    background-color: #2DDD72; }
+
+>>>>>>> master
 /*********************Landing Page******************************/
 .landingPage {
   background: #D2DFEA;
@@ -5873,4 +5911,100 @@ body {
 [ui-view].ng-leave-active {
   opacity: 0; }
 
+<<<<<<< HEAD
+=======
+.top-bar {
+  background-color: #303E4D; }
+  .top-bar ul {
+    background-color: inherit; }
+  .top-bar .top-bar-left {
+    margin-top: -2em; }
+    .top-bar .top-bar-left a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: 500; }
+    .top-bar .top-bar-left img {
+      width: 10%; }
+  .top-bar .top-bar-right .menu button {
+    margin-top: 12px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px; }
+
+.logoArea {
+  height: 70px; }
+
+.logoArea a {
+  margin-top: 11px; }
+
+@media all and (max-width: 900px) {
+  .top-bar-left {
+    width: 13em;
+    padding-top: 10px; }
+    .top-bar-left .logoArea a img {
+      width: 2em; } }
+
+.hide-user {
+  display: none; }
+
+#user {
+  width: 15em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em; }
+  #user h5 {
+    text-align: center; }
+  #user p {
+    display: inline-block; }
+  #user li {
+    padding: .5em; }
+    #user li:hover {
+      background-color: black;
+      color: white; }
+    #user li a {
+      width: 85%;
+      display: inline-block; }
+    #user li i {
+      display: inline-block;
+      margin-right: .5em; }
+
+#user-btn:hover {
+  background-color: #2DDD72; }
+
+#alert {
+  width: 16em;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  z-index: 999;
+  padding: 0.6em;
+  overflow: auto;
+  max-height: 100%; }
+  #alert h5 {
+    text-align: center; }
+  #alert p {
+    display: inline-block;
+    margin-top: 1em; }
+  #alert li {
+    padding: .5em; }
+    #alert li:hover {
+      background-color: black;
+      color: white; }
+  #alert a {
+    padding: 0; }
+
+#alert-btn:hover {
+  background-color: #2DDD72; }
+
+.users-list {
+  border: 1px solid black;
+  text-align: center;
+  margin-bottom: .4em; }
+  .users-list:hover {
+    background-color: #2DDD72; }
+
+>>>>>>> master
 /*# sourceMappingURL=main.css.map */
