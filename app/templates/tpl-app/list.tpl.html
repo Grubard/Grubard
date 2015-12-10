@@ -26,20 +26,20 @@
   <h3>Grocery List</h3>
 
   <p>
-    <a data-open="exampleModal1">
+    <a data-open="addForm">
       <div class="buttonAdd">
         <button class="button addAGroc">Add New Item</button>
       </div>
     </a>
   </p>
 
-  <div class="reveal" id="exampleModal1" data-reveal>
+  <div class="reveal" id="addForm" data-reveal>
     <li>
       <div class="grocAddForm">
         <form ng-submit="vm.addNewItem(food)">
           <input class="newGroc foodName" ng-model="food.title" placeholder="New Item">
           <input type="text" class="newGroc addItem foodQuantity" ng-model="food.quantity" placeholder="Quantity">
-          <input type="text" class="newGroc addItem foodUnit" ng-model="food.unit" placeholder="Unit of Meas.">
+          <input type="text" class="newGroc addItem foodUnit" ng-model="food.unit" placeholder="Unit of Measure">
             
           <select class="newGroc foodCategory" ng-model="food.category">
             <option value="" disabled selected>Category</option>  
@@ -62,14 +62,14 @@
           <button class="button newGroc foodCategory">Submit</button>
         </form>
         
-        <button class="button doneAddingGroc newGroc" data-close aria-label="Close reveal">Done Adding</button>
+        <button class="button doneAddingGroc newGroc close-reveal-modal" data-close aria-label="Close reveal" type="button">Done Adding</button>
+
       </div>
     </li>
 
   </div>
 
-
-
+ 
 
 
   <ul>

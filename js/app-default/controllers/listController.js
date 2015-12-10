@@ -22,7 +22,6 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   vm.purchased = [];
 
 
-
   function addNewItem (food) {
     ListService.addItem(food).then((response) => {
     });
