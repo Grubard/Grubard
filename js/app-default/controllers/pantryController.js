@@ -44,7 +44,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
     PantryService.removeFood(object.id);
     setTimeout( function() {
       $state.reload();
-    },100);
+    },150);
   }
 
   function cancelChange () {
@@ -72,18 +72,33 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
     $state.go('landing');
   };
 
-  // function removeItem(items) {
-  //   console.log('delete me');
-  // }
+  $scope.sort = {
+    column: '',
+    descending: false
+  };
+  vm.sortBy = function (column) {
 
-  // function addItemsToPantry() {
-  //   console.log('ok');
-  //   // vm.items.post()
-  // }
+    var sort = $scope.sort;
 
-  // function clearCompleted() {
-  //   console.log('asdf');
-  // }
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
+
+  vm.sortPantry = function (column) {
+
+    var sort = $scope.sort;
+
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
 
 };
 

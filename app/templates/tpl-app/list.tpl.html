@@ -23,16 +23,19 @@
 </div>
 
 <div class="side mainGroceryList">
-  <h3>Current Grocery List</h3>
+  <h3>Grocery List</h3>
     <div class="buttonAdd">
-      <button class="button addAGroc">Add Grocery</button>
+      <button class="button addAGroc">Add New Item</button>
+      <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Purchase Checked Items!<br><span>(Add to Pantry)</span></button>
+  <button class="button clearCompleted" ng-click="vm.clearThese()">Delete Checked Items</button>
     </div>
   <ul>
     <li>
     <div class="grocAddForm">
       <form ng-submit="vm.addNewItem(food)">
         <input class="newGroc foodName" ng-model="food.title" placeholder="New Item">
-        <input type="text" class="addItem foodQuantity" ng-model="food.quantity" placeholder="Quantity">
+        <input type="text" class="newGroc addItem foodQuantity" ng-model="food.quantity" placeholder="Quantity">
+        <input type="text" class="newGroc addItem foodUnit" ng-model="food.unit" placeholder="Unit of Meas.">
           
 
         <select class="newGroc foodCategory" ng-model="food.category">
@@ -55,13 +58,11 @@
         </select>
       
 
-
-        
-          <button class="button newGroc">Submit</button>
+        <button class="button newGroc foodCategory">Submit</button>
         
       </form>
       
-        <button class="button doneAddingGroc">Done Adding</button>
+        <button class="button doneAddingGroc newGroc">Done Adding</button>
       
       </div>
     </li>

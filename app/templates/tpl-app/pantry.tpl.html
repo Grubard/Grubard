@@ -79,12 +79,23 @@
     <button class="button doneAdding">Done Adding</button>
     </div>
     </div>
-    
-
-    <li ng-repeat="object in vm.pantryList"  ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
-
-      <input class="checkIt" type="checkbox" id="check1">
-      <label ng-hide="object.showEdit" for="check1" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
+      <table>
+        <tr>
+          <th ng-click="vm.sortPantry('title')">Item Name</th>
+          <th ng-click="vm.sortPantry('category')">Category</th>
+          <th ng-click="vm.sortPantry('quantity')">Quantity in Pantry</th>
+          <th ng-click="vm.sortPantry('preferred')">Quantity Preferred</th>
+          <th ng-click="vm.sortPantry('necessity')">Necessity</th>
+        </tr>
+        <tr ng-repeat="i in vm.pantryList|orderBy:sort.column:sort.descending">
+          <td>{{i.title}}</td>
+          <td>{{i.category}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.preferred}}</td>
+          <td>{{i.necessity}}</td>
+          <td><i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(i)"></i></td>
+        </tr>
+      </table>
       
 
       <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">
@@ -98,7 +109,7 @@
         <button class="button" ng-click="vm.cancelChange()">Cancel</button>
       </form>
 
-      <i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
+      
       <hr>
     </li>
   </ul>

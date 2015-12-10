@@ -16,6 +16,7 @@ let ListService = function($http, SERVER, $cookies) {
     this.category = foodItem.category;
     this.preferred = foodItem.preferred;
     this.necessity = foodItem.necessity;
+    this.units= foodItem.units;
   }
 
   function addItem (foodItem) {

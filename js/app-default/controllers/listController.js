@@ -24,7 +24,9 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   vm.groceryList = groceryList;
   vm.purchased = [];
   function addNewItem (food) {
+    console.log('food: ', food);
     ListService.addItem(food).then((response) => {
+      console.log('response: ', response);
     });
     $scope.food = {};
   }

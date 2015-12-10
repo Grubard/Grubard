@@ -177,7 +177,10 @@ var ListController = function ListController($scope, $http, ListService, $state,
   vm.groceryList = groceryList;
   vm.purchased = [];
   function addNewItem(food) {
-    ListService.addItem(food).then(function (response) {});
+    console.log('food: ', food);
+    ListService.addItem(food).then(function (response) {
+      console.log('response: ', response);
+    });
     $scope.food = {};
   }
 
@@ -358,7 +361,7 @@ var PantryController = function PantryController($scope, $http, PantryService, $
     PantryService.removeFood(object.id);
     setTimeout(function () {
       $state.reload();
-    }, 100);
+    }, 150);
   }
 
   function cancelChange() {
@@ -384,18 +387,33 @@ var PantryController = function PantryController($scope, $http, PantryService, $
     $state.go('landing');
   };
 
-  // function removeItem(items) {
-  //   console.log('delete me');
-  // }
+  $scope.sort = {
+    column: '',
+    descending: false
+  };
+  vm.sortBy = function (column) {
 
-  // function addItemsToPantry() {
-  //   console.log('ok');
-  //   // vm.items.post()
-  // }
+    var sort = $scope.sort;
 
-  // function clearCompleted() {
-  //   console.log('asdf');
-  // }
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
+
+  vm.sortPantry = function (column) {
+
+    var sort = $scope.sort;
+
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
 };
 
 PantryController.$inject = ['$scope', '$http', 'PantryService', '$state', 'TransferService'];
@@ -779,6 +797,7 @@ var ListService = function ListService($http, SERVER, $cookies) {
     this.category = foodItem.category;
     this.preferred = foodItem.preferred;
     this.necessity = foodItem.necessity;
+    this.units = foodItem.units;
   }
 
   function addItem(foodItem) {
