@@ -5406,6 +5406,7 @@ body {
   background-position: cover; }
 
 .wrapper {
+  overflow: hidden;
   height: 100vh;
   width: 100%; }
 
