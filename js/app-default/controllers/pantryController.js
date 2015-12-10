@@ -4,6 +4,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   
   $('.addItem').click(function(){
     $('.panAdd').addClass('displayPan');
+
   });
   $('.doneAdding').click(function(){
     $('.panAdd').removeClass('displayPan');
