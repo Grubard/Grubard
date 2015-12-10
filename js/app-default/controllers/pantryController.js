@@ -2,12 +2,6 @@ import $ from 'jQuery';
 
 let PantryController = function($scope, $http, PantryService, $state, TransferService) {
   
-  $('.addItem').click(function(){
-    $('.panAdd').addClass('displayPan');
-  });
-  $('.doneAdding').click(function(){
-    $('.panAdd').removeClass('displayPan');
-  });
   let vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;
@@ -18,6 +12,13 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.pantryList = pantryList;
+
+  $('.addItem').click(function(){
+    $('.panAdd').addClass('displayPan');
+  });
+  $('.doneAdding').click(function(){
+    $('.panAdd').removeClass('displayPan');
+  });
 
   function addNewItem (food) {
     

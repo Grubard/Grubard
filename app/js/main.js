@@ -321,12 +321,6 @@ var _jQuery2 = _interopRequireDefault(_jQuery);
 
 var PantryController = function PantryController($scope, $http, PantryService, $state, TransferService) {
 
-  (0, _jQuery2['default'])('.addItem').click(function () {
-    (0, _jQuery2['default'])('.panAdd').addClass('displayPan');
-  });
-  (0, _jQuery2['default'])('.doneAdding').click(function () {
-    (0, _jQuery2['default'])('.panAdd').removeClass('displayPan');
-  });
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;
@@ -337,6 +331,13 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.pantryList = pantryList;
+
+  (0, _jQuery2['default'])('.addItem').click(function () {
+    (0, _jQuery2['default'])('.panAdd').addClass('displayPan');
+  });
+  (0, _jQuery2['default'])('.doneAdding').click(function () {
+    (0, _jQuery2['default'])('.panAdd').removeClass('displayPan');
+  });
 
   function addNewItem(food) {
 

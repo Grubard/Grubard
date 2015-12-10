@@ -5531,6 +5531,8 @@ body {
   margin-left: 2%;
   padding-left: 4%;
   overflow: scroll; }
+  .loginPage button {
+    border-radius: 5px; }
   .loginPage .formStuff {
     padding-top: 1%;
     margin-top: 5%;
@@ -5687,16 +5689,6 @@ body {
       color: black; }
 
 /*************************Pantry Page*******************************/
-.panTable {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center; }
-  .panTable .fa-check-circle-o {
-    color: green; }
-  .panTable .fa-minus-circle {
-    color: #999900; }
-
-/*****************************Grocery List Page*******************/
 .quickLinks2 {
   width: 17%;
   height: 100vh;
@@ -5716,6 +5708,106 @@ body {
   display: inline-block;
   vertical-align: top; }
 
+.panAdd {
+  display: none; }
+
+.addPanItem {
+  display: block;
+  border-radius: 5px; }
+
+.displayPan {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center; }
+  .displayPan input {
+    width: 100%; }
+  .displayPan option {
+    width: 100%; }
+  .displayPan select {
+    margin-bottom: 1px; }
+  .displayPan .addToPantryBoth input {
+    display: inline-block;
+    width: 49.5%; }
+
+.mainPantryList {
+  background: #D2DFEA;
+  width: 74%;
+  height: 38em;
+  overflow-y: scroll;
+  margin: 1% 3% 1% 5%;
+  padding-bottom: 10px; }
+  .mainPantryList .buttonAdd {
+    text-align: center; }
+    .mainPantryList .buttonAdd button {
+      width: 12em;
+      height: 3em;
+      font-size: 1em;
+      border-radius: 5px; }
+    .mainPantryList .buttonAdd .addToPantry {
+      padding-top: 0; }
+    .mainPantryList .buttonAdd .clearCompleted {
+      padding-top: 7px; }
+  .mainPantryList i {
+    float: right;
+    margin-right: 7%;
+    color: #D41617; }
+  .mainPantryList h3 {
+    text-align: center; }
+  .mainPantryList ul {
+    padding-top: 2%;
+    list-style: none;
+    font-size: 1.2em; }
+  .mainPantryList li {
+    margin-top: 1em;
+    list-style: none; }
+  .mainPantryList .button {
+    text-align: center;
+    margin: 2% auto;
+    width: 15em; }
+  .mainPantryList .checkIt {
+    display: none; }
+  .mainPantryList input {
+    background: #e3ebf2;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 1px 0px;
+    height: 2.6em; }
+  .mainPantryList select {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em; }
+  .mainPantryList label {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border: 1px solid #3C3F95;
+    border-radius: 100px;
+    vertical-align: -25%; }
+  .mainPantryList label:hover:before {
+    position: absolute;
+    right: 3px;
+    top: -4px;
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    font-size: 1.4em;
+    font-weight: 100;
+    color: #57B65C; }
+
+.panTable {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; }
+  .panTable .fa-sort {
+    color: #b5b5b7;
+    margin-top: 5px; }
+  .panTable .fa-check-circle-o {
+    color: green; }
+  .panTable .fa-minus-circle {
+    color: #999900; }
+
+/*****************************Grocery List Page*******************/
 .mainGroceryList {
   background: #D2DFEA;
   width: 74%;
@@ -5734,8 +5826,6 @@ body {
       padding-top: 0; }
     .mainGroceryList .buttonAdd .clearCompleted {
       padding-top: 7px; }
-  .mainGroceryList .addPanItem {
-    margin: 10px; }
   .mainGroceryList i {
     float: right;
     margin-right: 7%;
@@ -5810,31 +5900,6 @@ body {
 .notCrossedOut {
   text-decoration: none; }
 
-.panAdd {
-  display: none;
-  text-align: center; }
-
-.displayPan {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
-  text-align: center; }
-
-.addPanItem {
-  display: block;
-  width: 100%; }
-
-.addBtns {
-  text-align: center; }
-
-.btnAdd {
-  text-align: center; }
-  .btnAdd button {
-    border-radius: 10px; }
-
-.addToPantry span {
-  font-size: 0.5em; }
-
 .groceryList table {
   display: inline-block;
   vertical-align: top; }
@@ -5865,5 +5930,8 @@ body {
 
 [ui-view].ng-leave-active {
   opacity: 0; }
+
+.addToPantry span {
+  font-size: 0.5em; }
 
 /*# sourceMappingURL=main.css.map */
