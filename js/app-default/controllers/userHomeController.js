@@ -26,6 +26,44 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
     });
   }
 
+  $scope.sort = {
+    column: '',
+    descending: false
+  };
+  vm.sortBy = function (column) {
+
+    var sort = $scope.sort;
+
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
+
+  vm.sortPantry = function (column) {
+
+    var sort = $scope.sort;
+
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
+  vm.sortSelfList= function(column){
+    var sort = $scope.sort;
+
+    if (sort.column === column) {
+      sort.descending = !sort.descending;
+    } else {
+      sort.column = column;
+      sort.descending = false;
+    }
+  };
+
   vm.necessity = [];
   vm.produce = [];
   vm.deli = [];

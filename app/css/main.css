@@ -5686,6 +5686,15 @@ body {
     .vertical table tr.head span {
       color: black; }
 
+/*************************Pantry Page*******************************/
+.panTable {
+  width: 80%;
+  margin: 0 auto; }
+  .panTable .objectTitle {
+    width: 30%; }
+  .panTable .objectAmt {
+    width: 18%; }
+
 /*****************************Grocery List Page*******************/
 .quickLinks2 {
   width: 17%;
