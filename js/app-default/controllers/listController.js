@@ -1,6 +1,6 @@
 import $ from 'jQuery';
 
-let ListController = function($scope, $http, ListService, $state, SERVER, $cookies) {
+let ListController = function($scope, $http, ListService, $state, SERVER, $cookies, $rootScope) {
   
 
   let url = SERVER.URL;
@@ -23,12 +23,13 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
 
 
   function addNewItem (food) {
-    console.log('food: ', food);
     ListService.addItem(food).then((response) => {
-      console.log('response: ', response);
+      $scope.$broadcast('newfood');
     });
     $scope.food = {};
   }
+    
+    
 
 
   groceryList();
@@ -37,15 +38,21 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
       console.log(response);
       vm.groceryListYay = response.data;
     });
+    $scope.$on('newfood', function(){
+      ListService.getGroceryList().then( (response) => {
+        console.log(response);
+        vm.groceryListYay = response.data;
+      });
+    });
   }
 
   function removeItem (object) {
     console.log(object.id);
-    ListService.removeFood(object.id);
-    setTimeout( function() {
-      $state.reload();
-    },1000);
+    ListService.removeFood(object.id).then(()=>{
+      $scope.$broadcast('newfood');
+    });
   }
+
   
   
   function editItem (object){
@@ -57,20 +64,20 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   function addItemsToPantry() {
     vm.purchased.map(function(x){
       $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
-        ListService.removeFood(x.id);
-        setTimeout( function() {
-          $state.reload();
-        },1000);
+        ListService.removeFood(x.id).then(()=>{
+          $scope.$broadcast('newfood');
+        });
+        
       });
     });  
   }
   
   function clearThese() {
     vm.purchased.map(function(x){
-      ListService.removeFood(x.id);
-      setTimeout( function() {
-        $state.reload();
-      },100);
+      ListService.removeFood(x.id).then(()=>{
+        $scope.$broadcast('newfood');
+      });
+      
     });
   }
 
@@ -83,6 +90,6 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
 
 };
 
-ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies'];
+ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies', '$rootScope'];
 
 export default ListController;

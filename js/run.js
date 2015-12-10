@@ -11,7 +11,9 @@ let run = function($rootScope, $cookies, $state, AuthService, $stateParams) {
     console.log("w:", x);
     
     if(toState.authenticate && x === true){
-      $rootScope.$broadcast('LoggedIn');
+      setTimeout(function(){
+        $rootScope.$broadcast('LoggedIn');
+      }, 100);
       return;
     }
     if (toState.authenticate && x === false ){
