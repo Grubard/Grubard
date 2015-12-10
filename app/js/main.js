@@ -153,7 +153,7 @@ var _jQuery = require('jQuery');
 
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
-var ListController = function ListController($scope, $http, ListService, $state, SERVER, $cookies) {
+var ListController = function ListController($scope, $http, ListService, $state, SERVER, $cookies, $rootScope) {
 
   var url = SERVER.URL;
   var token = $cookies.get('auth_token');
@@ -172,9 +172,8 @@ var ListController = function ListController($scope, $http, ListService, $state,
   vm.purchased = [];
 
   function addNewItem(food) {
-    console.log('food: ', food);
     ListService.addItem(food).then(function (response) {
-      console.log('response: ', response);
+      $scope.$broadcast('newfood');
     });
     $scope.food = {};
   }
@@ -185,14 +184,19 @@ var ListController = function ListController($scope, $http, ListService, $state,
       console.log(response);
       vm.groceryListYay = response.data;
     });
+    $scope.$on('newfood', function () {
+      ListService.getGroceryList().then(function (response) {
+        console.log(response);
+        vm.groceryListYay = response.data;
+      });
+    });
   }
 
   function removeItem(object) {
     console.log(object.id);
-    ListService.removeFood(object.id);
-    setTimeout(function () {
-      $state.reload();
-    }, 1000);
+    ListService.removeFood(object.id).then(function () {
+      $scope.$broadcast('newfood');
+    });
   }
 
   function editItem(object) {
@@ -202,20 +206,18 @@ var ListController = function ListController($scope, $http, ListService, $state,
   function addItemsToPantry() {
     vm.purchased.map(function (x) {
       $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
-        ListService.removeFood(x.id);
-        setTimeout(function () {
-          $state.reload();
-        }, 1000);
+        ListService.removeFood(x.id).then(function () {
+          $scope.$broadcast('newfood');
+        });
       });
     });
   }
 
   function clearThese() {
     vm.purchased.map(function (x) {
-      ListService.removeFood(x.id);
-      setTimeout(function () {
-        $state.reload();
-      }, 100);
+      ListService.removeFood(x.id).then(function () {
+        $scope.$broadcast('newfood');
+      });
     });
   }
 
@@ -227,7 +229,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
   };
 };
 
-ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies'];
+ListController.$inject = ['$scope', '$http', 'ListService', '$state', 'SERVER', '$cookies', '$rootScope'];
 
 exports['default'] = ListController;
 module.exports = exports['default'];
@@ -324,7 +326,6 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   });
   (0, _jQuery2['default'])('.doneAdding').click(function () {
     (0, _jQuery2['default'])('.panAdd').removeClass('displayPan');
-    $state.reload();
   });
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
@@ -339,7 +340,9 @@ var PantryController = function PantryController($scope, $http, PantryService, $
 
   function addNewItem(food) {
 
-    PantryService.addItem(food).then(function (response) {});
+    PantryService.addItem(food).then(function (response) {
+      $scope.$broadcast('newPantryItem');
+    });
     $scope.food = {};
   }
 
@@ -349,14 +352,19 @@ var PantryController = function PantryController($scope, $http, PantryService, $
       vm.pantryList = response.data;
       TransferService.transferItems(vm.pantryList);
     });
+    $scope.$on('newPantryItem', function () {
+      PantryService.getPantryList().then(function (response) {
+        vm.pantryList = response.data;
+        TransferService.transferItems(vm.pantryList);
+      });
+    });
   }
 
   function removeItem(object) {
 
-    PantryService.removeFood(object.id);
-    setTimeout(function () {
-      $state.reload();
-    }, 150);
+    PantryService.removeFood(object.id).then(function () {
+      $scope.$broadcast('newPantryItem');
+    });
   }
 
   function cancelChange() {
@@ -369,10 +377,9 @@ var PantryController = function PantryController($scope, $http, PantryService, $
 
   function saveNewChanges(object) {
 
-    PantryService.editFoodItem(object).then(function (response) {});
-    setTimeout(function () {
-      $state.reload();
-    }, 100);
+    PantryService.editFoodItem(object).then(function (response) {
+      $scope.$broadcast('newPantryItem');
+    });
   }
 
   vm.logOut = function () {
@@ -515,13 +522,13 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
 
   function pantryList() {
     PantryService.getPantryList().then(function (response) {
-      console.log('pantry: ', response);
+
       vm.pantryItems = response.data;
       TransferService.transferItems(vm.pantryItems);
       var items = response.data;
       items.forEach(function (item) {
         if (item.necessity === true) {
-          console.log(item);
+
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
         } else if (item.category === "Produce") {
@@ -1084,7 +1091,9 @@ var run = function run($rootScope, $cookies, $state, AuthService, $stateParams) 
     console.log("w:", x);
 
     if (toState.authenticate && x === true) {
-      $rootScope.$broadcast('LoggedIn');
+      setTimeout(function () {
+        $rootScope.$broadcast('LoggedIn');
+      }, 100);
       return;
     }
     if (toState.authenticate && x === false) {

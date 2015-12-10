@@ -89,13 +89,13 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
 
   function pantryList() {
     PantryService.getPantryList().then( (response) => {
-      console.log('pantry: ', response);
+      
       vm.pantryItems = response.data;
       TransferService.transferItems(vm.pantryItems);
       let items = response.data;
       items.forEach(function(item) {
         if (item.necessity === true) {
-          console.log(item);
+          
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
         } else if (item.category === "Produce") {

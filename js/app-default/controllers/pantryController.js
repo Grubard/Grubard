@@ -7,7 +7,6 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   });
   $('.doneAdding').click(function(){
     $('.panAdd').removeClass('displayPan');
-    $state.reload();
   });
   let vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
@@ -23,7 +22,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   function addNewItem (food) {
     
     PantryService.addItem(food).then((response) => {
-      
+      $scope.$broadcast('newPantryItem');  
 
     });
     $scope.food = {};
@@ -37,14 +36,20 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
       vm.pantryList = response.data;
       TransferService.transferItems(vm.pantryList);
     });
+    $scope.$on('newPantryItem', function(){
+      PantryService.getPantryList().then( (response) => {
+        vm.pantryList = response.data;
+        TransferService.transferItems(vm.pantryList);
+      });
+    });
   }
 
   function removeItem (object) {
     
-    PantryService.removeFood(object.id);
-    setTimeout( function() {
-      $state.reload();
-    },150);
+    PantryService.removeFood(object.id).then(()=>{
+      $scope.$broadcast('newPantryItem');
+    });
+    
   }
 
   function cancelChange () {
@@ -58,11 +63,9 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   function saveNewChanges(object) {
     
     PantryService.editFoodItem(object).then((response) => {
-      
+      $scope.$broadcast('newPantryItem');
     });
-    setTimeout( function() {
-      $state.reload();
-    },100);
+    
   }
 
   vm.logOut = function(){
