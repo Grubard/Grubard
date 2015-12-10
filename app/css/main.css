@@ -5750,7 +5750,9 @@ body {
     border: none;
     border-radius: 5px;
     padding: 0.5em;
-    margin: 8px 0px; }
+    width: 35.3em;
+    margin: 1px 0px;
+    height: 2.6em; }
   .mainGroceryList select {
     border: none;
     border-radius: 5px;
@@ -5835,30 +5837,6 @@ body {
     text-align: center; }
 
 /*************************Add Groceries Form***********************/
-.grocAddForm {
-  display: none; }
-
-.showGrocForm {
-  display: block;
-  width: 15em;
-  margin: 0 auto; }
-  .showGrocForm .newGroc {
-    width: 8em;
-    display: block; }
-  .showGrocForm .foodName {
-    width: 13.5em; }
-  .showGrocForm .addItem {
-    display: inline-block; }
-  .showGrocForm .foodCategory {
-    display: inline-block;
-    height: 2.2em;
-    border-radius: 5px; }
-    .showGrocForm .foodCategory.button {
-      line-height: 0px; }
-  .showGrocForm .doneAddingGroc {
-    margin-left: 5em;
-    margin-top: -0.5em; }
-
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;

@@ -24,48 +24,56 @@
 
 <div class="side mainGroceryList">
   <h3>Grocery List</h3>
-    <div class="buttonAdd">
-      <button class="button addAGroc">Add New Item</button>
-      <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Purchase Checked Items!<br><span>(Add to Pantry)</span></button>
-  <button class="button clearCompleted" ng-click="vm.clearThese()">Delete Checked Items</button>
-    </div>
-  <ul>
+
+  <p>
+    <a data-open="exampleModal1">
+      <div class="buttonAdd">
+        <button class="button addAGroc">Add New Item</button>
+      </div>
+    </a>
+  </p>
+
+  <div class="reveal" id="exampleModal1" data-reveal>
     <li>
-    <div class="grocAddForm">
-      <form ng-submit="vm.addNewItem(food)">
-        <input class="newGroc foodName" ng-model="food.title" placeholder="New Item">
-        <input type="text" class="newGroc addItem foodQuantity" ng-model="food.quantity" placeholder="Quantity">
-        <input type="text" class="newGroc addItem foodUnit" ng-model="food.unit" placeholder="Unit of Meas.">
-          
-
-        <select class="newGroc foodCategory" ng-model="food.category">
-          <option value="" disabled selected>Category</option>  
-          <option value="Produce">Produce</option>
-          <option value="Deli">Deli</option>
-          <option value="Meats">Meats</option>
-          <option value="Spices">Spices</option>
-          <option value="Baking">Baking</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Snacks">Snacks</option>
-          <option value="Sweets">Sweets</option>
-          <option value="Grains">Grains & Pasta</option>
-          <option value="Frozen">Frozen Foods</option>
-          <option value="Beer">Beverages</option>
-          <option value="Hygeine">Hygeine</option>
-          <option value="Household">Household Items</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Other">Other</option>
-        </select>
-      
-
-        <button class="button newGroc foodCategory">Submit</button>
+      <div class="grocAddForm">
+        <form ng-submit="vm.addNewItem(food)">
+          <input class="newGroc foodName" ng-model="food.title" placeholder="New Item">
+          <input type="text" class="newGroc addItem foodQuantity" ng-model="food.quantity" placeholder="Quantity">
+          <input type="text" class="newGroc addItem foodUnit" ng-model="food.unit" placeholder="Unit of Meas.">
+            
+          <select class="newGroc foodCategory" ng-model="food.category">
+            <option value="" disabled selected>Category</option>  
+            <option value="Produce">Produce</option>
+            <option value="Deli">Deli</option>
+            <option value="Meats">Meats</option>
+            <option value="Spices">Spices</option>
+            <option value="Baking">Baking</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Sweets">Sweets</option>
+            <option value="Grains">Grains & Pasta</option>
+            <option value="Frozen">Frozen Foods</option>
+            <option value="Beer">Beverages</option>
+            <option value="Hygeine">Hygeine</option>
+            <option value="Household">Household Items</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="button newGroc foodCategory">Submit</button>
+        </form>
         
-      </form>
-      
-        <button class="button doneAddingGroc newGroc">Done Adding</button>
-      
+        <button class="button doneAddingGroc newGroc" data-close aria-label="Close reveal">Done Adding</button>
       </div>
     </li>
+
+  </div>
+
+
+
+
+
+  <ul>
+
 
     <li ng-repeat="object in vm.groceryListYay" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 

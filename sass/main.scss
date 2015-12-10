@@ -505,10 +505,11 @@ body{
     border: none;
     border-radius: 5px;
     padding: 0.5em;
-    margin: 8px 0px;
+    width: 35.3em;
+    margin: 1px 0px;
+    height: 2.6em;
   }
   select{
-    // background: lighten(#D2DFEA, 5%);
     border: none;
     border-radius: 5px;
     padding: 0.5em;
@@ -597,7 +598,6 @@ body{
 }
 
 .addToPantry span{
-  // padding-top: 0;
   font-size: 0.5em;
 }
 
@@ -621,37 +621,6 @@ body{
 
 /*************************Add Groceries Form***********************/
 
-.grocAddForm{
-  display: none;
-}
-
-.showGrocForm{
-  display: block;
-  width: 15em;
-  margin: 0 auto;
-  .newGroc{
-    width: 8em;
-    display: block;
-  }
-  .foodName{
-    width: 13.5em;
-  }
-  .addItem{
-    display: inline-block;
-  }
-  .foodCategory{
-    display: inline-block;
-    height: 2.2em;
-    border-radius: 5px;
-    &.button{
-      line-height: 0px;
-    }
-  }
-  .doneAddingGroc{
-    margin-left: 5em;
-    margin-top: -0.5em;
-  }
-}
 
 
 
