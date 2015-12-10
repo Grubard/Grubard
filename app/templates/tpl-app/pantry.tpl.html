@@ -58,10 +58,6 @@
       
         <input type="text" class="addPanItem" ng-model="food.preferred" placeholder="Preferred Amount">
             
-          
-
-
-
         <select class="addPanItem" ng-model="food.necessity">
           <option value="" disabled selected>Necessity?</option>
           <option value="true">Yes</option>
@@ -75,9 +71,13 @@
       
 
     </li>
+
     <div class="btnAdd">
-    <button class="button doneAdding">Done Adding</button>
+      <button class="button doneAdding">Done Adding</button>
     </div>
+
+
+
     </div>
       <table class="panTable">
         <tr>
@@ -87,53 +87,83 @@
           <th ng-click="vm.sortPantry('preferred')">Quantity Preferred</th>
           <th ng-click="vm.sortPantry('necessity')">Necessity</th>
         </tr>
-        <tr ng-repeat="object in vm.pantryList|orderBy:sort.column:sort.descending">
-          <td> 
-            <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">{{object.title}}
-            </span>
-
-            <form ng-show="object.showEdit" class="editItem" ng-submit="vm.saveNewChanges(object)">
-              <span>Item:</span><input class="objectTitle" ng-model="object.title" value="{{object.title}}">
-              <span>Quantity:</span><input class="objectAmt" ng-model="object.quantity" value="{{object.quantity}}">
-              <button class="button" type="submit">Submit Changes</button>
-              <button class="button" ng-click="vm.cancelChange()">Cancel</button>
-            </form>
-
-          </td>
-
-          <td>{{object.category}}</td>
-          <td>{{object.quantity}}</td>
-          <td>{{object.preferred}}</td>
-          <td>{{object.necessity}}</td>
-          <td>
+        
+        <tr ng-repeat="object in vm.pantryList|orderBy:sort.column:sort.descending" ng-dblClick="vm.editItem(object)">
+          <td ng-hide="object.showEdit">{{object.title}}</td>
+          <td ng-hide="object.showEdit">{{object.category}}</td>
+          <td ng-hide="object.showEdit">{{object.quantity}}</td>
+          <td ng-hide="object.showEdit">{{object.preferred}}</td>
+          <td ng-hide="object.showEdit">{{object.necessity}}</td>
+          <td ng-hide="object.showEdit">
             <i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
           </td>
+
+
+          <td ng-show="object.showEdit">
+            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+              <input ng-model="object.title" value="{{object.title}}">
+            </form>
+          </td>
+
+          <td ng-show="object.showEdit">
+            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+              <select ng-model="object.category">
+                <option value="" disabled selected>Category</option>
+                <option value="Produce">Produce</option>
+                <option value="Deli">Deli</option>
+                <option value="Meats">Meats</option>
+                <option value="Spices">Spices</option>
+                <option value="Baking">Baking</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Sweets">Sweets</option>
+                <option value="Grains">Grains & Pasta</option>
+                <option value="Frozen">Frozen Foods</option>
+                <option value="Beverages">Beverages</option>
+                <option value="Hygiene">Hygeine</option>
+                <option value="Household">Household Items</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Other">Other</option>
+              </select>
+            </form>
+          </td>
+
+          <td ng-show="object.showEdit">
+            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+              <input ng-model="object.quantity" value="{{object.quantity}}">
+            </form>
+          </td>
+
+          <td ng-show="object.showEdit">
+            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+              <input ng-model="object.preferred" value="{{object.preferred}}">
+            </form>
+          </td>
+
+          <td ng-show="object.showEdit">
+            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+              <select ng-model="object.necessity">
+                <option value="{{object.necessity}}" selected>{{object.necessity}}</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </form>
+          </td>
+
+          <td ng-show="object.showEdit" ng-model="object">
+            <button ng-click="vm.saveNewChanges(object)"><i class="fa fa-check-circle-o"></i></button>
+            <button ng-click="vm.cancelChange()"><i class="fa fa-minus-circle"></i></button>
+          </td>
+
         </tr>
       </table>
       
 
-    <!--   <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">
-        <strong>Item:</strong> {{ object.title }} {{ object.quantity }}
-      </span>
-
-      <form ng-show="object.showEdit" class="editItem" ng-submit="vm.saveNewChanges(object)">
-        <span>Item:</span><input class="objectTitle" ng-model="object.title" value="{{object.title}}">
-        <span>Quantity:</span><input class="objectAmt" ng-model="object.quantity" value="{{object.quantity}}">
-        <button class="button" type="submit">Submit Changes</button>
-        <button class="button" ng-click="vm.cancelChange()">Cancel</button>
-      </form> -->
-
       
-      <hr>
     </li>
   </ul>
 
-
-
- <!--  <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Add Items to Pantry</button>
-  <button class="button clearCompleted" ng-click="vm.clearCompleted()">Clear Completed Items</button> -->
 </div>
-
 
 
 

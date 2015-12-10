@@ -128,8 +128,7 @@ body{
   border-radius: 10px;
   width: 70%;
   opacity: .95;
-  margin: 2% auto;
-  vertical-align: middle;
+  margin: 1% auto;
   overflow: scroll;
 }
 
@@ -284,6 +283,7 @@ body{
   color: white;
   background: #303E4D;
   opacity: 0.9;
+  margin-top: 4%;
   margin-left: 2%;
   padding-left: 4%;
   overflow: scroll;
@@ -502,11 +502,12 @@ body{
 .panTable{
   width: 80%;
   margin: 0 auto;
-  .objectTitle{
-    width: 30%;
+  text-align: center;
+  .fa-check-circle-o{
+    color: green;
   }
-  .objectAmt{
-    width: 18%;
+  .fa-minus-circle{
+    color: darken(yellow, 20%);
   }
 }
 
@@ -588,7 +589,6 @@ body{
     margin: 2% auto;
     width: 15em;
   }
- 
   .checkIt{
     display: none;
   }  
@@ -629,18 +629,18 @@ body{
 }
 
 .editItem{
-  margin-left: 3.5em;
+  margin-left: 2em;
   span{
     font-weight: bold;
   }
   input{
-    width: 4em;
-    margin-right: 2.5em;
+    width: 8em;
   }
-  .button{
-    width: 10em;
-    border-radius: 5px;
+  select{
+    width: 7em;
+    margin-top: 20px;
   }
+
 }
 
 .crossOut {
@@ -649,8 +649,8 @@ body{
   opacity: 0.3;
   &:before{
     position: absolute;
-    left: 14px;
-    top: 3px;
+    left: 13px;
+    top: 0px;
     font-family: 'FontAwesome';
     content: '\f00c';
     color: #57B65C;
