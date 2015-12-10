@@ -79,7 +79,7 @@
     <button class="button doneAdding">Done Adding</button>
     </div>
     </div>
-      <table>
+      <table class="panTable">
         <tr>
           <th ng-click="vm.sortPantry('title')">Item Name</th>
           <th ng-click="vm.sortPantry('category')">Category</th>
@@ -87,18 +87,32 @@
           <th ng-click="vm.sortPantry('preferred')">Quantity Preferred</th>
           <th ng-click="vm.sortPantry('necessity')">Necessity</th>
         </tr>
-        <tr ng-repeat="i in vm.pantryList|orderBy:sort.column:sort.descending">
-          <td>{{i.title}}</td>
-          <td>{{i.category}}</td>
-          <td>{{i.quantity}}</td>
-          <td>{{i.preferred}}</td>
-          <td>{{i.necessity}}</td>
-          <td><i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(i)"></i></td>
+        <tr ng-repeat="object in vm.pantryList|orderBy:sort.column:sort.descending">
+          <td> 
+            <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">{{object.title}}
+            </span>
+
+            <form ng-show="object.showEdit" class="editItem" ng-submit="vm.saveNewChanges(object)">
+              <span>Item:</span><input class="objectTitle" ng-model="object.title" value="{{object.title}}">
+              <span>Quantity:</span><input class="objectAmt" ng-model="object.quantity" value="{{object.quantity}}">
+              <button class="button" type="submit">Submit Changes</button>
+              <button class="button" ng-click="vm.cancelChange()">Cancel</button>
+            </form>
+
+          </td>
+
+          <td>{{object.category}}</td>
+          <td>{{object.quantity}}</td>
+          <td>{{object.preferred}}</td>
+          <td>{{object.necessity}}</td>
+          <td>
+            <i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
+          </td>
         </tr>
       </table>
       
 
-      <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">
+    <!--   <span ng-hide="object.showEdit" class="pantryListItem" ng-dblClick="vm.editItem(object)">
         <strong>Item:</strong> {{ object.title }} {{ object.quantity }}
       </span>
 
@@ -107,7 +121,7 @@
         <span>Quantity:</span><input class="objectAmt" ng-model="object.quantity" value="{{object.quantity}}">
         <button class="button" type="submit">Submit Changes</button>
         <button class="button" ng-click="vm.cancelChange()">Cancel</button>
-      </form>
+      </form> -->
 
       
       <hr>
