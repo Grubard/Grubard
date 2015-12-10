@@ -5,12 +5,13 @@ let run = function($rootScope, $cookies, $state, AuthService, $stateParams) {
   });
 
 
-  $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams){
+  $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams){
 
     let x = AuthService.authenticate();
     console.log("w:", x);
     
     if(toState.authenticate && x === true){
+      $rootScope.$broadcast('LoggedIn');
       return;
     }
     if (toState.authenticate && x === false ){
