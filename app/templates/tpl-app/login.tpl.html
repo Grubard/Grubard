@@ -3,8 +3,8 @@
   <div class="loginBlock formStuff">
     <form ng-submit="vm.login(user)" class="logIn">
       <p>Log In to Existing Account</p>
-      <input type="text" ng-model="user.username" placeholder="Username">
-      <input type="password" ng-model="user.password" placeholder="Password">
+      <input type="text" ng-model="user.username" placeholder="Username" required>
+      <input type="password" ng-model="user.password" placeholder="Password" required>
       <button class="button">Log In</button>
     </form>
 
@@ -13,16 +13,16 @@
 
     <form ng-submit="vm.signUp(newUser)" class="createAcct">
       <p>Create User Profile</p>
-      <input type="email" ng-model="newUser.email" placeholder="Email">
-      <input type="text" ng-model="newUser.username" placeholder="Username"> 
-      <input type="password" ng-model="newUser.password" placeholder="Password">
+      <input type="email" ng-model="newUser.email" placeholder="Email" required>
+      <input type="text" ng-model="newUser.username" placeholder="Username" required> 
+      <input type="password" ng-model="newUser.password" placeholder="Password" required>
       <button class="button">Sign Up</button>
     </form>
 
     <form ng-submit="vm.createSmartCart(house)" class="newSmartCart">
       <p>New smartCart!</p>
-      <input type="text" ng-model="house.name" placeholder="Name your smartCart">
-      <input type="text" ng-model="house.address" placeholder="smartCart Location"> 
+      <input type="text" ng-model="house.name" placeholder="Name your smartCart" required>
+      <input type="text" ng-model="house.address" placeholder="smartCart Location" required> 
       <button class="button">Next Step</button>
     </form>
 

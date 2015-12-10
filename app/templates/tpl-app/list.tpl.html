@@ -63,24 +63,15 @@
         </form>
         
         <button class="button doneAddingGroc newGroc close-reveal-modal" data-close aria-label="Close reveal" type="button">Done Adding</button>
-
       </div>
     </li>
-
   </div>
 
- 
-
-
   <ul>
-
-
     <li ng-repeat="object in vm.groceryListYay" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
       <input class="checkIt" type="checkbox" id="check{{ object.id }}"  checklist-model="vm.purchased" checklist-value="object">
       <label for="check{{object.id}}" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
-      
-
       
       <strong>Item:</strong> {{ object.title }} | {{object.quantity }} needed
 

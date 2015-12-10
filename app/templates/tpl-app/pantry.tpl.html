@@ -10,7 +10,7 @@
   <div class="quickNav2">
     <a href="/#list">
       <img ng-src='../images/apple.png'>
-      <p>Go Shopping <br> or <br> Edit Grocery List</p>
+      <p>Go Shopping <br> Edit Grocery List</p>
     </a>
   </div>
 
@@ -22,146 +22,135 @@
   </div>
 </div>
 
-<div class="side mainGroceryList">
+<div class="side mainPantryList">
   <h3>Current Pantry List</h3>
 
     <button class="button addItem addPanItem">Add an Item</button>
     
-
-
   <div class="panAdd">  
-  <ul>
-    <li>
-      <form ng-submit="vm.addNewItem(food)">
-        <input class="addPanItem" ng-model="food.title" placeholder="New Item" required>
+    <form ng-submit="vm.addNewItem(food)">
+      
+      <input class="addPanItem" ng-model="food.title" placeholder="New Item" required>
+      <div class="addToPantryBoth">
         <input type="text" class="addPanItem" ng-model="food.quantity" placeholder="Quantity">
+        <input type="text" ng-model="food.units" placeholder="Unit">
+      </div>
+        
+      <select class="addPanItem" ng-model="food.category" required>
+        <option value="" disabled selected>Category</option>  
+        <option value="Produce">Produce</option>
+        <option value="Deli">Deli</option>
+        <option value="Meats">Meats</option>
+        <option value="Spices">Spices</option>
+        <option value="Baking">Baking</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Sweets">Sweets</option>
+        <option value="Grains">Grains & Pasta</option>
+        <option value="Frozen">Frozen Foods</option>
+        <option value="Beverages">Beverages</option>
+        <option value="Hygiene">Hygiene</option>
+        <option value="Household">Household Items</option>
+        <option value="Dairy">Dairy</option>
+        <option value="Other">Other</option>
+      </select>
+    
+      <input type="text" class="addPanItem" ng-model="food.preferred" placeholder="Preferred Amount">
           
+      <select class="addPanItem" ng-model="food.necessity">
+        <option value="" disabled selected>Necessity?</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
 
-        <select class="addPanItem" ng-model="food.category" required>
-          <option value="" disabled selected>Category</option>  
-          <option value="Produce">Produce</option>
-          <option value="Deli">Deli</option>
-          <option value="Meats">Meats</option>
-          <option value="Spices">Spices</option>
-          <option value="Baking">Baking</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Snacks">Snacks</option>
-          <option value="Sweets">Sweets</option>
-          <option value="Grains">Grains & Pasta</option>
-          <option value="Frozen">Frozen Foods</option>
-          <option value="Beverages">Beverages</option>
-          <option value="Hygiene">Hygeine</option>
-          <option value="Household">Household Items</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Other">Other</option>
-        </select>
-      
-        <input type="text" class="addPanItem" ng-model="food.preferred" placeholder="Preferred Amount">
-            
-        <select class="addPanItem" ng-model="food.necessity">
-          <option value="" disabled selected>Necessity?</option>
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select>
-
-        <div class="btnAdd">
+      <div class="btnAdd">
         <button class="button addPanItem">Submit</button>
-        </div>
-      </form>
-      
-
-    </li>
-
+      </div>
+    </form>
+        
     <div class="btnAdd">
       <button class="button doneAdding">Done Adding</button>
     </div>
+  </div>
+
+  <table class="panTable">
+    <tr>
+      <th ng-click="vm.sortPantry('title')">Item Name<i class="fa fa-sort"></i></th>
+      <th ng-click="vm.sortPantry('category')">Category<i class="fa fa-sort"></i></th>
+      <th ng-click="vm.sortPantry('quantity')">Quantity in Pantry<i class="fa fa-sort"></i></th>
+      <th ng-click="vm.sortPantry('preferred')">Quantity Preferred<i class="fa fa-sort"></i></th>
+      <th ng-click="vm.sortPantry('necessity')">Necessity<i class="fa fa-sort"></i></th>
+    </tr>
+    
+    <tr ng-repeat="object in vm.pantryList|orderBy:sort.column:sort.descending" ng-dblClick="vm.editItem(object)">
+      <td ng-hide="object.showEdit">{{object.title}}</td>
+      <td ng-hide="object.showEdit">{{object.category}}</td>
+      <td ng-hide="object.showEdit">{{object.quantity}}</td>
+      <td ng-hide="object.showEdit">{{object.preferred}}</td>
+      <td ng-hide="object.showEdit">{{object.necessity}}</td>
+      <td ng-hide="object.showEdit">
+        <i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
+      </td>
 
 
+      <td ng-show="object.showEdit">
+        <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+          <input ng-model="object.title" value="{{object.title}}">
+        </form>
+      </td>
 
-    </div>
-      <table class="panTable">
-        <tr>
-          <th ng-click="vm.sortPantry('title')">Item Name</th>
-          <th ng-click="vm.sortPantry('category')">Category</th>
-          <th ng-click="vm.sortPantry('quantity')">Quantity in Pantry</th>
-          <th ng-click="vm.sortPantry('preferred')">Quantity Preferred</th>
-          <th ng-click="vm.sortPantry('necessity')">Necessity</th>
-        </tr>
-        
-        <tr ng-repeat="object in vm.pantryList|orderBy:sort.column:sort.descending" ng-dblClick="vm.editItem(object)">
-          <td ng-hide="object.showEdit">{{object.title}}</td>
-          <td ng-hide="object.showEdit">{{object.category}}</td>
-          <td ng-hide="object.showEdit">{{object.quantity}}</td>
-          <td ng-hide="object.showEdit">{{object.preferred}}</td>
-          <td ng-hide="object.showEdit">{{object.necessity}}</td>
-          <td ng-hide="object.showEdit">
-            <i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
-          </td>
+      <td ng-show="object.showEdit">
+        <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+          <select ng-model="object.category">
+            <option value="" disabled selected>Category</option>
+            <option value="Produce">Produce</option>
+            <option value="Deli">Deli</option>
+            <option value="Meats">Meats</option>
+            <option value="Spices">Spices</option>
+            <option value="Baking">Baking</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Sweets">Sweets</option>
+            <option value="Grains">Grains & Pasta</option>
+            <option value="Frozen">Frozen Foods</option>
+            <option value="Beverages">Beverages</option>
+            <option value="Hygiene">Hygeine</option>
+            <option value="Household">Household Items</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Other">Other</option>
+          </select>
+        </form>
+      </td>
 
+      <td ng-show="object.showEdit">
+        <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+          <input ng-model="object.quantity" value="{{object.quantity}}">
+        </form>
+      </td>
 
-          <td ng-show="object.showEdit">
-            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
-              <input ng-model="object.title" value="{{object.title}}">
-            </form>
-          </td>
+      <td ng-show="object.showEdit">
+        <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+          <input ng-model="object.preferred" value="{{object.preferred}}">
+        </form>
+      </td>
 
-          <td ng-show="object.showEdit">
-            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
-              <select ng-model="object.category">
-                <option value="" disabled selected>Category</option>
-                <option value="Produce">Produce</option>
-                <option value="Deli">Deli</option>
-                <option value="Meats">Meats</option>
-                <option value="Spices">Spices</option>
-                <option value="Baking">Baking</option>
-                <option value="Breakfast">Breakfast</option>
-                <option value="Snacks">Snacks</option>
-                <option value="Sweets">Sweets</option>
-                <option value="Grains">Grains & Pasta</option>
-                <option value="Frozen">Frozen Foods</option>
-                <option value="Beverages">Beverages</option>
-                <option value="Hygiene">Hygeine</option>
-                <option value="Household">Household Items</option>
-                <option value="Dairy">Dairy</option>
-                <option value="Other">Other</option>
-              </select>
-            </form>
-          </td>
+      <td ng-show="object.showEdit">
+        <form class="editItem" ng-submit="vm.saveNewChanges(object)">
+          <select ng-model="object.necessity">
+            <option value="{{object.necessity}}" selected>{{object.necessity}}</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
+        </form>
+      </td>
 
-          <td ng-show="object.showEdit">
-            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
-              <input ng-model="object.quantity" value="{{object.quantity}}">
-            </form>
-          </td>
+      <td ng-show="object.showEdit" ng-model="object">
+        <button ng-click="vm.saveNewChanges(object)"><i class="fa fa-check-circle-o"></i></button>
+        <button ng-click="vm.cancelChange()"><i class="fa fa-minus-circle"></i></button>
+      </td>
+    </tr>
+  </table>   
 
-          <td ng-show="object.showEdit">
-            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
-              <input ng-model="object.preferred" value="{{object.preferred}}">
-            </form>
-          </td>
-
-          <td ng-show="object.showEdit">
-            <form class="editItem" ng-submit="vm.saveNewChanges(object)">
-              <select ng-model="object.necessity">
-                <option value="{{object.necessity}}" selected>{{object.necessity}}</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-              </select>
-            </form>
-          </td>
-
-          <td ng-show="object.showEdit" ng-model="object">
-            <button ng-click="vm.saveNewChanges(object)"><i class="fa fa-check-circle-o"></i></button>
-            <button ng-click="vm.cancelChange()"><i class="fa fa-minus-circle"></i></button>
-          </td>
-
-        </tr>
-      </table>
-      
-
-      
-    </li>
-  </ul>
 
 </div>
 
