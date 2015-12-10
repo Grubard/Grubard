@@ -39,7 +39,7 @@
         <form ng-submit="vm.addNewItem(food)">
           <input class="newGroc foodName" ng-model="food.title" placeholder="New Item">
           <input type="text" class="newGroc addItem foodQuantity" ng-model="food.quantity" placeholder="Quantity">
-          <input type="text" class="newGroc addItem foodUnit" ng-model="food.unit" placeholder="Unit of Measure">
+          <input type="text" class="newGroc addItem foodUnit" ng-model="food.units" placeholder="Unit of Measure">
             
           <select class="newGroc foodCategory" ng-model="food.category">
             <option value="" disabled selected>Category</option>  
@@ -73,7 +73,7 @@
       <input class="checkIt" type="checkbox" id="check{{ object.id }}"  checklist-model="vm.purchased" checklist-value="object">
       <label for="check{{object.id}}" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
       
-      <strong>Item:</strong> {{ object.title }} | {{object.quantity }} needed
+      <strong>Item:</strong> {{ object.title }} | {{object.quantity }} {{ object.units }}
 
       <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 
