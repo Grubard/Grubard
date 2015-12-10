@@ -1,28 +1,27 @@
 import $ from 'jQuery';
 
 let ListController = function($scope, $http, ListService, $state, SERVER, $cookies) {
-  $('.addAGroc').click(function(){
-    console.log('wat');
-    $('.grocAddForm').addClass('showGrocForm');
-  });
-  $('.doneAddingGroc').click(function(){
-    $('.grocAddForm').removeClass('showGrocForm');
-    $state.reload();
-  });
-  let items= [];
+  
 
-  let vm = this;
   let url = SERVER.URL;
   let token = $cookies.get('auth_token');
   SERVER.CONFIG.headers['Access-Token'] = token;
+  
+
+  let vm = this;
+
   vm.addItemsToPantry = addItemsToPantry;
   vm.clearThese = clearThese;
   vm.editItem = editItem;
-
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
+  
+
+  let items= [];
   vm.purchased = [];
+
+
   function addNewItem (food) {
     console.log('food: ', food);
     ListService.addItem(food).then((response) => {
@@ -30,7 +29,6 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
     });
     $scope.food = {};
   }
-
 
 
   groceryList();
@@ -46,7 +44,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
     ListService.removeFood(object.id);
     setTimeout( function() {
       $state.reload();
-    },100);
+    },1000);
   }
   
   
@@ -62,7 +60,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
         ListService.removeFood(x.id);
         setTimeout( function() {
           $state.reload();
-        },100);
+        },1000);
       });
     });  
   }

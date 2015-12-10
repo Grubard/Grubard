@@ -154,28 +154,23 @@ var _jQuery = require('jQuery');
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
 var ListController = function ListController($scope, $http, ListService, $state, SERVER, $cookies) {
-  (0, _jQuery2['default'])('.addAGroc').click(function () {
-    console.log('wat');
-    (0, _jQuery2['default'])('.grocAddForm').addClass('showGrocForm');
-  });
-  (0, _jQuery2['default'])('.doneAddingGroc').click(function () {
-    (0, _jQuery2['default'])('.grocAddForm').removeClass('showGrocForm');
-    $state.reload();
-  });
-  var items = [];
 
-  var vm = this;
   var url = SERVER.URL;
   var token = $cookies.get('auth_token');
   SERVER.CONFIG.headers['Access-Token'] = token;
+
+  var vm = this;
+
   vm.addItemsToPantry = addItemsToPantry;
   vm.clearThese = clearThese;
   vm.editItem = editItem;
-
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
+
+  var items = [];
   vm.purchased = [];
+
   function addNewItem(food) {
     console.log('food: ', food);
     ListService.addItem(food).then(function (response) {
@@ -197,7 +192,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
     ListService.removeFood(object.id);
     setTimeout(function () {
       $state.reload();
-    }, 100);
+    }, 1000);
   }
 
   function editItem(object) {
@@ -210,7 +205,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
         ListService.removeFood(x.id);
         setTimeout(function () {
           $state.reload();
-        }, 100);
+        }, 1000);
       });
     });
   }
