@@ -23,6 +23,12 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
       vm.items = response.data;
+      vm.groceries = [];
+      vm.items.forEach(function(groc){
+        if(groc.necessity===false || groc.necessity === null){
+          vm.groceries.push(groc);
+        }
+      });
     });
   }
 
@@ -63,7 +69,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
       sort.descending = false;
     }
   };
-
+  vm.transferred = [];
   vm.necessity = [];
   vm.produce = [];
   vm.deli = [];
@@ -94,7 +100,10 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
       TransferService.transferItems(vm.pantryItems);
       let items = response.data;
       items.forEach(function(item) {
-        if (item.necessity === true) {
+        if(item.necessity === true && item.quantity < item.preferred){
+          vm.transferred.push(item);
+          vm.transferredAmt= vm.transferred.length;
+        } else if (item.necessity === true) {
           
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;

@@ -475,6 +475,12 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
       vm.items = response.data;
+      vm.groceries = [];
+      vm.items.forEach(function (groc) {
+        if (groc.necessity === false || groc.necessity === null) {
+          vm.groceries.push(groc);
+        }
+      });
     });
   }
 
@@ -515,7 +521,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       sort.descending = false;
     }
   };
-
+  vm.transferred = [];
   vm.necessity = [];
   vm.produce = [];
   vm.deli = [];
@@ -544,7 +550,10 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       TransferService.transferItems(vm.pantryItems);
       var items = response.data;
       items.forEach(function (item) {
-        if (item.necessity === true) {
+        if (item.necessity === true && item.quantity < item.preferred) {
+          vm.transferred.push(item);
+          vm.transferredAmt = vm.transferred.length;
+        } else if (item.necessity === true) {
 
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
