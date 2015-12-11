@@ -29,7 +29,12 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
     $scope.food = {};
   }
     
-    
+  vm.changeOrderCategory = function(){
+    vm.orderList = 'category';
+  };    
+  vm.changeOrderItem = function(){
+    vm.orderList = 'title';
+  };
 
 
   groceryList();

@@ -178,6 +178,13 @@ var ListController = function ListController($scope, $http, ListService, $state,
     $scope.food = {};
   }
 
+  vm.changeOrderCategory = function () {
+    vm.orderList = 'category';
+  };
+  vm.changeOrderItem = function () {
+    vm.orderList = 'title';
+  };
+
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
@@ -320,6 +327,13 @@ var _jQuery = require('jQuery');
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
 var PantryController = function PantryController($scope, $http, PantryService, $state, TransferService) {
+
+  (0, _jQuery2['default'])('.addItem').click(function () {
+    (0, _jQuery2['default'])('.panAdd').addClass('displayPan');
+  });
+  (0, _jQuery2['default'])('.doneAdding').click(function () {
+    (0, _jQuery2['default'])('.panAdd').removeClass('displayPan');
+  });
 
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;

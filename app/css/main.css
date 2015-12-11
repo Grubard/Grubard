@@ -5960,7 +5960,6 @@ body {
 .notCrossedOut {
   text-decoration: none; }
 
-<<<<<<< HEAD
 .panAdd {
   display: none;
   text-align: center; }
@@ -5986,11 +5985,6 @@ body {
   .btnAdd button {
     border-radius: 10px; }
 
-.addToPantry span {
-  font-size: 0.5em; }
-
-=======
->>>>>>> 0b0f1c1ea13f4d7decbddc9cd5c4277e1976c043
 .groceryList table {
   display: inline-block;
   vertical-align: top; }
