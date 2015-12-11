@@ -408,7 +408,7 @@
           <th ng-click="vm.sortPantry('category')">Category</th>
           <th ng-click="vm.sortPantry('preferred-quantity')">Amount Needed</th>
         </tr>
-        <tr ng-repeat="i in vm.necessity|orderBy:sort.column:sort.descending">
+        <tr ng-repeat="i in vm.transferred|orderBy:sort.column:sort.descending">
           <td>{{i.title}}</td>
           <td>{{i.category}}</td>
           <td>{{i.preferred - i.quantity}} {{i.units}}</td>
@@ -422,7 +422,7 @@
           <th ng-click="vm.sortSelfList('category')">Category</th>
           <th ng-click="vm.sortSelfList('quantity')">Amount Needed</th>
         </tr>
-        <tr ng-repeat="i in vm.items|orderBy:sort.column:sort.descending">
+        <tr ng-repeat="i in vm.groceries|orderBy:sort.column:sort.descending">
           <td>{{i.title}}</td>
           <td>{{i.category}}</td>
           <td>{{i.quantity}} {{i.units}}</td>
