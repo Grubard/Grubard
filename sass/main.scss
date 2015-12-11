@@ -786,6 +786,35 @@ body{
 
 
 
+.panAdd{
+  display: none;
+  text-align: center;
+}
+.panAddBtn{
+  display: none;
+}
+.displayPan{
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.addPanItem{
+  display: block;
+  width: 100%;
+}
+.addBtns{
+  text-align: center;
+}
+.btnAdd{
+  text-align: center;
+  button{
+    border-radius: 10px;
+  }
+}
+
+
 
 .groceryList table{
   display: inline-block;

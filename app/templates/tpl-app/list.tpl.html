@@ -66,14 +66,18 @@
       </div>
     </li>
   </div>
-
+  
   <ul>
-    <li ng-repeat="object in vm.groceryListYay" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
+    <button class="button" ng-click="vm.changeOrderItem()">Sort By Item</button>
+    <button class="button" ng-click="vm.changeOrderCategory()">Sort By Category</button>
+    <li ng-repeat="object in vm.groceryListYay|orderBy: vm.orderList" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
       <input class="checkIt" type="checkbox" id="check{{ object.id }}"  checklist-model="vm.purchased" checklist-value="object">
       <label for="check{{object.id}}" ng-click="hasFoodItem = !hasFoodItem" ng-mouseOver="showDelete = !showDelete"></label>
       
-      <strong>Item:</strong> {{ object.title }} | {{object.quantity }} {{ object.units }}
+
+      <strong>Item:</strong> {{ object.title }} | {{object.quantity }} {{object.units}} needed {{object.category}}
+
 
       <i class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 

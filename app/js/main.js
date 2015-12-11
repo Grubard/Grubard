@@ -179,6 +179,13 @@ var ListController = function ListController($scope, $http, ListService, $state,
     $scope.food = {};
   }
 
+  vm.changeOrderCategory = function () {
+    vm.orderList = 'category';
+  };
+  vm.changeOrderItem = function () {
+    vm.orderList = 'title';
+  };
+
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
@@ -321,6 +328,13 @@ var _jQuery = require('jQuery');
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
 var PantryController = function PantryController($scope, $http, PantryService, $state, TransferService) {
+
+  (0, _jQuery2['default'])('.addItem').click(function () {
+    (0, _jQuery2['default'])('.panAdd').addClass('displayPan');
+  });
+  (0, _jQuery2['default'])('.doneAdding').click(function () {
+    (0, _jQuery2['default'])('.panAdd').removeClass('displayPan');
+  });
 
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
@@ -812,7 +826,7 @@ var _directivesUserlistDir = require('./directives/userlist.dir');
 var _directivesUserlistDir2 = _interopRequireDefault(_directivesUserlistDir);
 
 _angular2['default'].module('app.default', ['app.core', 'ngCookies', 'checklist-model']).constant('SERVER', {
-  URL: 'http://intense-refuge-9476.herokuapp.com',
+  URL: 'https://intense-refuge-9476.herokuapp.com',
   CONFIG: {
     headers: {}
   }
