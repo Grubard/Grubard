@@ -166,6 +166,11 @@ body{
 .aboutPage{
   height: 40em;
   overflow-y: scroll;
+  h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    margin: 4% auto -4% 20%;
+  }
 }
 .aboutBtn{
   text-align: center;
@@ -408,10 +413,13 @@ body{
       }
       span.imgWord{
         margin-left: 45.5%;
+        padding-bottom: 5%;
 
       }
       span.imgWord2{
         margin-left: 44%;
+        padding-bottom: 5%;
+        
       }
 
       table{
