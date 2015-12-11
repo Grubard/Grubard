@@ -102,6 +102,7 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
       items.forEach(function(item) {
         if(item.necessity === true && item.quantity < item.preferred){
           vm.transferred.push(item);
+          vm.necessity.push(item);
           vm.transferredAmt= vm.transferred.length;
         } else if (item.necessity === true) {
           
