@@ -5653,7 +5653,7 @@ body {
     width: 80%;
     margin: 5% -15% 0 2%;
     overflow-y: scroll;
-    height: 85vh; }
+    height: 87vh; }
     .userHomePage .bothLists .title {
       width: 49%;
       display: inline-block;
@@ -5710,6 +5710,8 @@ body {
   display: inline-block;
   width: 32em;
   vertical-align: top; }
+  .vertical li {
+    padding-left: 0; }
   .vertical a.subTitle {
     font-size: 1.5em;
     color: #40704E;
@@ -5729,24 +5731,14 @@ body {
     text-align: center;
     font-size: 0.6em;
     font-weight: 500; }
-  .vertical .nested li {
-    margin-top: -0.5em; }
-    .vertical .nested li table td {
-      text-align: center; }
-  .vertical table {
-    width: 70%;
-    margin: 0 5%; }
-    .vertical table tbody {
-      background: inherit;
-      margin-left: -2%; }
-  .vertical table td {
-    margin: 0 auto;
-    width: 13em; }
-  .vertical table tr.head {
-    color: #78427E;
-    font-weight: bold; }
-    .vertical table tr.head span {
-      color: black; }
+  .vertical .vertical2 {
+    margin-left: 0; }
+    .vertical .vertical2 .necTable tr.head {
+      border-bottom: 3px solid white; }
+    .vertical .vertical2 table tr.head {
+      border-bottom: 3px solid white; }
+  .vertical tr.listItem {
+    color: #78427E; }
 
 /*************************Pantry Page*******************************/
 .quickLinks2 {

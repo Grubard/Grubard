@@ -371,7 +371,7 @@ body{
     width: 80%;
     margin: 5% -15% 0 2%;
     overflow-y: scroll;
-    height: 85vh;
+    height: 87vh;
     .title{
       width: 49%;
       display: inline-block;
@@ -408,6 +408,7 @@ body{
       }
       span.imgWord{
         margin-left: 45.5%;
+
       }
       span.imgWord2{
         margin-left: 44%;
@@ -451,6 +452,9 @@ body{
   display: inline-block;
   width: 32em;
   vertical-align: top;
+  li{
+    padding-left: 0;
+  }
   a.subTitle{
     font-size: 1.5em;
     color: $FruitGreen;
@@ -472,30 +476,17 @@ body{
     font-size: 0.6em;
     font-weight: 500;
   }
-  .nested li{
-    margin-top: -0.5em;
-    table td{
-      text-align: center;
+  .vertical2{
+    margin-left: 0;
+    .necTable tr.head{
+      border-bottom: 3px solid white;
+    }
+    table tr.head{
+      border-bottom: 3px solid white;
     }
   }
-  table{
-    width: 70%;
-    margin: 0 5%;
-    tbody{
-      background: inherit;
-      margin-left: -2%;
-    }
-  }
-  table td{
-    margin: 0 auto;
-    width: 13em;
-  }
-  table tr.head{
+  tr.listItem{
     color: $Purple;
-    font-weight: bold;
-    span{
-      color: black;
-    }
   }
 }
 

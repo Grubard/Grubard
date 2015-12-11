@@ -33,23 +33,23 @@
       <ul class="vertical menu" data-accordion-menu>
         <li>
           <a class="subTitle">Necessities<span class="quantity necessityQuant">{{ vm.necessityAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
            
             <li>
               <table class="necTable">
                 <tr class="head">
-                  <td>Category</td>
-                  <td>|</td>
                   <td>Item</td>
                   <td>|</td>
-                  <td>In Stock <span>/</span>Preferred</td>
+                  <td>Category</td>
+                  <td>|</td>
+                  <td>In Stock <span>/</span> Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.necessity  | orderBy:'category'">
-                  <td>{{item.category}}</td>
-                  <td></td>
+                <tr class="listItem" ng-repeat="item in vm.necessity  | orderBy:'category'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}}</td>
+                  <td>{{item.category}}</td>
+                  <td></td>
+                  <td>{{item.quantity}} {{item.units}} / {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -59,7 +59,7 @@
         
         <li>
           <a class="subTitle">Produce<span class="quantity">{{ vm.produceAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
 
             <li>
               <table>
@@ -68,10 +68,10 @@
                   <td>|</td>
                   <td>In Stock <span>/</span> Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.produce  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.produce  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}} {{item.units}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -81,7 +81,7 @@
         
         <li>
           <a class="subTitle">Deli<span class="quantity">{{ vm.deliAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
          
             <li>
               <table>
@@ -90,10 +90,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.deli  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.deli  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -102,7 +102,7 @@
 
         <li>
           <a class="subTitle">Meats<span class="quantity">{{ vm.meatsAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
            
             <li>
               <table>
@@ -111,10 +111,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.meats  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.meats  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -124,7 +124,7 @@
 
         <li>
           <a class="subTitle">Spices<span class="quantity">{{ vm.spicesAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
          
             <li>
               <table>
@@ -133,10 +133,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.spices  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.spices  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -145,7 +145,7 @@
         
         <li>
           <a class="subTitle">Baking<span class="quantity">{{ vm.bakingAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
        
             <li>
               <table>
@@ -154,10 +154,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.baking  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.baking  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -166,7 +166,7 @@
 
         <li>
           <a class="subTitle">Breakfast Items<span class="quantity">{{ vm.breakfastAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
             
             <li>
               <table>
@@ -175,10 +175,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.breakfast  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.breakfast  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -188,7 +188,7 @@
 
         <li>
           <a class="subTitle">Snacks<span class="quantity">{{ vm.snacksAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
             
             <li>
               <table>
@@ -197,10 +197,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span> Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.snacks  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.snacks  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -212,7 +212,7 @@
       <ul class="vertical menu" data-accordion-menu>
         <li>
           <a class="subTitle">Sweets<span class="quantity">{{ vm.sweetsAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
             
             <li>
               <table>
@@ -221,10 +221,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span> Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.sweets  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.sweets  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -234,7 +234,7 @@
 
         <li>
           <a class="subTitle">Grains & Pasta<span class="quantity">{{ vm.grainsAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
             
             <li>
               <table>
@@ -243,10 +243,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span> Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.grains  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.grains  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -256,7 +256,7 @@
 
         <li>
           <a class="subTitle">Frozen Foods<span class="quantity">{{ vm.frozenAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
            
             <li>
               <table>
@@ -265,10 +265,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span> Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.frozen  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.frozen  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -278,7 +278,7 @@
 
         <li>
           <a class="subTitle">Beverages<span class="quantity">{{ vm.bevsAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
        
             <li>
               <table>
@@ -287,10 +287,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.bevs  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.bevs  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -300,7 +300,7 @@
 
         <li>
           <a class="subTitle">Hygiene<span class="quantity">{{ vm.hygieneAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
          
             <li>
               <table>
@@ -309,10 +309,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.hygiene  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.hygiene  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -323,7 +323,7 @@
 
         <li>
           <a class="subTitle">Household Items<span class="quantity">{{ vm.householdAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
           
             <li>
               <table>
@@ -332,10 +332,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.household  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.household  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -345,7 +345,7 @@
 
         <li>
           <a class="subTitle">Dairy<span class="quantity">{{ vm.dairyAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
         
             <li>
               <table>
@@ -354,10 +354,10 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.dairy  | orderBy:'title'">
+                <tr class="listItem" ng-repeat="item in vm.dairy  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
@@ -367,7 +367,7 @@
 
         <li>
           <a class="subTitle">Other<span class="quantity">{{ vm.otherAmt }}</span></a>
-          <ul class="menu vertical nested">
+          <ul class="menu vertical2 nested">
          
             <li>
               <table>
@@ -376,10 +376,11 @@
                   <td>|</td>
                   <td> In Stock <span>/</span>  Preferred</td>
                 </tr>
-                <tr ng-repeat="item in vm.other  | orderBy:'title'">
+
+                <tr class="listItem" ng-repeat="item in vm.other  | orderBy:'title'">
                   <td>{{item.title}}</td>
                   <td></td>
-                  <td>{{item.quantity}} / {{item.preferred}}</td>
+                  <td>{{item.quantity}} {{item.units}}/ {{item.preferred}} {{item.units}}</td>
                 </tr>
               </table>
             </li>
