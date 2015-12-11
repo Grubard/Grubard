@@ -155,34 +155,42 @@ var _jQuery2 = _interopRequireDefault(_jQuery);
 
 var ListController = function ListController($scope, $http, ListService, $state, SERVER, $cookies, $rootScope) {
 
+  // Setting Headers properties needed
   var url = SERVER.URL;
   var token = $cookies.get('auth_token');
   SERVER.CONFIG.headers['Access-Token'] = token;
 
+  // Setting functions as vm
   var vm = this;
-
+  vm.cancelChange = cancelChange;
   vm.addItemsToPantry = addItemsToPantry;
   vm.clearThese = clearThese;
   vm.editItem = editItem;
+  vm.saveNewChanges = saveNewChanges;
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
 
+  // Empty Arrays that items will be pushed to
   var items = [];
   vm.purchased = [];
 
+  // This was a fix to the modal not closing after a hard refresh of the grocery list page
   (0, _jQuery2['default'])('body').on('click', function () {
     (0, _jQuery2['default'])('.reveal-overlay').remove();
   });
 
+  // Post request to add a new food item to the grocery list
+  // Broadcast handles the refresh
+  // Resets field to empty
   function addNewItem(food) {
-    console.log('new grocery item', food);
     ListService.addItem(food).then(function (response) {
       $scope.$broadcast('newfood');
     });
     $scope.food = {};
   }
 
+  // Functions to allow users to sort their grocery lists by category or title
   vm.changeOrderCategory = function () {
     vm.orderList = 'category';
   };
@@ -190,22 +198,23 @@ var ListController = function ListController($scope, $http, ListService, $state,
     vm.orderList = 'title';
   };
 
+  // Calling the groceryList get request on page load
+  // Function that gets the data and populates the users grocery list
+  // $scope.on receives the broadcast and updates the list without page refresh
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
-      response.data.forEach(function (groc) {
-        vm.amountNeeded = Math.abs(groc.preferred - groc.quantity);
-      });
       vm.groceryListYay = response.data;
     });
     $scope.$on('newfood', function () {
       ListService.getGroceryList().then(function (response) {
-        console.log(response);
         vm.groceryListYay = response.data;
       });
     });
   }
 
+  // Delete item from grocery list function
+  // Broadcast auto reloads
   function removeItem(object) {
     console.log(object.id);
     ListService.removeFood(object.id).then(function () {
@@ -213,8 +222,22 @@ var ListController = function ListController($scope, $http, ListService, $state,
     });
   }
 
+  // Function to show the editable fields on the grocery list
   function editItem(object) {
-    // Edit item on double click
+    object.showEdit = true;
+  }
+
+  // Function to save the new Edits
+  function saveNewChanges(object) {
+    ListService.editFoodItem(object).then(function (response) {
+      console.log(response);
+      $scope.$broadcast('newFood');
+    });
+    object.showEdit = false;
+  }
+
+  function cancelChange() {
+    $state.reload();
   }
 
   function addItemsToPantry() {
@@ -335,13 +358,6 @@ var _jQuery2 = _interopRequireDefault(_jQuery);
 
 var PantryController = function PantryController($scope, $http, PantryService, $state, TransferService) {
 
-  (0, _jQuery2['default'])('.addItem').click(function () {
-    (0, _jQuery2['default'])('.panAdd').addClass('displayPan');
-  });
-  (0, _jQuery2['default'])('.doneAdding').click(function () {
-    (0, _jQuery2['default'])('.panAdd').removeClass('displayPan');
-  });
-
   var vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;
@@ -361,7 +377,6 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   });
 
   function addNewItem(food) {
-    console.log('New Pantry Item:', food);
 
     PantryService.addItem(food).then(function (response) {
       $scope.$broadcast('newPantryItem');
@@ -399,7 +414,6 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   }
 
   function saveNewChanges(object) {
-
     PantryService.editFoodItem(object).then(function (response) {
       $scope.$broadcast('newPantryItem');
     });
@@ -863,6 +877,7 @@ var ListService = function ListService($http, SERVER, $cookies) {
   this.addItem = addItem;
   this.getGroceryList = getGroceryList;
   this.removeFood = removeFood;
+  this.editFoodItem = editFoodItem;
 
   function Item(foodItem) {
     this.title = foodItem.title;
@@ -884,6 +899,11 @@ var ListService = function ListService($http, SERVER, $cookies) {
 
   function removeFood(objId) {
     return $http['delete'](url + '/grocery/' + objId, SERVER.CONFIG);
+  }
+
+  function editFoodItem(foodObj) {
+    var x = foodObj.id;
+    return $http.put(url + '/grocery/' + x, foodObj, SERVER.CONFIG);
   }
 };
 

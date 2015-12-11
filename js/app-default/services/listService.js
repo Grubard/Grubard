@@ -9,6 +9,7 @@ let ListService = function($http, SERVER, $cookies) {
   this.addItem = addItem;
   this.getGroceryList = getGroceryList;
   this.removeFood = removeFood;
+  this.editFoodItem = editFoodItem;
 
   function Item (foodItem) {
     this.title = foodItem.title;
@@ -30,6 +31,11 @@ let ListService = function($http, SERVER, $cookies) {
 
   function removeFood (objId) {
     return $http.delete(url + '/grocery/' + objId, SERVER.CONFIG);
+  }
+
+  function editFoodItem (foodObj) {
+    let x = foodObj.id;
+    return $http.put(url + '/grocery/' + x, foodObj, SERVER.CONFIG);
   }
 
 };
