@@ -171,6 +171,10 @@ var ListController = function ListController($scope, $http, ListService, $state,
   var items = [];
   vm.purchased = [];
 
+  (0, _jQuery2['default'])('body').on('click', function () {
+    (0, _jQuery2['default'])('.reveal-overlay').remove();
+  });
+
   function addNewItem(food) {
     console.log('new grocery item', food);
     ListService.addItem(food).then(function (response) {

@@ -5866,55 +5866,6 @@ body {
     color: #999900; }
 
 /*****************************Grocery List Page*******************/
-.sortBtn {
-  border-radius: 5px; }
-
-.listTag {
-  color: white;
-  font-size: .7em;
-  padding: 3px;
-  border-radius: 3px; }
-
-.ProduceTag {
-  background-color: green; }
-
-.DairyTag {
-  background-color: blue; }
-
-.MeatsTag {
-  background-color: red; }
-
-.DeliTag {
-  background-color: pink; }
-
-.SpicesTag {
-  background-color: brown; }
-
-.BeerTag {
-  background-color: black; }
-
-.SweetsTag {
-  background-color: #6F4C7E; }
-
-.GrainsTag {
-  background-color: #BA987C; }
-
-.FrozenTag {
-  background-color: white;
-  color: black; }
-
-.BreakfastTag {
-  background-color: orange; }
-
-.SnacksTag {
-  background-color: #429DE5; }
-
-.HygieneTag {
-  background-color: #98FB98; }
-
-.BakingTag {
-  background-color: gray; }
-
 .mainGroceryList {
   background: #D2DFEA;
   width: 74%;
@@ -5982,6 +5933,55 @@ body {
     font-weight: 100;
     color: #57B65C; }
 
+.sortBtn {
+  border-radius: 5px; }
+
+.listTag {
+  color: white;
+  font-size: .7em;
+  padding: 3px;
+  border-radius: 3px; }
+
+.ProduceTag {
+  background-color: green; }
+
+.DairyTag {
+  background-color: blue; }
+
+.MeatsTag {
+  background-color: red; }
+
+.DeliTag {
+  background-color: pink; }
+
+.SpicesTag {
+  background-color: brown; }
+
+.BeerTag {
+  background-color: black; }
+
+.SweetsTag {
+  background-color: #6F4C7E; }
+
+.GrainsTag {
+  background-color: #BA987C; }
+
+.FrozenTag {
+  background-color: white;
+  color: black; }
+
+.BreakfastTag {
+  background-color: orange; }
+
+.SnacksTag {
+  background-color: #429DE5; }
+
+.HygieneTag {
+  background-color: #98FB98; }
+
+.BakingTag {
+  background-color: gray; }
+
 .editItem {
   margin-left: 2em; }
   .editItem span {
@@ -6031,6 +6031,10 @@ body {
   text-align: center; }
   .btnAdd button {
     border-radius: 10px; }
+
+@media all and (max-width: 575px) {
+  .groceryList {
+    padding-left: 13%; } }
 
 .groceryList table {
   display: inline-block;

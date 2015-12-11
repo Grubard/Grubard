@@ -70,6 +70,7 @@
   <ul>
     <button class="button sortBtn" ng-click="vm.changeOrderItem()">Sort By Item</button>
     <button class="button sortBtn" ng-click="vm.changeOrderCategory()">Sort By Category</button>
+    
     <li ng-repeat="object in vm.groceryListYay|orderBy: vm.orderList" ng-dblClick="vm.editItem()" ng-class="{'crossOut' : hasFoodItem, 'notCrossedOut' : !hasFoodItem}">
 
       <input class="checkIt" type="checkbox" id="check{{ object.id }}"  checklist-model="vm.purchased" checklist-value="object">

@@ -22,6 +22,10 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   vm.purchased = [];
 
 
+  $('body').on('click', function() {
+    $('.reveal-overlay').remove();
+  });
+
   function addNewItem (food) {
     console.log('new grocery item', food);
     ListService.addItem(food).then((response) => {
