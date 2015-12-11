@@ -172,6 +172,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
   vm.purchased = [];
 
   function addNewItem(food) {
+    console.log('new grocery item', food);
     ListService.addItem(food).then(function (response) {
       $scope.$broadcast('newfood');
     });
@@ -354,6 +355,7 @@ var PantryController = function PantryController($scope, $http, PantryService, $
   });
 
   function addNewItem(food) {
+    console.log('New Pantry Item:', food);
 
     PantryService.addItem(food).then(function (response) {
       $scope.$broadcast('newPantryItem');
@@ -824,7 +826,7 @@ var _directivesUserlistDir = require('./directives/userlist.dir');
 var _directivesUserlistDir2 = _interopRequireDefault(_directivesUserlistDir);
 
 _angular2['default'].module('app.default', ['app.core', 'ngCookies', 'checklist-model']).constant('SERVER', {
-  URL: 'http://intense-refuge-9476.herokuapp.com',
+  URL: 'https://intense-refuge-9476.herokuapp.com',
   CONFIG: {
     headers: {}
   }
@@ -929,6 +931,7 @@ var PantryService = function PantryService($http, SERVER, $cookies) {
     this.category = foodItem.category;
     this.preferred = foodItem.preferred;
     this.necessity = foodItem.necessity;
+    this.units = foodItem.units;
   }
 
   function addItem(foodItem) {

@@ -30,6 +30,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   });
 
   function addNewItem (food) {
+    console.log('New Pantry Item:', food);
     
     PantryService.addItem(food).then((response) => {
       $scope.$broadcast('newPantryItem');  

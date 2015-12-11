@@ -23,6 +23,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
 
 
   function addNewItem (food) {
+    console.log('new grocery item', food);
     ListService.addItem(food).then((response) => {
       $scope.$broadcast('newfood');
     });
