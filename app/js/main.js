@@ -475,6 +475,28 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope, TransferService) {
 
+  // $(document).ready(function () {
+
+  //   setTimeout(function() {
+  //     $('.tutorial').css('display', 'block');
+  //   }, 5000);
+
+  // });
+
+  (0, _jquery2['default'])('.tutorial1').on('click', function () {
+    (0, _jquery2['default'])('.tutorial1').css('display', 'none');
+    (0, _jquery2['default'])('.tutorial2').css('display', 'block');
+  });
+
+  (0, _jquery2['default'])('.tutorial2').on('click', function () {
+    (0, _jquery2['default'])('.tutorial2').css('display', 'none');
+    (0, _jquery2['default'])('.tutorial3').css('display', 'block');
+  });
+
+  (0, _jquery2['default'])('.tutorial3').on('click', function () {
+    (0, _jquery2['default'])('.tutorial3').css('display', 'none');
+  });
+
   var vm = this;
 
   (0, _jquery2['default'])('.grocTitle').click(function () {

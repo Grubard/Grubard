@@ -19,6 +19,43 @@ $Red: #D02527;
 $FruitGreen: #40704E;
 
 
+.tutorial1{
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 50%;
+  top: 25%;
+  background: white;
+  z-index: 1;
+}
+.tutorial2{
+  display: none;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 75%;
+  top: 25%;
+  background: white;
+  z-index: 1;
+}
+.tutorial3{
+  display: none;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 25%;
+  top: 25%;
+  background: white;
+  z-index: 1;
+}
+
+
 /**********************************All Things **************************************/
 
 body{

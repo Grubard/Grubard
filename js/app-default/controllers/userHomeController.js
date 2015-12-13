@@ -1,6 +1,37 @@
 import $ from 'jquery';
 let UserHomeController = function($cookies, ListService, PantryService, $scope, TransferService) {
   
+
+  // $(document).ready(function () {
+
+  //   setTimeout(function() {
+  //     $('.tutorial').css('display', 'block');
+  //   }, 5000);
+
+  // });
+
+  $('.tutorial1').on('click', function(){
+    $('.tutorial1').css('display', 'none');
+    $('.tutorial2').css('display', 'block');
+  });
+
+  $('.tutorial2').on('click', function(){
+    $('.tutorial2').css('display', 'none');
+    $('.tutorial3').css('display', 'block');
+  });
+
+  $('.tutorial3').on('click', function(){
+    $('.tutorial3').css('display', 'none');
+  });
+
+
+
+
+
+
+
+
+
   let vm = this;
 
 
