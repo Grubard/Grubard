@@ -49,16 +49,11 @@ body{
     background-color: inherit;
   }
   .top-bar-left {
-    margin-top: -2em;
+    margin-top: -0.5em;
+    width: 15%;
     a{
       color: white;
       text-decoration: none;
-      font-size: 1.3em;
-      font-weight: 500;
-      margin-top: 8px;
-    }
-    img{
-      width: 10%;
     }
   }
   .top-bar-right {
@@ -69,11 +64,11 @@ body{
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .top-bar-left{
-    width: 13em;
-    .logoArea a img{
-      width: 2em;
+    width: 50%;
+    img{
+      width: 100%;
     }
   }
 }
@@ -473,15 +468,9 @@ body{
   background: #E6E6E6;
 }
 
-@media all and(max-width: 800px) {
-  .vertical a.subTitle{
-    margin-left: 0;
-    width: 60%;
-  }
 
-}
 
-.vertical{
+.hate{
   padding-top: 1em;
   padding-left: 6%;
   display: inline-block;
@@ -522,6 +511,17 @@ body{
   }
   tr.listItem{
     color: $Purple;
+  }
+}
+
+@media all and(max-width: 800px) {
+  .hate a.subTitle{
+    margin-left: 0;
+    width: 100%;
+  }
+  .hate{
+    display: block;
+    width: 95%;
   }
 }
 
