@@ -47,6 +47,12 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
     templateUrl: 'templates/tpl-app/addUser.tpl.html',
     authenticate: true
   })
+  .state('root.recipe', {
+    url: '/recipe',
+    controller: 'AddRecipe as vm',
+    templateUrl: 'templates/tpl-app/addbyRecipe.tpl.html',
+    authenticate: true
+  })
   .state('root.contact',{
     url: '/contact',
     templateUrl: 'templates/tpl-app/contact.tpl.html',
@@ -60,7 +66,6 @@ let config = function($stateProvider, $urlRouterProvider, $locationProvider) {
   .state('root.account', {
     url: '/account',
     templateUrl: 'templates/tpl-app/accountSettings.tpl.html'
-    
   });
 
 

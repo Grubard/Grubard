@@ -6148,6 +6148,9 @@ button.button.newGroc {
     text-align: center; }
 
 /*************************Add Groceries Form***********************/
+.addToPantry span {
+  font-size: 0.5em; }
+
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
   left: 0;
@@ -6167,7 +6170,30 @@ button.button.newGroc {
 [ui-view].ng-leave-active {
   opacity: 0; }
 
-.addToPantry span {
-  font-size: 0.5em; }
+/***************************************Recipe***************************/
+.addByRecipe .side {
+  display: inline-block; }
+
+.addByRecipe .recipeInfo {
+  width: 70%;
+  height: 40em;
+  background: #D2DFEB;
+  overflow: scroll; }
+
+.addByRecipe p {
+  text-align: center;
+  font-size: 1.3em; }
+
+.addByRecipe form {
+  width: 50%;
+  margin: 0 auto; }
+
+.addByRecipe ul {
+  margin-left: 5%; }
+
+.addByRecipe .recipeTitle {
+  font-size: 1.7em;
+  list-style: none;
+  font-weight: bold; }
 
 /*# sourceMappingURL=main.css.map */

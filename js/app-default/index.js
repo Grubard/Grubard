@@ -9,6 +9,7 @@ import UserHomeController from './controllers/userHomeController';
 import ListController from './controllers/listController';
 import PantryController from './controllers/pantryController';
 import AddUserController from './controllers/add.user.controller';
+import AddRecipe from './controllers/recipeController';
 
 import LoginService from './services/loginService';
 import ListService from './services/listService';
@@ -34,6 +35,7 @@ angular
   .controller('ListController', ListController)
   .controller('PantryController', PantryController)
   .controller('AddUserController', AddUserController)
+  .controller('AddRecipe', AddRecipe)
   .service('LoginService', LoginService)
   .service('ListService', ListService)
   .service('PantryService', PantryService)
