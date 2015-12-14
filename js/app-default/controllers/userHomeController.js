@@ -47,7 +47,6 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
-      console.log('that other list: ', response);
       vm.items = response.data;
       vm.groceries = [];
       vm.items.forEach(function(groc){

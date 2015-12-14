@@ -533,7 +533,6 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
-      console.log('that other list: ', response);
       vm.items = response.data;
       vm.groceries = [];
       vm.items.forEach(function (groc) {
