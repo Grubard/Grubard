@@ -1,0 +1,66 @@
+<div class="addByRecipe">
+
+  <div class="side quickLinks2">
+
+    <div class="quickNav2">
+      <a href="/#home">
+        <img ng-src='../images/home.png'>
+        <p>Return Home</p>
+      </a>
+    </div>
+
+    <div class="quickNav2">
+      <a href="/#pantry">
+        <img ng-src='../images/eggplant.png'>
+        <p>Edit Pantry</p>
+      </a>
+    </div>
+    
+    <div class="quickNav2">
+      <a href="/#list">
+        <img ng-src='../images/apple.png'>
+        <p>Go Shopping <br> Edit Grocery List</p>
+      </a>
+    </div>
+
+    <div class="quickNav2">
+      <a href="/#list" ng-click="vm.logOut()">
+        <img ng-src='../images/carrot.png'>
+        <p>Log Out</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="side recipeInfo">
+    <p class="title">Select a Recipe to add to your Grocery List</p>
+
+    <form ng-submit="vm.searchForRecipe(recipe)" >
+      <input type="text" placeholder="Search for a Recipe" ng-model="recipe.name">
+      <button class="button">Search</button>
+    </form>
+
+    <ul>
+      <li class="recipeTitle">Recipe Title</li>
+      <img ng-src="https://placecage.com/200/200">
+      <button class="button">See Ingredient List</button>
+      <hr>
+
+      <li class="recipeTitle">Recipe Title</li>  
+      <img ng-src="https://placecage.com/200/200">
+      <button class="button">See Ingredient List</button>
+      <hr>
+
+      <li class="recipeTitle">Recipe Title</li>
+      <img ng-src="https://placecage.com/200/200">
+      <button class="button">See Ingredient List</button>
+      <hr>
+    </ul>
+
+
+
+  </div>
+  
+
+
+  
+</div>

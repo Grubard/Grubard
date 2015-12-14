@@ -286,9 +286,6 @@ body{
 /*********************LogIn Page******************************/
 
 .loginPage{
-  button{
-    border-radius: 5px;
-  }
   width: 50%;
   border-radius: 5px;
   color: white;
@@ -298,6 +295,9 @@ body{
   margin-left: 2%;
   padding-left: 4%;
   overflow: scroll;
+  button{
+    border-radius: 5px;
+  }
   .formStuff{
     padding-top: 1%;
     margin-top: 5%;
@@ -1004,11 +1004,9 @@ button.button.newGroc{
 
 /*************************Add Groceries Form***********************/
 
-
-
-
-
-
+.addToPantry span{
+  font-size: 0.5em;
+}
 
 [ui-view].ng-enter, [ui-view].ng-leave {
   position: absolute;
@@ -1047,22 +1045,50 @@ button.button.newGroc{
 }
 
 
+/***************************************Recipe***************************/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.addToPantry span{
-  font-size: 0.5em;
+.addByRecipe{
+  .side{
+    display: inline-block;
+  }
+  .recipeInfo{
+    width: 70%;
+    height: 40em;
+    background: #D2DFEB;
+    overflow: scroll;
+  }
+  p{
+    text-align: center;
+    font-size: 1.3em;
+  }
+  form{
+    width: 50%;
+    margin: 0 auto;
+  }
+  ul{
+    margin-left: 5%;
+  }
+  .recipeTitle{
+    font-size: 1.7em;
+    list-style: none;
+    font-weight: bold;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
