@@ -5396,39 +5396,25 @@ table.hover tr:nth-of-type(even):hover {
 .top-bar-right {
   float: right; }
 
-.tutorial1 {
-  position: absolute;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 200px;
-  height: 150px;
-  left: 50%;
-  top: 25%;
-  background: white;
-  z-index: 1; }
-
-.tutorial2 {
+.bubble1 {
   display: none;
   position: absolute;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 200px;
-  height: 150px;
-  left: 75%;
-  top: 25%;
-  background: white;
+  right: 5%;
+  top: 20%;
   z-index: 1; }
 
-.tutorial3 {
+.bubble2 {
   display: none;
   position: absolute;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 200px;
-  height: 150px;
-  left: 25%;
-  top: 25%;
-  background: white;
+  left: 40%;
+  top: 22%;
+  z-index: 1; }
+
+.bubble3 {
+  display: none;
+  position: absolute;
+  right: 69%;
+  top: 33%;
   z-index: 1; }
 
 /**********************************All Things **************************************/

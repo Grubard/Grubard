@@ -1,40 +1,33 @@
 import $ from 'jquery';
 let UserHomeController = function($cookies, ListService, PantryService, $scope, TransferService) {
   
-
-  // $(document).ready(function () {
-
-  //   setTimeout(function() {
-  //     $('.tutorial').css('display', 'block');
-  //   }, 5000);
-
-  // });
-
-  $('.tutorial1').on('click', function(){
-    $('.tutorial1').css('display', 'none');
-    $('.tutorial2').css('display', 'block');
+  // Function to only show tutorial one time
+  $(document).ready(function(){
+    var shown = localStorage.getItem('isShow');
+    if(shown !== "f"){
+      $('.bubble').show();
+      localStorage.setItem('isShow', "f");
+    }
   });
 
-  $('.tutorial2').on('click', function(){
-    $('.tutorial2').css('display', 'none');
-    $('.tutorial3').css('display', 'block');
+  // Functions to clear tutorial bubbles
+  $('.bubble1').on('click', function() {
+    $('.bubble1').css('display', 'none');
   });
 
-  $('.tutorial3').on('click', function(){
-    $('.tutorial3').css('display', 'none');
+  $('.bubble2').on('click', function() {
+    $('.bubble2').css('display', 'none');
+  });  
+
+  $('.bubble3').on('click', function() {
+    $('.bubble3').css('display', 'none');
   });
-
-
-
-
-
-
-
 
 
   let vm = this;
 
 
+  // Functions to switch between grocery and pantry tabs on the user home page
   $('.grocTitle').click(function(){
     $('.grocTitle').addClass('dark').removeClass('lighten');
     $('.groceryList').removeClass('hidden');
@@ -47,9 +40,10 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
     $('.pantryList').removeClass('hidden');
     $('.groceryList').addClass('hidden');
     $('.grocTitle').removeClass('dark').addClass('lighten');
-
   });
 
+
+  // Get request to populate the grocery list into either nec or non-nec items on user home page
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
@@ -63,6 +57,8 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
     });
   }
 
+
+  // Sort functions
   $scope.sort = {
     column: '',
     descending: false
@@ -100,6 +96,9 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
       sort.descending = false;
     }
   };
+
+
+  // Empty arrays for items to be pushed to.  Each array populates a different category subheading on the user home page
   vm.transferred = [];
   vm.necessity = [];
   vm.produce = [];
@@ -116,14 +115,13 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
   vm.hygiene = [];
   vm.household = [];
   vm.dairy = [];
-  
   vm.other = [];
   vm.nonNecessity = [];
 
   
 
+  // Function to populate the pantry on the user home page.  All the else ifs push the items to their proper arrays
   pantryList();
-
   function pantryList() {
     PantryService.getPantryList().then( (response) => {
       
@@ -205,6 +203,8 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
     });
   }
 
+
+  // Logout functions
   vm.logOut = function(){
     $cookies.remove('auth_token');
     $cookies.remove('username');
