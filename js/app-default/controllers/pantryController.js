@@ -4,8 +4,7 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   
 
   let vm = this;
-  // vm.addItemsToPantry = addItemsToPantry;
-  // vm.clearCompleted = clearCompleted;
+
 
   vm.cancelChange = cancelChange;
   vm.editItem = editItem;
@@ -14,18 +13,14 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   vm.addNewItem = addNewItem;
   vm.pantryList = pantryList;
 
-  $('.addItem').click(function(){
-    $('.panAdd').addClass('displayPan');
-  });
-  $('.doneAdding').click(function(){
-    $('.panAdd').removeClass('displayPan');
+
+  $('body').on('click', function() {
+    $('.reveal-overlay').remove();
   });
 
   function addNewItem (food) {
-    
     PantryService.addItem(food).then((response) => {
       $scope.$broadcast('newPantryItem');  
-
     });
     $scope.food = {};
   }

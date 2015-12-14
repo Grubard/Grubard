@@ -5396,27 +5396,6 @@ table.hover tr:nth-of-type(even):hover {
 .top-bar-right {
   float: right; }
 
-.bubble1 {
-  display: none;
-  position: absolute;
-  right: 5%;
-  top: 20%;
-  z-index: 1; }
-
-.bubble2 {
-  display: none;
-  position: absolute;
-  left: 40%;
-  top: 22%;
-  z-index: 1; }
-
-.bubble3 {
-  display: none;
-  position: absolute;
-  right: 69%;
-  top: 33%;
-  z-index: 1; }
-
 /**********************************All Things **************************************/
 body {
   -moz-user-select: none;
@@ -5655,6 +5634,27 @@ body {
     width: 90%; } }
 
 /*********************User Home Page******************************/
+.bubble1 {
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  z-index: 1; }
+
+.bubble2 {
+  display: none;
+  position: absolute;
+  left: 40%;
+  top: 22%;
+  z-index: 1; }
+
+.bubble3 {
+  display: none;
+  position: absolute;
+  right: 69%;
+  top: 33%;
+  z-index: 1; }
+
 .userHomePage {
   width: 100%; }
   .userHomePage img {
@@ -5809,6 +5809,13 @@ body {
     display: inline-block;
     width: 49.5%; }
 
+.instructions {
+  font-size: 0.6em;
+  text-align: center; }
+  .instructions p {
+    display: inline-block;
+    border-bottom: 1px dotted #b5b5b7; }
+
 .mainPantryList {
   background: #D2DFEA;
   width: 74%;
@@ -5922,7 +5929,7 @@ body {
   .mainGroceryList .button {
     text-align: center;
     margin: 2% auto;
-    width: 15em; }
+    width: 10em; }
   .mainGroceryList .checkIt {
     display: none; }
   .mainGroceryList input {
@@ -5953,6 +5960,19 @@ body {
     font-size: 1.4em;
     font-weight: 100;
     color: #57B65C; }
+  .mainGroceryList .instructions {
+    font-size: 0.6em;
+    text-align: center; }
+    .mainGroceryList .instructions p {
+      display: inline-block;
+      border-bottom: 1px dotted #b5b5b7; }
+  .mainGroceryList .fa-check-circle-o {
+    color: green; }
+  .mainGroceryList .fa-minus-circle {
+    color: #999900; }
+
+button.button.newGroc {
+  margin-left: 28%; }
 
 .sortBtn {
   border-radius: 5px; }
@@ -6051,7 +6071,10 @@ body {
 .btnAdd {
   text-align: center; }
   .btnAdd button {
-    border-radius: 10px; }
+    border-radius: 5px; }
+
+.btnAdded {
+  border-radius: 5px; }
 
 @media all and (max-width: 575px) {
   .groceryList {
