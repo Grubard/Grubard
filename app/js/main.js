@@ -189,7 +189,6 @@ var ListController = function ListController($scope, $http, ListService, $state,
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
-      console.log(response);
       vm.groceryListYay = response.data;
     });
     $scope.$on('newfood', function () {
