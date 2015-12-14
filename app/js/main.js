@@ -185,6 +185,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
   // Resets field to empty
   function addNewItem(food) {
     ListService.addItem(food).then(function (response) {
+      console.log(response);
       $scope.$broadcast('newfood');
     });
     $scope.food = {};
@@ -204,6 +205,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
+      console.log('heres your list idiot: ', response);
       vm.groceryListYay = response.data;
     });
     $scope.$on('newfood', function () {
@@ -516,6 +518,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then(function (response) {
+      console.log('that other list: ', response);
       vm.items = response.data;
       vm.groceries = [];
       vm.items.forEach(function (groc) {

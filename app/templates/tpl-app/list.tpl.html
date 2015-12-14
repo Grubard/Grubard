@@ -79,7 +79,7 @@
 
       <span ng-hide="object.showEdit" class="{{object.category}}Tag listTag" ng-click="vm.changeOrderCategory()">{{object.category}}</span>
 
-      <span ng-hide="object.showEdit">  {{ object.title }} | {{object.quantity}} {{object.units}} needed  </span>
+      <span ng-hide="object.showEdit">  {{ object.title }} | {{object.absolute}} {{object.units}} needed  </span>
 
       <i ng-hide="object.showEdit" class="fa fa-close fa-lg" ng-click="vm.removeItem(object)"></i>
 
@@ -107,7 +107,7 @@
 
           Item:<input ng-model="object.title" value="{{object.title}}">
 
-          Quantity Needed:<input ng-model="object.quantity" value="{{object.quantity}}">
+          Quantity Needed:<input ng-model="object.absolute" value="{{object.absolute}}">
 
           <button type='submit' ng-click="vm.saveNewChanges(object)"><i class="fa fa-check-circle-o"></i></button>
           <button ng-click="vm.cancelChange()"><i class="fa fa-minus-circle"></i></button>
