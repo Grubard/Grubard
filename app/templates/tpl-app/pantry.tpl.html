@@ -25,52 +25,60 @@
 <div class="side mainPantryList">
   <h3>Current Pantry List</h3>
 
-    <button class="button addItem addPanItem">Add an Item</button>
-    
-  <div class="panAdd">  
-    <form ng-submit="vm.addNewItem(food)">
-      
-      <input class="addPanItem" ng-model="food.title" placeholder="New Item" required>
-      <div class="addToPantryBoth">
-        <input type="text" class="addPanItem" ng-model="food.quantity" placeholder="Quantity">
-        <input type="text" ng-model="food.units" placeholder="Unit">
-      </div>
-        
-      <select class="addPanItem" ng-model="food.category" required>
-        <option value="" disabled selected>Category</option>  
-        <option value="Produce">Produce</option>
-        <option value="Deli">Deli</option>
-        <option value="Meats">Meats</option>
-        <option value="Spices">Spices</option>
-        <option value="Baking">Baking</option>
-        <option value="Breakfast">Breakfast</option>
-        <option value="Snacks">Snacks</option>
-        <option value="Sweets">Sweets</option>
-        <option value="Grains">Grains & Pasta</option>
-        <option value="Frozen">Frozen Foods</option>
-        <option value="Beverages">Beverages</option>
-        <option value="Hygiene">Hygiene</option>
-        <option value="Household">Household Items</option>
-        <option value="Dairy">Dairy</option>
-        <option value="Other">Other</option>
-      </select>
-    
-      <input type="text" class="addPanItem" ng-model="food.preferred" placeholder="Preferred Amount">
-          
-      <select class="addPanItem" ng-model="food.necessity">
-        <option value="" disabled selected>Necessity?</option>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-      </select>
+    <a data-open="addFormPantry">
+      <button class="button addItem addPanItem">Add an Item</button>
+    </a>
 
-      <div class="btnAdd">
-        <button class="button addPanItem">Submit</button>
-      </div>
-    </form>
-        
-    <div class="btnAdd">
-      <button class="button doneAdding">Done Adding</button>
+    <div class="instructions">
+
+      <p class="inst2">Double click an item to edit.</p>
+   
     </div>
+    
+  <div class="panAdd reveal" id="addFormPantry" data-reveal>
+    <li>  
+      <form ng-submit="vm.addNewItem(food)">
+        
+        <input class="addPanItem" ng-model="food.title" placeholder="New Item" required>
+        <div class="addToPantryBoth">
+          <input type="text" class="addPanItem" ng-model="food.quantity" placeholder="Quantity">
+          <input type="text" ng-model="food.units" placeholder="Unit">
+        </div>
+          
+        <select class="addPanItem" ng-model="food.category" required>
+          <option value="" disabled selected>Category</option>  
+          <option value="Produce">Produce</option>
+          <option value="Deli">Deli</option>
+          <option value="Meats">Meats</option>
+          <option value="Spices">Spices</option>
+          <option value="Baking">Baking</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Snacks">Snacks</option>
+          <option value="Sweets">Sweets</option>
+          <option value="Grains">Grains & Pasta</option>
+          <option value="Frozen">Frozen Foods</option>
+          <option value="Beverages">Beverages</option>
+          <option value="Hygiene">Hygiene</option>
+          <option value="Household">Household Items</option>
+          <option value="Dairy">Dairy</option>
+          <option value="Other">Other</option>
+        </select>
+      
+        <input type="text" class="addPanItem" ng-model="food.preferred" placeholder="Preferred Amount">
+            
+        <select class="addPanItem" ng-model="food.necessity">
+          <option value="" disabled selected>Necessity?</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+
+        <div class="btnAdd">
+          <button class="button addPanItem">Submit</button>
+        </div>
+      </form>
+
+      <button class="button btnAdded close-reveal-modal" data-close aria-label="Close reveal" type="button">Done Adding</button>
+    </li>
   </div>
 
   <table class="panTable">
