@@ -422,7 +422,7 @@
         <tr ng-repeat="i in vm.transferred|orderBy:sort.column:sort.descending">
           <td>{{i.title}}</td>
           <td>{{i.category}}</td>
-          <td>{{i.preferred - i.quantity}} {{i.units}}</td>
+          <td>{{i.absolute}} {{i.units}}</td>
         </tr>
       </table>
 
@@ -431,12 +431,12 @@
         <tr>
           <th ng-click="vm.sortSelfList('title')">Item Name</th>
           <th ng-click="vm.sortSelfList('category')">Category</th>
-          <th ng-click="vm.sortSelfList('quantity')">Amount Needed</th>
+          <th ng-click="vm.sortSelfList('absolute')">Amount Needed</th>
         </tr>
         <tr ng-repeat="i in vm.groceries|orderBy:sort.column:sort.descending">
           <td>{{i.title}}</td>
           <td>{{i.category}}</td>
-          <td>{{i.quantity}} {{i.units}}</td>
+          <td>{{i.absolute}} {{i.units}}</td>
         </tr>
       </table>
 
