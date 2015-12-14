@@ -248,6 +248,8 @@ var ListController = function ListController($scope, $http, ListService, $state,
 
   function addItemsToPantry() {
     vm.purchased.map(function (x) {
+      x.quantity = x.absolute;
+      console.log('hey you: ', x);
       $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
         ListService.removeFood(x.id).then(function () {
           $scope.$broadcast('newfood');
