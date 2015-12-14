@@ -313,7 +313,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
   };
 
   function createSmartCart(house) {
-    console.log(house);
+    // console.log(house);
     LoginService.createNewSmartCart(house).then(function (res) {
       console.log(res);
       var expireDate = new Date();
