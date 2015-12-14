@@ -5396,6 +5396,41 @@ table.hover tr:nth-of-type(even):hover {
 .top-bar-right {
   float: right; }
 
+.tutorial1 {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 50%;
+  top: 25%;
+  background: white;
+  z-index: 1; }
+
+.tutorial2 {
+  display: none;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 75%;
+  top: 25%;
+  background: white;
+  z-index: 1; }
+
+.tutorial3 {
+  display: none;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 25%;
+  top: 25%;
+  background: white;
+  z-index: 1; }
+
 /**********************************All Things **************************************/
 body {
   -moz-user-select: none;
@@ -5503,6 +5538,10 @@ body {
 .aboutPage {
   height: 40em;
   overflow-y: scroll; }
+  .aboutPage h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    margin: 4% auto -4% 20%; }
 
 .aboutBtn {
   text-align: center;
@@ -5681,9 +5720,11 @@ body {
         margin-left: 47.5%;
         margin-top: 2%; }
       .userHomePage .bothLists .list span.imgWord {
-        margin-left: 45.5%; }
+        margin-left: 45.5%;
+        padding-bottom: 5%; }
       .userHomePage .bothLists .list span.imgWord2 {
-        margin-left: 44%; }
+        margin-left: 44%;
+        padding-bottom: 5%; }
       .userHomePage .bothLists .list table {
         text-align: left; }
         .userHomePage .bothLists .list table tr {
@@ -5860,6 +5901,7 @@ body {
     color: #999900; }
 
 /*****************************Grocery List Page*******************/
+<<<<<<< HEAD
 .sortBtn {
   border-radius: 5px; }
 
@@ -5916,6 +5958,8 @@ body {
 .OtherTag {
   background-color: #b77dec; }
 
+=======
+>>>>>>> 0151a71096fcb2cf6fccd4543da5c2f057f490bb
 .mainGroceryList {
   background: #D2DFEA;
   width: 74%;
@@ -5983,6 +6027,55 @@ body {
     font-weight: 100;
     color: #57B65C; }
 
+.sortBtn {
+  border-radius: 5px; }
+
+.listTag {
+  color: white;
+  font-size: .7em;
+  padding: 3px;
+  border-radius: 3px; }
+
+.ProduceTag {
+  background-color: green; }
+
+.DairyTag {
+  background-color: blue; }
+
+.MeatsTag {
+  background-color: red; }
+
+.DeliTag {
+  background-color: pink; }
+
+.SpicesTag {
+  background-color: brown; }
+
+.BeerTag {
+  background-color: black; }
+
+.SweetsTag {
+  background-color: #6F4C7E; }
+
+.GrainsTag {
+  background-color: #BA987C; }
+
+.FrozenTag {
+  background-color: white;
+  color: black; }
+
+.BreakfastTag {
+  background-color: orange; }
+
+.SnacksTag {
+  background-color: #429DE5; }
+
+.HygieneTag {
+  background-color: #98FB98; }
+
+.BakingTag {
+  background-color: gray; }
+
 .editItem {
   margin-left: 2em; }
   .editItem span {
@@ -6032,6 +6125,10 @@ body {
   text-align: center; }
   .btnAdd button {
     border-radius: 10px; }
+
+@media all and (max-width: 575px) {
+  .groceryList {
+    padding-left: 13%; } }
 
 .groceryList table {
   display: inline-block;

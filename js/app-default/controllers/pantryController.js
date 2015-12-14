@@ -3,14 +3,6 @@ import $ from 'jQuery';
 let PantryController = function($scope, $http, PantryService, $state, TransferService) {
   
 
-  $('.addItem').click(function(){
-    $('.panAdd').addClass('displayPan');
-
-  });
-  $('.doneAdding').click(function(){
-    $('.panAdd').removeClass('displayPan');
-  });
-
   let vm = this;
   // vm.addItemsToPantry = addItemsToPantry;
   // vm.clearCompleted = clearCompleted;
@@ -30,7 +22,6 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
   });
 
   function addNewItem (food) {
-    console.log('New Pantry Item:', food);
     
     PantryService.addItem(food).then((response) => {
       $scope.$broadcast('newPantryItem');  
@@ -71,12 +62,10 @@ let PantryController = function($scope, $http, PantryService, $state, TransferSe
     object.showEdit = true;
   }
 
-  function saveNewChanges(object) {
-    
+  function saveNewChanges(object) {  
     PantryService.editFoodItem(object).then((response) => {
       $scope.$broadcast('newPantryItem');
     });
-    
   }
 
   vm.logOut = function(){

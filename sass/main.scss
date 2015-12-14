@@ -19,6 +19,43 @@ $Red: #D02527;
 $FruitGreen: #40704E;
 
 
+.tutorial1{
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 50%;
+  top: 25%;
+  background: white;
+  z-index: 1;
+}
+.tutorial2{
+  display: none;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 75%;
+  top: 25%;
+  background: white;
+  z-index: 1;
+}
+.tutorial3{
+  display: none;
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 200px;
+  height: 150px;
+  left: 25%;
+  top: 25%;
+  background: white;
+  z-index: 1;
+}
+
+
 /**********************************All Things **************************************/
 
 body{
@@ -166,6 +203,11 @@ body{
 .aboutPage{
   height: 40em;
   overflow-y: scroll;
+  h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    margin: 4% auto -4% 20%;
+  }
 }
 .aboutBtn{
   text-align: center;
@@ -408,10 +450,13 @@ body{
       }
       span.imgWord{
         margin-left: 45.5%;
+        padding-bottom: 5%;
 
       }
       span.imgWord2{
         margin-left: 44%;
+        padding-bottom: 5%;
+        
       }
 
       table{
@@ -654,6 +699,7 @@ body{
 
 /*****************************Grocery List Page*******************/
 
+<<<<<<< HEAD
 .sortBtn{
   border-radius: 5px;
 }
@@ -710,6 +756,7 @@ body{
 .OtherTag{
   background-color: #b77dec;
 }
+
 .mainGroceryList{
   background: #D2DFEA;
   width: 74%;
@@ -795,6 +842,58 @@ body{
   }
 }
 
+.sortBtn{
+  border-radius: 5px;
+}
+.listTag{
+  color: white;
+  font-size: .7em;
+  padding: 3px;
+  border-radius: 3px;
+}
+.ProduceTag{
+  background-color: green;
+}
+.DairyTag{
+  background-color: blue;
+}
+.MeatsTag{
+  background-color: red;
+}
+.DeliTag{
+  background-color: pink;
+}
+.SpicesTag{
+  background-color: brown;
+}
+.BeerTag{
+  background-color: black;
+}
+.SweetsTag{
+  background-color: #6F4C7E;
+}
+.GrainsTag{
+  background-color: #BA987C;
+}
+.FrozenTag{
+  background-color: white;
+  color: black;
+}
+.BreakfastTag{
+  background-color: orange;
+}
+.SnacksTag{
+  background-color: #429DE5;
+}
+.HygieneTag{
+  background-color: #98FB98;
+}
+.BakingTag{
+  background-color: gray;
+}
+
+
+
 .editItem{
   margin-left: 2em;
   span{
@@ -860,6 +959,11 @@ body{
 }
 
 
+@media all and (max-width: 575px) {
+  .groceryList {
+    padding-left: 13%;
+  }
+}
 
 .groceryList table{
   display: inline-block;
