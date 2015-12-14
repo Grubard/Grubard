@@ -37,6 +37,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   // Resets field to empty
   function addNewItem (food) {
     ListService.addItem(food).then((response) => {
+      console.log(response)
       $scope.$broadcast('newfood');
     });
     $scope.food = {};
@@ -57,7 +58,9 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
+      console.log('heres your list idiot: ', response);
       vm.groceryListYay = response.data;
+      
     });
     $scope.$on('newfood', function(){
       ListService.getGroceryList().then( (response) => {
