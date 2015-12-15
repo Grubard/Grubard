@@ -81,6 +81,12 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LayoutController = function LayoutController($cookies, $state, $rootScope, $http, LoginService) {
   var vm = this;
+
+  vm.showForm = showForm;
+  vm.cancelForm = cancelForm;
+
+  vm.cheese = true;
+
   $rootScope.$on('LoggedIn', function () {
 
     var name = $cookies.get('username');
@@ -104,10 +110,16 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
       console.log(res);
       $('#passForm').removeClass('showChangePass');
     });
+    $state.reload();
   };
-  vm.taco = function () {};
 
-  vm.showForm = function () {};
+  function showForm() {
+    vm.cheese = false;
+  }
+
+  function cancelForm() {
+    $state.reload();
+  }
 
   vm.logOut = function () {
     $cookies.remove('auth_token');
