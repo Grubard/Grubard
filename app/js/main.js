@@ -517,7 +517,7 @@ var AddRecipe = function AddRecipe($http, SERVER, $cookies) {
     console.log('recipe: ', recipe);
     console.log(SERVER.CONFIG);
     $http.post(url + '/recipe', recipe, SERVER.CONFIG).then(function (res) {
-      console.log(res);
+      vm.recipes = res.data.recipes;
     });
   };
 };
