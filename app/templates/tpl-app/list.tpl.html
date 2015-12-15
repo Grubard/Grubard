@@ -66,10 +66,10 @@
             <option value="Dairy">Dairy</option>
             <option value="Other">Other</option>
           </select>
-          <button class="button newGroc foodCategory">Submit</button>
+          <button type="submit" class="button newGroc foodCategory">Submit</button>
+          <button class="button doneAddingGroc newGroc close-reveal-modal" data-close aria-label="Close reveal" type="button">Done Adding</button>
         </form>
         
-        <button class="button doneAddingGroc newGroc close-reveal-modal" data-close aria-label="Close reveal" type="button">Done Adding</button>
       </div>
     </li>
   </div>
@@ -79,7 +79,7 @@
     <button class="button sortBtn" ng-click="vm.changeOrderCategory()">Sort By Category</button>
     <div class="instructions">
 
-      <p class="inst2">Double click an item to edit.</p>
+      <p>Double click an item to edit</p>
    
     </div>
     
@@ -126,12 +126,11 @@
         </form>
       </div>
 
-      <hr>
 
     </li>
   </ul>
 
-
+  <hr>
   <div class="buttonAdd">
   <button class="button addToPantry" ng-click="vm.addItemsToPantry()">Purchase Checked Items!<br><span>(Add to Pantry)</span></button>
   <button class="button clearCompleted" ng-click="vm.clearThese()">Delete Checked Items</button>
