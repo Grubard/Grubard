@@ -39,12 +39,14 @@
       <button class="button">Search</button>
     </form>
 
-    <ul>
-      <li class="recipeTitle" ng-repeat="object in vm.recipes">
-        <span class="recipeImages">{{object.name}}<br></span>
-        <img  class="recipeImages" ng-src="{{object.source_image_url}}">
-      </li>
-    </ul>
+
+    <div class="row small-up-1 medium-up-3 large-up-5">
+      <div class="column" ng-repeat="object in vm.recipes">
+        <span>{{object.name | limitTo: 18 }}...</span>
+        <img class="recipeImage" ng-src="{{object.source_image_url}}" class="thumbnail" alt="">
+      </div>
+    </div>
+
   </div>
   
 
