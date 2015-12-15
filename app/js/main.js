@@ -545,19 +545,60 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
   var token = $cookies.get('auth_token');
   SERVER.CONFIG.headers['Access-Token'] = token;
 
+  // function Item (foodItem) {
+  // this.title = foodItem.title;
+  // this.quantity = foodItem.quantity;
+  // this.category = foodItem.category;
+  // this.preferred = foodItem.preferred;
+  // this.necessity = foodItem.necessity;
+  // this.units= foodItem.units;
+  // }
+  var toBuy = [];
   $http.get(url + '/recipe/' + id, SERVER.CONFIG).then(function (res) {
 
     vm.title = res.data.name;
     vm.id = res.data.id;
     vm.ingredients = res.data.ingredients;
+
+    vm.ingredients.forEach(function (x) {
+
+      var food = {
+        title: x.name,
+        quantity: x.amount,
+        units: x.units
+      };
+      toBuy.push(food);
+    });
+  });
+
+  var pantry = [];
+  var grocery = [];
+
+  $http.get(url + '/edible', SERVER.CONFIG).then(function (res) {
+    res.data.forEach(function (x) {
+      pantry.push(x.title);
+    });
+  });
+
+  $http.get(url + '/grocery', SERVER.CONFIG).then(function (res) {
+    res.data.forEach(function (y) {
+      grocery.push(y.title);
+    });
   });
 
   vm.addThisRecipe = function () {
-    var r = {
-      id: vm.id
-    };
-    $http.post(url + '/recipe/add', r, SERVER.CONFIG).then(function (res) {
-      console.log(res);
+    console.log(grocery);
+    console.log(pantry);
+
+    toBuy.forEach(function (x) {
+      var yay = $.inArray(x.title, pantry);
+      var otherYay = $.inArray(x.title, grocery);
+
+      if (yay === -1 && otherYay === -1) {
+        $http.post(url + '/grocery', x, SERVER.CONFIG).then(function (res) {
+          console.log('what we posted: ', res);
+        });
+      }
     });
   };
 };
