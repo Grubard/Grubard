@@ -1161,11 +1161,18 @@ button.sortBtn{
       display: inline-block;
     }
   }
-  .recipeTitle{
-    color: $lightGray;
-    font-weight: 200;
-    font-size: 1.7em;
-    list-style: none;
+  .small-up-1{
+    span{
+      font-weight: 200;
+      color: white;
+    }
+    img{
+      width: 10em;
+      height: 10em;
+    }
+    .column{
+      margin-bottom: 2em;
+    }
   }
 }
 

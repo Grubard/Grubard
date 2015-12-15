@@ -6256,10 +6256,13 @@ button.sortBtn {
     .addByRecipe ul li {
       border: 1px solid white;
       display: inline-block; }
-  .addByRecipe .recipeTitle {
-    color: #b5b5b7;
+  .addByRecipe .small-up-1 span {
     font-weight: 200;
-    font-size: 1.7em;
-    list-style: none; }
+    color: white; }
+  .addByRecipe .small-up-1 img {
+    width: 10em;
+    height: 10em; }
+  .addByRecipe .small-up-1 .column, .addByRecipe .small-up-1 .columns {
+    margin-bottom: 2em; }
 
 /*# sourceMappingURL=main.css.map */
