@@ -1,6 +1,6 @@
 import $ from 'jQuery';
 
-let LoginController = function($state, $http, $cookies, AuthService, SERVER, LoginService, $rootScope){
+let LoginController = function($state, $http, $cookies, AuthService, SERVER, LoginService, $rootScope, $scope){
 
   let url = SERVER.URL;
 
@@ -10,13 +10,12 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
   vm.showCreateNew = showCreateNew;
   vm.createSmartCart = createSmartCart;
 
+    
   function showCreateNew () {
     $('.logIn').addClass('hidden');
     $('.createAcct').addClass('shown');
     $('.newButton').addClass('hidden');
   }
-
-
 
   vm.signUp = function(newUser){
     $http.post(url+'/signup/', newUser).then((res)=>{
@@ -48,7 +47,7 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
 
 
   vm.login = function(user){
-    
+    $scope.loading = true;
     $http.post(url+'/login', user).then((res)=>{
             
       var expireDate = new Date();
@@ -57,20 +56,11 @@ let LoginController = function($state, $http, $cookies, AuthService, SERVER, Log
       $cookies.put('username', res.data.user.username, {expires: expireDate});
       $rootScope.$broadcast('LoggedIn');
       $state.transitionTo('root.home');
-    });
-
-    
-      
-
-
-
-
-    
-    
+    });  
   };
 
 
 };
 
-LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService', '$rootScope'];
+LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService', '$rootScope', '$scope'];
 export default LoginController;

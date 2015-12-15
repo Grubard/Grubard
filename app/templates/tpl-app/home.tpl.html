@@ -51,8 +51,8 @@
     <div class="list pantryList dark">
       <ul class="hate vertical menu" data-accordion-menu>
         <li>
-          <a class="subTitle">Necessities<span class="quantity necessityQuant">{{ vm.necessityAmt }}</span></a>
-          <ul class="menu vertical2 nested">
+          <a class="subTitle subTitleTop">Necessities<span class="quantity necessityQuant">{{ vm.necessityAmt }}</span></a>
+          <ul class="menu vertical2 nested topOfTable">
            
             <li>
               <table class="necTable">
@@ -206,7 +206,7 @@
         </li>
 
         <li>
-          <a class="subTitle">Snacks<span class="quantity">{{ vm.snacksAmt }}</span></a>
+          <a class="subTitle subTitleBottom">Snacks<span class="quantity">{{ vm.snacksAmt }}</span></a>
           <ul class="menu vertical2 nested">
             
             <li>
@@ -230,7 +230,7 @@
 
       <ul class="hate vertical menu" data-accordion-menu>
         <li>
-          <a class="subTitle">Sweets<span class="quantity">{{ vm.sweetsAmt }}</span></a>
+          <a class="subTitle subTitleTop">Sweets<span class="quantity">{{ vm.sweetsAmt }}</span></a>
           <ul class="menu vertical2 nested">
             
             <li>
@@ -385,7 +385,7 @@
         </li>
 
         <li>
-          <a class="subTitle">Other<span class="quantity">{{ vm.otherAmt }}</span></a>
+          <a class="subTitle subTitleBottom">Other<span class="quantity">{{ vm.otherAmt }}</span></a>
           <ul class="menu vertical2 nested">
          
             <li>
@@ -420,7 +420,7 @@
 
 
     <div class="list groceryList dark hidden">
-      <table class="grocNec" style="width: 49%; margin-left: 4%; margin-right: -5%">
+      <table class="grocNec grocSide" style="width: 49%; margin-left: 4%; margin-right: -5%">
         <caption>Necessities</caption>
         <tr>
           <th ng-click="vm.sortPantry('title')">Item Name</th>
@@ -434,7 +434,7 @@
         </tr>
       </table>
 
-      <table class="grocReg " style="width: 49%; margin-left: 2%">
+      <table class="grocReg grocSide" style="width: 49%; margin-left: 2%">
         <caption>Self-Added Items</caption>
         <tr>
           <th ng-click="vm.sortSelfList('title')">Item Name</th>
