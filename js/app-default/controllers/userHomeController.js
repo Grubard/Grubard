@@ -47,7 +47,6 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
   groceryList();
   function groceryList() {
     ListService.getGroceryList().then( (response) => {
-      console.log('that other list: ', response);
       vm.items = response.data;
       vm.groceries = [];
       vm.items.forEach(function(groc){
@@ -134,10 +133,12 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
           vm.transferred.push(item);
           vm.necessity.push(item);
           vm.transferredAmt= vm.transferred.length;
+          vm.necessityAmt = vm.necessity.length;
         } else if (item.necessity === true) {
           
           vm.necessity.push(item);
           vm.necessityAmt = vm.necessity.length;
+
         } else if (item.category === "Produce") {
           vm.produce.push(item);
           vm.nonNecessity.push(item);

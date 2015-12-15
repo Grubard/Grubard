@@ -6,8 +6,10 @@ let LayoutController = function($cookies, $state, $rootScope){
     vm.name = name;
     
   });
-  
-  
+  $rootScope.$on('newHouse', function(){
+
+    vm.house = $cookies.get('house_name');
+  });
   
   
 
