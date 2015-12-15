@@ -35,11 +35,11 @@
       <li><i class="fa fa-shopping-cart"></i><a href="/#list">View Grocery List</a></li>
       <li><i class="fa fa-list"></i><a href="/#pantry">View Pantry</a></li>
       <li><i class="fa fa-envelope"></i><a href="/#contact">Contact Us</a></li>
-      <li><span class="changePass">Change Password</span>
-        <form class="changePassForm" ng-submit="vm.changePass(pass)">
+      <li ng-click="vm.showForm()" class="changePass"><span>Change Password</span>
+        <form ng-show="vm.taco(cheese)" ng-submit="vm.changePass(pass)">
         <input type='password' ng-model="pass.password" placeholder="Old Password">
         <input type="password" ng-model="pass.new_password" placeholder="New Password">
-        <button type="submit" class="button">Change</button><a href="#/home" class="button cancelPass">Cancel</a>
+        <button type="submit" class="button">Change</button><span class="button cancelPass">Cancel</span>
         </form>
       </li>
       <li ng-click="vm.logOut()">Log Out</li>

@@ -5428,11 +5428,18 @@ body {
   .top-bar .top-bar-right h3 {
     margin-right: 30px; }
 
+.changePass a {
+  width: 10%;
+  background-color: red; }
+
 .changePassForm {
   display: none; }
 
 .showChangePass {
   display: block; }
+
+.goway {
+  display: none; }
 
 @media (max-width: 1000px) {
   .top-bar-left {
@@ -6249,9 +6256,5 @@ button.sortBtn {
     font-weight: 200;
     font-size: 1.7em;
     list-style: none; }
-
-.cancelPass {
-  background-color: red;
-  width: 30px; }
 
 /*# sourceMappingURL=main.css.map */

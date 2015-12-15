@@ -66,11 +66,20 @@ body{
     }
   }
 }
+.changePass{
+  a{
+    width: 10%;
+    background-color: red;
+  }
+}
 .changePassForm{
   display: none;
 }
 .showChangePass{
   display: block;
+}
+.goway{
+  display: none;
 }
 @media (max-width: 1000px) {
   .top-bar-left{
@@ -1154,10 +1163,7 @@ button.sortBtn{
   }
 }
 
-.cancelPass{
-  background-color: red;
-  width: 30px;
-}
+
 
 
 
