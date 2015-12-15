@@ -26,12 +26,11 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
     });
 
   };
-  vm.taco = function(){
 
-  };
 
-  vm.showForm = function(){
-    
+  vm.showForm = function(cheese){
+    cheese={};
+    cheese.showForm = true;
   };
 
   vm.logOut = function(){
