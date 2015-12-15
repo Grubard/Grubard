@@ -86,19 +86,23 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
     vm.house = $cookies.get('house_name');
   });
 
-  $('.changePass').click(function () {
-    $('.changePassForm').addClass('showChangePass');
-  });
-  $('.cancelPass').click(function () {
-    $('.changePassForm').removeClass('showChangePass');
-  });
+  // $('.changePass').click(function(){
+  //   $('.changePassForm').toggleClass('showChangePass');
+  // });
+  // $('.cancelPass').click(function(){
+  //   console.log('hey');
+  //   $('.changePassForm').toggleClass('showChangePass');
+  // });
 
   vm.changePass = function (pass) {
     LoginService.changePassword(pass).then(function (res) {
       console.log(res);
-      $('.changePassForm').removeClass('showChangePass');
+      $('#passForm').removeClass('showChangePass');
     });
   };
+  vm.taco = function () {};
+
+  vm.showForm = function () {};
 
   vm.logOut = function () {
     $cookies.remove('auth_token');
@@ -498,17 +502,30 @@ exports['default'] = PantryController;
 module.exports = exports['default'];
 
 },{"jQuery":32}],8:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var AddRecipe = function AddRecipe() {};
+var AddRecipe = function AddRecipe($http, SERVER, $cookies) {
+  var vm = this;
+  var url = SERVER.URL;
+  var token = $cookies.get('auth_token');
+  SERVER.CONFIG.headers['Access-Token'] = token;
 
-AddRecipe.$inject = [];
+  vm.searchForRecipe = function (recipe) {
+    console.log('recipe: ', recipe);
+    console.log(SERVER.CONFIG);
+    $http.post(url + '/recipe', recipe, SERVER.CONFIG).then(function (res) {
+      console.log(res);
+    });
+  };
+};
 
-exports["default"] = AddRecipe;
-module.exports = exports["default"];
+AddRecipe.$inject = ['$http', 'SERVER', '$cookies'];
+
+exports['default'] = AddRecipe;
+module.exports = exports['default'];
 
 },{}],9:[function(require,module,exports){
 'use strict';
