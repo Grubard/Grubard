@@ -35,6 +35,7 @@
 
     <form ng-submit="vm.addOtherUsers(friends)" class="addOthers">
       <p>Invite others to this smartCart!</p>
+      <input type="email" ng-model="friends.email" placeholder="Friend's Email">
       <input type="text" ng-model="friends.username" placeholder="User Name">
       <input type="password" ng-model="friends.password" placeholder="Their Password">
       <button class="button">Add another friend</button>

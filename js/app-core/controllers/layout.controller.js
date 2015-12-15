@@ -19,6 +19,7 @@ let LayoutController = function($cookies, $state, $rootScope){
     $cookies.remove('auth_token');
     $cookies.remove('username');
     $cookies.remove('house_id');
+    $cookies.remove('house_name');
     $state.go('landing');
   };
 

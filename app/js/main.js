@@ -90,6 +90,7 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope) {
     $cookies.remove('auth_token');
     $cookies.remove('username');
     $cookies.remove('house_id');
+    $cookies.remove('house_name');
     $state.go('landing');
   };
 };
@@ -993,6 +994,7 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
   };
 
   var Friend = function Friend(friend) {
+    this.email = friend.email;
     this.username = friend.username;
     this.password = friend.password;
   };
@@ -1012,7 +1014,7 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
     var houseId = $cookies.get('house_id');
     SERVER.CONFIG.headers['Access-Token'] = token;
     var f = new Friend(friend);
-    return $http.post(url + '/signup/' + houseId, f, SERVER.CONFIG);
+    return $http.post(url + '/signup/roommate', f, SERVER.CONFIG);
   }
 };
 
