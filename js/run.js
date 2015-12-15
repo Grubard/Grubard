@@ -13,6 +13,7 @@ let run = function($rootScope, $cookies, $state, AuthService, $stateParams) {
     if(toState.authenticate && x === true){
       setTimeout(function(){
         $rootScope.$broadcast('LoggedIn');
+        $rootScope.$broadcast('newHouse');
       }, 100);
       return;
     }

@@ -81,6 +81,10 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope) {
     var name = $cookies.get('username');
     vm.name = name;
   });
+  $rootScope.$on('newHouse', function () {
+
+    vm.house = $cookies.get('house_name');
+  });
 
   vm.logOut = function () {
     $cookies.remove('auth_token');
@@ -300,6 +304,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
 
   vm.showCreateNew = showCreateNew;
   vm.createSmartCart = createSmartCart;
+  vm.addOtherUsers = addOtherUsers;
 
   function showCreateNew() {
     (0, _jQuery2['default'])('.logIn').addClass('hidden');
@@ -321,16 +326,26 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
   function createSmartCart(house) {
     // console.log(house);
     LoginService.createNewSmartCart(house).then(function (res) {
-      console.log(res);
+
       var expireDate = new Date();
       expireDate.setDate(expireDate.getDate() + 7);
       var id = res.data.house.id;
+      var houseName = res.data.house.name;
       $cookies.put('house_id', id, { expires: expireDate });
+      $cookies.put('house_name', houseName, { expires: expireDate });
+      $rootScope.$broadcast('newHouse');
     });
 
     (0, _jQuery2['default'])('.addOthers').addClass('shown');
     (0, _jQuery2['default'])('.finishButton').addClass('shown');
     (0, _jQuery2['default'])('.newSmartCart').addClass('hidden');
+  }
+  function addOtherUsers(friends) {
+    LoginService.addYoFriends(friends).then(function (res) {
+      console.log(res);
+    });
+    friends.username = '';
+    friends.password = '';
   }
 
   vm.login = function (user) {
@@ -341,6 +356,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
       expireDate.setDate(expireDate.getDate() + 7);
       $cookies.put('auth_token', res.data.user.access_token, { expires: expireDate });
       $cookies.put('username', res.data.user.username, { expires: expireDate });
+      console.log('the user man: ', res);
       $rootScope.$broadcast('LoggedIn');
       $state.transitionTo('root.home');
     });
@@ -615,6 +631,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
           vm.transferred.push(item);
           vm.necessity.push(item);
           vm.transferredAmt = vm.transferred.length;
+          vm.necessityAmt = vm.necessity.length;
         } else if (item.necessity === true) {
 
           vm.necessity.push(item);
@@ -968,10 +985,16 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
 
   var vm = this;
   vm.createNewSmartCart = createNewSmartCart;
+  vm.addYoFriends = addYoFriends;
 
   var House = function House(house) {
     this.name = house.name;
     this.address = house.address;
+  };
+
+  var Friend = function Friend(friend) {
+    this.username = friend.username;
+    this.password = friend.password;
   };
 
   function createNewSmartCart(house) {
@@ -982,6 +1005,14 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
     console.log(SERVER.CONFIG);
     console.log('h:', h);
     return $http.post(url + '/house', h, SERVER.CONFIG);
+  }
+  function addYoFriends(friend) {
+    var url = SERVER.URL;
+    var token = $cookies.get('auth_token');
+    var houseId = $cookies.get('house_id');
+    SERVER.CONFIG.headers['Access-Token'] = token;
+    var f = new Friend(friend);
+    return $http.post(url + '/signup/' + houseId, f, SERVER.CONFIG);
   }
 };
 
@@ -1193,6 +1224,7 @@ var run = function run($rootScope, $cookies, $state, AuthService, $stateParams) 
     if (toState.authenticate && x === true) {
       setTimeout(function () {
         $rootScope.$broadcast('LoggedIn');
+        $rootScope.$broadcast('newHouse');
       }, 100);
       return;
     }
