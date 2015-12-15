@@ -1,5 +1,11 @@
 let LayoutController = function($cookies, $state, $rootScope, $http, LoginService){
   let vm = this;
+
+  vm.showForm = showForm;
+  vm.cancelForm = cancelForm;
+
+  vm.cheese = true;
+
   $rootScope.$on('LoggedIn', function(){
 
     let name = $cookies.get('username');
@@ -24,14 +30,27 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
       console.log(res);
       $('#passForm').removeClass('showChangePass');
     });
+    $state.reload();
 
   };
+
 
 
   vm.showForm = function(cheese){
     cheese={};
     cheese.showForm = true;
   };
+
+  function showForm() {
+    vm.cheese = false;
+  }
+
+  function cancelForm() {
+    $state.reload();
+  }
+
+
+>>>>>>> 8dbea9cce324add674e336d65ef61d86982c2cd2
 
   vm.logOut = function(){
     $cookies.remove('auth_token');
