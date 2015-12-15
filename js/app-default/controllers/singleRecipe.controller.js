@@ -23,11 +23,15 @@ let SingleRecipe = function($http, SERVER, $cookies, $stateParams) {
     vm.ingredients= res.data.ingredients;
 
     vm.ingredients.forEach(function(x){
+      console.log(x);
       
       let food = {
         title: x.name,
         quantity: x.amount,
-        units: x.units
+        units: x.unit,
+        category: 'other',
+        preferred: false,
+        absolute: x.amount
       };
       toBuy.push(food);
       
