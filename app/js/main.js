@@ -74,7 +74,7 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LayoutController = function LayoutController($cookies, $state, $rootScope) {
+var LayoutController = function LayoutController($cookies, $state, $rootScope, $http, LoginService) {
   var vm = this;
   $rootScope.$on('LoggedIn', function () {
 
@@ -86,15 +86,30 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope) {
     vm.house = $cookies.get('house_name');
   });
 
+  $('.changePass').click(function () {
+    $('.changePassForm').addClass('showChangePass');
+  });
+  $('.cancelPass').click(function () {
+    $('.changePassForm').removeClass('showChangePass');
+  });
+
+  vm.changePass = function (pass) {
+    LoginService.changePassword(pass).then(function (res) {
+      console.log(res);
+      $('.changePassForm').removeClass('showChangePass');
+    });
+  };
+
   vm.logOut = function () {
     $cookies.remove('auth_token');
     $cookies.remove('username');
     $cookies.remove('house_id');
+    $cookies.remove('house_name');
     $state.go('landing');
   };
 };
 
-LayoutController.$inject = ['$cookies', '$state', '$rootScope'];
+LayoutController.$inject = ['$cookies', '$state', '$rootScope', '$http', 'LoginService'];
 
 exports['default'] = LayoutController;
 module.exports = exports['default'];
@@ -127,12 +142,16 @@ var _appLayoutServicesAuthService = require('../app-layout/services/authService'
 
 var _appLayoutServicesAuthService2 = _interopRequireDefault(_appLayoutServicesAuthService);
 
+var _appDefaultServicesLoginService = require('../app-default/services/loginService');
+
+var _appDefaultServicesLoginService2 = _interopRequireDefault(_appDefaultServicesLoginService);
+
 _angular2['default'].module('app.core', ['ui.router'])
 /////** Load Constants and Config **/////
 // .constant('...', ...)
-.controller('LayoutController', _controllersLayoutController2['default']).config(_config2['default']).service('AuthService', _appLayoutServicesAuthService2['default']);
+.controller('LayoutController', _controllersLayoutController2['default']).config(_config2['default']).service('AuthService', _appLayoutServicesAuthService2['default']).service('LoginService', _appDefaultServicesLoginService2['default']);
 
-},{"../app-layout/services/authService":20,"./config":1,"./controllers/layout.controller":2,"angular":29,"angular-cookies":26,"angular-ui-router":27}],4:[function(require,module,exports){
+},{"../app-default/services/loginService":16,"../app-layout/services/authService":20,"./config":1,"./controllers/layout.controller":2,"angular":29,"angular-cookies":26,"angular-ui-router":27}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -986,6 +1005,7 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
   var vm = this;
   vm.createNewSmartCart = createNewSmartCart;
   vm.addYoFriends = addYoFriends;
+  vm.changePassword = changePassword;
 
   var House = function House(house) {
     this.name = house.name;
@@ -993,10 +1013,14 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
   };
 
   var Friend = function Friend(friend) {
+    this.email = friend.email;
     this.username = friend.username;
     this.password = friend.password;
   };
-
+  var Pass = function Pass(pass) {
+    this.password = pass.password;
+    this.new_password = pass.new_password;
+  };
   function createNewSmartCart(house) {
     var url = SERVER.URL;
     var token = $cookies.get('auth_token');
@@ -1012,7 +1036,15 @@ var LoginService = function LoginService($http, SERVER, $cookies) {
     var houseId = $cookies.get('house_id');
     SERVER.CONFIG.headers['Access-Token'] = token;
     var f = new Friend(friend);
-    return $http.post(url + '/signup/' + houseId, f, SERVER.CONFIG);
+    return $http.post(url + '/signup/roommate', f, SERVER.CONFIG);
+  }
+  function changePassword(pass) {
+    var url = SERVER.URL;
+    var token = $cookies.get('auth_token');
+    SERVER.CONFIG.headers['Access-Token'] = token;
+    var p = new Pass(pass);
+    console.log('password: ', p);
+    return $http.post(url + '/signup/update', p, SERVER.CONFIG);
   }
 };
 
