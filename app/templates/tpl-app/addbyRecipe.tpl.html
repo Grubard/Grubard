@@ -40,12 +40,14 @@
     </form>
 
 
+
     <div class="row small-up-1 medium-up-3 large-up-5">
       <div class="column" ng-repeat="object in vm.recipes">
         <span>{{object.name | limitTo: 18 }}...</span>
         <img class="recipeImage" ng-src="{{object.source_image_url}}" class="thumbnail" alt="">
       </div>
     </div>
+
 
   </div>
   
