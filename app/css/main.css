@@ -6035,6 +6035,7 @@ body {
     .mainGroceryList .buttonAdd .clearCompleted {
       padding-top: 14px;
       font-weight: 200;
+      height: 3.1em;
       background: #990000; }
   .mainGroceryList i {
     float: right;
