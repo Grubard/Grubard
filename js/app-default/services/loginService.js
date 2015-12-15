@@ -12,6 +12,7 @@ let LoginService = function($http, SERVER, $cookies) {
   };
 
   let Friend = function(friend){
+    this.email = friend.email;
     this.username = friend.username;
     this.password = friend.password;
   };
@@ -31,7 +32,7 @@ let LoginService = function($http, SERVER, $cookies) {
     let houseId = $cookies.get('house_id');
     SERVER.CONFIG.headers['Access-Token'] = token;
     let f = new Friend(friend);
-    return $http.post(url + '/signup/'+ houseId, f, SERVER.CONFIG);
+    return $http.post(url + '/signup/roommate', f, SERVER.CONFIG);
   }
 };
 
