@@ -6,9 +6,21 @@ let SingleRecipe = function($http, SERVER, $cookies, $stateParams) {
   SERVER.CONFIG.headers['Access-Token'] = token;
 
   $http.get(url+'/recipe/'+ id, SERVER.CONFIG).then((res)=>{
-    console.log(res);
     
+    vm.title = res.data.name;
+    vm.id= res.data.id;
+    vm.ingredients= res.data.ingredients;
+
   });
+ 
+  vm.addThisRecipe= function(){
+    let r = {
+      id: vm.id
+    };
+    $http.post(url+'/recipe/add', r, SERVER.CONFIG).then((res)=>{
+      console.log(res);
+    });
+  };
     
 
 };

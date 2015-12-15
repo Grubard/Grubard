@@ -1,1 +1,6 @@
 <h2>{{vm.title}}</h2>
+<ul>
+  <li ng-repeat="item in vm.ingredients">{{item.name}} {{item.amount}} {{item.unit}}</li>
+</ul>
+
+<button ng-click="vm.addThisRecipe()">Add This Recipe!</button>
