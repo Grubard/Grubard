@@ -806,7 +806,8 @@ body{
   background-color: #429DE5;
 }
 .HygieneTag{
-  background-color: #98FB98;
+  background-color: darken(#98FB98, 12%);
+  color: black;
 }
 .BakingTag{
   background-color: gray;
