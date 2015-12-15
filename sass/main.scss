@@ -422,11 +422,11 @@ body{
       display: none;
     }
     .dark{
-      background: darken(white, 10%);   
+      background: white;   
     }
     .lighten{
-      background: white;
-      color: gray;
+      background: darken(white, 10%);
+      color: #333333;
     }
     .list{
       width: 98.4%;
@@ -444,7 +444,6 @@ body{
       span.imgWord2{
         margin-left: 43%;
         padding-bottom: 5%;
-        
       }
 
       table{
@@ -468,7 +467,14 @@ body{
 
 .userHomePage .bothLists .list table tr {
   border-bottom: none;
-  background: #E6E6E6;
+  background: white;
+  border-left: 2px solid darken(#D2DFEA, 20%);
+}
+
+.userHomePage .bothLists .list table.grocSide tr {
+  border-bottom: none;
+  background: white;
+  border-left: none;
 }
 
 
@@ -486,9 +492,17 @@ body{
     font-size: 1.5em;
     color: $FruitGreen;
     border: 2px solid darken(#D2DFEA, 20%);
-    border-radius: 5px;
+    border-bottom: none;
     padding-top: 0.5%;
   }
+  a.subTitleTop{
+    border-radius: 5px 5px 0 0;
+  }
+  a.subTitleBottom{
+    border-bottom: 2px solid darken(#D2DFEA, 20%);
+    border-radius: 0 0 5px 5px;
+  }
+
   span.quantity{
     float: right;
     margin-right: 4%;
@@ -506,10 +520,10 @@ body{
   .vertical2{
     margin-left: 0;
     .necTable tr.head{
-      border-bottom: 3px solid white;
+      border-bottom: 2px solid $lightGray;
     }
     table tr.head{
-      border-bottom: 3px solid white;
+      border-bottom: 2px solid $lightGray;
     }
   }
   tr.listItem{

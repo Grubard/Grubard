@@ -5,8 +5,13 @@
       <p>Log In to Existing Account</p>
       <input type="text" ng-model="user.username" placeholder="Username" required>
       <input type="password" ng-model="user.password" placeholder="Password" required>
-      <button class="button">Log In</button>
+      <button class="button">
+        <span data-ng-hide="loading">Log In</span>
+        <span data-ng-show="loading"><i class="fa fa-spinner fa-spin"></i></span>
+      </button>
     </form>
+
+  
 
 
     <button class="button newButton" ng-click="vm.showCreateNew()">New smartCart</button>

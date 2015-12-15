@@ -296,7 +296,7 @@ var _jQuery = require('jQuery');
 
 var _jQuery2 = _interopRequireDefault(_jQuery);
 
-var LoginController = function LoginController($state, $http, $cookies, AuthService, SERVER, LoginService, $rootScope) {
+var LoginController = function LoginController($state, $http, $cookies, AuthService, SERVER, LoginService, $rootScope, $scope) {
 
   var url = SERVER.URL;
 
@@ -349,7 +349,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
   }
 
   vm.login = function (user) {
-
+    $scope.loading = true;
     $http.post(url + '/login', user).then(function (res) {
 
       var expireDate = new Date();
@@ -363,7 +363,7 @@ var LoginController = function LoginController($state, $http, $cookies, AuthServ
   };
 };
 
-LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService', '$rootScope'];
+LoginController.$inject = ['$state', '$http', '$cookies', 'AuthService', 'SERVER', 'LoginService', '$rootScope', '$scope'];
 exports['default'] = LoginController;
 module.exports = exports['default'];
 

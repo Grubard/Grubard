@@ -5694,10 +5694,10 @@ body {
     .userHomePage .bothLists .hidden {
       display: none; }
     .userHomePage .bothLists .dark {
-      background: #e6e6e6; }
+      background: white; }
     .userHomePage .bothLists .lighten {
-      background: white;
-      color: gray; }
+      background: #e6e6e6;
+      color: #333333; }
     .userHomePage .bothLists .list {
       width: 98.4%; }
       .userHomePage .bothLists .list img {
@@ -5724,7 +5724,13 @@ body {
 
 .userHomePage .bothLists .list table tr {
   border-bottom: none;
-  background: #E6E6E6; }
+  background: white;
+  border-left: 2px solid #8caeca; }
+
+.userHomePage .bothLists .list table.grocSide tr {
+  border-bottom: none;
+  background: white;
+  border-left: none; }
 
 .hate {
   padding-top: 1em;
@@ -5738,8 +5744,13 @@ body {
     font-size: 1.5em;
     color: #40704E;
     border: 2px solid #8caeca;
-    border-radius: 5px;
+    border-bottom: none;
     padding-top: 0.5%; }
+  .hate a.subTitleTop {
+    border-radius: 5px 5px 0 0; }
+  .hate a.subTitleBottom {
+    border-bottom: 2px solid #8caeca;
+    border-radius: 0 0 5px 5px; }
   .hate span.quantity {
     float: right;
     margin-right: 4%;
@@ -5756,9 +5767,9 @@ body {
   .hate .vertical2 {
     margin-left: 0; }
     .hate .vertical2 .necTable tr.head {
-      border-bottom: 3px solid white; }
+      border-bottom: 2px solid #b5b5b7; }
     .hate .vertical2 table tr.head {
-      border-bottom: 3px solid white; }
+      border-bottom: 2px solid #b5b5b7; }
   .hate tr.listItem {
     color: #78427E; }
 
