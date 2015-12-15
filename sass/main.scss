@@ -1217,7 +1217,16 @@ button.sortBtn{
   }
   .deetButtons{
     float: right;
-    margin-right: 10%;
+    margin-right: 8%;
+    p{
+      background: $lightGray;
+      padding: 0.5em;
+      opacity: .9;
+      border-radius: 5px;
+      width: 15em;
+      font-style: italic;
+      color: white;
+    }
   }
 }
 

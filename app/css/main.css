@@ -6298,7 +6298,15 @@ button.sortBtn {
       color: #F97F1F; }
   .singleRecipeTile .deetButtons {
     float: right;
-    margin-right: 10%; }
+    margin-right: 8%; }
+    .singleRecipeTile .deetButtons p {
+      background: #b5b5b7;
+      padding: 0.5em;
+      opacity: .9;
+      border-radius: 5px;
+      width: 15em;
+      font-style: italic;
+      color: white; }
 
 @media (max-width: 1200px) {
   .singleRecipeTile .theDetails {
