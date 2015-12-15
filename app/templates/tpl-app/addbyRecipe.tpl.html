@@ -40,24 +40,11 @@
     </form>
 
     <ul>
-      <li class="recipeTitle">Recipe Title</li>
-      <img ng-src="https://placecage.com/200/200">
-      <button class="button">See Ingredient List</button>
-      <hr>
-
-      <li class="recipeTitle">Recipe Title</li>  
-      <img ng-src="https://placecage.com/200/200">
-      <button class="button">See Ingredient List</button>
-      <hr>
-
-      <li class="recipeTitle">Recipe Title</li>
-      <img ng-src="https://placecage.com/200/200">
-      <button class="button">See Ingredient List</button>
-      <hr>
+      <li class="recipeTitle" ng-repeat="object in vm.recipes">
+        <span class="recipeImages">{{object.name}}<br></span>
+        <img  class="recipeImages" ng-src="{{object.source_image_url}}">
+      </li>
     </ul>
-
-
-
   </div>
   
 
