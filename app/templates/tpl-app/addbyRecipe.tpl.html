@@ -44,10 +44,10 @@
     <div class="row small-up-1 medium-up-3 large-up-5">
 
       <div class="column" ng-repeat="object in vm.recipes">
-        <a href="#/recipe/{{object.id}}">
-        <span>{{object.name | limitTo: 18 }}...</span>
-        <img class="recipeImage" ng-src="{{object.source_image_url}}" class="thumbnail" alt="">
-        </a>
+
+        <a href="#/recipe/{{object.id}}"><span>{{object.name | limitTo: 17 }}...</span>
+        <img class="recipeImage" ng-src="{{object.source_image_url}}" class="thumbnail" alt=""></a>
+
       </div>
     </div>
 

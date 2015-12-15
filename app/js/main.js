@@ -555,8 +555,10 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
   // }
   var toBuy = [];
   $http.get(url + '/recipe/' + id, SERVER.CONFIG).then(function (res) {
-
+    console.log('hi', res);
     vm.title = res.data.name;
+    vm.image = res.data.source_image_url;
+    vm.recipeSource = res.data.source_url;
     vm.id = res.data.id;
     vm.ingredients = res.data.ingredients;
 

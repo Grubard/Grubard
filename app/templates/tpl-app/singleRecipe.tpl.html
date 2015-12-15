@@ -1,6 +1,59 @@
-<h2>{{vm.title}}</h2>
-<ul>
-  <li ng-repeat="item in vm.ingredients">{{item.name}} {{item.amount}} {{item.unit}}</li>
-</ul>
+<div class="singleRecipe">
 
-<button ng-click="vm.addThisRecipe()">Add This Recipe!</button>
+  <div class="side quickLinks2">
+
+    <div class="quickNav2">
+      <a href="/#home">
+        <img ng-src='../images/home.png'>
+        <p>Return Home</p>
+      </a>
+    </div>
+
+    <div class="quickNav2">
+      <a href="/#pantry">
+        <img ng-src='../images/eggplant.png'>
+        <p>Edit Pantry</p>
+      </a>
+    </div>
+    
+    <div class="quickNav2">
+      <a href="/#list">
+        <img ng-src='../images/apple.png'>
+        <p>Go Shopping <br> Edit Grocery List</p>
+      </a>
+    </div>
+
+    <div class="quickNav2">
+      <a href="/#list" ng-click="vm.logOut()">
+        <img ng-src='../images/carrot.png'>
+        <p>Log Out</p>
+      </a>
+    </div>
+  </div>
+  
+
+  <div class="side singleRecipeTile">
+    <h2>{{vm.title}}</h2>
+    <hr>
+
+    <div class="foodItem">
+      <img class="theDetails" ng-src="{{vm.image}}"></span>
+      <ul class="theDetails">
+        <span>Ingredient List</span>
+        <li ng-repeat="item in vm.ingredients">
+          {{item.name}} {{item.amount}} {{item.unit}}
+        </li>
+      </ul>
+      
+      <div class="theDetails deetButtons">
+        <button class="button"ng-click="vm.addThisRecipe()">Add This Recipe!</button>
+        <a href="{{vm.recipeSource}}"><button class="button">View Recipe Instructions</button></a>
+        <a href="/#recipe"><button class="button">Return to Search</button></a>
+      </div>
+      
+    </div>
+
+
+  </div>
+
+</div>
