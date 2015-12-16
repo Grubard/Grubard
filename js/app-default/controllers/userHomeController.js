@@ -1,5 +1,5 @@
 import $ from 'jquery';
-let UserHomeController = function($cookies, ListService, PantryService, $scope, TransferService) {
+let UserHomeController = function($cookies, ListService, PantryService, $scope, TransferService, $rootScope) {
   
   // Function to only show tutorial one time
   $(document).ready(function(){
@@ -56,7 +56,17 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
       });
     });
   }
-
+  // $rootScope.$on('newFood', function(){
+  //   ListService.getGroceryList().then( (response) => {
+  //     vm.items = response.data;
+  //     vm.groceries = [];
+  //     vm.items.forEach(function(groc){
+  //       if(groc.necessity===false || groc.necessity === null){
+  //         vm.groceries.push(groc);
+  //       }
+  //     });
+  //   });
+  // })
 
   // Sort functions
   $scope.sort = {
@@ -216,6 +226,6 @@ let UserHomeController = function($cookies, ListService, PantryService, $scope, 
      
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService', '$rootScope'];
 
 export default UserHomeController;

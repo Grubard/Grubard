@@ -84,6 +84,7 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
 
   vm.showForm = showForm;
   vm.cancelForm = cancelForm;
+  vm.addUser = addUser;
   vm.cheese = true;
 
   $rootScope.$on('LoggedIn', function () {
@@ -111,6 +112,15 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
 
   function cancelForm() {
     $state.reload();
+  }
+
+  function addUser(friends) {
+    console.log('friend');
+    LoginService.addYoFriends(friends).then(function (res) {
+      console.log(res);
+    });
+    friends.username = '';
+    friends.password = '';
   }
 
   vm.logOut = function () {
@@ -261,7 +271,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
   function removeItem(object) {
     console.log(object.id);
     ListService.removeFood(object.id).then(function () {
-      $scope.$broadcast('newfood');
+      $rootScope.$broadcast('newfood');
     });
   }
 
@@ -285,17 +295,20 @@ var ListController = function ListController($scope, $http, ListService, $state,
 
   function addItemsToPantry() {
     vm.purchased.map(function (x) {
-      console.log(SERVER);
-      console.log(SERVER.CONFIG);
+
       x.quantity = x.absolute;
+
       if (x.preferred === null || x.preferred === 0 || x.preferred === undefined) {
+
         x.preferred = x.absolute;
       }
       console.log('hey you: ', x);
+
       $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
-        console.log('the response:', res);
-        ListService.removeFood(x.id).then(function () {
-          $scope.$broadcast('newfood');
+
+        ListService.removeFood(x.id).then(function (res) {
+          console.log(res);
+          $rootScope.$broadcast('newfood');
         });
       });
     });
@@ -308,12 +321,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
       });
     });
   }
-  function checkAll() {
 
-    vm.purchased = vm.groceryListYay.map(function (x) {
-      console.log(x);
-    });
-  }
   vm.logOut = function () {
     $cookies.remove('auth_token');
     $cookies.remove('username');
@@ -685,7 +693,7 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope, TransferService) {
+var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope, TransferService, $rootScope) {
 
   // Function to only show tutorial one time
   (0, _jquery2['default'])(document).ready(function () {
@@ -739,6 +747,17 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       });
     });
   }
+  // $rootScope.$on('newFood', function(){
+  //   ListService.getGroceryList().then( (response) => {
+  //     vm.items = response.data;
+  //     vm.groceries = [];
+  //     vm.items.forEach(function(groc){
+  //       if(groc.necessity===false || groc.necessity === null){
+  //         vm.groceries.push(groc);
+  //       }
+  //     });
+  //   });
+  // })
 
   // Sort functions
   $scope.sort = {
@@ -891,7 +910,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   };
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService', '$rootScope'];
 
 exports['default'] = UserHomeController;
 module.exports = exports['default'];

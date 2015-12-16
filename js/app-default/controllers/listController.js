@@ -74,7 +74,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   function removeItem (object) {
     console.log(object.id);
     ListService.removeFood(object.id).then(()=>{
-      $scope.$broadcast('newfood');
+      $rootScope.$broadcast('newfood');
     });
   }
 
@@ -102,17 +102,20 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
 
   function addItemsToPantry() {
     vm.purchased.map(function(x){
-      console.log(SERVER);
-      console.log(SERVER.CONFIG);
+      
       x.quantity = x.absolute; 
+
       if(x.preferred === null || x.preferred === 0 || x.preferred === undefined) {
+
         x.preferred = x.absolute;
       }
       console.log('hey you: ', x);
+
       $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
-        console.log('the response:', res);
-        ListService.removeFood(x.id).then(()=>{
-          $scope.$broadcast('newfood');
+        
+        ListService.removeFood(x.id).then((res)=>{
+          console.log(res);
+          $rootScope.$broadcast('newfood');
         });
         
       });
@@ -127,13 +130,9 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
       
     });
   }
-  function checkAll(){
-    
-    vm.purchased = vm.groceryListYay.map(function(x){
-      console.log(x);
-      
-    });
-  }
+
+
+
   vm.logOut = function(){
     $cookies.remove('auth_token');
     $cookies.remove('username');
