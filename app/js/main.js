@@ -113,12 +113,11 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
     $state.reload();
   };
 
-<<<<<<< HEAD
   vm.showForm = function (cheese) {
     cheese = {};
     cheese.showForm = true;
   };
-=======
+
   function showForm() {
     vm.cheese = false;
   }
@@ -126,7 +125,6 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
   function cancelForm() {
     $state.reload();
   }
->>>>>>> 8dbea9cce324add674e336d65ef61d86982c2cd2
 
   vm.logOut = function () {
     $cookies.remove('auth_token');
@@ -617,6 +615,9 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
     });
   });
 
+  var alreadyPan = [];
+  var alreadyGroc = [];
+
   vm.addThisRecipe = function () {
     console.log(grocery);
     console.log(pantry);
@@ -629,6 +630,12 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
         $http.post(url + '/grocery', x, SERVER.CONFIG).then(function (res) {
           console.log('what we posted: ', res);
         });
+      } else if (yay !== -1) {
+        alreadyPan.push(x);
+        console.log('already have pan: ', alreadyPan);
+      } else if (otherYay !== -1) {
+        alreadyGroc.push(x);
+        console.log('already groc: ', alreadyGroc);
       }
     });
   };

@@ -53,6 +53,9 @@ let SingleRecipe = function($http, SERVER, $cookies, $stateParams) {
       });
   });
 
+  let alreadyPan = [];
+  let alreadyGroc =[];
+
   vm.addThisRecipe= function(){
     console.log(grocery);
     console.log(pantry);
@@ -68,7 +71,15 @@ let SingleRecipe = function($http, SERVER, $cookies, $stateParams) {
         
         });
         
+      } else if(yay !== -1){
+        alreadyPan.push(x);
+        console.log('already have pan: ', alreadyPan);
+      
+      } else if(otherYay !== -1){
+        alreadyGroc.push(x);
+        console.log('already groc: ', alreadyGroc);
       }
+
     });  
       
     
