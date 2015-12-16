@@ -298,7 +298,8 @@ var ListController = function ListController($scope, $http, ListService, $state,
 
       x.quantity = x.absolute;
 
-      if (x.preferred === null) {
+      if (x.preferred === null || x.preferred === 0 || x.preferred === undefined) {
+
         x.preferred = x.absolute;
       }
       console.log('hey you: ', x);

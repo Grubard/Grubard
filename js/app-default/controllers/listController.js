@@ -105,9 +105,8 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
       
       x.quantity = x.absolute; 
 
-      
+      if(x.preferred === null || x.preferred === 0 || x.preferred === undefined) {
 
-      if(x.preferred === null) {
         x.preferred = x.absolute;
       }
       console.log('hey you: ', x);
