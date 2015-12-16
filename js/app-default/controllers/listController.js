@@ -104,8 +104,14 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
     vm.purchased.map(function(x){
       
       x.quantity = x.absolute; 
-      x.preferred = x.absolute;
+
       
+
+      if(x.preferred === null) {
+        x.preferred = x.absolute;
+      }
+      console.log('hey you: ', x);
+
       $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
         
         ListService.removeFood(x.id).then((res)=>{
