@@ -6113,9 +6113,11 @@ body {
       border-bottom: 1px dotted #b5b5b7;
       text-align: left; }
   .mainGroceryList .fa-check-circle-o {
-    color: green; }
+    color: green;
+    border: none; }
   .mainGroceryList .fa-minus-circle {
-    color: #999900; }
+    color: #999900;
+    border: none; }
 
 button.button.newGroc {
   margin-left: 20%;

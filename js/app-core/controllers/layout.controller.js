@@ -50,8 +50,6 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
   }
 
 
-
-
   vm.logOut = function(){
     $cookies.remove('auth_token');
     $cookies.remove('username');

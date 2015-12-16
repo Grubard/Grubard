@@ -602,10 +602,13 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
 
   var pantry = [];
   var grocery = [];
+  var fullPantry = [];
 
   $http.get(url + '/edible', SERVER.CONFIG).then(function (res) {
+
     res.data.forEach(function (x) {
       pantry.push(x.title);
+      fullPantry.push(x);
     });
   });
 
@@ -624,18 +627,17 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
 
     toBuy.forEach(function (x) {
       var yay = $.inArray(x.title, pantry);
+      console.log('this is yay: ', yay);
       var otherYay = $.inArray(x.title, grocery);
+      var tacos = fullPantry[yay];
+      console.log('these are tacos: ', tacos);
 
       if (yay === -1 && otherYay === -1) {
         $http.post(url + '/grocery', x, SERVER.CONFIG).then(function (res) {
           console.log('what we posted: ', res);
         });
       } else if (yay !== -1) {
-        alreadyPan.push(x);
-        console.log('already have pan: ', alreadyPan);
-      } else if (otherYay !== -1) {
-        alreadyGroc.push(x);
-        console.log('already groc: ', alreadyGroc);
+        console.log(toBuy);
       }
     });
   };
