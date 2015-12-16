@@ -38,12 +38,15 @@ let SingleRecipe = function($http, SERVER, $cookies, $stateParams) {
     });
   });
 
-  let pantry=[];
-  let grocery=[];
+  let pantry = [];
+  let grocery = [];
+  let fullPantry = [];
 
   $http.get(url+ '/edible', SERVER.CONFIG).then((res)=>{
+
     res.data.forEach(function(x){
         pantry.push(x.title);
+        fullPantry.push(x);
       });
   });
 
@@ -59,7 +62,10 @@ let SingleRecipe = function($http, SERVER, $cookies, $stateParams) {
     
     toBuy.forEach(function(x){
       let yay = $.inArray(x.title, pantry);
+      console.log('this is yay: ', yay);
       let otherYay = $.inArray(x.title, grocery); 
+      let tacos = fullPantry[yay];
+      console.log('these are tacos: ', tacos);
       
 
       if(yay === -1 && otherYay === -1){
@@ -68,6 +74,9 @@ let SingleRecipe = function($http, SERVER, $cookies, $stateParams) {
         
         });
         
+      } else if (yay !== -1) {
+        console.log(toBuy);
+
       }
     });  
       
