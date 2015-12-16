@@ -261,7 +261,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
   function removeItem(object) {
     console.log(object.id);
     ListService.removeFood(object.id).then(function () {
-      $scope.$broadcast('newfood');
+      $rootScope.$broadcast('newfood');
     });
   }
 
@@ -285,15 +285,15 @@ var ListController = function ListController($scope, $http, ListService, $state,
 
   function addItemsToPantry() {
     vm.purchased.map(function (x) {
-      console.log(SERVER);
-      console.log(SERVER.CONFIG);
+
       x.quantity = x.absolute;
       x.preferred = x.absolute;
-      console.log('hey you: ', x);
+
       $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
-        console.log('the response:', res);
-        ListService.removeFood(x.id).then(function () {
-          $scope.$broadcast('newfood');
+
+        ListService.removeFood(x.id).then(function (res) {
+          console.log(res);
+          $rootScope.$broadcast('newfood');
         });
       });
     });
@@ -683,7 +683,7 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope, TransferService) {
+var UserHomeController = function UserHomeController($cookies, ListService, PantryService, $scope, TransferService, $rootScope) {
 
   // Function to only show tutorial one time
   (0, _jquery2['default'])(document).ready(function () {
@@ -737,6 +737,17 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
       });
     });
   }
+  // $rootScope.$on('newFood', function(){
+  //   ListService.getGroceryList().then( (response) => {
+  //     vm.items = response.data;
+  //     vm.groceries = [];
+  //     vm.items.forEach(function(groc){
+  //       if(groc.necessity===false || groc.necessity === null){
+  //         vm.groceries.push(groc);
+  //       }
+  //     });
+  //   });
+  // })
 
   // Sort functions
   $scope.sort = {
@@ -889,7 +900,7 @@ var UserHomeController = function UserHomeController($cookies, ListService, Pant
   };
 };
 
-UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService'];
+UserHomeController.$inject = ['$cookies', 'ListService', 'PantryService', '$scope', 'TransferService', '$rootScope'];
 
 exports['default'] = UserHomeController;
 module.exports = exports['default'];
