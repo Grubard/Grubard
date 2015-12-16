@@ -565,7 +565,7 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
   // }
   var toBuy = [];
   $http.get(url + '/recipe/' + id, SERVER.CONFIG).then(function (res) {
-    console.log('hi', res);
+    // console.log('hi', res);
     vm.title = res.data.name;
     vm.image = res.data.source_image_url;
     vm.recipeSource = res.data.source_url;
@@ -573,7 +573,7 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
     vm.ingredients = res.data.ingredients;
 
     vm.ingredients.forEach(function (x) {
-      console.log(x);
+      // console.log(x);
 
       var food = {
         title: x.name,
@@ -590,6 +590,7 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
   var pantry = [];
   var grocery = [];
   var fullPantry = [];
+  var fullGrocery = [];
 
   $http.get(url + '/edible', SERVER.CONFIG).then(function (res) {
 
@@ -602,26 +603,59 @@ var SingleRecipe = function SingleRecipe($http, SERVER, $cookies, $stateParams) 
   $http.get(url + '/grocery', SERVER.CONFIG).then(function (res) {
     res.data.forEach(function (y) {
       grocery.push(y.title);
+      fullGrocery.push(y);
     });
   });
 
+  var alreadyPan = [];
+  var alreadyGroc = [];
+
   vm.addThisRecipe = function () {
-    console.log(grocery);
-    console.log(pantry);
+    // console.log(grocery);
+    // console.log(pantry);
 
     toBuy.forEach(function (x) {
       var yay = $.inArray(x.title, pantry);
-      console.log('this is yay: ', yay);
+      // console.log('this is yay: ', yay);
       var otherYay = $.inArray(x.title, grocery);
       var tacos = fullPantry[yay];
-      console.log('these are tacos: ', tacos);
+      // console.log('these are tacos: ', tacos);
 
       if (yay === -1 && otherYay === -1) {
         $http.post(url + '/grocery', x, SERVER.CONFIG).then(function (res) {
-          console.log('what we posted: ', res);
+          console.log('we didnt have: ', res);
         });
-      } else if (yay !== -1) {
-        console.log(toBuy);
+      } else if (yay !== -1 && x.quantity > fullPantry[yay].quantity) {
+
+        var panFood = x.quantity - fullPantry[yay].quantity;
+
+        var food = {
+          title: x.title,
+          quantity: panFood,
+          units: x.units,
+          category: 'other',
+          preferred: panFood,
+          absolute: panFood
+        };
+        $http.post(url + '/grocery', food, SERVER.CONFIG).then(function (res) {
+          console.log('had in pantry but not enough: ', res);
+        });
+      } else if (otherYay !== -1 && x.quantity > fullGrocery[otherYay].quantity) {
+        console.log('wat wat');
+        var panFood = x.quantity - fullGrocery[otherYay].quantity;
+
+        var food = {
+          title: x.title,
+          quantity: panFood,
+          units: x.units,
+          category: 'other',
+          preferred: panFood,
+          absolute: panFood
+        };
+        console.log(food);
+        $http.post(url + '/grocery', food, SERVER.CONFIG).then(function (res) {
+          console.log('had on grocery but not enough: ', res);
+        });
       }
     });
   };

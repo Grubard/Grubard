@@ -25,6 +25,7 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
 
   };
 
+
   function showForm() {
     console.log('hi');
     vm.cheese = false;
@@ -33,6 +34,7 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
   function cancelForm() {
     $state.reload();
   }
+
 
   vm.logOut = function(){
     $cookies.remove('auth_token');
