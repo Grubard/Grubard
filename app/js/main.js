@@ -113,6 +113,11 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
     $state.reload();
   };
 
+  vm.showForm = function (cheese) {
+    cheese = {};
+    cheese.showForm = true;
+  };
+
   function showForm() {
     vm.cheese = false;
   }
@@ -218,6 +223,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
+  vm.checkAll = checkAll;
 
   // Empty Arrays that items will be pushed to
   var items = [];
@@ -309,7 +315,12 @@ var ListController = function ListController($scope, $http, ListService, $state,
       });
     });
   }
+  function checkAll() {
 
+    vm.purchased = vm.groceryListYay.map(function (x) {
+      console.log(x);
+    });
+  }
   vm.logOut = function () {
     $cookies.remove('auth_token');
     $cookies.remove('username');
