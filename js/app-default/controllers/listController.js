@@ -131,13 +131,9 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
       
     });
   }
-  function checkAll(){
-    
-    vm.purchased = vm.groceryListYay.map(function(x){
-      console.log(x);
-      
-    });
-  }
+
+
+
   vm.logOut = function(){
     $cookies.remove('auth_token');
     $cookies.remove('username');

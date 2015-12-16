@@ -84,6 +84,7 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
 
   vm.showForm = showForm;
   vm.cancelForm = cancelForm;
+  vm.addUser = addUser;
   vm.cheese = true;
 
   $rootScope.$on('LoggedIn', function () {
@@ -111,6 +112,15 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
 
   function cancelForm() {
     $state.reload();
+  }
+
+  function addUser(friends) {
+    console.log('friend');
+    LoginService.addYoFriends(friends).then(function (res) {
+      console.log(res);
+    });
+    friends.username = '';
+    friends.password = '';
   }
 
   vm.logOut = function () {
@@ -310,12 +320,7 @@ var ListController = function ListController($scope, $http, ListService, $state,
       });
     });
   }
-  function checkAll() {
 
-    vm.purchased = vm.groceryListYay.map(function (x) {
-      console.log(x);
-    });
-  }
   vm.logOut = function () {
     $cookies.remove('auth_token');
     $cookies.remove('username');

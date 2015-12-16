@@ -3,6 +3,7 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
 
   vm.showForm = showForm;
   vm.cancelForm = cancelForm;
+  vm.addUser = addUser;
   vm.cheese = true;
 
   $rootScope.$on('LoggedIn', function(){
@@ -35,6 +36,14 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
     $state.reload();
   }
 
+  function addUser(friends){
+    console.log('friend');
+    LoginService.addYoFriends(friends).then((res)=>{
+      console.log(res);
+    });
+    friends.username= '';
+    friends.password= '';
+  }
 
   vm.logOut = function(){
     $cookies.remove('auth_token');

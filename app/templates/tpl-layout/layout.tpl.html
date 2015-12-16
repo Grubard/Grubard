@@ -24,12 +24,14 @@
     <ul class="small-12 vertical menu">
       <li class="users-list" add-user>Add User To House</li>
       <div id="add-user" class="hide-user">
-        <input type="email" placeholder="Email">
+        <form ng-submit="vm.addUser(friend)">
         <div class="input-group">
-          <input class="input-group-field" type="text" placeholder="First Name">
-          <a class="input-group-button button success"><i class="fa fa-plus"></i></a>
-          <a add-user class="input-group-button button">Done</a>
+          <input class="input-group-field" type="email" ng-model="friend.email" placeholder="Email">
+          <input class="input-group-field" type="text" ng-model="friend.username" placeholder="Username">
+          <input class="input-group-field" type="password" ng-model="friend.password" placeholder="Password">
+          <button class="button">Done</button>
         </div>
+        </form>
       </div>
       <li><i class="fa fa-home"></i><a href="/#home">Go Home</a></li>
       <li><i class="fa fa-shopping-cart"></i><a href="/#list">View Grocery List</a></li>
