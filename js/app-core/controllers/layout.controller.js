@@ -36,10 +36,7 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
 
 
 
-  vm.showForm = function(cheese){
-    cheese={};
-    cheese.showForm = true;
-  };
+
 
   function showForm() {
     vm.cheese = false;
