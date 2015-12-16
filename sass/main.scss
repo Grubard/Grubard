@@ -779,7 +779,6 @@ body{
 }
 
 .listTag{
-  color: white;
   font-weight: 200;
   font-size: .7em;
   padding: 3px;
@@ -790,27 +789,34 @@ body{
 
 .ProduceTag{
   background-color: green;
+  color: white;
 }
 .DairyTag{
   background-color: blue;
+  color: white;
 }
 .MeatsTag{
   background-color: red;
+  color: white;
 }
 .DeliTag{
   background-color: pink;
 }
 .SpicesTag{
   background-color: brown;
+  color: white;
 }
 .BeveragesTag{
   background-color: black;
+  color: white;
 }
 .SweetsTag{
   background-color: #6F4C7E;
+  color: white;
 }
 .GrainsTag{
   background-color: #BA987C;
+  color: white;
 }
 .FrozenTag{
   background-color: white;
@@ -835,6 +841,7 @@ body{
 }
 .OtherTag{
   background-color: #b77dec;
+  color: black;
 }
 
 .mainGroceryList{

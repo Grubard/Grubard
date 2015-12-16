@@ -5958,7 +5958,6 @@ body {
   margin-left: 16%; }
 
 .listTag {
-  color: white;
   font-weight: 200;
   font-size: .7em;
   padding: 3px;
@@ -5967,28 +5966,35 @@ body {
   border: 1px solid white; }
 
 .ProduceTag {
-  background-color: green; }
+  background-color: green;
+  color: white; }
 
 .DairyTag {
-  background-color: blue; }
+  background-color: blue;
+  color: white; }
 
 .MeatsTag {
-  background-color: red; }
+  background-color: red;
+  color: white; }
 
 .DeliTag {
   background-color: pink; }
 
 .SpicesTag {
-  background-color: brown; }
+  background-color: brown;
+  color: white; }
 
 .BeveragesTag {
-  background-color: black; }
+  background-color: black;
+  color: white; }
 
 .SweetsTag {
-  background-color: #6F4C7E; }
+  background-color: #6F4C7E;
+  color: white; }
 
 .GrainsTag {
-  background-color: #BA987C; }
+  background-color: #BA987C;
+  color: white; }
 
 .FrozenTag {
   background-color: white;
@@ -6012,7 +6018,8 @@ body {
   color: black; }
 
 .OtherTag {
-  background-color: #b77dec; }
+  background-color: #b77dec;
+  color: black; }
 
 .mainGroceryList {
   background: #303E4E;

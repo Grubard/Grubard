@@ -288,7 +288,9 @@ var ListController = function ListController($scope, $http, ListService, $state,
       console.log(SERVER);
       console.log(SERVER.CONFIG);
       x.quantity = x.absolute;
-      x.preferred = x.absolute;
+      if (x.preferred === null) {
+        x.preferred = x.absolute;
+      }
       console.log('hey you: ', x);
       $http.post(url + '/edible', x, SERVER.CONFIG).then(function (res) {
         console.log('the response:', res);
