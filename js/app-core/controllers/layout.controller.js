@@ -40,6 +40,7 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
     console.log('friend');
     LoginService.addYoFriends(friends).then((res)=>{
       console.log(res);
+      $state.reload();
     });
     friends.username= '';
     friends.password= '';
