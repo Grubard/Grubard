@@ -84,7 +84,6 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
 
   vm.showForm = showForm;
   vm.cancelForm = cancelForm;
-
   vm.cheese = true;
 
   $rootScope.$on('LoggedIn', function () {
@@ -97,14 +96,6 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
     vm.house = $cookies.get('house_name');
   });
 
-  // $('.changePass').click(function(){
-  //   $('.changePassForm').toggleClass('showChangePass');
-  // });
-  // $('.cancelPass').click(function(){
-  //   console.log('hey');
-  //   $('.changePassForm').toggleClass('showChangePass');
-  // });
-
   vm.changePass = function (pass) {
     LoginService.changePassword(pass).then(function (res) {
       console.log(res);
@@ -114,6 +105,7 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
   };
 
   function showForm() {
+    console.log('hi');
     vm.cheese = false;
   }
 
