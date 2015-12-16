@@ -3,7 +3,6 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
 
   vm.showForm = showForm;
   vm.cancelForm = cancelForm;
-
   vm.cheese = true;
 
   $rootScope.$on('LoggedIn', function(){
@@ -16,14 +15,6 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
 
     vm.house = $cookies.get('house_name');
   });
-  
-  // $('.changePass').click(function(){
-  //   $('.changePassForm').toggleClass('showChangePass');
-  // });
-  // $('.cancelPass').click(function(){
-  //   console.log('hey');
-  //   $('.changePassForm').toggleClass('showChangePass');
-  // });
 
   vm.changePass = function(pass){
     LoginService.changePassword(pass).then((res)=>{
@@ -34,14 +25,8 @@ let LayoutController = function($cookies, $state, $rootScope, $http, LoginServic
 
   };
 
-
-
-  vm.showForm = function(cheese){
-    cheese={};
-    cheese.showForm = true;
-  };
-
   function showForm() {
+    console.log('hi');
     vm.cheese = false;
   }
 
