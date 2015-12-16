@@ -102,9 +102,13 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
 
   function addItemsToPantry() {
     vm.purchased.map(function(x){
+      console.log(SERVER);
+      console.log(SERVER.CONFIG);
       x.quantity = x.absolute; 
+      x.preferred = x.absolute;
       console.log('hey you: ', x);
       $http.post(url + '/edible', x, SERVER.CONFIG).then((res)=>{
+        console.log('the response:', res);
         ListService.removeFood(x.id).then(()=>{
           $scope.$broadcast('newfood');
         });
