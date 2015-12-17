@@ -118,6 +118,7 @@ var LayoutController = function LayoutController($cookies, $state, $rootScope, $
     console.log('friend');
     LoginService.addYoFriends(friends).then(function (res) {
       console.log(res);
+      $state.reload();
     });
     friends.username = '';
     friends.password = '';
@@ -220,7 +221,6 @@ var ListController = function ListController($scope, $http, ListService, $state,
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
-  vm.checkAll = checkAll;
 
   // Empty Arrays that items will be pushed to
   var items = [];
