@@ -18,7 +18,7 @@ let ListController = function($scope, $http, ListService, $state, SERVER, $cooki
   vm.removeItem = removeItem;
   vm.addNewItem = addNewItem;
   vm.groceryList = groceryList;
-  vm.checkAll = checkAll;
+  
 
   // Empty Arrays that items will be pushed to
   let items= [];
